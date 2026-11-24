@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC 无头仿真管理"
+  short_description: "Console 环境、实例、项目、Run、采集、交付与反馈闭环"
+  default_prompt: "Use $pfc-headless to discover and verify PFC Console, manage isolated instances, execute traceable Runs, capture real data, publish immutable standardized packages, and turn validated analysis feedback into a new Run."

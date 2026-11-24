@@ -1,0 +1,70 @@
+[2026-11-16 21:13:48,759] INFO - MainThreadExecutor initialized (main_thread=MainThread, id=11084)
+[2026-11-16 21:13:48,760] INFO - Interrupt callback registered (position=50.0)
+[2026-11-16 21:13:48,760] INFO - Executor callback registered (position=51.0)
+[2026-11-16 21:13:48,764] INFO - Loaded 0 historical task(s)
+[2026-11-16 21:13:48,765] INFO - TaskManager initialized
+[2026-11-16 21:13:48,766] INFO - ConsoleHistory ready (0 entries, cursor=0)
+[2026-11-16 21:13:48,779] INFO - HTTP bridge listening on http://127.0.0.1:9001
+[2026-11-16 21:13:48,779] INFO - Engine: D:\Itasca\PFC900\exe64\pfc2d9_console.exe
+[2026-11-16 21:13:48,780] INFO - Package: C:\Users\L\AppData\Roaming\Python\Python310\site-packages\itasca_mcp_bridge
+[2026-11-16 21:13:48,780] INFO - Pump: interval=20ms, max_tasks_per_tick=1
+[2026-11-16 21:13:49,017] INFO - SSE client connected (total=1)
+[2026-11-16 21:13:49,072] INFO - [a0aed79b] >> execute_code code="import json, os, sys, itasca\nprint('PFC_HEADLESS_PROBE=' + json.dumps({'executab..."
+[2026-11-16 21:13:49,655] INFO - [a0aed79b] << execute_code status=success (583ms)
+[2026-11-16 21:13:57,313] INFO - [f54fe2c1] >> execute_code code="import os, sys, json, itasca\nprint('PFC_HEADLESS_MCP_PROBE=' + json.dumps({'pid'..."
+[2026-11-16 21:13:57,461] INFO - [f54fe2c1] << execute_code status=success (148ms)
+[2026-11-16 21:13:57,468] INFO - [ccc6fc3d] >> console_history limit=20
+[2026-11-16 21:13:57,469] INFO - [ccc6fc3d] << console_history status=success (0ms)
+[2026-11-16 21:14:15,731] INFO - [692e83ca] >> execute_code code="import json, os, sys, itasca\nprint('PFC_HEADLESS_PROBE=' + json.dumps({'executab..."
+[2026-11-16 21:14:15,743] INFO - [692e83ca] << execute_code status=success (12ms)
+[2026-11-16 21:14:40,159] INFO - [a0e8a3f8] >> execute_code code="import json, os, sys, itasca\nprint('PFC_HEADLESS_PROBE=' + json.dumps({'executab..."
+[2026-11-16 21:14:40,193] INFO - [a0e8a3f8] << execute_code status=success (33ms)
+[2026-11-16 21:14:40,251] INFO - [unknown] >> execute_task script="D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\acceptance\e2e_20261116\runs\run_pfc2d_001\entry\capture_case.py" desc="PFC2D Console case 0 embedded capture run_pfc2d_001"
+[2026-11-16 21:14:40,253] INFO - Script task registered: capture_case.py (id=b9b2bc)
+[2026-11-16 21:14:40,256] INFO - [unknown] << execute_task status=pending (6ms)
+[2026-11-16 21:14:40,298] INFO - [unknown] >> check_task_status task_id=b9b2bc
+[2026-11-16 21:14:40,307] INFO - [unknown] << check_task_status status=running (1ms)
+[2026-11-16 21:14:41,332] INFO - [unknown] >> check_task_status task_id=b9b2bc
+[2026-11-16 21:14:41,340] INFO - [unknown] << check_task_status status=running (8ms)
+[2026-11-16 21:14:41,359] INFO - Project pane not readable with this GUI; data files are not registered
+[2026-11-16 21:14:42,371] INFO - [unknown] >> check_task_status task_id=b9b2bc
+[2026-11-16 21:14:42,372] INFO - [unknown] << check_task_status status=completed (1ms)
+[2026-11-16 21:15:58,223] INFO - [dba11446] >> execute_code code="import json, os, sys, itasca\nprint('PFC_HEADLESS_PROBE=' + json.dumps({'executab..."
+[2026-11-16 21:15:58,247] INFO - [dba11446] << execute_code status=success (24ms)
+[2026-11-16 21:15:58,291] INFO - [unknown] >> execute_task script="D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\acceptance\e2e_20261116\runs\run_pfc2d_002\entry\capture_case.py" desc="PFC2D Console case 0 embedded capture run_pfc2d_002"
+[2026-11-16 21:15:58,293] INFO - Script task registered: capture_case.py (id=35b72e)
+[2026-11-16 21:15:58,296] INFO - [unknown] << execute_task status=pending (5ms)
+[2026-11-16 21:15:58,304] INFO - [unknown] >> check_task_status task_id=35b72e
+[2026-11-16 21:15:58,305] INFO - [unknown] << check_task_status status=pending (1ms)
+[2026-11-16 21:15:59,322] INFO - [unknown] >> check_task_status task_id=35b72e
+[2026-11-16 21:15:59,322] INFO - [unknown] << check_task_status status=completed (0ms)
+[2026-11-16 21:16:27,274] INFO - [130bdb70] >> execute_code code="import json, os, sys, itasca\nprint('PFC_HEADLESS_PROBE=' + json.dumps({'executab..."
+[2026-11-16 21:16:27,294] INFO - [130bdb70] << execute_code status=success (20ms)
+[2026-11-16 21:16:27,327] INFO - [unknown] >> execute_task script="D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\acceptance\e2e_20261116\runs\run_pfc2d_contact_001\entry\capture_case.py" desc="PFC2D Console case 2 embedded capture run_pfc2d_contact_001"
+[2026-11-16 21:16:27,329] INFO - Script task registered: capture_case.py (id=2eda11)
+[2026-11-16 21:16:27,332] INFO - [unknown] << execute_task status=pending (4ms)
+[2026-11-16 21:16:27,366] INFO - [unknown] >> check_task_status task_id=2eda11
+[2026-11-16 21:16:27,384] INFO - [unknown] << check_task_status status=running (11ms)
+[2026-11-16 21:16:28,399] INFO - [unknown] >> check_task_status task_id=2eda11
+[2026-11-16 21:16:28,399] INFO - [unknown] << check_task_status status=completed (1ms)
+[2026-11-16 21:16:35,323] INFO - [ebd6385b] >> execute_code code="import itasca\nprint('count', itasca.contact.count())\nprint('list', list(itasca.c..."
+[2026-11-16 21:16:35,339] INFO - [ebd6385b] << execute_code status=success (16ms)
+[2026-11-16 21:16:35,344] INFO - [ad480d26] >> console_history limit=20
+[2026-11-16 21:16:35,344] INFO - [ad480d26] << console_history status=success (0ms)
+[2026-11-16 21:16:56,099] INFO - [aabee357] >> execute_code code="import json, os, sys, itasca\nprint('PFC_HEADLESS_PROBE=' + json.dumps({'executab..."
+[2026-11-16 21:16:56,126] INFO - [aabee357] << execute_code status=success (26ms)
+[2026-11-16 21:16:56,159] INFO - [unknown] >> execute_task script="D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\acceptance\e2e_20261116\runs\run_pfc2d_contact_002\entry\capture_case.py" desc="PFC2D Console case 2 embedded capture run_pfc2d_contact_002"
+[2026-11-16 21:16:56,161] INFO - Script task registered: capture_case.py (id=f4e181)
+[2026-11-16 21:16:56,164] INFO - [unknown] << execute_task status=pending (5ms)
+[2026-11-16 21:16:56,204] INFO - [unknown] >> check_task_status task_id=f4e181
+[2026-11-16 21:16:56,213] INFO - [unknown] << check_task_status status=running (8ms)
+[2026-11-16 21:16:57,227] INFO - [unknown] >> check_task_status task_id=f4e181
+[2026-11-16 21:16:57,227] INFO - [unknown] << check_task_status status=completed (0ms)
+[2026-11-16 21:17:16,784] INFO - [unknown] >> list_tasks offset=0 limit=100
+[2026-11-16 21:17:16,784] INFO - [unknown] << list_tasks status=success (0ms)
+[2026-11-16 21:17:27,014] INFO - [unknown] >> list_tasks offset=0 limit=100
+[2026-11-16 21:17:27,014] INFO - [unknown] << list_tasks status=success (0ms)
+[2026-11-16 21:17:27,027] INFO - [df0d826d] >> execute_code code="import itasca\nitasca.command("model save 'pfc2d_acceptance_stop'")\nprint('MODEL_..."
+[2026-11-16 21:17:27,099] INFO - [df0d826d] << execute_code status=success (71ms)
+[2026-11-16 21:17:27,120] INFO - [463e981c] >> execute_code code="import itasca\nitasca.command('program stop')\n"
+[2026-11-16 21:17:27,171] INFO - [463e981c] << execute_code status=success (51ms)

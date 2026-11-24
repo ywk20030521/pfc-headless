@@ -1,0 +1,89 @@
+{
+  "status": "GENERATED",
+  "verification": "NOT_VERIFIED",
+  "items": [
+    {
+      "id": "source_standardized_contract",
+      "status": "VERIFIED_READ_ONLY",
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\deliveries\\run_pfc2d_002",
+      "owner": "pfc-headless",
+      "manifest_sha256": "f90b773cc90722b36a67c9014901ef5892c207ca1fccd2b27a948f198099d32b"
+    },
+    {
+      "id": "analysis_data",
+      "status": "GENERATED",
+      "path": "03_analysis/"
+    },
+    {
+      "id": "offline_viewer",
+      "status": "GENERATED",
+      "path": "04_viewer/scientific_viewer.html",
+      "verification": "NOT_VERIFIED"
+    },
+    {
+      "id": "charts",
+      "status": "GENERATED",
+      "path": "03_analysis/chart_specs.json",
+      "rejected": [
+        {
+          "id": "case_0:stress_strain",
+          "case_id": 0,
+          "status": "NOT_CAPTURED",
+          "reason": "No valid stress channel exists; no stress chart was generated."
+        },
+        {
+          "id": "case_0:stress_time",
+          "case_id": 0,
+          "status": "NOT_CAPTURED",
+          "reason": "No valid stress channel exists; no stress–time chart was generated."
+        },
+        {
+          "id": "case_0:line_load_time",
+          "case_id": 0,
+          "status": "NOT_GENERATED",
+          "reason": "PFC2D line load is constant across all captured frames, so a line-load–time trend is omitted."
+        },
+        {
+          "id": "case_0:fracture",
+          "case_id": 0,
+          "status": "NOT_CAPTURED",
+          "reason": "No captured fracture events; fracture evolution and orientation charts are omitted."
+        },
+        {
+          "id": "experiment:case_comparison",
+          "case_id": null,
+          "status": "NOT_GENERATED",
+          "reason": "A comparison requires at least two cases."
+        }
+      ]
+    },
+    {
+      "id": "publication_figure_plan",
+      "status": "GENERATED",
+      "path": "06_publication_figures/figure_plan.json",
+      "verification": "NOT_VERIFIED"
+    },
+    {
+      "id": "publication_composed_svg",
+      "status": "NOT_GENERATED",
+      "reason": "Viewer SVG exports are required."
+    },
+    {
+      "id": "publication_pdf",
+      "status": "NOT_SUPPORTED",
+      "reason": "Use a local vector converter on composed SVG; no PDF backend is bundled."
+    },
+    {
+      "id": "experiment_report",
+      "status": "GENERATED",
+      "path": "report/experiment_report.md",
+      "verification": "NOT_VERIFIED"
+    }
+  ],
+  "unverified": [
+    "browser rendering and interaction",
+    "PNG/SVG export",
+    "test suite execution",
+    "performance measurement"
+  ]
+}

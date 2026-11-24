@@ -1,0 +1,60 @@
+{
+  "feedback_id": "feedback_run_pfc2d_001_contacts",
+  "findings": [
+    {
+      "evidence": [
+        "analysis/run_pfc2d_001_visualization/03_analysis/analysis.json",
+        "analysis/run_pfc2d_001_visualization/07_metadata/experiment_capabilities.json"
+      ],
+      "finding_id": "contact_network_absent",
+      "statement": "The scientific capability summary marks the contact network as NOT_CAPTURED, preventing contact-level scientific analysis."
+    }
+  ],
+  "missing_data": [
+    "contact_id",
+    "contact_force_xyz"
+  ],
+  "produced_utc": "2026-11-16T13:15:00+00:00",
+  "recommended_actions": [
+    "Rerun the same Case with contact network capture enabled.",
+    "Preserve the original Run and deliver the result as a new immutable package."
+  ],
+  "recommended_parameters": {},
+  "recommended_sampling": {
+    "capture_contacts": true,
+    "interval": 1,
+    "mode": "cycle"
+  },
+  "recommended_time_range": [
+    0.0,
+    0.0271914
+  ],
+  "referenced_artifacts": [
+    "analysis/run_pfc2d_001_visualization/03_analysis/analysis.json",
+    "analysis/run_pfc2d_001_visualization/07_metadata/experiment_capabilities.json"
+  ],
+  "review": {
+    "approved_by": "Codex",
+    "approved_utc": "2026-11-16T13:15:21+00:00",
+    "checks": {
+      "arbitrary_code_forbidden": true,
+      "delivery_valid": "PASS",
+      "missing_channels_declared": "PASS",
+      "parameters_are_scalar": "PASS",
+      "referenced_artifacts": "PASS",
+      "run_exists": "PASS",
+      "sampling_rule_valid": "PASS",
+      "schema": "PASS",
+      "time_range_valid": "PASS"
+    },
+    "proposed_run_id": "run_pfc2d_002",
+    "rationale": "Finding is based on the actual analysis capability summary; rerun preserves the source Run.",
+    "received_utc": "2026-11-16T13:15:15+00:00",
+    "status": "APPROVED",
+    "used_utc": "2026-11-16T13:15:26+00:00"
+  },
+  "run_id": "run_pfc2d_001",
+  "schema_version": "1.0.0",
+  "source": "pfc-scientific-visualization",
+  "status": "USED"
+}

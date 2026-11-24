@@ -1,0 +1,68 @@
+{
+  "status": "GENERATED",
+  "verification_status": "NOT_VERIFIED",
+  "payload_version": "2.2.0",
+  "reused": false,
+  "source_signature_sha256": "6a4abd3045ba540f25207fb096ba1c6240557e42382ede28b86a1426f3205fc0",
+  "frame_policy": "ALL_REAL_FRAMES",
+  "chunk_frames": 8,
+  "history_buckets": 128,
+  "case_count": 1,
+  "cases": [
+    {
+      "id": 0,
+      "label": "Case 0",
+      "runId": "run_pfc2d_002",
+      "dimension": 2,
+      "sourceFrameCount": 21,
+      "viewerFrameCount": 21,
+      "frameStatus": "FULL_REAL_FRAME_SET",
+      "ballCountMin": 41,
+      "ballCountMax": 41,
+      "fractureEvents": 0,
+      "crackStatus": "NOT_CAPTURED",
+      "maxDisplacement": 0.0011730000000000906,
+      "maxSpeed": 0.08010360706064282,
+      "maxAcceleration": 4.5325654261833686,
+      "bounds": [
+        [
+          -0.591109,
+          -0.560918,
+          0.0
+        ],
+        [
+          0.517322,
+          0.600192,
+          0.0
+        ]
+      ],
+      "chartCount": 6,
+      "metaPath": "data/cases/case_0/meta.js",
+      "chartsPath": "data/cases/case_0/charts.js",
+      "chunkPattern": "data/cases/case_0/chunks/chunk_{chunk:03d}.js",
+      "historyPattern": "data/cases/case_0/histories/bucket_{bucket:03d}.js",
+      "chartsStatus": "GENERATED",
+      "entityStatus": {
+        "ball": "SUPPORTED",
+        "wall": "SUPPORTED",
+        "fracture": "NOT_CAPTURED",
+        "contact": "NOT_CAPTURED",
+        "bond": "NOT_CAPTURED",
+        "clump": "NOT_CAPTURED"
+      },
+      "metricStatus": {
+        "displacement": "SUPPORTED",
+        "speed": "SUPPORTED",
+        "acceleration": "SUPPORTED"
+      }
+    }
+  ],
+  "sizes": {
+    "catalog_bytes": 1688,
+    "static_bytes": 6186,
+    "chunk_bytes": 43413,
+    "history_bytes": 45816,
+    "metadata_and_chart_bytes": 20117,
+    "total_bytes": 117226
+  }
+}

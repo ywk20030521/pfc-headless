@@ -1,0 +1,8 @@
+{
+  "transport": null,
+  "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe\\entry\\capture_case.py",
+  "config": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe\\entry\\capture_config.json",
+  "data_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe\\data",
+  "run_id": "run_interrupt_probe",
+  "case_id": 3
+}

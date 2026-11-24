@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "data_boundary": "REAL_PFC",
+  "case_id": 2,
+  "run_id": "run_pfc2d_contact_001",
+  "started_utc": "2026-11-16T13:16:27.406+00:00",
+  "config": {
+    "case_id": 2,
+    "run_id": "run_pfc2d_contact_001",
+    "engine_dimension": 2,
+    "project_dir": "D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116",
+    "restore_initial": false,
+    "setup": [
+      "model new",
+      "model large-strain on",
+      "model domain extent -2.0 2.0 -2.0 2.0",
+      "wall generate id 101 name 'bottom' plane position (0,-1.0) dip 0.0",
+      "wall generate id 102 name 'top' plane position (0,1.0) dip 0.0",
+      "ball create id 1 radius 0.6 position (0,0)",
+      "ball create id 2 radius 0.6 position (0.8,0)",
+      "ball create id 3 radius 0.6 position (0.4,0.5)",
+      "ball attribute density 2500.0 damp 0.7",
+      "contact model linear"
+    ],
+    "solve": "model cycle 20",
+    "post_solve": [],
+    "save": "model save 'pfc2d_contact_smoke_final'",
+    "sample_mode": "cycle",
+    "sample_interval": 1.0,
+    "sample_stride_cycles": 1,
+    "capture_contacts": true,
+    "history_names": [],
+    "history_meanings": {},
+    "time_history_name": "1",
+    "fracture_observer": false,
+    "expected_initial": {
+      "balls": 3
+    },
+    "source_files": {},
+    "load_axis": "y",
+    "top_wall_id": 102,
+    "bottom_wall_id": 101,
+    "headless": {
+      "project_id": "pfc_headless_e2e_20261116",
+      "case_id": 2,
+      "run_id": "run_pfc2d_contact_001",
+      "parameters": {},
+      "source_case_config": "cases/case_2/case_config.json"
+    },
+    "run_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_contact_001\\data",
+    "execution_mode": "CONSOLE"
+  },
+  "status": "COMPLETE",
+  "errors": [],
+  "source_hashes": {},
+  "pre_snapshot": {
+    "pid": 33204,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept",
+    "python": "3.10.5",
+    "cycle": 0,
+    "mechanical_time_total": 0.0,
+    "balls": 3,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": null,
+    "fracture_module_available": false
+  },
+  "post_snapshot": {
+    "pid": 33204,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept",
+    "python": "3.10.5",
+    "cycle": 20,
+    "mechanical_time_total": 20.0,
+    "balls": 3,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": null,
+    "fracture_module_available": false
+  },
+  "capture": {
+    "callback_calls": 20,
+    "frame_count": 21,
+    "fracture_event_count": 0,
+    "mechanical_time_run": 20.0,
+    "sample_stride_cycles": 1,
+    "sample_mode": "cycle",
+    "sample_value": 1.0,
+    "sample_interval_mode": "Cycle-stride sampling",
+    "capture_contacts": true,
+    "field_status": {
+      "particle_position": "REAL_PFC",
+      "particle_radius": "REAL_PFC",
+      "particle_velocity": "REAL_PFC",
+      "particle_spin": "REAL_PFC",
+      "wall_vertices": "REAL_PFC",
+      "contact_network": "REAL_PFC",
+      "fracture_events": "NOT_CAPTURED"
+    }
+  },
+  "save_executed": true,
+  "solve_elapsed_seconds": 0.48358540001208894,
+  "native_history_row_count": 0,
+  "ended_utc": "2026-11-16T13:16:28.317+00:00",
+  "engine": {
+    "executable": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+    "python": "3.10.5",
+    "runtime_mode": "CONSOLE"
+  },
+  "files": [
+    {
+      "path": "native_histories.csv",
+      "size_bytes": 60,
+      "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+    },
+    {
+      "path": "raw/ball_frames.csv",
+      "size_bytes": 1860,
+      "sha256": "1cebbd376545de9bafb10a75905a83a1129fd2260adf7562254af35faaaf710b"
+    },
+    {
+      "path": "raw/contact_frames.csv",
+      "size_bytes": 77,
+      "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+    },
+    {
+      "path": "raw/fracture_events.csv",
+      "size_bytes": 94,
+      "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+    },
+    {
+      "path": "raw/frame_index.csv",
+      "size_bytes": 959,
+      "sha256": "d757dbc55b01f5cbb51b100b6bbf060fb1581200da874e214243521a6b96e7c3"
+    },
+    {
+      "path": "raw/wall_vertices.csv",
+      "size_bytes": 997,
+      "sha256": "924c0e4ceac5181fd86fe49ad0f5a6d35bceaf975221b2393cc4dfdeb20ede3e"
+    },
+    {
+      "path": "static.json",
+      "size_bytes": 2748,
+      "sha256": "6f0e34baec5c4f578b7ce98346c2d7cea20ceae2c1518edf1b81d81405966360"
+    }
+  ]
+}

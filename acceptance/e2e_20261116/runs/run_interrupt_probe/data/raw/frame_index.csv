@@ -1,0 +1,2 @@
+frame_id,cycle,mechanical_time_total,ball_count,wall1_x,wall1_y,wall1_z,wall2_x,wall2_y,wall2_z,top_force_magnitude,bottom_force_magnitude,callback_calls,sample_mode,sample_value
+1,0,0,2,0,0,1,0,0,-1,0,0,0,cycle,100

@@ -1,0 +1,13 @@
+# WorkBuddy local skill metadata
+_user_meta.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp

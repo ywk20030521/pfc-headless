@@ -1,0 +1,5 @@
+frame_id,cycle,mechanical_time_total,ball_count,wall1_z,wall2_z,top_force_magnitude,bottom_force_magnitude,callback_calls
+1,1,0.00,3,2.40,0.00,0.0,0.0,1
+2,500,0.01,4,2.36,0.00,120.0,118.0,2
+3,1000,0.02,3,2.31,0.00,180.0,178.0,3
+4,1500,0.03,3,2.26,0.00,220.0,218.0,4

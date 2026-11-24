@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "feedback_id": "feedback_run_pfc2d_001_contacts",
+  "run_id": "run_pfc2d_001",
+  "source": "pfc-scientific-visualization",
+  "referenced_artifacts": [
+    "analysis/run_pfc2d_001_visualization/03_analysis/analysis.json",
+    "analysis/run_pfc2d_001_visualization/07_metadata/experiment_capabilities.json"
+  ],
+  "findings": [
+    {
+      "finding_id": "contact_network_absent",
+      "statement": "The scientific capability summary marks the contact network as NOT_CAPTURED, preventing contact-level scientific analysis.",
+      "evidence": [
+        "analysis/run_pfc2d_001_visualization/03_analysis/analysis.json",
+        "analysis/run_pfc2d_001_visualization/07_metadata/experiment_capabilities.json"
+      ]
+    }
+  ],
+  "missing_data": [
+    "contact_id",
+    "contact_force_xyz"
+  ],
+  "recommended_sampling": {
+    "mode": "cycle",
+    "interval": 1,
+    "capture_contacts": true
+  },
+  "recommended_parameters": {},
+  "recommended_time_range": [
+    0.0,
+    0.0271914
+  ],
+  "recommended_actions": [
+    "Rerun the same Case with contact network capture enabled.",
+    "Preserve the original Run and deliver the result as a new immutable package."
+  ],
+  "status": "RECEIVED",
+  "review": null,
+  "produced_utc": "2026-11-16T13:15:00+00:00"
+}

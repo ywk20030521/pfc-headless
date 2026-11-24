@@ -1,0 +1,88 @@
+{
+  "bootstrap_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.pfc-console\\bridge_bootstrap.py",
+  "bridge_port": 9001,
+  "command_line": [
+    "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+    "--run",
+    "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.pfc-console\\bridge_bootstrap.py"
+  ],
+  "engine_type": "PFC2D_CONSOLE",
+  "engine_version": "9.0.0",
+  "executable_path": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+  "executable_sha256": "20ffb56da3f3acc4bc51c05043a9c6f31d796ce8b13cc7ee6f7f8626392f3f40",
+  "execution_verified": true,
+  "health_verified": true,
+  "identity_verified": true,
+  "instance_id": "pfc2d_accept",
+  "mcp_verified": true,
+  "pid": 33204,
+  "schema_version": "1.0.0",
+  "started_utc": "2026-11-16T13:13:49+00:00",
+  "state": "STOPPED",
+  "stop_result": {
+    "graceful_requested": true,
+    "identity": {
+      "command_line": [
+        "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+        "--run",
+        "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.pfc-console\\bridge_bootstrap.py"
+      ],
+      "create_time": 1794834823.755937,
+      "executable": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+      "pid": 33204
+    },
+    "interrupted_tasks": [],
+    "method": "verified PID process termination after program stop",
+    "native_graceful_exit_claimed": false,
+    "pid": 33204,
+    "port_released": true,
+    "saved_model": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\pfc2d_acceptance_stop.sav",
+    "status": "STOPPED"
+  },
+  "stopped_utc": "2026-11-16T13:17:47+00:00",
+  "verification": {
+    "layers": {
+      "L1_process_identity": {
+        "command_line": [
+          "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+          "--run",
+          "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.pfc-console\\bridge_bootstrap.py"
+        ],
+        "create_time": 1794834823.755937,
+        "executable": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+        "pid": 33204,
+        "status": "PASS"
+      },
+      "L2_bridge_health": {
+        "runtime_mode": "console",
+        "status": "success",
+        "version": "0.6.11"
+      },
+      "L3_mcp_round_trip": {
+        "bridge_port": 9001,
+        "channel": "itasca-mcp",
+        "observed_utc": "2026-11-16T13:14:10+00:00",
+        "output": "PFC_HEADLESS_MCP_PROBE={\"pid\": 33204, \"exe\": \"D:\\\\Itasca\\\\PFC900\\\\exe64\\\\pfc2d9_console.exe\", \"dimension\": 2, \"cycle\": 0, \"balls\": 0}\n",
+        "status": "PASS",
+        "tool": "itasca_execute_code"
+      },
+      "L3_pfc_execution": {
+        "channel": "Bridge execute_code",
+        "probe": {
+          "balls": 0,
+          "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept",
+          "cycle": 0,
+          "dimension": 2,
+          "executable": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+          "pid": 33204
+        },
+        "status": "PASS"
+      }
+    },
+    "ready": true,
+    "state": "READY",
+    "verification_scope": "PROCESS+BRIDGE+PFC+MCP",
+    "verified_utc": "2026-11-16T13:14:15+00:00"
+  },
+  "workdir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept"
+}

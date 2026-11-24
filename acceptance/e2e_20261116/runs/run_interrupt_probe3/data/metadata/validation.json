@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "status": "FAIL",
+  "errors": [
+    "PFC execution did not report completion"
+  ],
+  "warnings": [],
+  "execution_status": "interrupted"
+}

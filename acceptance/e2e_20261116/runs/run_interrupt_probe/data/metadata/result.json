@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "data_boundary": "REAL_PFC",
+  "case_id": 3,
+  "run_id": "run_interrupt_probe",
+  "started_utc": "2026-11-16T13:19:16.905+00:00",
+  "config": {
+    "case_id": 3,
+    "run_id": "run_interrupt_probe",
+    "engine_dimension": 3,
+    "project_dir": "D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116",
+    "restore_initial": false,
+    "setup": [
+      "model new",
+      "model domain extent -2.0 2.0 -2.0 2.0 -2.0 2.0",
+      "wall generate id 101 name 'bottom' plane position (0,0,-1.0) dip 0.0",
+      "wall generate id 102 name 'top' plane position (0,0,1.0) dip 0.0",
+      "ball create id 1 radius 0.6 position (0,0,0)",
+      "ball create id 2 radius 0.6 position (0.8,0,0)",
+      "ball attribute density 2500.0 damp 0.7",
+      "contact cmat default model linear property kn 1e8 ks 5e7 fric 0.5"
+    ],
+    "solve": "model solve time 100.0",
+    "post_solve": [],
+    "save": "model save 'pfc3d_interrupt_smoke_final'",
+    "sample_mode": "cycle",
+    "sample_interval": 100.0,
+    "sample_stride_cycles": 100,
+    "capture_contacts": false,
+    "history_names": [],
+    "history_meanings": {},
+    "time_history_name": "1",
+    "fracture_observer": false,
+    "expected_initial": {
+      "balls": 2
+    },
+    "source_files": {},
+    "load_axis": "z",
+    "top_wall_id": 102,
+    "bottom_wall_id": 101,
+    "headless": {
+      "project_id": "pfc_headless_e2e_20261116",
+      "case_id": 3,
+      "run_id": "run_interrupt_probe",
+      "parameters": {},
+      "source_case_config": "cases/case_3/case_config.json"
+    },
+    "run_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe\\data",
+    "execution_mode": "CONSOLE"
+  },
+  "status": "FAILED",
+  "errors": [
+    {
+      "type": "ValueError",
+      "message": "Strain calculation mode is not specified. Use command MODEL LARGE-STRAIN ON/OFF to set strain mode.\n    While processing line 0 of source Python interpreter.",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages\\itasca_mcp_bridge\\execution\\script.py\", line 169, in _execute\n    code_obj = compile(script_content, script_path, \"eval\")\n  File \"D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe\\entry\\capture_case.py\", line 1\n    from __future__ import annotations\n    ^^^^\nSyntaxError: invalid syntax\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe\\entry\\capture_case.py\", line 538, in main\n    \"ball_count\",\n  File \"C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages\\itasca_mcp_bridge\\utils\\command_log.py\", line 110, in _patched\n    _orig_command(cmd)\n  File \"C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages\\itasca_mcp_bridge\\signals\\interrupt.py\", line 773, in _wrapped_command\n    result = _original_command(cmd)\nValueError: Strain calculation mode is not specified. Use command MODEL LARGE-STRAIN ON/OFF to set strain mode.\n    While processing line 0 of source Python interpreter.\n"
+    }
+  ],
+  "source_hashes": {},
+  "pre_snapshot": {
+    "pid": 5500,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+    "python": "3.10.5",
+    "cycle": 0,
+    "mechanical_time_total": 0.0,
+    "balls": 2,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": 0,
+    "fracture_module_available": true
+  },
+  "post_snapshot": {
+    "pid": 5500,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+    "python": "3.10.5",
+    "cycle": 0,
+    "mechanical_time_total": 0.0,
+    "balls": 2,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": 0,
+    "fracture_module_available": true
+  },
+  "capture": null,
+  "save_executed": false,
+  "ended_utc": "2026-11-16T13:19:17.334+00:00",
+  "engine": {
+    "executable": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+    "python": "3.10.5",
+    "runtime_mode": "CONSOLE"
+  },
+  "files": [
+    {
+      "path": "raw/ball_frames.csv",
+      "size_bytes": 114,
+      "sha256": "111ed2d3fb55492566389c2328b583d1bdafb98b0f68b22de5f08d1b8b98aa5a"
+    },
+    {
+      "path": "raw/contact_frames.csv",
+      "size_bytes": 77,
+      "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+    },
+    {
+      "path": "raw/fracture_events.csv",
+      "size_bytes": 94,
+      "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+    },
+    {
+      "path": "raw/frame_index.csv",
+      "size_bytes": 216,
+      "sha256": "746942c7351b2e81ca43537c39afc43e07d47764d31bb22e724ad84424d62c04"
+    },
+    {
+      "path": "raw/wall_vertices.csv",
+      "size_bytes": 117,
+      "sha256": "b2d1b6ef96907edbd14c78f3a9e1700eb671403c9d367d414cb875ba5f5e5e7d"
+    },
+    {
+      "path": "static.json",
+      "size_bytes": 3899,
+      "sha256": "5f4f7022329a17b134ad89c62266eb604e8be5249f6f84a2f019885935719f2c"
+    }
+  ]
+}

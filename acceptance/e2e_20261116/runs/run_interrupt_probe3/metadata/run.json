@@ -1,0 +1,17 @@
+{
+  "case_id": 3,
+  "end_time": "2026-11-16T13:20:44+00:00",
+  "error": {
+    "message": "Capture failed; refusing standardization: D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe3",
+    "type": "ConsoleRuntimeError"
+  },
+  "input_snapshot": "input",
+  "instance_id": "pfc3d_accept",
+  "mcp_task_id": "95769f",
+  "output_path": "deliveries/run_interrupt_probe3",
+  "run_id": "run_interrupt_probe3",
+  "schema_version": "1.0.0",
+  "script_version": "sha256:d1571bccf4455163f72a7ef35711a82c9364d943f94d66a27b9ad91baac2e41e",
+  "start_time": "2026-11-16T13:20:22+00:00",
+  "task_status": "INTERRUPTED"
+}

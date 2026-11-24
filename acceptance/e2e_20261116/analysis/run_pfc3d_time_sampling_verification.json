@@ -1,0 +1,1069 @@
+{
+  "checks": {
+    "consumer_cannot_write": true,
+    "consumer_read_only": true,
+    "contract_immutable": true,
+    "contract_name": true,
+    "contract_version": true,
+    "experiment_hash_matches": true,
+    "manifest_covers_data_files": true,
+    "metadata_file_index_complete": true
+  },
+  "errors": [],
+  "experiment": {
+    "cases": [
+      {
+        "arrays_path": "cases/case_1/arrays.npz",
+        "case_id": 1,
+        "channels": [
+          {
+            "description": "PFC Cycle at capture.",
+            "dimensions": [
+              "frame"
+            ],
+            "entity_type": "history",
+            "id": "cycle",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "cycle",
+            "variable": "cycle"
+          },
+          {
+            "description": "PFC total mechanical time at capture.",
+            "dimensions": [
+              "frame"
+            ],
+            "entity_type": "history",
+            "id": "mechanical_time_total",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "s",
+            "variable": "mechanical_time_total"
+          },
+          {
+            "description": "Stable PFC Ball ID; offsets define each real frame.",
+            "dimensions": [
+              "entity",
+              "frame_variable_length"
+            ],
+            "entity_type": "ball",
+            "id": "ball_id",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": null,
+            "variable": "id"
+          },
+          {
+            "description": "Same-Cycle Ball coordinates.",
+            "dimensions": [
+              "entity",
+              "xyz"
+            ],
+            "entity_type": "ball",
+            "id": "ball_xyz",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "m",
+            "variable": "position"
+          },
+          {
+            "description": "Static radius or a real radius update at/after Ball creation.",
+            "dimensions": [
+              "entity"
+            ],
+            "entity_type": "ball",
+            "id": "ball_radius",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "m",
+            "variable": "radius"
+          },
+          {
+            "description": "Wall vertices from each captured frame.",
+            "dimensions": [
+              "entity",
+              "xyz",
+              "frame_variable_length"
+            ],
+            "entity_type": "wall",
+            "id": "wall_vertex_xyz",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "m",
+            "variable": "vertex_position"
+          },
+          {
+            "description": "Captured Ball velocity in the global coordinate system.",
+            "dimensions": [
+              "entity",
+              "xyz"
+            ],
+            "entity_type": "ball",
+            "id": "ball_velocity",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "m/s",
+            "variable": "velocity"
+          },
+          {
+            "description": "Captured Ball angular velocity; PFC2D uses the z component.",
+            "dimensions": [
+              "entity",
+              "xyz"
+            ],
+            "entity_type": "ball",
+            "id": "ball_spin",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "rad/s",
+            "variable": "angular_velocity"
+          },
+          {
+            "description": "Contact network was disabled for this Case.",
+            "dimensions": [
+              "contact"
+            ],
+            "entity_type": "contact",
+            "id": "contact_id",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "NOT_CAPTURED"
+            },
+            "source": "NOT_CAPTURED",
+            "status": "NOT_CAPTURED",
+            "unit": null,
+            "variable": "id"
+          },
+          {
+            "description": "Contact force was not captured.",
+            "dimensions": [
+              "contact",
+              "xyz"
+            ],
+            "entity_type": "contact",
+            "id": "contact_force_xyz",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "NOT_CAPTURED"
+            },
+            "source": "NOT_CAPTURED",
+            "status": "NOT_CAPTURED",
+            "unit": "N",
+            "variable": "force_global"
+          },
+          {
+            "description": "Top platen contact-force magnitude.",
+            "dimensions": [
+              "frame"
+            ],
+            "entity_type": "wall",
+            "id": "top_force_n",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "N",
+            "variable": "contact_force_magnitude"
+          },
+          {
+            "description": "Bottom platen contact-force magnitude.",
+            "dimensions": [
+              "frame"
+            ],
+            "entity_type": "wall",
+            "id": "bottom_force_n",
+            "provenance": {
+              "applicability": null,
+              "formula": null,
+              "generated_utc": "2026-11-16T13:21:22+00:00",
+              "input_files": [],
+              "method": null,
+              "notes": [],
+              "parent_results": [],
+              "source": "REAL_PFC"
+            },
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "unit": "N",
+            "variable": "contact_force_magnitude"
+          }
+        ],
+        "dimension": 3,
+        "entity_groups": [
+          {
+            "array_prefix": "ball",
+            "count": 2388,
+            "dynamic_ids": true,
+            "entity_type": "ball",
+            "properties": [
+              "id",
+              "position",
+              "radius",
+              "frame_index"
+            ],
+            "source": "REAL_PFC"
+          },
+          {
+            "array_prefix": "wall",
+            "count": 48,
+            "dynamic_ids": true,
+            "entity_type": "wall",
+            "properties": [
+              "id",
+              "vertex_id",
+              "vertex_position"
+            ],
+            "source": "REAL_PFC"
+          }
+        ],
+        "frame_count": 6,
+        "label": "Case 1",
+        "metadata": {
+          "ball_count_max": 398,
+          "ball_count_min": 398,
+          "contact_count": 0,
+          "contact_model_codes": {},
+          "contact_type_codes": {},
+          "cycle_end": 20,
+          "cycle_start": 0,
+          "event_count": 0,
+          "geometry": {
+            "area0": 16.0,
+            "area_kind": "cross_section_area",
+            "axis": "z",
+            "axis_index": 2,
+            "bottom": 101,
+            "dimension": 3,
+            "height0": 1.6,
+            "top": 102,
+            "transverse_spans": [
+              {
+                "axis": "x",
+                "extent": 4.0
+              },
+              {
+                "axis": "y",
+                "extent": 4.0
+              }
+            ]
+          },
+          "mechanical_time_end": 0.0269807,
+          "mechanical_time_start": 0.0
+        },
+        "provenance": {
+          "applicability": null,
+          "formula": null,
+          "generated_utc": "2026-11-16T13:21:22+00:00",
+          "input_files": [
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\static.json",
+              "sha256": "9535f22bb1bb60bb07615de5de01935f0ce13ce22c82f382960b6f291e2cdfdb",
+              "size_bytes": 81066
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\frame_index.csv",
+              "sha256": "86b4b6e7078a7209d972057a1d07593d2183bd6dbac12384f08c797906e6fddc",
+              "size_bytes": 492
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\ball_frames.csv",
+              "sha256": "e39aecebc5a2c260a2eec8ba1ec4cd8b98ceec5dffab1b89b52a3d35a213d6ac",
+              "size_bytes": 151250
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\wall_vertices.csv",
+              "sha256": "36fc02567b3532236e33b10603739df20b4f0a7614bc98cf470ce98cded53f48",
+              "size_bytes": 673
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\fracture_events.csv",
+              "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367",
+              "size_bytes": 94
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\contact_frames.csv",
+              "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1",
+              "size_bytes": 77
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\native_histories.csv",
+              "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333",
+              "size_bytes": 60
+            }
+          ],
+          "method": "read-only legacy adapter; variable-length concatenated arrays; NPZ compression",
+          "notes": [
+            "Raw capture files were not modified.",
+            "Each frame uses explicit offsets; Ball sets may grow or shrink."
+          ],
+          "parent_results": [],
+          "source": "REAL_PFC"
+        },
+        "run_id": "run_pfc3d_time_sampling",
+        "schema_version": "1.0.0",
+        "source_format": "pfc-live-capture-working"
+      }
+    ],
+    "data_boundary": "REAL_PFC",
+    "dimensions": [
+      3
+    ],
+    "execution_mode": "CONSOLE",
+    "experiment_id": "run_pfc3d_time_sampling",
+    "generated_utc": "2026-11-16T13:21:22+00:00",
+    "metadata": {
+      "case_count": 1,
+      "conversion": "NumPy NPZ with variable-length entity offsets",
+      "raw_input_root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling"
+    },
+    "pfc_version": "9.0.0",
+    "provenance": {
+      "applicability": null,
+      "formula": null,
+      "generated_utc": "2026-11-16T13:21:22+00:00",
+      "input_files": [
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\static.json",
+          "sha256": "9535f22bb1bb60bb07615de5de01935f0ce13ce22c82f382960b6f291e2cdfdb",
+          "size_bytes": 81066
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\frame_index.csv",
+          "sha256": "86b4b6e7078a7209d972057a1d07593d2183bd6dbac12384f08c797906e6fddc",
+          "size_bytes": 492
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\ball_frames.csv",
+          "sha256": "e39aecebc5a2c260a2eec8ba1ec4cd8b98ceec5dffab1b89b52a3d35a213d6ac",
+          "size_bytes": 151250
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\wall_vertices.csv",
+          "sha256": "36fc02567b3532236e33b10603739df20b4f0a7614bc98cf470ce98cded53f48",
+          "size_bytes": 673
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\fracture_events.csv",
+          "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367",
+          "size_bytes": 94
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\raw\\contact_frames.csv",
+          "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1",
+          "size_bytes": 77
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data\\native_histories.csv",
+          "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333",
+          "size_bytes": 60
+        }
+      ],
+      "method": "standardize_experiment",
+      "notes": [],
+      "parent_results": [],
+      "source": "CONFIG"
+    },
+    "schema_version": "1.0.0",
+    "title": "run_pfc3d_time_sampling"
+  },
+  "generated_utc": "2026-11-16T13:25:19+00:00",
+  "manifest": {
+    "case_id": 1,
+    "coordinate_system": {
+      "dimensions": 3,
+      "name": "PFC_GLOBAL_CARTESIAN",
+      "pfc2d_z": "physical PFC3D coordinate"
+    },
+    "data_files": [
+      {
+        "path": "cases/case_1/arrays.npz",
+        "sha256": "8c015e43c03ac12aeb292921a9ce94722cf613ad01a3703bd491234db32b6079",
+        "size_bytes": 33895
+      },
+      {
+        "path": "cases/case_1/case.json",
+        "sha256": "e3d0517d8e67cf0a87e79a353d927e7455e4c016deefa05aae23ac3b45195a3e",
+        "size_bytes": 10917
+      },
+      {
+        "path": "cases/case_1/channels.json",
+        "sha256": "16aa67f332d3c5c775958dee2042a1dde530f48c8da152221ecff429ea7275b6",
+        "size_bytes": 6426
+      },
+      {
+        "path": "cases/case_1/conversion_report.json",
+        "sha256": "0492f474adb2e21b67ea41bec43839e54b7b895d51e9781f32f37ffaceae0dd9",
+        "size_bytes": 5989
+      },
+      {
+        "path": "cases/case_1/entity_changes.json",
+        "sha256": "d7584fe5ca534f047b718ba80dd243d1ff200a87b0634f4ae9d75474990be270",
+        "size_bytes": 1397
+      },
+      {
+        "path": "cases/case_1/events.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "size_bytes": 3
+      },
+      {
+        "path": "cases/case_1/frame_summary.csv",
+        "sha256": "e70bf0239151accd8f33682d8bc59f6128cdc359777ac85dd0c13cc5f66c9270",
+        "size_bytes": 281
+      },
+      {
+        "path": "cases/case_1/frames.json",
+        "sha256": "be995470f5c6b7e2efab30f279d0b269052c92a83aea8a94c01a38bef44b9742",
+        "size_bytes": 3694
+      },
+      {
+        "path": "cases/case_1/static.json",
+        "sha256": "70e00847e2da76183daa50ea09ccb978286ccff6f83a89dbabbd7dde47d30d5b",
+        "size_bytes": 66039
+      },
+      {
+        "path": "conversion_report.json",
+        "sha256": "53c4a305acd1d9581e5d690e6e060f7b4ddc515e968faba6c3f9650aa2cfc0f6",
+        "size_bytes": 7164
+      },
+      {
+        "path": "experiment.json",
+        "sha256": "a7ed3243ce6f816d31d7ae076972ca92258a87534eced526ad75c76e810a7309",
+        "size_bytes": 15353
+      },
+      {
+        "path": "schema/case.schema.json",
+        "sha256": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75",
+        "size_bytes": 1191
+      },
+      {
+        "path": "schema/channel.schema.json",
+        "sha256": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308",
+        "size_bytes": 930
+      },
+      {
+        "path": "schema/experiment.schema.json",
+        "sha256": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac",
+        "size_bytes": 1015
+      },
+      {
+        "path": "schema/feedback.schema.json",
+        "sha256": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080",
+        "size_bytes": 1921
+      },
+      {
+        "path": "schema/frame.schema.json",
+        "sha256": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684",
+        "size_bytes": 841
+      },
+      {
+        "path": "schema/instance.schema.json",
+        "sha256": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8",
+        "size_bytes": 1246
+      },
+      {
+        "path": "schema/manifest.schema.json",
+        "sha256": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8",
+        "size_bytes": 1209
+      },
+      {
+        "path": "schema/metadata.schema.json",
+        "sha256": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969",
+        "size_bytes": 1359
+      },
+      {
+        "path": "schema/project.schema.json",
+        "sha256": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171",
+        "size_bytes": 1014
+      },
+      {
+        "path": "schema/run.schema.json",
+        "sha256": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077",
+        "size_bytes": 1159
+      },
+      {
+        "path": "validation_report.json",
+        "sha256": "2bff1e05fd9799bb0ddc8ae66b674a55aae6f40b4fcc6203ec9b971bce3dcfe3",
+        "size_bytes": 713
+      }
+    ],
+    "engine_dimension": 3,
+    "engine_version": "9.0.0",
+    "file_hashes": {
+      "cases/case_1/arrays.npz": "8c015e43c03ac12aeb292921a9ce94722cf613ad01a3703bd491234db32b6079",
+      "cases/case_1/case.json": "e3d0517d8e67cf0a87e79a353d927e7455e4c016deefa05aae23ac3b45195a3e",
+      "cases/case_1/channels.json": "16aa67f332d3c5c775958dee2042a1dde530f48c8da152221ecff429ea7275b6",
+      "cases/case_1/conversion_report.json": "0492f474adb2e21b67ea41bec43839e54b7b895d51e9781f32f37ffaceae0dd9",
+      "cases/case_1/entity_changes.json": "d7584fe5ca534f047b718ba80dd243d1ff200a87b0634f4ae9d75474990be270",
+      "cases/case_1/events.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "cases/case_1/frame_summary.csv": "e70bf0239151accd8f33682d8bc59f6128cdc359777ac85dd0c13cc5f66c9270",
+      "cases/case_1/frames.json": "be995470f5c6b7e2efab30f279d0b269052c92a83aea8a94c01a38bef44b9742",
+      "cases/case_1/static.json": "70e00847e2da76183daa50ea09ccb978286ccff6f83a89dbabbd7dde47d30d5b",
+      "conversion_report.json": "53c4a305acd1d9581e5d690e6e060f7b4ddc515e968faba6c3f9650aa2cfc0f6",
+      "experiment.json": "a7ed3243ce6f816d31d7ae076972ca92258a87534eced526ad75c76e810a7309",
+      "schema/case.schema.json": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75",
+      "schema/channel.schema.json": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308",
+      "schema/experiment.schema.json": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac",
+      "schema/feedback.schema.json": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080",
+      "schema/frame.schema.json": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684",
+      "schema/instance.schema.json": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8",
+      "schema/manifest.schema.json": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8",
+      "schema/metadata.schema.json": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969",
+      "schema/project.schema.json": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171",
+      "schema/run.schema.json": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077",
+      "validation_report.json": "2bff1e05fd9799bb0ddc8ae66b674a55aae6f40b4fcc6203ec9b971bce3dcfe3"
+    },
+    "files": [
+      {
+        "path": "cases/case_1/arrays.npz",
+        "sha256": "8c015e43c03ac12aeb292921a9ce94722cf613ad01a3703bd491234db32b6079",
+        "size_bytes": 33895
+      },
+      {
+        "path": "cases/case_1/case.json",
+        "sha256": "e3d0517d8e67cf0a87e79a353d927e7455e4c016deefa05aae23ac3b45195a3e",
+        "size_bytes": 10917
+      },
+      {
+        "path": "cases/case_1/channels.json",
+        "sha256": "16aa67f332d3c5c775958dee2042a1dde530f48c8da152221ecff429ea7275b6",
+        "size_bytes": 6426
+      },
+      {
+        "path": "cases/case_1/conversion_report.json",
+        "sha256": "0492f474adb2e21b67ea41bec43839e54b7b895d51e9781f32f37ffaceae0dd9",
+        "size_bytes": 5989
+      },
+      {
+        "path": "cases/case_1/entity_changes.json",
+        "sha256": "d7584fe5ca534f047b718ba80dd243d1ff200a87b0634f4ae9d75474990be270",
+        "size_bytes": 1397
+      },
+      {
+        "path": "cases/case_1/events.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "size_bytes": 3
+      },
+      {
+        "path": "cases/case_1/frame_summary.csv",
+        "sha256": "e70bf0239151accd8f33682d8bc59f6128cdc359777ac85dd0c13cc5f66c9270",
+        "size_bytes": 281
+      },
+      {
+        "path": "cases/case_1/frames.json",
+        "sha256": "be995470f5c6b7e2efab30f279d0b269052c92a83aea8a94c01a38bef44b9742",
+        "size_bytes": 3694
+      },
+      {
+        "path": "cases/case_1/static.json",
+        "sha256": "70e00847e2da76183daa50ea09ccb978286ccff6f83a89dbabbd7dde47d30d5b",
+        "size_bytes": 66039
+      },
+      {
+        "path": "conversion_report.json",
+        "sha256": "53c4a305acd1d9581e5d690e6e060f7b4ddc515e968faba6c3f9650aa2cfc0f6",
+        "size_bytes": 7164
+      },
+      {
+        "path": "experiment.json",
+        "sha256": "a7ed3243ce6f816d31d7ae076972ca92258a87534eced526ad75c76e810a7309",
+        "size_bytes": 15353
+      },
+      {
+        "path": "metadata.json",
+        "sha256": "7fa89fc3d7fc06b640cedc217da9a727141b5260c4a64bbf455d6e1325f77ea8",
+        "size_bytes": 9116
+      },
+      {
+        "path": "schema/case.schema.json",
+        "sha256": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75",
+        "size_bytes": 1191
+      },
+      {
+        "path": "schema/channel.schema.json",
+        "sha256": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308",
+        "size_bytes": 930
+      },
+      {
+        "path": "schema/experiment.schema.json",
+        "sha256": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac",
+        "size_bytes": 1015
+      },
+      {
+        "path": "schema/feedback.schema.json",
+        "sha256": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080",
+        "size_bytes": 1921
+      },
+      {
+        "path": "schema/frame.schema.json",
+        "sha256": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684",
+        "size_bytes": 841
+      },
+      {
+        "path": "schema/instance.schema.json",
+        "sha256": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8",
+        "size_bytes": 1246
+      },
+      {
+        "path": "schema/manifest.schema.json",
+        "sha256": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8",
+        "size_bytes": 1209
+      },
+      {
+        "path": "schema/metadata.schema.json",
+        "sha256": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969",
+        "size_bytes": 1359
+      },
+      {
+        "path": "schema/project.schema.json",
+        "sha256": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171",
+        "size_bytes": 1014
+      },
+      {
+        "path": "schema/run.schema.json",
+        "sha256": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077",
+        "size_bytes": 1159
+      },
+      {
+        "path": "validation_report.json",
+        "sha256": "2bff1e05fd9799bb0ddc8ae66b674a55aae6f40b4fcc6203ec9b971bce3dcfe3",
+        "size_bytes": 713
+      }
+    ],
+    "files_sha256_verified": true,
+    "metadata_file": "metadata.json",
+    "model_identity": {
+      "ball_count": 398,
+      "basis": "static initial topology plus captured fracture events",
+      "sha256": "8b2237e8e228b76b97e8140b6f2b9ea7cc3be212b6d6949d8c5ee411096ec4f3",
+      "wall_count": 2,
+      "wall_vertex_count": 8
+    },
+    "parameters": {},
+    "record_counts": {
+      "ball_observations": 2388,
+      "cases": 1,
+      "events": 0,
+      "frames": 6,
+      "wall_observations": 48
+    },
+    "run_id": "run_pfc3d_time_sampling",
+    "sampling_configuration": {
+      "capture_contacts": false,
+      "mode": "time",
+      "source": "recorded capture configuration",
+      "value": 0.005
+    },
+    "schema_version": "1.0.0",
+    "script_identity": {
+      "capture_config_available": true,
+      "capture_config_sha256": "2551dd6030d5e883f2da4793a1786fb307dc2dba3e4cf01d9091a5c4df47a03d",
+      "input_files": [
+        {
+          "path": "static.json",
+          "sha256": "9535f22bb1bb60bb07615de5de01935f0ce13ce22c82f382960b6f291e2cdfdb",
+          "size_bytes": 81066
+        },
+        {
+          "path": "frame_index.csv",
+          "sha256": "86b4b6e7078a7209d972057a1d07593d2183bd6dbac12384f08c797906e6fddc",
+          "size_bytes": 492
+        },
+        {
+          "path": "ball_frames.csv",
+          "sha256": "e39aecebc5a2c260a2eec8ba1ec4cd8b98ceec5dffab1b89b52a3d35a213d6ac",
+          "size_bytes": 151250
+        },
+        {
+          "path": "wall_vertices.csv",
+          "sha256": "36fc02567b3532236e33b10603739df20b4f0a7614bc98cf470ce98cded53f48",
+          "size_bytes": 673
+        },
+        {
+          "path": "fracture_events.csv",
+          "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367",
+          "size_bytes": 94
+        },
+        {
+          "path": "contact_frames.csv",
+          "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1",
+          "size_bytes": 77
+        },
+        {
+          "path": "native_histories.csv",
+          "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333",
+          "size_bytes": 60
+        }
+      ]
+    },
+    "step_range": [
+      0,
+      20
+    ],
+    "time_range": [
+      0.0,
+      0.0269807
+    ],
+    "units": {
+      "angular_velocity": "rad/s",
+      "force": "N",
+      "length": "m",
+      "time": "s",
+      "unknown_native_histories": "UNKNOWN",
+      "velocity": "m/s"
+    },
+    "validation_status": "PASS"
+  },
+  "metadata": {
+    "case_id": 1,
+    "case_ids": [
+      1
+    ],
+    "coordinate_system": {
+      "dimensions": 3,
+      "name": "PFC_GLOBAL_CARTESIAN",
+      "pfc2d_z": "physical PFC3D coordinate"
+    },
+    "data_files": [
+      {
+        "path": "cases/case_1/arrays.npz",
+        "sha256": "8c015e43c03ac12aeb292921a9ce94722cf613ad01a3703bd491234db32b6079",
+        "size_bytes": 33895
+      },
+      {
+        "path": "cases/case_1/case.json",
+        "sha256": "e3d0517d8e67cf0a87e79a353d927e7455e4c016deefa05aae23ac3b45195a3e",
+        "size_bytes": 10917
+      },
+      {
+        "path": "cases/case_1/channels.json",
+        "sha256": "16aa67f332d3c5c775958dee2042a1dde530f48c8da152221ecff429ea7275b6",
+        "size_bytes": 6426
+      },
+      {
+        "path": "cases/case_1/conversion_report.json",
+        "sha256": "0492f474adb2e21b67ea41bec43839e54b7b895d51e9781f32f37ffaceae0dd9",
+        "size_bytes": 5989
+      },
+      {
+        "path": "cases/case_1/entity_changes.json",
+        "sha256": "d7584fe5ca534f047b718ba80dd243d1ff200a87b0634f4ae9d75474990be270",
+        "size_bytes": 1397
+      },
+      {
+        "path": "cases/case_1/events.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "size_bytes": 3
+      },
+      {
+        "path": "cases/case_1/frame_summary.csv",
+        "sha256": "e70bf0239151accd8f33682d8bc59f6128cdc359777ac85dd0c13cc5f66c9270",
+        "size_bytes": 281
+      },
+      {
+        "path": "cases/case_1/frames.json",
+        "sha256": "be995470f5c6b7e2efab30f279d0b269052c92a83aea8a94c01a38bef44b9742",
+        "size_bytes": 3694
+      },
+      {
+        "path": "cases/case_1/static.json",
+        "sha256": "70e00847e2da76183daa50ea09ccb978286ccff6f83a89dbabbd7dde47d30d5b",
+        "size_bytes": 66039
+      },
+      {
+        "path": "conversion_report.json",
+        "sha256": "53c4a305acd1d9581e5d690e6e060f7b4ddc515e968faba6c3f9650aa2cfc0f6",
+        "size_bytes": 7164
+      },
+      {
+        "path": "experiment.json",
+        "sha256": "a7ed3243ce6f816d31d7ae076972ca92258a87534eced526ad75c76e810a7309",
+        "size_bytes": 15353
+      },
+      {
+        "path": "schema/case.schema.json",
+        "sha256": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75",
+        "size_bytes": 1191
+      },
+      {
+        "path": "schema/channel.schema.json",
+        "sha256": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308",
+        "size_bytes": 930
+      },
+      {
+        "path": "schema/experiment.schema.json",
+        "sha256": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac",
+        "size_bytes": 1015
+      },
+      {
+        "path": "schema/feedback.schema.json",
+        "sha256": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080",
+        "size_bytes": 1921
+      },
+      {
+        "path": "schema/frame.schema.json",
+        "sha256": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684",
+        "size_bytes": 841
+      },
+      {
+        "path": "schema/instance.schema.json",
+        "sha256": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8",
+        "size_bytes": 1246
+      },
+      {
+        "path": "schema/manifest.schema.json",
+        "sha256": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8",
+        "size_bytes": 1209
+      },
+      {
+        "path": "schema/metadata.schema.json",
+        "sha256": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969",
+        "size_bytes": 1359
+      },
+      {
+        "path": "schema/project.schema.json",
+        "sha256": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171",
+        "size_bytes": 1014
+      },
+      {
+        "path": "schema/run.schema.json",
+        "sha256": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077",
+        "size_bytes": 1159
+      },
+      {
+        "path": "validation_report.json",
+        "sha256": "2bff1e05fd9799bb0ddc8ae66b674a55aae6f40b4fcc6203ec9b971bce3dcfe3",
+        "size_bytes": 713
+      }
+    ],
+    "engine_dimension": 3,
+    "engine_version": "9.0.0",
+    "file_hashes": {
+      "cases/case_1/arrays.npz": "8c015e43c03ac12aeb292921a9ce94722cf613ad01a3703bd491234db32b6079",
+      "cases/case_1/case.json": "e3d0517d8e67cf0a87e79a353d927e7455e4c016deefa05aae23ac3b45195a3e",
+      "cases/case_1/channels.json": "16aa67f332d3c5c775958dee2042a1dde530f48c8da152221ecff429ea7275b6",
+      "cases/case_1/conversion_report.json": "0492f474adb2e21b67ea41bec43839e54b7b895d51e9781f32f37ffaceae0dd9",
+      "cases/case_1/entity_changes.json": "d7584fe5ca534f047b718ba80dd243d1ff200a87b0634f4ae9d75474990be270",
+      "cases/case_1/events.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "cases/case_1/frame_summary.csv": "e70bf0239151accd8f33682d8bc59f6128cdc359777ac85dd0c13cc5f66c9270",
+      "cases/case_1/frames.json": "be995470f5c6b7e2efab30f279d0b269052c92a83aea8a94c01a38bef44b9742",
+      "cases/case_1/static.json": "70e00847e2da76183daa50ea09ccb978286ccff6f83a89dbabbd7dde47d30d5b",
+      "conversion_report.json": "53c4a305acd1d9581e5d690e6e060f7b4ddc515e968faba6c3f9650aa2cfc0f6",
+      "experiment.json": "a7ed3243ce6f816d31d7ae076972ca92258a87534eced526ad75c76e810a7309",
+      "schema/case.schema.json": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75",
+      "schema/channel.schema.json": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308",
+      "schema/experiment.schema.json": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac",
+      "schema/feedback.schema.json": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080",
+      "schema/frame.schema.json": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684",
+      "schema/instance.schema.json": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8",
+      "schema/manifest.schema.json": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8",
+      "schema/metadata.schema.json": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969",
+      "schema/project.schema.json": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171",
+      "schema/run.schema.json": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077",
+      "validation_report.json": "2bff1e05fd9799bb0ddc8ae66b674a55aae6f40b4fcc6203ec9b971bce3dcfe3"
+    },
+    "model_identity": {
+      "ball_count": 398,
+      "basis": "static initial topology plus captured fracture events",
+      "sha256": "8b2237e8e228b76b97e8140b6f2b9ea7cc3be212b6d6949d8c5ee411096ec4f3",
+      "wall_count": 2,
+      "wall_vertex_count": 8
+    },
+    "parameters": {},
+    "record_counts": {
+      "ball_observations": 2388,
+      "cases": 1,
+      "events": 0,
+      "frames": 6,
+      "wall_observations": 48
+    },
+    "run_id": "run_pfc3d_time_sampling",
+    "sampling_configuration": {
+      "capture_contacts": false,
+      "mode": "time",
+      "source": "recorded capture configuration",
+      "value": 0.005
+    },
+    "schema_version": "1.0.0",
+    "script_identity": {
+      "capture_config_available": true,
+      "capture_config_sha256": "2551dd6030d5e883f2da4793a1786fb307dc2dba3e4cf01d9091a5c4df47a03d",
+      "input_files": [
+        {
+          "path": "static.json",
+          "sha256": "9535f22bb1bb60bb07615de5de01935f0ce13ce22c82f382960b6f291e2cdfdb",
+          "size_bytes": 81066
+        },
+        {
+          "path": "frame_index.csv",
+          "sha256": "86b4b6e7078a7209d972057a1d07593d2183bd6dbac12384f08c797906e6fddc",
+          "size_bytes": 492
+        },
+        {
+          "path": "ball_frames.csv",
+          "sha256": "e39aecebc5a2c260a2eec8ba1ec4cd8b98ceec5dffab1b89b52a3d35a213d6ac",
+          "size_bytes": 151250
+        },
+        {
+          "path": "wall_vertices.csv",
+          "sha256": "36fc02567b3532236e33b10603739df20b4f0a7614bc98cf470ce98cded53f48",
+          "size_bytes": 673
+        },
+        {
+          "path": "fracture_events.csv",
+          "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367",
+          "size_bytes": 94
+        },
+        {
+          "path": "contact_frames.csv",
+          "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1",
+          "size_bytes": 77
+        },
+        {
+          "path": "native_histories.csv",
+          "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333",
+          "size_bytes": 60
+        }
+      ]
+    },
+    "source": {
+      "data_boundary": "REAL_PFC",
+      "engine": {
+        "executable": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+        "python": "3.10.5",
+        "runtime_mode": "CONSOLE"
+      },
+      "raw_input_root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling",
+      "snapshot": {
+        "balls": 398,
+        "contacts": 0,
+        "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+        "cycle": 0,
+        "fracture_module_available": true,
+        "fractures": 0,
+        "mechanical_time_total": 0.0,
+        "pid": 5500,
+        "python": "3.10.5",
+        "walls": 2
+      }
+    },
+    "step_range": [
+      0,
+      20
+    ],
+    "time_range": [
+      0.0,
+      0.0269807
+    ],
+    "units": {
+      "angular_velocity": "rad/s",
+      "force": "N",
+      "length": "m",
+      "time": "s",
+      "unknown_native_histories": "UNKNOWN",
+      "velocity": "m/s"
+    },
+    "validation_status": "PASS"
+  },
+  "root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\deliveries\\run_pfc3d_time_sampling",
+  "status": "PASS"
+}

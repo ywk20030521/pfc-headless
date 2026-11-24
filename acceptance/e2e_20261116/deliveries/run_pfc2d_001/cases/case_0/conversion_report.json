@@ -1,0 +1,256 @@
+{
+  "status": "GENERATED",
+  "case_id": 0,
+  "input_files": [
+    {
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\static.json",
+      "size_bytes": 8888,
+      "sha256": "67ef9424cb223dc1aaf8f582ada65e3797a751de29e10b300f5a474e8c9f1305"
+    },
+    {
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\frame_index.csv",
+      "size_bytes": 1223,
+      "sha256": "975fc49b0927324ef735602ddccfa2097652c2f89156d0d6956a2b6a5a282ed8"
+    },
+    {
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\ball_frames.csv",
+      "size_bytes": 43538,
+      "sha256": "4421309771187f1232b347df0fcc47a82c8c1cd5258da146c01fdc520fd88026"
+    },
+    {
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\wall_vertices.csv",
+      "size_bytes": 1333,
+      "sha256": "6700e4b8797c4a2d9f063c8dc9cea7c6fddc8f5d9b0dc3a676a447b71e3bc085"
+    },
+    {
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\fracture_events.csv",
+      "size_bytes": 94,
+      "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+    },
+    {
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\contact_frames.csv",
+      "size_bytes": 77,
+      "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+    },
+    {
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\native_histories.csv",
+      "size_bytes": 60,
+      "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+    }
+  ],
+  "output_file": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\deliveries\\run_pfc2d_001\\cases\\case_0\\arrays.npz",
+  "output_sha256": "8f3e95de97fc2710d50f1df4bc6fb646a495838545d68887ab1921d59f440578",
+  "arrays": [
+    {
+      "key": "cycle",
+      "shape": [
+        21
+      ],
+      "dtype": "int64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "mechanical_time_total",
+      "shape": [
+        21
+      ],
+      "dtype": "float64",
+      "source": "DERIVED"
+    },
+    {
+      "key": "frame_offsets",
+      "shape": [
+        22
+      ],
+      "dtype": "int64",
+      "source": "DERIVED"
+    },
+    {
+      "key": "ball_id",
+      "shape": [
+        777
+      ],
+      "dtype": "uint64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "ball_xyz",
+      "shape": [
+        777,
+        3
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "ball_radius",
+      "shape": [
+        777
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "ball_frame_index",
+      "shape": [
+        777
+      ],
+      "dtype": "int64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "wall_offsets",
+      "shape": [
+        22
+      ],
+      "dtype": "int64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "wall_id",
+      "shape": [
+        84
+      ],
+      "dtype": "uint64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "wall_vertex_id",
+      "shape": [
+        84
+      ],
+      "dtype": "uint64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "wall_vertex_xyz",
+      "shape": [
+        84,
+        3
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "fracture_event_id",
+      "shape": [
+        0
+      ],
+      "dtype": "int64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "fracture_cycle",
+      "shape": [
+        0
+      ],
+      "dtype": "int64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "fracture_mechanical_time_total",
+      "shape": [
+        0
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "fracture_mode",
+      "shape": [
+        0
+      ],
+      "dtype": "int8",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "fracture_position",
+      "shape": [
+        0,
+        3
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "fracture_normal",
+      "shape": [
+        0,
+        3
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "fracture_diameter",
+      "shape": [
+        0
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "ball_velocity",
+      "shape": [
+        777,
+        3
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "ball_spin",
+      "shape": [
+        777,
+        3
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "top_force_n",
+      "shape": [
+        21
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "bottom_force_n",
+      "shape": [
+        21
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    },
+    {
+      "key": "platen_distance_m",
+      "shape": [
+        21
+      ],
+      "dtype": "float64",
+      "source": "REAL_PFC"
+    }
+  ],
+  "integrity": {
+    "status": "PASS_AT_CONVERSION_TIME",
+    "frame_count": 21,
+    "frame_offsets": [
+      0,
+      777
+    ],
+    "ball_observation_count": 777,
+    "wall_observation_count": 84,
+    "strictly_increasing_cycle": true,
+    "strictly_increasing_mechanical_time": true
+  },
+  "entity_changes": {
+    "added_id_count": 1,
+    "removed_id_count": 1
+  },
+  "missing_fields": [
+    "contact_id",
+    "contact_force_xyz"
+  ],
+  "truth_boundary": "Original files remain unchanged; no missing value is zero-filled."
+}

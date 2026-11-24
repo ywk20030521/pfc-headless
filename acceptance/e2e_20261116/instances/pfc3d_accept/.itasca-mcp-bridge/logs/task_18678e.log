@@ -1,0 +1,324 @@
+pfc3d>model new
+pfc3d>model large-strain on
+pfc3d>model domain extent -2.0 2.0 -2.0 2.0 -2.0 2.0
+pfc3d>wall generate id 101 name 'bottom' plane position (0,0,-0.8) dip 0.0
+--- The plane wall with name bottom and ID 101 and 2 facets has been generated.
+pfc3d>wall generate id 102 name 'top' plane position (0,0,0.8) dip 0.0
+--- The plane wall with name top and ID 102 and 2 facets has been generated.
+pfc3d>ball distribute radius 0.08 0.12 porosity 0.38 box -0.7 0.7 -0.7 0.7 -0.7 0.7
+--- 393 balls generated - There may be huge overlaps!
+pfc3d>ball attribute density 2500.0 damp 0.7
+--- Attribute density initialized in 393 ball(s).
+--- Attribute damp initialized in 393 ball(s).
+pfc3d>model gravity 0 0 -9.81
+--- Gravity has been set to: (0,0,-9.81).
+pfc3d>fish define _pfc_live_capture_init
+Fish>global _pfc_live_capture_enabled = true
+Fish>global _pfc_live_capture_frame_id = 0
+Fish>global _pfc_live_capture_stride = 500
+Fish>global _pfc_live_capture_mode = 'cycle'
+Fish>global _pfc_live_capture_value = 1.0
+Fish>global _pfc_live_capture_last_cycle = -1
+Fish>global _pfc_live_capture_last_time = -1.0
+Fish>global _pfc_live_capture_calls = 0
+Fish>global _pfc_live_capture_events = 0
+Fish>global _pfc_live_capture_contacts = false
+Fish>global _pfc_live_capture_wall_top = 1
+Fish>global _pfc_live_capture_wall_bottom = 2
+Fish>global _pfc_live_capture_3d = false
+Fish>end
+pfc3d>fish define _pfc_live_capture_vel_z(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_vel_z = comp.z(v)
+Fish>else
+Fish>_pfc_live_capture_vel_z = 0.0
+Fish>endif
+Fish>end
+pfc3d>fish define _pfc_live_capture_spin_x(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_spin_x = comp.x(v)
+Fish>else
+Fish>_pfc_live_capture_spin_x = 0.0
+Fish>endif
+Fish>end
+pfc3d>fish define _pfc_live_capture_spin_y(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_spin_y = comp.y(v)
+Fish>else
+Fish>_pfc_live_capture_spin_y = 0.0
+Fish>endif
+Fish>end
+pfc3d>fish define _pfc_live_capture_spin_z(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_spin_z = comp.z(v)
+Fish>else
+Fish>_pfc_live_capture_spin_z = v
+Fish>endif
+Fish>end
+pfc3d>fish define _pfc_live_capture_z(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_z = comp.z(v)
+Fish>else
+Fish>_pfc_live_capture_z = 0.0
+Fish>endif
+Fish>end
+pfc3d>fish define _pfc_live_capture_frame
+Fish>if _pfc_live_capture_enabled = false then
+Fish>exit
+Fish>endif
+Fish>_pfc_live_capture_frame_id = _pfc_live_capture_frame_id + 1
+Fish>local fid = _pfc_live_capture_frame_id
+Fish>local cyc = mech.cycle()
+Fish>local mt = mech.time.total()
+Fish>_pfc_live_capture_last_cycle = cyc
+Fish>_pfc_live_capture_last_time = mt
+Fish>local bf = file.open(_pfc_live_capture_frame_path,'append','text')
+Fish>local brows = list()
+Fish>loop foreach local b ball.list
+Fish>local bv = ball.vel(b)
+Fish>local bs = ball.spin(b)
+Fish>brows = list.append(brows,string.build('%1,%2,%3,%4,%5,%6,%7,%8,%9', ...
+Fish>fid,ball.id(b),comp.x(ball.pos(b)),comp.y(ball.pos(b)), ...
+Fish>_pfc_live_capture_z(ball.pos(b)),ball.radius(b), ...
+Fish>comp.x(bv),comp.y(bv),_pfc_live_capture_vel_z(bv)) + ',' + ...
+Fish>string.build('%1,%2,%3',_pfc_live_capture_spin_x(bs), ...
+Fish>_pfc_live_capture_spin_y(bs),_pfc_live_capture_spin_z(bs)))
+Fish>endloop
+Fish>file.write(bf,brows)
+Fish>file.close(bf)
+Fish>local wf = file.open(_pfc_live_capture_walls_path,'append','text')
+Fish>local wrows = list()
+Fish>loop foreach local v wall.vertex.list()
+Fish>local wp = wall.vertex.pos(v)
+Fish>wrows = list.append(wrows,string.build('%1,%2,%3,%4,%5', ...
+Fish>fid,wall.vertex.id(v),comp.x(wp),comp.y(wp),_pfc_live_capture_z(wp)))
+Fish>endloop
+Fish>file.write(wf,wrows)
+Fish>file.close(wf)
+Fish>if _pfc_live_capture_contacts = true then
+Fish>local cf = file.open(_pfc_live_capture_contacts_path,'append','text')
+Fish>local crows = list()
+Fish>loop foreach local c contact.list
+Fish>local cp = contact.pos(c)
+Fish>local cforce = contact.force.global(c)
+Fish>local e1 = contact.end1(c)
+Fish>local e2 = contact.end2(c)
+Fish>crows = list.append(crows,string.build('%1,%2,%3,%4,%5,%6,%7,%8,%9', ...
+Fish>fid,contact.id(c),type.pointer(e1),type.pointer.id(e1), ...
+Fish>type.pointer(e2),type.pointer.id(e2),comp.x(cp),comp.y(cp), ...
+Fish>_pfc_live_capture_z(cp)) + ',' + ...
+Fish>string.build('%1,%2,%3,%4',comp.x(cforce),comp.y(cforce), ...
+Fish>_pfc_live_capture_vel_z(cforce),contact.model(c)))
+Fish>endloop
+Fish>file.write(cf,crows)
+Fish>file.close(cf)
+Fish>endif
+Fish>local ix = file.open(_pfc_live_capture_index_path,'append','text')
+Fish>local irow = list()
+Fish>if _pfc_live_capture_wall_top > 0 then
+Fish>local w1 = wall.find(_pfc_live_capture_wall_top)
+Fish>local w2 = wall.find(_pfc_live_capture_wall_bottom)
+Fish>local p1 = wall.pos(w1)
+Fish>local p2 = wall.pos(w2)
+Fish>local f1 = wall.force.contact(w1)
+Fish>local f2 = wall.force.contact(w2)
+Fish>irow = list.append(irow,string.build('%1,%2,%3,%4,%5,%6,%7,%8,%9', ...
+Fish>fid,cyc,mt,ball.num(),comp.x(p1),comp.y(p1),_pfc_live_capture_z(p1), ...
+Fish>comp.x(p2),comp.y(p2)) + ',' + string.build('%1,%2,%3,%4', ...
+Fish>_pfc_live_capture_z(p2),math.mag(f1),math.mag(f2),_pfc_live_capture_calls) + ',' + ...
+Fish>string.build('%1,%2',_pfc_live_capture_mode,_pfc_live_capture_value))
+Fish>else
+Fish>irow = list.append(irow,string.build('%1,%2,%3,%4,,,,,,,,,%5', ...
+Fish>fid,cyc,mt,ball.num(),_pfc_live_capture_calls) + ',' + ...
+Fish>string.build('%1,%2',_pfc_live_capture_mode,_pfc_live_capture_value))
+Fish>endif
+Fish>file.write(ix,irow)
+Fish>file.close(ix)
+Fish>end
+pfc3d>fish define _pfc_live_capture_cycle
+Fish>_pfc_live_capture_calls = _pfc_live_capture_calls + 1
+Fish>if _pfc_live_capture_enabled = true then
+Fish>if _pfc_live_capture_mode = 'cycle' then
+Fish>if (mech.cycle() - _pfc_live_capture_last_cycle) >= _pfc_live_capture_stride then
+Fish>_pfc_live_capture_frame
+Fish>endif
+Fish>else
+Fish>if _pfc_live_capture_mode = 'time' then
+Fish>if (mech.time.total() - _pfc_live_capture_last_time) >= _pfc_live_capture_value then
+Fish>_pfc_live_capture_frame
+Fish>endif
+Fish>endif
+Fish>endif
+Fish>endif
+Fish>end
+pfc3d>fish callback remove _pfc_live_capture_cycle 49.5
+pfc3d>fish callback add _pfc_live_capture_cycle 49.5
+--- Function _pfc_live_capture_cycle() registered as a callback at position 49.5 in the cycle sequence
+pfc3d>model solve time 0.02
+    Cycle      Total    Timestep    Mech Time       Clock
+--------- ---------- ----------- ------------ ----------- 
+       17         17 1.78880E-03 2.117541e-02 00:00:00:01                                  2.000000e-02             
+--- Limit time of 2.000000e-02 met in process(es): mech Ball (2.117541e-02),mech Clump (2.117541e-02),mech Wall (2.117541e-02),mech RBlock (2.117541e-02),mech MPMPoint (2.117541e-02),mech BlockMechanical (2.117541e-02).
+--- Cycling ended at: 2026-11-16T21:18:26
+pfc3d>ball delete range id 2
+--- 1 balls deleted.
+pfc3d>ball create radius 0.1 position (0,0,0.2) id 10000
+--- Ball 10000 with radius 0.1 created at position (0,0,0.2).
+pfc3d>ball attribute density 2500.0 damp 0.7 range id 10000
+--- Attribute density initialized in 1 ball(s).
+--- Attribute damp initialized in 1 ball(s).
+pfc3d>model solve time 0.005
+    Cycle      Total    Timestep    Mech Time       Clock
+--------- ---------- ----------- ------------ ----------- 
+        3         20 2.07076E-03 5.921153e-03 00:00:00:00                                  5.000000e-03             
+--- Limit time of 5.000000e-03 met in process(es): mech Ball (5.921153e-03),mech Clump (5.921153e-03),mech Wall (5.921153e-03),mech RBlock (2.709656e-02),mech MPMPoint (2.709656e-02),mech BlockMechanical (2.709656e-02).
+--- Cycling ended at: 2026-11-16T21:18:26
+pfc3d>fish callback remove _pfc_live_capture_cycle 49.5
+pfc3d>model save 'pfc3d_console_smoke_final'
+--- Model saved to file D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\acceptance\e2e_20261116\instances\pfc3d_accept\.pfc-console\pfc3d_console_smoke_final.sav.
+{
+  "schema_version": 1,
+  "data_boundary": "REAL_PFC",
+  "case_id": 1,
+  "run_id": "run_pfc3d_001",
+  "started_utc": "2026-11-16T13:18:25.631+00:00",
+  "config": {
+    "case_id": 1,
+    "run_id": "run_pfc3d_001",
+    "project_dir": "D:/path/to/PFC-project",
+    "restore_initial": false,
+    "setup": [
+      "model new",
+      "model large-strain on",
+      "model domain extent -2.0 2.0 -2.0 2.0 -2.0 2.0",
+      "wall generate id 101 name 'bottom' plane position (0,0,-0.8) dip 0.0",
+      "wall generate id 102 name 'top' plane position (0,0,0.8) dip 0.0",
+      "ball distribute radius 0.08 0.12 porosity 0.38 box -0.7 0.7 -0.7 0.7 -0.7 0.7",
+      "ball attribute density 2500.0 damp 0.7",
+      "model gravity 0 0 -9.81"
+    ],
+    "solve": "model solve time 0.02",
+    "post_solve": [
+      "ball delete range id 2",
+      "ball create radius 0.1 position (0,0,0.2) id 10000",
+      "ball attribute density 2500.0 damp 0.7 range id 10000",
+      "model solve time 0.005"
+    ],
+    "save": "model save 'pfc3d_console_smoke_final'",
+    "sample_stride_cycles": 1,
+    "history_names": [],
+    "history_meanings": {},
+    "time_history_name": "1",
+    "fracture_observer": false,
+    "expected_initial": {},
+    "source_files": {},
+    "load_axis": "z",
+    "top_wall_id": 102,
+    "bottom_wall_id": 101,
+    "sample_mode": "cycle",
+    "sample_interval": 1.0,
+    "capture_contacts": false,
+    "headless": {
+      "project_id": "pfc_headless_e2e_20261116",
+      "case_id": 1,
+      "run_id": "run_pfc3d_001",
+      "parameters": {},
+      "source_case_config": "cases/case_1/case_config.json"
+    },
+    "run_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_001\\data",
+    "execution_mode": "CONSOLE"
+  },
+  "status": "COMPLETE",
+  "errors": [],
+  "source_hashes": {},
+  "pre_snapshot": {
+    "pid": 5500,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+    "python": "3.10.5",
+    "cycle": 0,
+    "mechanical_time_total": 0.0,
+    "balls": 393,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": 0,
+    "fracture_module_available": true
+  },
+  "post_snapshot": {
+    "pid": 5500,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+    "python": "3.10.5",
+    "cycle": 20,
+    "mechanical_time_total": 0.02709655839129704,
+    "balls": 393,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": 0,
+    "fracture_module_available": true
+  },
+  "capture": {
+    "callback_calls": 20,
+    "frame_count": 21,
+    "fracture_event_count": 0,
+    "mechanical_time_run": 0.02709655839129704,
+    "sample_stride_cycles": 1,
+    "sample_mode": "cycle",
+    "sample_value": 1.0,
+    "sample_interval_mode": "Cycle-stride sampling",
+    "capture_contacts": false,
+    "field_status": {
+      "particle_position": "REAL_PFC",
+      "particle_radius": "REAL_PFC",
+      "particle_velocity": "REAL_PFC",
+      "particle_spin": "REAL_PFC",
+      "wall_vertices": "REAL_PFC",
+      "contact_network": "NOT_CAPTURED",
+      "fracture_events": "NOT_CAPTURED"
+    }
+  },
+  "save_executed": true,
+  "solve_elapsed_seconds": 0.5452457999926992,
+  "native_history_row_count": 0,
+  "ended_utc": "2026-11-16T13:18:26.805+00:00",
+  "engine": {
+    "executable": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+    "python": "3.10.5",
+    "runtime_mode": "CONSOLE"
+  },
+  "files": [
+    {
+      "path": "native_histories.csv",
+      "size_bytes": 60,
+      "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+    },
+    {
+      "path": "raw/ball_frames.csv",
+      "size_bytes": 536530,
+      "sha256": "6b801473eba4166e4d79883266289f57f26a563f4f32b04e9ec0e14bf5a7edd4"
+    },
+    {
+      "path": "raw/contact_frames.csv",
+      "size_bytes": 77,
+      "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+    },
+    {
+      "path": "raw/fracture_events.csv",
+      "size_bytes": 94,
+      "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+    },
+    {
+      "path": "raw/frame_index.csv",
+      "size_bytes": 1241,
+      "sha256": "ec5576f63b08846db76bc139806dc20f7312b8e2a79b46c1955cfad17cc111d6"
+    },
+    {
+      "path": "raw/wall_vertices.csv",
+      "size_bytes": 2389,
+      "sha256": "843ed7cbf48dedceec06689d56d70a9d19640539c62c7158b5bd73a1768c7143"
+    },
+    {
+      "path": "static.json",
+      "size_bytes": 80095,
+      "sha256": "46d2b8591093052d568e1df998842538a9243aedc9195641321a3d06df490868"
+    }
+  ]
+}

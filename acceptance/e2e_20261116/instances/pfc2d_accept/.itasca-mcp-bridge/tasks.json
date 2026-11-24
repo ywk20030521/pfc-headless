@@ -1,0 +1,50 @@
+[
+  {
+    "task_id": "b9b2bc",
+    "task_type": "script",
+    "description": "PFC2D Console case 0 embedded capture run_pfc2d_001",
+    "status": "completed",
+    "start_time": 1794834880.253338,
+    "end_time": 1794834881.3593404,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.itasca-mcp-bridge\\logs\\task_b9b2bc.log",
+    "error": null
+  },
+  {
+    "task_id": "35b72e",
+    "task_type": "script",
+    "description": "PFC2D Console case 0 embedded capture run_pfc2d_002",
+    "status": "completed",
+    "start_time": 1794834958.2933838,
+    "end_time": 1794834959.2452538,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.itasca-mcp-bridge\\logs\\task_35b72e.log",
+    "error": null
+  },
+  {
+    "task_id": "2eda11",
+    "task_type": "script",
+    "description": "PFC2D Console case 2 embedded capture run_pfc2d_contact_001",
+    "status": "completed",
+    "start_time": 1794834987.329568,
+    "end_time": 1794834988.3432796,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_contact_001\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.itasca-mcp-bridge\\logs\\task_2eda11.log",
+    "error": null
+  },
+  {
+    "task_id": "f4e181",
+    "task_type": "script",
+    "description": "PFC2D Console case 2 embedded capture run_pfc2d_contact_002",
+    "status": "completed",
+    "start_time": 1794835016.16146,
+    "end_time": 1794835017.0975392,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_contact_002\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.itasca-mcp-bridge\\logs\\task_f4e181.log",
+    "error": null
+  }
+]

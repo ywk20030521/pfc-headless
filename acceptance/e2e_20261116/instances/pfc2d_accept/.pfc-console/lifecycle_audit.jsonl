@@ -1,0 +1,9 @@
+{"engine": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe", "event": "CONSOLE_STARTED", "instance_id": "pfc2d_9001_5a425dad", "launch_arguments": ["--run", "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.pfc-console\\bridge_bootstrap.py"], "pid": 33204, "port": 9001, "time_utc": "2026-11-16T13:13:49+00:00"}
+{"engine": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe", "event": "ATTACHED_VERIFIED_INSTANCE", "instance_id": "pfc2d_9001_b7df9e87", "pid": 33204, "port": 9001, "time_utc": "2026-11-16T13:14:40+00:00"}
+{"engine": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe", "event": "ATTACHED_VERIFIED_INSTANCE", "instance_id": "pfc2d_9001_4a6d3825", "pid": 33204, "port": 9001, "time_utc": "2026-11-16T13:15:58+00:00"}
+{"engine": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe", "event": "ATTACHED_VERIFIED_INSTANCE", "instance_id": "pfc2d_9001_db4108b2", "pid": 33204, "port": 9001, "time_utc": "2026-11-16T13:16:27+00:00"}
+{"engine": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe", "event": "ATTACHED_VERIFIED_INSTANCE", "instance_id": "pfc2d_9001_459489a1", "pid": 33204, "port": 9001, "time_utc": "2026-11-16T13:16:56+00:00"}
+{"event": "STOP_STARTED", "instance_id": "pfc2d_9001_459489a1", "pid": 33204, "time_utc": "2026-11-16T13:17:16+00:00"}
+{"error": "AttributeError: 'list' object has no attribute 'get'", "event": "STOP_ABORTED_ACTIVE_TASK_CHECK", "pid": 33204, "time_utc": "2026-11-16T13:17:16+00:00"}
+{"event": "STOP_STARTED", "instance_id": "pfc2d_9001_459489a1", "pid": 33204, "time_utc": "2026-11-16T13:17:27+00:00"}
+{"event": "STOP_COMPLETED", "instance_id": "pfc2d_9001_459489a1", "method": "verified PID process termination after program stop", "pid": 33204, "port_released": true, "saved_model": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\pfc2d_acceptance_stop.sav", "time_utc": "2026-11-16T13:17:47+00:00"}

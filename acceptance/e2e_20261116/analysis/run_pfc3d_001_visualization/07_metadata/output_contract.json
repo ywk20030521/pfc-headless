@@ -1,0 +1,83 @@
+{
+  "status": "GENERATED",
+  "verification": "NOT_VERIFIED",
+  "items": [
+    {
+      "id": "source_standardized_contract",
+      "status": "VERIFIED_READ_ONLY",
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\deliveries\\run_pfc3d_001",
+      "owner": "pfc-headless",
+      "manifest_sha256": "e1f03e915c0fcee8203f9077e9842ccba8f9a8e0e14bae205826e2fa39cdaffb"
+    },
+    {
+      "id": "analysis_data",
+      "status": "GENERATED",
+      "path": "03_analysis/"
+    },
+    {
+      "id": "offline_viewer",
+      "status": "GENERATED",
+      "path": "04_viewer/scientific_viewer.html",
+      "verification": "NOT_VERIFIED"
+    },
+    {
+      "id": "charts",
+      "status": "GENERATED",
+      "path": "03_analysis/chart_specs.json",
+      "rejected": [
+        {
+          "id": "case_1:stress_strain",
+          "case_id": 1,
+          "status": "NOT_GENERATED",
+          "reason": "Stress or strain is constant across all captured frames, so the relationship has no evident statistical information."
+        },
+        {
+          "id": "case_1:stress_time",
+          "case_id": 1,
+          "status": "NOT_GENERATED",
+          "reason": "Stress is constant across all captured frames, so a stress–time trend would be visually flat and non-informative."
+        },
+        {
+          "id": "case_1:fracture",
+          "case_id": 1,
+          "status": "NOT_CAPTURED",
+          "reason": "No captured fracture events; fracture evolution and orientation charts are omitted."
+        },
+        {
+          "id": "experiment:case_comparison",
+          "case_id": null,
+          "status": "NOT_GENERATED",
+          "reason": "A comparison requires at least two cases."
+        }
+      ]
+    },
+    {
+      "id": "publication_figure_plan",
+      "status": "GENERATED",
+      "path": "06_publication_figures/figure_plan.json",
+      "verification": "NOT_VERIFIED"
+    },
+    {
+      "id": "publication_composed_svg",
+      "status": "NOT_GENERATED",
+      "reason": "Viewer SVG exports are required."
+    },
+    {
+      "id": "publication_pdf",
+      "status": "NOT_SUPPORTED",
+      "reason": "Use a local vector converter on composed SVG; no PDF backend is bundled."
+    },
+    {
+      "id": "experiment_report",
+      "status": "GENERATED",
+      "path": "report/experiment_report.md",
+      "verification": "NOT_VERIFIED"
+    }
+  ],
+  "unverified": [
+    "browser rendering and interaction",
+    "PNG/SVG export",
+    "test suite execution",
+    "performance measurement"
+  ]
+}

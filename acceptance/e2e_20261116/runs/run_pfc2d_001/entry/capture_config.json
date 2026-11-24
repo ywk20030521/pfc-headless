@@ -1,0 +1,46 @@
+{
+  "case_id": 0,
+  "run_id": "run_pfc2d_001",
+  "project_dir": "D:/path/to/PFC-project",
+  "restore_initial": false,
+  "setup": [
+    "model new",
+    "model large-strain on",
+    "model domain extent -1.5 1.5 -1.5 1.5",
+    "wall generate id 101 name 'bottom' plane position (0,-0.8) dip 0.0",
+    "wall generate id 102 name 'top' plane position (0,0.8) dip 0.0",
+    "ball distribute radius 0.08 0.12 porosity 0.35 box -0.7 0.7 -0.7 0.7",
+    "ball attribute density 2500.0 damp 0.7",
+    "model gravity 0 -9.81"
+  ],
+  "solve": "model solve time 0.02",
+  "post_solve": [
+    "ball delete range id 2",
+    "ball create radius 0.1 position (0,0.2) id 10000",
+    "ball attribute density 2500.0 damp 0.7 range id 10000",
+    "model solve time 0.005"
+  ],
+  "save": "model save 'pfc2d_console_smoke_final'",
+  "sample_stride_cycles": 1,
+  "history_names": [],
+  "history_meanings": {},
+  "time_history_name": "1",
+  "fracture_observer": false,
+  "expected_initial": {},
+  "source_files": {},
+  "load_axis": "y",
+  "top_wall_id": 102,
+  "bottom_wall_id": 101,
+  "sample_mode": "cycle",
+  "sample_interval": 1.0,
+  "capture_contacts": false,
+  "headless": {
+    "project_id": "pfc_headless_e2e_20261116",
+    "case_id": 0,
+    "run_id": "run_pfc2d_001",
+    "parameters": {},
+    "source_case_config": "cases/case_0/case_config.json"
+  },
+  "run_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data",
+  "execution_mode": "CONSOLE"
+}

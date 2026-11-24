@@ -1,0 +1,25 @@
+{
+  "status": "VERIFIED_READ_ONLY",
+  "owner": "pfc-headless",
+  "root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\deliveries\\run_pfc2d_contact_002",
+  "contract": {
+    "name": "pfc.standardized-experiment",
+    "version": "1.0.0",
+    "read_only": true
+  },
+  "manifest_sha256": "10b7a3aa0a87cc2dc4c06e270a0818de474c0a13c2d4777de565bf9c9492d756",
+  "experiment_id": "run_pfc2d_contact_002",
+  "case_count": 1,
+  "cases": [
+    {
+      "case_id": 2,
+      "arrays_path": "cases/case_2/arrays.npz",
+      "arrays_sha256": "03107771dd0b6c0cc88a231a95932f041e44e4b50d0546d967f0121657cbdf5b",
+      "frame_count": 17
+    }
+  ],
+  "consumer_policy": {
+    "read_only": true,
+    "may_write_inside_contract": false
+  }
+}

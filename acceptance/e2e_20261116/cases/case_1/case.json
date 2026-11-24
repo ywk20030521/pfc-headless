@@ -1,0 +1,16 @@
+{
+  "case_id": 1,
+  "case_name": "PFC3D smoke capture",
+  "config_path": "cases/case_1/case_config.json",
+  "created_utc": "2026-11-16T13:13:22+00:00",
+  "data_collection_config": {
+    "capture_contacts": false,
+    "interval": 1.0,
+    "mode": "cycle"
+  },
+  "engine_dimension": 3,
+  "model_path": null,
+  "parameters": {},
+  "schema_version": "1.0.0",
+  "script_path": null
+}

@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run_interrupt_probe2",
+  "case_id": 3,
+  "case_ids": [
+    3
+  ],
+  "engine_dimension": 3,
+  "engine_version": "9.0.0",
+  "model_identity": {
+    "sha256": "96b119d49ee9fa0592b4a99848c987d14a93d05a03d5ebe697a9502f9dfb406c",
+    "ball_count": 2,
+    "wall_count": 2,
+    "wall_vertex_count": 8,
+    "basis": "static initial topology plus captured fracture events"
+  },
+  "script_identity": {
+    "input_files": [
+      {
+        "path": "static.json",
+        "size_bytes": 3900,
+        "sha256": "4c5407ccfc32ee470a1234201e8db470f4f8d0109f89a1cbcea82f6b35a05f00"
+      },
+      {
+        "path": "frame_index.csv",
+        "size_bytes": 359,
+        "sha256": "f1c786a36d6be904159338036f8eaad31da6d6f428e083d449cec90324fa9f21"
+      },
+      {
+        "path": "ball_frames.csv",
+        "size_bytes": 273,
+        "sha256": "9790e5f882cbc5a7db9907a5c361e2c489309b0618c3ab104833c0a367f04c1f"
+      },
+      {
+        "path": "wall_vertices.csv",
+        "size_bytes": 393,
+        "sha256": "27d679438fa0139ca0cf34c6b03edf51200ccfc764c35b26307b8dbb4e57040a"
+      },
+      {
+        "path": "fracture_events.csv",
+        "size_bytes": 94,
+        "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+      },
+      {
+        "path": "contact_frames.csv",
+        "size_bytes": 77,
+        "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+      },
+      {
+        "path": "native_histories.csv",
+        "size_bytes": 60,
+        "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+      }
+    ],
+    "capture_config_sha256": "dfb2dd06dce2a51417a4c869965f7b9d5fa9ee2cba50396c1b6df95e4a16e704",
+    "capture_config_available": true
+  },
+  "parameters": {},
+  "sampling_configuration": {
+    "mode": "cycle",
+    "value": 100.0,
+    "capture_contacts": false,
+    "source": "recorded capture configuration"
+  },
+  "units": {
+    "length": "m",
+    "time": "s",
+    "force": "N",
+    "velocity": "m/s",
+    "angular_velocity": "rad/s",
+    "unknown_native_histories": "UNKNOWN"
+  },
+  "coordinate_system": {
+    "name": "PFC_GLOBAL_CARTESIAN",
+    "dimensions": 3,
+    "pfc2d_z": "physical PFC3D coordinate"
+  },
+  "time_range": [
+    0.0,
+    101.474
+  ],
+  "step_range": [
+    0,
+    253
+  ],
+  "data_files": [
+    {
+      "path": "cases/case_3/arrays.npz",
+      "size_bytes": 4829,
+      "sha256": "85a49db95892d0c6cdeb9aed5e0d9cd1726974bb2c1ea059d1c96ef8763cab89"
+    },
+    {
+      "path": "cases/case_3/case.json",
+      "size_bytes": 10881,
+      "sha256": "350f958a92c3b58d6e8ccd484a090ce5a32edc34232d4aaea8b9930c9362135d"
+    },
+    {
+      "path": "cases/case_3/channels.json",
+      "size_bytes": 6426,
+      "sha256": "85369085931a0ef6209e01984c3df4eae08e069cc8b5aaa0b157562e838030ae"
+    },
+    {
+      "path": "cases/case_3/conversion_report.json",
+      "size_bytes": 5937,
+      "sha256": "188bad3d1354912fba1c22f515282781842aee8703c225afe3440eebd5a23d20"
+    },
+    {
+      "path": "cases/case_3/entity_changes.json",
+      "size_bytes": 954,
+      "sha256": "b6e90b1ffccb7ecc3ef89f8e59edcd03901af10bfecee041b19df30c12411ca2"
+    },
+    {
+      "path": "cases/case_3/events.json",
+      "size_bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "cases/case_3/frame_summary.csv",
+      "size_bytes": 210,
+      "sha256": "831c89350d2631f7e538bcea852af047c8b327d9007c87dd6330b7e54677b51a"
+    },
+    {
+      "path": "cases/case_3/frames.json",
+      "size_bytes": 2440,
+      "sha256": "c1c53f5d48e563641e69b28c0e43c38d26516a9461edd900d2cc2a2843ad8256"
+    },
+    {
+      "path": "cases/case_3/static.json",
+      "size_bytes": 1904,
+      "sha256": "e4369d38cfa45ccab9ef59b3d64ccf88744941bdd4c2a93faeef1739a3de4654"
+    },
+    {
+      "path": "conversion_report.json",
+      "size_bytes": 7109,
+      "sha256": "a01210008185f9be6831a98ea31115fd0a12dc4e8ba57ce1739609e022c1a57b"
+    },
+    {
+      "path": "experiment.json",
+      "size_bytes": 15283,
+      "sha256": "917085cd17a20a347c0382b30a08617e15de10d09a3b6913b57b3242d6a2565f"
+    },
+    {
+      "path": "schema/case.schema.json",
+      "size_bytes": 1191,
+      "sha256": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75"
+    },
+    {
+      "path": "schema/channel.schema.json",
+      "size_bytes": 930,
+      "sha256": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308"
+    },
+    {
+      "path": "schema/experiment.schema.json",
+      "size_bytes": 1015,
+      "sha256": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac"
+    },
+    {
+      "path": "schema/feedback.schema.json",
+      "size_bytes": 1921,
+      "sha256": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080"
+    },
+    {
+      "path": "schema/frame.schema.json",
+      "size_bytes": 841,
+      "sha256": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684"
+    },
+    {
+      "path": "schema/instance.schema.json",
+      "size_bytes": 1246,
+      "sha256": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8"
+    },
+    {
+      "path": "schema/manifest.schema.json",
+      "size_bytes": 1209,
+      "sha256": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8"
+    },
+    {
+      "path": "schema/metadata.schema.json",
+      "size_bytes": 1359,
+      "sha256": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969"
+    },
+    {
+      "path": "schema/project.schema.json",
+      "size_bytes": 1014,
+      "sha256": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171"
+    },
+    {
+      "path": "schema/run.schema.json",
+      "size_bytes": 1159,
+      "sha256": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077"
+    },
+    {
+      "path": "validation_report.json",
+      "size_bytes": 710,
+      "sha256": "f52e8187a42007e20fb08ead3fc50c97c8a676f490c31f1347955080447a94b3"
+    }
+  ],
+  "file_hashes": {
+    "cases/case_3/arrays.npz": "85a49db95892d0c6cdeb9aed5e0d9cd1726974bb2c1ea059d1c96ef8763cab89",
+    "cases/case_3/case.json": "350f958a92c3b58d6e8ccd484a090ce5a32edc34232d4aaea8b9930c9362135d",
+    "cases/case_3/channels.json": "85369085931a0ef6209e01984c3df4eae08e069cc8b5aaa0b157562e838030ae",
+    "cases/case_3/conversion_report.json": "188bad3d1354912fba1c22f515282781842aee8703c225afe3440eebd5a23d20",
+    "cases/case_3/entity_changes.json": "b6e90b1ffccb7ecc3ef89f8e59edcd03901af10bfecee041b19df30c12411ca2",
+    "cases/case_3/events.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "cases/case_3/frame_summary.csv": "831c89350d2631f7e538bcea852af047c8b327d9007c87dd6330b7e54677b51a",
+    "cases/case_3/frames.json": "c1c53f5d48e563641e69b28c0e43c38d26516a9461edd900d2cc2a2843ad8256",
+    "cases/case_3/static.json": "e4369d38cfa45ccab9ef59b3d64ccf88744941bdd4c2a93faeef1739a3de4654",
+    "conversion_report.json": "a01210008185f9be6831a98ea31115fd0a12dc4e8ba57ce1739609e022c1a57b",
+    "experiment.json": "917085cd17a20a347c0382b30a08617e15de10d09a3b6913b57b3242d6a2565f",
+    "schema/case.schema.json": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75",
+    "schema/channel.schema.json": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308",
+    "schema/experiment.schema.json": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac",
+    "schema/feedback.schema.json": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080",
+    "schema/frame.schema.json": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684",
+    "schema/instance.schema.json": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8",
+    "schema/manifest.schema.json": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8",
+    "schema/metadata.schema.json": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969",
+    "schema/project.schema.json": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171",
+    "schema/run.schema.json": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077",
+    "validation_report.json": "f52e8187a42007e20fb08ead3fc50c97c8a676f490c31f1347955080447a94b3"
+  },
+  "record_counts": {
+    "cases": 1,
+    "frames": 4,
+    "ball_observations": 8,
+    "wall_observations": 32,
+    "events": 0
+  },
+  "validation_status": "PASS",
+  "source": {
+    "raw_input_root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2",
+    "data_boundary": "REAL_PFC",
+    "engine": {
+      "executable": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+      "python": "3.10.5",
+      "runtime_mode": "CONSOLE"
+    },
+    "snapshot": {
+      "pid": 5500,
+      "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+      "python": "3.10.5",
+      "cycle": 0,
+      "mechanical_time_total": 0.0,
+      "balls": 2,
+      "walls": 2,
+      "contacts": 0,
+      "fractures": 0,
+      "fracture_module_available": true
+    }
+  }
+}

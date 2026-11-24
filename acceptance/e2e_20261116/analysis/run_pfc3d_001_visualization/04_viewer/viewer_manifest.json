@@ -1,0 +1,119 @@
+{
+  "status": "GENERATED",
+  "verification_status": "NOT_VERIFIED",
+  "architecture": "small-html-local-dependencies-chunked-data",
+  "viewer": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\analysis\\run_pfc3d_001_visualization\\04_viewer\\scientific_viewer.html",
+  "html_bytes": 8789,
+  "html_target_bytes": 5242880,
+  "html_target_met": true,
+  "viewer_total_bytes": 2623956,
+  "offline": true,
+  "external_network_requests": false,
+  "single_html": false,
+  "dependencies": [
+    "viewer/vendor/three.min.js",
+    "viewer/vendor/OrbitControls.js",
+    "viewer/vendor/echarts.min.js",
+    "viewer/visual-semantics.js"
+  ],
+  "payload": {
+    "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\analysis\\run_pfc3d_001_visualization\\04_viewer\\data",
+    "version": "2.2.0",
+    "reused": false,
+    "frame_policy": "ALL_REAL_FRAMES",
+    "sizes": {
+      "catalog_bytes": 1665,
+      "static_bytes": 68146,
+      "chunk_bytes": 360869,
+      "history_bytes": 372327,
+      "metadata_and_chart_bytes": 20188,
+      "total_bytes": 823201
+    },
+    "cases": [
+      {
+        "id": 1,
+        "label": "Case 1",
+        "runId": "run_pfc3d_001",
+        "dimension": 3,
+        "sourceFrameCount": 21,
+        "viewerFrameCount": 21,
+        "frameStatus": "FULL_REAL_FRAME_SET",
+        "ballCountMin": 393,
+        "ballCountMax": 393,
+        "fractureEvents": 0,
+        "crackStatus": "NOT_CAPTURED",
+        "maxDisplacement": 0.0011570999999999942,
+        "maxSpeed": 0.07967935097550799,
+        "maxAcceleration": 4.594078495252352,
+        "bounds": [
+          [
+            -0.610753,
+            -0.589028,
+            -0.606211
+          ],
+          [
+            0.613084,
+            0.61795,
+            0.599581
+          ]
+        ],
+        "chartCount": 6,
+        "metaPath": "data/cases/case_1/meta.js",
+        "chartsPath": "data/cases/case_1/charts.js",
+        "chunkPattern": "data/cases/case_1/chunks/chunk_{chunk:03d}.js",
+        "historyPattern": "data/cases/case_1/histories/bucket_{bucket:03d}.js",
+        "chartsStatus": "GENERATED",
+        "entityStatus": {
+          "ball": "SUPPORTED",
+          "wall": "SUPPORTED",
+          "fracture": "NOT_CAPTURED",
+          "contact": "NOT_CAPTURED",
+          "bond": "NOT_CAPTURED",
+          "clump": "NOT_CAPTURED"
+        },
+        "metricStatus": {
+          "displacement": "SUPPORTED",
+          "speed": "SUPPORTED",
+          "acceleration": "SUPPORTED"
+        }
+      }
+    ]
+  },
+  "state_contract": {
+    "currentCase": "integer Case ID",
+    "currentFrame": "zero-based index in the real-frame sequence",
+    "currentCycle": "captured PFC Cycle",
+    "currentTime": "captured mechanical time in seconds",
+    "selectedBallIds": "real PFC Ball IDs",
+    "selectedMetric": "displacement | speed | acceleration",
+    "selectedRange": "inclusive numeric range for the selected particle metric"
+  },
+  "linking": {
+    "timeline_to_scene": true,
+    "chart_drag_to_frame": true,
+    "scene_ball_to_history": true,
+    "current_distribution_brush_to_particles": true,
+    "multi_ball_selection": true,
+    "particle_force_history": "NOT_CAPTURED_UNLESS_SOURCE_FIELD_EXISTS",
+    "decision_record": "linkage_decisions.json",
+    "decision_summary": {
+      "implemented": 3,
+      "not_implemented": 4
+    }
+  },
+  "design_system": {
+    "path": "viewer/visual-semantics.js",
+    "source": "assets/styles/scientific-visual-semantics.json",
+    "version": "2.1.0",
+    "sha256": "9880e0dba8813b9d2edc79bd8f6da70b14b1e9597ed2a2937db841bbe5631498"
+  },
+  "publication_export_api": {
+    "png_current": "window.PFCViewer.exportPNG()",
+    "png_specified_frame": "window.PFCViewer.exportFramePNG(frameIndex, width)",
+    "chart_svg": "window.PFCViewer.exportChartSVGs()",
+    "composite_png": "window.PFCViewer.exportCompositePanels()"
+  },
+  "requested_cases": null,
+  "viewer_output_contract": "viewer_output_contract.json",
+  "build_elapsed_seconds": 0.506
+}

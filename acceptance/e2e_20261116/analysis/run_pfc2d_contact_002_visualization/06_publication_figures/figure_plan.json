@@ -1,0 +1,395 @@
+{
+  "status": "GENERATED",
+  "width_mm": 180.0,
+  "height_mm": 124.138,
+  "page_aspect_ratio": 1.45,
+  "columns": 3,
+  "rows": 3,
+  "layout": {
+    "template": "featured_plus_six",
+    "panel_count": 7,
+    "row_count": 3,
+    "column_count": 3,
+    "variable_panel_sizes": true,
+    "empty_placeholder_panels": 0,
+    "read_order": "row_major_left_to_right",
+    "panels": [
+      {
+        "index": 0,
+        "row": 0,
+        "column": 0,
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.36507937,
+        "weight": 1.0,
+        "role": "primary"
+      },
+      {
+        "index": 1,
+        "row": 1,
+        "column": 0,
+        "x": 0.0,
+        "y": 0.36507937,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      },
+      {
+        "index": 2,
+        "row": 1,
+        "column": 1,
+        "x": 0.33333333,
+        "y": 0.36507937,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      },
+      {
+        "index": 3,
+        "row": 1,
+        "column": 2,
+        "x": 0.66666667,
+        "y": 0.36507937,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      },
+      {
+        "index": 4,
+        "row": 2,
+        "column": 0,
+        "x": 0.0,
+        "y": 0.68253968,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      },
+      {
+        "index": 5,
+        "row": 2,
+        "column": 1,
+        "x": 0.33333333,
+        "y": 0.68253968,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      },
+      {
+        "index": 6,
+        "row": 2,
+        "column": 2,
+        "x": 0.66666667,
+        "y": 0.68253968,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      }
+    ]
+  },
+  "font_family": "Arial, Helvetica, sans-serif",
+  "background": "#FFFFFF",
+  "panel_letters": "bold lowercase in parentheses",
+  "color_tokens": {
+    "primary": "#3C5488",
+    "fracture": "#E64B35",
+    "slate": "#8491B4",
+    "tan": "#B09C85",
+    "accent": "#F39B7F"
+  },
+  "panels": [
+    {
+      "index": 1,
+      "panel": "a",
+      "chart_id": "case_2:line_load_time",
+      "title": "PFC2D 线载荷–机械时间",
+      "basis": "Frame-aligned native mechanical time and derived PFC2D line load.",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.91,
+        "reason": "At least three finite frame-aligned mechanical-time samples preserve the temporal trend without interpolation.",
+        "alternatives": [
+          {
+            "type": "area",
+            "score": 0.73,
+            "reason": "Adds magnitude emphasis without improving trend identification."
+          },
+          {
+            "type": "scatter",
+            "score": 0.6,
+            "reason": "Shows real observations but obscures continuity."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "line",
+          "area",
+          "scatter"
+        ]
+      },
+      "rectangle": {
+        "index": 0,
+        "row": 0,
+        "column": 0,
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.36507937,
+        "weight": 1.0,
+        "role": "primary"
+      }
+    },
+    {
+      "index": 2,
+      "panel": "b",
+      "chart_id": "case_2:speed_time",
+      "title": "平均速度–机械时间",
+      "basis": "Backward finite differences between consecutive real same-ID observations.",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.91,
+        "reason": "At least three finite frame-aligned mechanical-time samples preserve the temporal trend without interpolation.",
+        "alternatives": [
+          {
+            "type": "area",
+            "score": 0.73,
+            "reason": "Adds magnitude emphasis without improving trend identification."
+          },
+          {
+            "type": "scatter",
+            "score": 0.6,
+            "reason": "Shows real observations but obscures continuity."
+          }
+        ],
+        "derived": true,
+        "missing_count": 1,
+        "manual_override": null,
+        "compatible_types": [
+          "line",
+          "area",
+          "scatter"
+        ]
+      },
+      "rectangle": {
+        "index": 1,
+        "row": 1,
+        "column": 0,
+        "x": 0.0,
+        "y": 0.36507937,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      }
+    },
+    {
+      "index": 3,
+      "panel": "c",
+      "chart_id": "case_2:acceleration_time",
+      "title": "平均加速度–机械时间",
+      "basis": "Backward finite differences between consecutive real same-ID velocity observations.",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.91,
+        "reason": "At least three finite frame-aligned mechanical-time samples preserve the temporal trend without interpolation.",
+        "alternatives": [
+          {
+            "type": "area",
+            "score": 0.73,
+            "reason": "Adds magnitude emphasis without improving trend identification."
+          },
+          {
+            "type": "scatter",
+            "score": 0.6,
+            "reason": "Shows real observations but obscures continuity."
+          }
+        ],
+        "derived": true,
+        "missing_count": 2,
+        "manual_override": null,
+        "compatible_types": [
+          "line",
+          "area",
+          "scatter"
+        ]
+      },
+      "rectangle": {
+        "index": 2,
+        "row": 1,
+        "column": 1,
+        "x": 0.33333333,
+        "y": 0.36507937,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      }
+    },
+    {
+      "index": 4,
+      "panel": "d",
+      "chart_id": "case_2:motion",
+      "title": "颗粒平均位移",
+      "basis": "Mean displacement over present captured Ball IDs at each real frame.",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.8,
+        "reason": "The channel is an ordered frame summary and is useful even when fracture data is absent.",
+        "alternatives": [
+          {
+            "type": "area",
+            "score": 0.64,
+            "reason": "A filled trend is decorative when the baseline is not zero."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "line",
+          "area"
+        ]
+      },
+      "rectangle": {
+        "index": 3,
+        "row": 1,
+        "column": 2,
+        "x": 0.66666667,
+        "y": 0.36507937,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      }
+    },
+    {
+      "index": 5,
+      "panel": "e",
+      "chart_id": "case_2:displacement_hist",
+      "title": "末帧颗粒累计位移分布",
+      "basis": "Distribution of real final-frame particle displacements.",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.9,
+        "reason": "A finite particle-level sample is available for distribution analysis in the final captured frame.",
+        "alternatives": [
+          {
+            "type": "boxplot",
+            "score": 0.74,
+            "reason": "Compact for summary comparison but hides multimodality."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "histogram",
+          "boxplot"
+        ]
+      },
+      "rectangle": {
+        "index": 4,
+        "row": 2,
+        "column": 0,
+        "x": 0.0,
+        "y": 0.68253968,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      }
+    },
+    {
+      "index": 6,
+      "panel": "f",
+      "chart_id": "case_2:particle_density",
+      "title": "末帧颗粒数密度",
+      "basis": "Particle-count density from the final captured frame, not a stress or strain field.",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.86,
+        "reason": "The final real frame has XY coordinates; binned counts expose spatial heterogeneity without claiming a physical field.",
+        "alternatives": [
+          {
+            "type": "scatter",
+            "score": 0.58,
+            "reason": "Would overplot dense particles and obscure count gradients."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "heatmap"
+        ]
+      },
+      "rectangle": {
+        "index": 5,
+        "row": 2,
+        "column": 1,
+        "x": 0.33333333,
+        "y": 0.68253968,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      }
+    },
+    {
+      "index": 7,
+      "panel": "g",
+      "chart_id": "case_2:correlation",
+      "title": "通道相关性",
+      "basis": "Pearson correlation on frame-aligned native samples; no interpolation",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.75,
+        "reason": "At least two frame-aligned finite channels vary; a compact matrix shows pairwise association for exploration.",
+        "alternatives": [
+          {
+            "type": "scatter",
+            "score": 0.66,
+            "reason": "Better for one selected pair but requires multiple panels for all pairs."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "correlation"
+        ]
+      },
+      "rectangle": {
+        "index": 6,
+        "row": 2,
+        "column": 2,
+        "x": 0.66666667,
+        "y": 0.68253968,
+        "width": 0.33333333,
+        "height": 0.31746032,
+        "weight": 1.0,
+        "role": "supporting"
+      }
+    }
+  ],
+  "export_strategy": {
+    "png": "Render composed SVG at the requested raster size.",
+    "svg": "Native vector composition.",
+    "pdf": "Convert the composed SVG with a local vector converter; no implicit raster fallback and no runtime network dependency.",
+    "pdf_status": "NOT_SUPPORTED_WITHOUT_LOCAL_VECTOR_CONVERTER"
+  },
+  "export_requirements": [
+    "Use real captured frames and supplied chart exports only.",
+    "Do not insert blank panels to force an even count.",
+    "Keep a common scale and color meaning across Cases.",
+    "Retain variable names and units on axes and color bars."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "case_id": 2,
+  "run_id": "run_pfc2d_contact_001",
+  "engine_dimension": 2,
+  "project_dir": "D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116",
+  "restore_initial": false,
+  "setup": [
+    "model new",
+    "model large-strain on",
+    "model domain extent -2.0 2.0 -2.0 2.0",
+    "wall generate id 101 name 'bottom' plane position (0,-1.0) dip 0.0",
+    "wall generate id 102 name 'top' plane position (0,1.0) dip 0.0",
+    "ball create id 1 radius 0.6 position (0,0)",
+    "ball create id 2 radius 0.6 position (0.8,0)",
+    "ball create id 3 radius 0.6 position (0.4,0.5)",
+    "ball attribute density 2500.0 damp 0.7",
+    "contact model linear"
+  ],
+  "solve": "model cycle 20",
+  "post_solve": [],
+  "save": "model save 'pfc2d_contact_smoke_final'",
+  "sample_mode": "cycle",
+  "sample_interval": 1.0,
+  "sample_stride_cycles": 1,
+  "capture_contacts": true,
+  "history_names": [],
+  "history_meanings": {},
+  "time_history_name": "1",
+  "fracture_observer": false,
+  "expected_initial": {
+    "balls": 3
+  },
+  "source_files": {},
+  "load_axis": "y",
+  "top_wall_id": 102,
+  "bottom_wall_id": 101,
+  "headless": {
+    "project_id": "pfc_headless_e2e_20261116",
+    "case_id": 2,
+    "run_id": "run_pfc2d_contact_001",
+    "parameters": {},
+    "source_case_config": "cases/case_2/case_config.json"
+  },
+  "run_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_contact_001\\data",
+  "execution_mode": "CONSOLE"
+}

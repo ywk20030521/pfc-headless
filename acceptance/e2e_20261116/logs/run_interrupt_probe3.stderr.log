@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\scripts\headless.py", line 400, in <module>
+    raise SystemExit(main())
+  File "D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\scripts\headless.py", line 325, in main
+    run_project_case(
+  File "D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\scripts\pfc_headless\simulation.py", line 135, in run_project_case
+    return _execute_created_run(
+  File "D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\scripts\pfc_headless\simulation.py", line 61, in _execute_created_run
+    result = execute_prepared_run(
+  File "D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\scripts\run_case.py", line 354, in execute_prepared_run
+    raise ConsoleRuntimeError(
+console_runtime.ConsoleRuntimeError: Capture failed; refusing standardization: D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\acceptance\e2e_20261116\runs\run_interrupt_probe3

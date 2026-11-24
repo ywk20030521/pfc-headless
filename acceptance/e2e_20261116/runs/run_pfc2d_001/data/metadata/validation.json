@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "case_id": 0,
+  "run_id": "run_pfc2d_001",
+  "frames": 21,
+  "cycle_start": 0,
+  "cycle_end": 20,
+  "mechanical_time_run": 0.027191377331844683,
+  "ball_count_start": 37,
+  "ball_count_end": 37,
+  "added_ball_count": 1,
+  "added_ball_ids": [
+    10000
+  ],
+  "removed_ball_count": 1,
+  "removed_ball_ids": [
+    2
+  ],
+  "wall_vertex_rows": 84,
+  "native_history_rows": 0,
+  "ball_velocity_rows": 777,
+  "ball_spin_rows": 777,
+  "contact_rows": 0,
+  "fracture_events": 0,
+  "fracture_catalog": 0,
+  "matched_fracture_events": 0,
+  "hash_errors": [],
+  "all_ball_values_finite": true,
+  "strictly_increasing_cycles": true,
+  "strictly_increasing_time": true
+}

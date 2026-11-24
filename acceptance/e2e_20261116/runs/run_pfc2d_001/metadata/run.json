@@ -1,0 +1,566 @@
+{
+  "case_id": 0,
+  "end_time": "2026-11-16T13:14:42+00:00",
+  "error": null,
+  "execution": {
+    "dimension": 2,
+    "elapsed_seconds": 2.26,
+    "engine": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+    "generated_utc": "2026-11-16T13:14:42+00:00",
+    "runtime": {
+      "attached_utc": "2026-11-16T13:14:40+00:00",
+      "bootstrap_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.pfc-console\\bridge_bootstrap.py",
+      "command_line": [
+        "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+        "--run",
+        "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.pfc-console\\bridge_bootstrap.py"
+      ],
+      "dimension": 2,
+      "engine": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+      "engine_version": "9.0.0",
+      "executable_sha256": "20ffb56da3f3acc4bc51c05043a9c6f31d796ce8b13cc7ee6f7f8626392f3f40",
+      "health": {
+        "runtime_mode": "console",
+        "status": "success",
+        "version": "0.6.11"
+      },
+      "instance_id": "pfc2d_9001_b7df9e87",
+      "pid": 33204,
+      "port": 9001,
+      "probe": {
+        "balls": 0,
+        "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept",
+        "cycle": 0,
+        "dimension": 2,
+        "executable": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+        "pid": 33204
+      },
+      "probe_output": "PFC_HEADLESS_PROBE={\"executable\": \"D:\\\\Itasca\\\\PFC900\\\\exe64\\\\pfc2d9_console.exe\", \"pid\": 33204, \"cwd\": \"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\instances\\\\pfc2d_accept\", \"dimension\": 2, \"cycle\": 0, \"balls\": 0}\n",
+      "process_create_time": 1794834823.755937,
+      "status": "ATTACHED",
+      "workdir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept"
+    },
+    "standardization": {
+      "cases": [
+        {
+          "arrays_path": "cases/case_0/arrays.npz",
+          "case_id": 0,
+          "channels": [
+            {
+              "description": "PFC Cycle at capture.",
+              "dimensions": [
+                "frame"
+              ],
+              "entity_type": "history",
+              "id": "cycle",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "cycle",
+              "variable": "cycle"
+            },
+            {
+              "description": "PFC total mechanical time at capture.",
+              "dimensions": [
+                "frame"
+              ],
+              "entity_type": "history",
+              "id": "mechanical_time_total",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "s",
+              "variable": "mechanical_time_total"
+            },
+            {
+              "description": "Stable PFC Ball ID; offsets define each real frame.",
+              "dimensions": [
+                "entity",
+                "frame_variable_length"
+              ],
+              "entity_type": "ball",
+              "id": "ball_id",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": null,
+              "variable": "id"
+            },
+            {
+              "description": "Same-Cycle Ball coordinates.",
+              "dimensions": [
+                "entity",
+                "xyz"
+              ],
+              "entity_type": "ball",
+              "id": "ball_xyz",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "m",
+              "variable": "position"
+            },
+            {
+              "description": "Static radius or a real radius update at/after Ball creation.",
+              "dimensions": [
+                "entity"
+              ],
+              "entity_type": "ball",
+              "id": "ball_radius",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "m",
+              "variable": "radius"
+            },
+            {
+              "description": "Wall vertices from each captured frame.",
+              "dimensions": [
+                "entity",
+                "xyz",
+                "frame_variable_length"
+              ],
+              "entity_type": "wall",
+              "id": "wall_vertex_xyz",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "m",
+              "variable": "vertex_position"
+            },
+            {
+              "description": "Captured Ball velocity in the global coordinate system.",
+              "dimensions": [
+                "entity",
+                "xyz"
+              ],
+              "entity_type": "ball",
+              "id": "ball_velocity",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "m/s",
+              "variable": "velocity"
+            },
+            {
+              "description": "Captured Ball angular velocity; PFC2D uses the z component.",
+              "dimensions": [
+                "entity",
+                "xyz"
+              ],
+              "entity_type": "ball",
+              "id": "ball_spin",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "rad/s",
+              "variable": "angular_velocity"
+            },
+            {
+              "description": "Contact network was disabled for this Case.",
+              "dimensions": [
+                "contact"
+              ],
+              "entity_type": "contact",
+              "id": "contact_id",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "NOT_CAPTURED"
+              },
+              "source": "NOT_CAPTURED",
+              "status": "NOT_CAPTURED",
+              "unit": null,
+              "variable": "id"
+            },
+            {
+              "description": "Contact force was not captured.",
+              "dimensions": [
+                "contact",
+                "xyz"
+              ],
+              "entity_type": "contact",
+              "id": "contact_force_xyz",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "NOT_CAPTURED"
+              },
+              "source": "NOT_CAPTURED",
+              "status": "NOT_CAPTURED",
+              "unit": "N",
+              "variable": "force_global"
+            },
+            {
+              "description": "Top platen contact-force magnitude.",
+              "dimensions": [
+                "frame"
+              ],
+              "entity_type": "wall",
+              "id": "top_force_n",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "N",
+              "variable": "contact_force_magnitude"
+            },
+            {
+              "description": "Bottom platen contact-force magnitude.",
+              "dimensions": [
+                "frame"
+              ],
+              "entity_type": "wall",
+              "id": "bottom_force_n",
+              "provenance": {
+                "applicability": null,
+                "formula": null,
+                "generated_utc": "2026-11-16T13:14:42+00:00",
+                "input_files": [],
+                "method": null,
+                "notes": [],
+                "parent_results": [],
+                "source": "REAL_PFC"
+              },
+              "source": "REAL_PFC",
+              "status": "GENERATED",
+              "unit": "N",
+              "variable": "contact_force_magnitude"
+            }
+          ],
+          "dimension": 2,
+          "entity_groups": [
+            {
+              "array_prefix": "ball",
+              "count": 777,
+              "dynamic_ids": true,
+              "entity_type": "ball",
+              "properties": [
+                "id",
+                "position",
+                "radius",
+                "frame_index"
+              ],
+              "source": "REAL_PFC"
+            },
+            {
+              "array_prefix": "wall",
+              "count": 84,
+              "dynamic_ids": true,
+              "entity_type": "wall",
+              "properties": [
+                "id",
+                "vertex_id",
+                "vertex_position"
+              ],
+              "source": "REAL_PFC"
+            }
+          ],
+          "frame_count": 21,
+          "label": "Case 0",
+          "metadata": {
+            "ball_count_max": 37,
+            "ball_count_min": 37,
+            "contact_count": 0,
+            "contact_model_codes": {},
+            "contact_type_codes": {},
+            "cycle_end": 20,
+            "cycle_start": 0,
+            "event_count": 0,
+            "geometry": {
+              "area0": 3.0,
+              "area_kind": "unit_thickness_length",
+              "axis": "y",
+              "axis_index": 1,
+              "bottom": 101,
+              "dimension": 2,
+              "height0": 1.6,
+              "top": 102,
+              "transverse_spans": [
+                {
+                  "axis": "x",
+                  "extent": 3.0
+                }
+              ]
+            },
+            "mechanical_time_end": 0.0271914,
+            "mechanical_time_start": 0.0
+          },
+          "provenance": {
+            "applicability": null,
+            "formula": null,
+            "generated_utc": "2026-11-16T13:14:42+00:00",
+            "input_files": [
+              {
+                "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\static.json",
+                "sha256": "67ef9424cb223dc1aaf8f582ada65e3797a751de29e10b300f5a474e8c9f1305",
+                "size_bytes": 8888
+              },
+              {
+                "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\frame_index.csv",
+                "sha256": "975fc49b0927324ef735602ddccfa2097652c2f89156d0d6956a2b6a5a282ed8",
+                "size_bytes": 1223
+              },
+              {
+                "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\ball_frames.csv",
+                "sha256": "4421309771187f1232b347df0fcc47a82c8c1cd5258da146c01fdc520fd88026",
+                "size_bytes": 43538
+              },
+              {
+                "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\wall_vertices.csv",
+                "sha256": "6700e4b8797c4a2d9f063c8dc9cea7c6fddc8f5d9b0dc3a676a447b71e3bc085",
+                "size_bytes": 1333
+              },
+              {
+                "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\fracture_events.csv",
+                "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367",
+                "size_bytes": 94
+              },
+              {
+                "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\contact_frames.csv",
+                "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1",
+                "size_bytes": 77
+              },
+              {
+                "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\native_histories.csv",
+                "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333",
+                "size_bytes": 60
+              }
+            ],
+            "method": "read-only legacy adapter; variable-length concatenated arrays; NPZ compression",
+            "notes": [
+              "Raw capture files were not modified.",
+              "Each frame uses explicit offsets; Ball sets may grow or shrink."
+            ],
+            "parent_results": [],
+            "source": "REAL_PFC"
+          },
+          "run_id": "run_pfc2d_001",
+          "schema_version": "1.0.0",
+          "source_format": "pfc-live-capture-working"
+        }
+      ],
+      "data_boundary": "REAL_PFC",
+      "dimensions": [
+        2
+      ],
+      "execution_mode": "CONSOLE",
+      "experiment_id": "run_pfc2d_001",
+      "generated_utc": "2026-11-16T13:14:42+00:00",
+      "metadata": {
+        "case_count": 1,
+        "conversion": "NumPy NPZ with variable-length entity offsets",
+        "raw_input_root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001"
+      },
+      "pfc_version": "9.0.0",
+      "provenance": {
+        "applicability": null,
+        "formula": null,
+        "generated_utc": "2026-11-16T13:14:42+00:00",
+        "input_files": [
+          {
+            "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\static.json",
+            "sha256": "67ef9424cb223dc1aaf8f582ada65e3797a751de29e10b300f5a474e8c9f1305",
+            "size_bytes": 8888
+          },
+          {
+            "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\frame_index.csv",
+            "sha256": "975fc49b0927324ef735602ddccfa2097652c2f89156d0d6956a2b6a5a282ed8",
+            "size_bytes": 1223
+          },
+          {
+            "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\ball_frames.csv",
+            "sha256": "4421309771187f1232b347df0fcc47a82c8c1cd5258da146c01fdc520fd88026",
+            "size_bytes": 43538
+          },
+          {
+            "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\wall_vertices.csv",
+            "sha256": "6700e4b8797c4a2d9f063c8dc9cea7c6fddc8f5d9b0dc3a676a447b71e3bc085",
+            "size_bytes": 1333
+          },
+          {
+            "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\fracture_events.csv",
+            "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367",
+            "size_bytes": 94
+          },
+          {
+            "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\raw\\contact_frames.csv",
+            "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1",
+            "size_bytes": 77
+          },
+          {
+            "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\data\\native_histories.csv",
+            "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333",
+            "size_bytes": 60
+          }
+        ],
+        "method": "standardize_experiment",
+        "notes": [],
+        "parent_results": [],
+        "source": "CONFIG"
+      },
+      "schema_version": "1.0.0",
+      "title": "run_pfc2d_001"
+    },
+    "status": "COMPLETE",
+    "task": {
+      "data": {
+        "description": "PFC2D Console case 0 embedded capture run_pfc2d_001",
+        "elapsed_time": 1.1060023307800293,
+        "end_time": 1794834881.3593404,
+        "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_001\\entry\\capture_case.py",
+        "output": "  },\n  \"post_snapshot\": {\n    \"pid\": 33204,\n    \"cwd\": \"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\instances\\\\pfc2d_accept\",\n    \"python\": \"3.10.5\",\n    \"cycle\": 20,\n    \"mechanical_time_total\": 0.027191377331844683,\n    \"balls\": 37,\n    \"walls\": 2,\n    \"contacts\": 0,\n    \"fractures\": null,\n    \"fracture_module_available\": false\n  },\n  \"capture\": {\n    \"callback_calls\": 20,\n    \"frame_count\": 21,\n    \"fracture_event_count\": 0,\n    \"mechanical_time_run\": 0.027191377331844683,\n    \"sample_stride_cycles\": 1,\n    \"sample_mode\": \"cycle\",\n    \"sample_value\": 1.0,\n    \"sample_interval_mode\": \"Cycle-stride sampling\",\n    \"capture_contacts\": false,\n    \"field_status\": {\n      \"particle_position\": \"REAL_PFC\",\n      \"particle_radius\": \"REAL_PFC\",\n      \"particle_velocity\": \"REAL_PFC\",\n      \"particle_spin\": \"REAL_PFC\",\n      \"wall_vertices\": \"REAL_PFC\",\n      \"contact_network\": \"NOT_CAPTURED\",\n      \"fracture_events\": \"NOT_CAPTURED\"\n    }\n  },\n  \"save_executed\": true,\n  \"solve_elapsed_seconds\": 0.32399140000052284,\n  \"native_history_row_count\": 0,\n  \"ended_utc\": \"2026-11-16T13:14:41.332+00:00\",\n  \"engine\": {\n    \"executable\": \"D:\\\\Itasca\\\\PFC900\\\\exe64\\\\pfc2d9_console.exe\",\n    \"python\": \"3.10.5\",\n    \"runtime_mode\": \"CONSOLE\"\n  },\n  \"files\": [\n    {\n      \"path\": \"native_histories.csv\",\n      \"size_bytes\": 60,\n      \"sha256\": \"9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333\"\n    },\n    {\n      \"path\": \"raw/ball_frames.csv\",\n      \"size_bytes\": 43538,\n      \"sha256\": \"4421309771187f1232b347df0fcc47a82c8c1cd5258da146c01fdc520fd88026\"\n    },\n    {\n      \"path\": \"raw/contact_frames.csv\",\n      \"size_bytes\": 77,\n      \"sha256\": \"f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1\"\n    },\n    {\n      \"path\": \"raw/fracture_events.csv\",\n      \"size_bytes\": 94,\n      \"sha256\": \"20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367\"\n    },\n    {\n      \"path\": \"raw/frame_index.csv\",\n      \"size_bytes\": 1223,\n      \"sha256\": \"975fc49b0927324ef735602ddccfa2097652c2f89156d0d6956a2b6a5a282ed8\"\n    },\n    {\n      \"path\": \"raw/wall_vertices.csv\",\n      \"size_bytes\": 1333,\n      \"sha256\": \"6700e4b8797c4a2d9f063c8dc9cea7c6fddc8f5d9b0dc3a676a447b71e3bc085\"\n    },\n    {\n      \"path\": \"static.json\",\n      \"size_bytes\": 8888,\n      \"sha256\": \"67ef9424cb223dc1aaf8f582ada65e3797a751de29e10b300f5a474e8c9f1305\"\n    }\n  ]\n}",
+        "pagination": {
+          "line_range": "245-324",
+          "total_lines": 324
+        },
+        "result": null,
+        "script_name": "capture_case.py",
+        "start_time": 1794834880.253338,
+        "task_id": "b9b2bc",
+        "task_type": "script"
+      },
+      "message": "Script execution completed: capture_case.py\nElapsed time: 1.11s\n\n=== Script Output ===\n  },\n  \"post_snapshot\": {\n    \"pid\": 33204,\n    \"cwd\": \"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\instances\\\\pfc2d_accept\",\n    \"python\": \"3.10.5\",\n    \"cycle\": 20,\n    \"mechanical_time_total\": 0.027191377331844683,\n    \"balls\": 37,\n    \"walls\": 2,\n    \"contacts\": 0,\n    \"fractures\": null,\n    \"fracture_module_available\": false\n  },\n  \"capture\": {\n    \"callback_calls\": 20,\n    \"frame_count\": 21,\n    \"fracture_event_count\": 0,\n    \"mechanical_time_run\": 0.027191377331844683,\n    \"sample_stride_cycles\": 1,\n    \"sample_mode\": \"cycle\",\n    \"sample_value\": 1.0,\n    \"sample_interval_mode\": \"Cycle-stride sampling\",\n    \"capture_contacts\": false,\n    \"field_status\": {\n      \"particle_position\": \"REAL_PFC\",\n      \"particle_radius\": \"REAL_PFC\",\n      \"particle_velocity\": \"REAL_PFC\",\n      \"particle_spin\": \"REAL_PFC\",\n      \"wall_vertices\": \"REAL_PFC\",\n      \"contact_network\": \"NOT_CAPTURED\",\n      \"fracture_events\": \"NOT_CAPTURED\"\n    }\n  },\n  \"save_executed\": true,\n  \"solve_elapsed_seconds\": 0.32399140000052284,\n  \"native_history_row_count\": 0,\n  \"ended_utc\": \"2026-11-16T13:14:41.332+00:00\",\n  \"engine\": {\n    \"executable\": \"D:\\\\Itasca\\\\PFC900\\\\exe64\\\\pfc2d9_console.exe\",\n    \"python\": \"3.10.5\",\n    \"runtime_mode\": \"CONSOLE\"\n  },\n  \"files\": [\n    {\n      \"path\": \"native_histories.csv\",\n      \"size_bytes\": 60,\n      \"sha256\": \"9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333\"\n    },\n    {\n      \"path\": \"raw/ball_frames.csv\",\n      \"size_bytes\": 43538,\n      \"sha256\": \"4421309771187f1232b347df0fcc47a82c8c1cd5258da146c01fdc520fd88026\"\n    },\n    {\n      \"path\": \"raw/contact_frames.csv\",\n      \"size_bytes\": 77,\n      \"sha256\": \"f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1\"\n    },\n    {\n      \"path\": \"raw/fracture_events.csv\",\n      \"size_bytes\": 94,\n      \"sha256\": \"20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367\"\n    },\n    {\n      \"path\": \"raw/frame_index.csv\",\n      \"size_bytes\": 1223,\n      \"sha256\": \"975fc49b0927324ef735602ddccfa2097652c2f89156d0d6956a2b6a5a282ed8\"\n    },\n    {\n      \"path\": \"raw/wall_vertices.csv\",\n      \"size_bytes\": 1333,\n      \"sha256\": \"6700e4b8797c4a2d9f063c8dc9cea7c6fddc8f5d9b0dc3a676a447b71e3bc085\"\n    },\n    {\n      \"path\": \"static.json\",\n      \"size_bytes\": 8888,\n      \"sha256\": \"67ef9424cb223dc1aaf8f582ada65e3797a751de29e10b300f5a474e8c9f1305\"\n    }\n  ]\n}",
+      "request_id": "unknown",
+      "status": "completed",
+      "type": "result"
+    },
+    "task_id": "b9b2bc",
+    "task_kind": "task",
+    "task_status": "completed",
+    "transport": "bridge",
+    "validation": {
+      "added_ball_count": 1,
+      "added_ball_ids": [
+        10000
+      ],
+      "all_ball_values_finite": true,
+      "ball_count_end": 37,
+      "ball_count_start": 37,
+      "ball_spin_rows": 777,
+      "ball_velocity_rows": 777,
+      "case_id": 0,
+      "contact_rows": 0,
+      "cycle_end": 20,
+      "cycle_start": 0,
+      "errors": [],
+      "fracture_catalog": 0,
+      "fracture_events": 0,
+      "frames": 21,
+      "hash_errors": [],
+      "matched_fracture_events": 0,
+      "mechanical_time_run": 0.027191377331844683,
+      "native_history_rows": 0,
+      "removed_ball_count": 1,
+      "removed_ball_ids": [
+        2
+      ],
+      "run_id": "run_pfc2d_001",
+      "schema_version": 1,
+      "status": "PASS",
+      "strictly_increasing_cycles": true,
+      "strictly_increasing_time": true,
+      "wall_vertex_rows": 84,
+      "warnings": []
+    }
+  },
+  "input_snapshot": "input",
+  "instance_id": "pfc2d_accept",
+  "mcp_task_id": "b9b2bc",
+  "output_path": "deliveries/run_pfc2d_001",
+  "run_id": "run_pfc2d_001",
+  "schema_version": "1.0.0",
+  "script_version": "sha256:3c4f9f51457737876b7d395da870d7419d83745f8924e537dd2d939c0b42c008",
+  "start_time": "2026-11-16T13:14:40+00:00",
+  "task_status": "COMPLETED"
+}

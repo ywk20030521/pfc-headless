@@ -1,0 +1,1612 @@
+{
+  "status": "GENERATED",
+  "charts": [
+    {
+      "id": "case_0:speed_time",
+      "case_id": 0,
+      "type": "line",
+      "title": "平均速度–机械时间",
+      "basis": "Backward finite differences between consecutive real same-ID observations.",
+      "x": {
+        "name": "机械时间",
+        "unit": "s",
+        "data": [
+          0.0,
+          0.000822338,
+          0.00168579,
+          0.00259242,
+          0.00354438,
+          0.00454393,
+          0.00559347,
+          0.00669548,
+          0.00785259,
+          0.00906756,
+          0.0103433,
+          0.0116828,
+          0.0130893,
+          0.0145661,
+          0.0161167,
+          0.0177449,
+          0.0194544,
+          0.0212495,
+          0.0231343,
+          0.0251134,
+          0.0271914
+        ]
+      },
+      "y": {
+        "name": "平均速度",
+        "unit": "m/s",
+        "data": [
+          null,
+          0.004062247567951741,
+          0.006479334803325527,
+          0.009166706165481504,
+          0.011790752052946274,
+          0.014782327723149427,
+          0.01771689939839987,
+          0.02087585902614693,
+          0.024228582533322295,
+          0.027701718360748452,
+          0.031358588274575785,
+          0.03530966576878897,
+          0.0392617288458045,
+          0.04352544581417946,
+          0.047897762330882256,
+          0.05271282829322436,
+          0.05756543323083548,
+          0.06272028811162879,
+          0.06813572910771531,
+          0.0722345811022463,
+          0.07818068308925114
+        ]
+      },
+      "source_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "color": "#8491B4",
+      "source_channels": [
+        "mechanical_time_total",
+        "ball.velocity"
+      ],
+      "analysis_goal": "temporal_trend",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.91,
+        "reason": "At least three finite frame-aligned mechanical-time samples preserve the temporal trend without interpolation.",
+        "alternatives": [
+          {
+            "type": "area",
+            "score": 0.73,
+            "reason": "Adds magnitude emphasis without improving trend identification."
+          },
+          {
+            "type": "scatter",
+            "score": 0.6,
+            "reason": "Shows real observations but obscures continuity."
+          }
+        ],
+        "derived": true,
+        "missing_count": 1,
+        "manual_override": null,
+        "compatible_types": [
+          "line",
+          "area",
+          "scatter"
+        ]
+      },
+      "display": {
+        "x": {
+          "status": "GENERATED",
+          "unit": "s",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "s",
+            "scientific": true,
+            "significant_digits": 4,
+            "decimals": null,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        },
+        "y": {
+          "status": "GENERATED",
+          "unit": "m/s",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "m/s",
+            "scientific": false,
+            "significant_digits": 4,
+            "decimals": 6,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        }
+      }
+    },
+    {
+      "id": "case_0:acceleration_time",
+      "case_id": 0,
+      "type": "line",
+      "title": "平均加速度–机械时间",
+      "basis": "Backward finite differences between consecutive real same-ID velocity observations.",
+      "x": {
+        "name": "机械时间",
+        "unit": "s",
+        "data": [
+          0.0,
+          0.000822338,
+          0.00168579,
+          0.00259242,
+          0.00354438,
+          0.00454393,
+          0.00559347,
+          0.00669548,
+          0.00785259,
+          0.00906756,
+          0.0103433,
+          0.0116828,
+          0.0130893,
+          0.0145661,
+          0.0161167,
+          0.0177449,
+          0.0194544,
+          0.0212495,
+          0.0231343,
+          0.0251134,
+          0.0271914
+        ]
+      },
+      "y": {
+        "name": "平均加速度",
+        "unit": "m/s^2",
+        "data": [
+          null,
+          null,
+          2.7993301716526093,
+          2.9641324047913447,
+          2.7564665400487094,
+          2.9929224853215484,
+          2.796055105332279,
+          2.8665435229689886,
+          2.8974976511959754,
+          2.8586185892871034,
+          2.86646958927944,
+          2.9496659157993026,
+          2.809856435844673,
+          2.8871322916948574,
+          2.8197578464483315,
+          2.957293921104353,
+          2.8386106683890744,
+          2.871625469775117,
+          2.876590606005743,
+          2.872164782667803,
+          2.861454276710684
+        ]
+      },
+      "source_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "color": "#F39B7F",
+      "source_channels": [
+        "mechanical_time_total",
+        "ball.acceleration"
+      ],
+      "analysis_goal": "temporal_trend",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.91,
+        "reason": "At least three finite frame-aligned mechanical-time samples preserve the temporal trend without interpolation.",
+        "alternatives": [
+          {
+            "type": "area",
+            "score": 0.73,
+            "reason": "Adds magnitude emphasis without improving trend identification."
+          },
+          {
+            "type": "scatter",
+            "score": 0.6,
+            "reason": "Shows real observations but obscures continuity."
+          }
+        ],
+        "derived": true,
+        "missing_count": 2,
+        "manual_override": null,
+        "compatible_types": [
+          "line",
+          "area",
+          "scatter"
+        ]
+      },
+      "display": {
+        "x": {
+          "status": "GENERATED",
+          "unit": "s",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "s",
+            "scientific": true,
+            "significant_digits": 4,
+            "decimals": null,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        },
+        "y": {
+          "status": "GENERATED",
+          "unit": "m/s^2",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "m/s^2",
+            "scientific": false,
+            "significant_digits": 4,
+            "decimals": 3,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        }
+      }
+    },
+    {
+      "id": "case_0:motion",
+      "case_id": 0,
+      "type": "area",
+      "title": "颗粒平均位移",
+      "basis": "Mean displacement over present captured Ball IDs at each real frame.",
+      "x": {
+        "name": "Cycle",
+        "unit": "cycle",
+        "data": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          11.0,
+          12.0,
+          13.0,
+          14.0,
+          15.0,
+          16.0,
+          17.0,
+          18.0,
+          19.0,
+          20.0
+        ]
+      },
+      "y": {
+        "name": "平均位移",
+        "unit": "m",
+        "data": [
+          0.0,
+          3.3405405405342984e-06,
+          8.935135135135332e-06,
+          1.7245945945945826e-05,
+          2.8470270270268568e-05,
+          4.324594594594257e-05,
+          6.184054054053917e-05,
+          8.484594594594335e-05,
+          0.0001128810810810759,
+          0.00014653783783783448,
+          0.00018654324324324177,
+          0.0002338405405405346,
+          0.0002890621621621586,
+          0.00035334054054053887,
+          0.0004276108108108049,
+          0.0005134378378378328,
+          0.000611845945945946,
+          0.0007244351351351309,
+          0.0008297918918918879,
+          0.0009727513513513436,
+          0.0011352108108108076
+        ]
+      },
+      "source_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "color": "#8491B4",
+      "source_channels": [
+        "ball.displacement",
+        "cycle"
+      ],
+      "analysis_goal": "temporal_trend",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.8,
+        "reason": "The channel is an ordered frame summary and is useful even when fracture data is absent.",
+        "alternatives": [
+          {
+            "type": "area",
+            "score": 0.64,
+            "reason": "A filled trend is decorative when the baseline is not zero."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "line",
+          "area"
+        ]
+      },
+      "display": {
+        "x": {
+          "status": "GENERATED",
+          "unit": "cycle",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "cycle",
+            "scientific": false,
+            "significant_digits": 4,
+            "decimals": 3,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        },
+        "y": {
+          "status": "GENERATED",
+          "unit": "m",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "m",
+            "scientific": true,
+            "significant_digits": 4,
+            "decimals": null,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        }
+      }
+    },
+    {
+      "id": "case_0:displacement_hist",
+      "case_id": 0,
+      "type": "histogram",
+      "title": "末帧颗粒累计位移分布",
+      "basis": "Distribution of real final-frame particle displacements.",
+      "counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        36
+      ],
+      "edges": [
+        7.299999999998974e-05,
+        0.00010712499999999091,
+        0.00014124999999999208,
+        0.00017537499999999324,
+        0.0002094999999999944,
+        0.00024362499999999558,
+        0.00027774999999999675,
+        0.0003118749999999979,
+        0.0003459999999999991,
+        0.00038012500000000025,
+        0.0004142500000000014,
+        0.0004483750000000026,
+        0.00048250000000000376,
+        0.0005166250000000049,
+        0.0005507500000000061,
+        0.0005848750000000073,
+        0.0006190000000000084,
+        0.0006531250000000096,
+        0.0006872500000000108,
+        0.0007213750000000119,
+        0.0007555000000000131,
+        0.0007896250000000143,
+        0.0008237500000000154,
+        0.0008578750000000166,
+        0.0008920000000000178,
+        0.000926125000000019,
+        0.0009602500000000201,
+        0.0009943750000000213,
+        0.0010285000000000225,
+        0.0010626250000000236,
+        0.0010967500000000248,
+        0.001130875000000026,
+        0.0011650000000000271
+      ],
+      "color": "#8491B4",
+      "display": {
+        "x": {
+          "status": "GENERATED",
+          "unit": "m",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "m",
+            "scientific": true,
+            "significant_digits": 4,
+            "decimals": null,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        },
+        "y": {
+          "status": "GENERATED",
+          "unit": "count",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "count",
+            "scientific": false,
+            "significant_digits": 4,
+            "decimals": 3,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        }
+      },
+      "source_channels": [
+        "ball.displacement"
+      ],
+      "analysis_goal": "spatial_distribution",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.9,
+        "reason": "A finite particle-level sample is available for distribution analysis in the final captured frame.",
+        "alternatives": [
+          {
+            "type": "boxplot",
+            "score": 0.74,
+            "reason": "Compact for summary comparison but hides multimodality."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "histogram",
+          "boxplot"
+        ]
+      }
+    },
+    {
+      "id": "case_0:particle_density",
+      "case_id": 0,
+      "type": "heatmap",
+      "title": "末帧颗粒数密度",
+      "basis": "Particle-count density from the final captured frame, not a stress or strain field.",
+      "x": [
+        -0.602306,
+        -0.5537038333333333,
+        -0.5051016666666667,
+        -0.4564995,
+        -0.40789733333333333,
+        -0.35929516666666667,
+        -0.310693,
+        -0.26209083333333333,
+        -0.21348866666666666,
+        -0.1648865,
+        -0.11628433333333332,
+        -0.06768216666666671,
+        -0.019079999999999986,
+        0.029522166666666738,
+        0.07812433333333335,
+        0.12672649999999996,
+        0.1753286666666667,
+        0.2239308333333334,
+        0.272533,
+        0.32113516666666664,
+        0.36973733333333336,
+        0.4183395000000001,
+        0.4669416666666666,
+        0.5155438333333333,
+        0.564146
+      ],
+      "y": [
+        -0.606669,
+        -0.5576594583333333,
+        -0.5086499166666667,
+        -0.459640375,
+        -0.4106308333333334,
+        -0.3616212916666667,
+        -0.31261175,
+        -0.26360220833333337,
+        -0.2145926666666667,
+        -0.16558312500000005,
+        -0.1165735833333334,
+        -0.06756404166666674,
+        -0.01855450000000003,
+        0.03045504166666657,
+        0.07946458333333328,
+        0.12847412499999988,
+        0.1774836666666666,
+        0.2264932083333333,
+        0.2755027499999999,
+        0.3245122916666666,
+        0.3735218333333332,
+        0.4225313749999998,
+        0.47154091666666653,
+        0.5205504583333332,
+        0.56956
+      ],
+      "z": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "color": [
+        "#EAEEF5",
+        "#3C5488"
+      ],
+      "display": {
+        "x": {
+          "status": "GENERATED",
+          "unit": "m",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "m",
+            "scientific": false,
+            "significant_digits": 4,
+            "decimals": 5,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        },
+        "y": {
+          "status": "GENERATED",
+          "unit": "m",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "m",
+            "scientific": false,
+            "significant_digits": 4,
+            "decimals": 5,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        },
+        "z": {
+          "status": "GENERATED",
+          "unit": "count",
+          "formatting": {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "unit": "count",
+            "scientific": false,
+            "significant_digits": 4,
+            "decimals": 3,
+            "axis_formatter": "number",
+            "tooltip_digits": 8,
+            "missing_text": "—",
+            "rule": "Axis values prioritize readability; tooltips retain higher precision. Formatted strings never replace analysis values."
+          },
+          "value_materialization": "GENERATED_ON_RENDER",
+          "rule": "Per-point display strings are derived from chart values at render time."
+        }
+      },
+      "source_channels": [
+        "ball.position"
+      ],
+      "analysis_goal": "spatial_distribution",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.86,
+        "reason": "The final real frame has XY coordinates; binned counts expose spatial heterogeneity without claiming a physical field.",
+        "alternatives": [
+          {
+            "type": "scatter",
+            "score": 0.58,
+            "reason": "Would overplot dense particles and obscure count gradients."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "heatmap"
+        ]
+      }
+    },
+    {
+      "id": "case_0:correlation",
+      "case_id": 0,
+      "type": "correlation",
+      "title": "通道相关性",
+      "basis": "Pearson correlation on frame-aligned native samples; no interpolation",
+      "labels": [
+        "机械时间",
+        "平均累计位移",
+        "平均速度",
+        "平均加速度"
+      ],
+      "source_labels": [
+        "mechanical_time_total",
+        "frame_displacement_mean_m",
+        "frame_speed_mean_m_s",
+        "frame_acceleration_mean_m_s2"
+      ],
+      "values": [
+        [
+          1.0,
+          0.9764185340502776,
+          0.9998360727707968,
+          0.033299317766235854
+        ],
+        [
+          0.9764185340502776,
+          0.9999999999999999,
+          0.9735392178759974,
+          0.013076084455782535
+        ],
+        [
+          0.9998360727707969,
+          0.9735392178759974,
+          1.0,
+          0.03577897615532397
+        ],
+        [
+          0.03329931776623586,
+          0.013076084455782535,
+          0.035778976155323966,
+          1.0
+        ]
+      ],
+      "color": [
+        "#E64B35",
+        "#FFFFFF",
+        "#3C5488"
+      ],
+      "source_channels": [
+        "mechanical_time_total",
+        "frame_displacement_mean_m",
+        "frame_speed_mean_m_s",
+        "frame_acceleration_mean_m_s2"
+      ],
+      "analysis_goal": "multivariate_association",
+      "decision": {
+        "status": "GENERATED",
+        "score": 0.75,
+        "reason": "At least two frame-aligned finite channels vary; a compact matrix shows pairwise association for exploration.",
+        "alternatives": [
+          {
+            "type": "scatter",
+            "score": 0.66,
+            "reason": "Better for one selected pair but requires multiple panels for all pairs."
+          }
+        ],
+        "derived": true,
+        "missing_count": 0,
+        "manual_override": null,
+        "compatible_types": [
+          "correlation"
+        ]
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "id": "case_0:stress_strain",
+      "case_id": 0,
+      "status": "NOT_CAPTURED",
+      "reason": "No valid stress channel exists; no stress chart was generated."
+    },
+    {
+      "id": "case_0:stress_time",
+      "case_id": 0,
+      "status": "NOT_CAPTURED",
+      "reason": "No valid stress channel exists; no stress–time chart was generated."
+    },
+    {
+      "id": "case_0:line_load_time",
+      "case_id": 0,
+      "status": "NOT_GENERATED",
+      "reason": "PFC2D line load is constant across all captured frames, so a line-load–time trend is omitted."
+    },
+    {
+      "id": "case_0:fracture",
+      "case_id": 0,
+      "status": "NOT_CAPTURED",
+      "reason": "No captured fracture events; fracture evolution and orientation charts are omitted."
+    },
+    {
+      "id": "experiment:case_comparison",
+      "case_id": null,
+      "status": "NOT_GENERATED",
+      "reason": "A comparison requires at least two cases."
+    }
+  ],
+  "decision_policy": {
+    "requires_real_data": true,
+    "requires_valid_samples": true,
+    "requires_explicit_physical_meaning": true,
+    "minimum_points_enforced": true,
+    "duplicate_and_misleading_candidates_excluded": true,
+    "manual_overrides_supported": true
+  },
+  "chart_type_registry": {
+    "line": {
+      "roles": [
+        "trend",
+        "path"
+      ],
+      "minimum_points": 2
+    },
+    "area": {
+      "roles": [
+        "trend",
+        "magnitude"
+      ],
+      "minimum_points": 2
+    },
+    "scatter": {
+      "roles": [
+        "relationship"
+      ],
+      "minimum_points": 3
+    },
+    "bar": {
+      "roles": [
+        "category_comparison"
+      ],
+      "minimum_points": 1
+    },
+    "grouped-bar": {
+      "roles": [
+        "multi_case_comparison"
+      ],
+      "minimum_points": 1
+    },
+    "stacked-bar": {
+      "roles": [
+        "composition",
+        "category_comparison"
+      ],
+      "minimum_points": 1
+    },
+    "histogram": {
+      "roles": [
+        "distribution"
+      ],
+      "minimum_points": 5
+    },
+    "boxplot": {
+      "roles": [
+        "distribution",
+        "case_comparison"
+      ],
+      "minimum_points": 5
+    },
+    "heatmap": {
+      "roles": [
+        "spatial_distribution",
+        "time_distribution"
+      ],
+      "minimum_points": 1
+    },
+    "correlation": {
+      "roles": [
+        "multivariate_relationship"
+      ],
+      "minimum_points": 3
+    },
+    "rose": {
+      "roles": [
+        "direction_distribution"
+      ],
+      "minimum_points": 1
+    },
+    "radar": {
+      "roles": [
+        "multivariate_index"
+      ],
+      "minimum_points": 3
+    },
+    "dual-line": {
+      "roles": [
+        "temporal_relationship"
+      ],
+      "minimum_points": 2
+    },
+    "polar": {
+      "roles": [
+        "direction_distribution"
+      ],
+      "minimum_points": 1
+    }
+  },
+  "channel_features": {
+    "mechanical_time_total": {
+      "label": "机械时间",
+      "unit": "s",
+      "role": "time"
+    },
+    "cycle": {
+      "label": "Cycle",
+      "unit": "cycle",
+      "role": "cycle"
+    },
+    "ball_count": {
+      "label": "颗粒数",
+      "unit": "count",
+      "role": "count"
+    },
+    "frame_displacement_mean_m": {
+      "label": "平均累计位移",
+      "unit": "m",
+      "role": "temporal_magnitude"
+    },
+    "frame_speed_mean_m_s": {
+      "label": "平均速度",
+      "unit": "m/s",
+      "role": "temporal_magnitude"
+    },
+    "frame_acceleration_mean_m_s2": {
+      "label": "平均加速度",
+      "unit": "m/s^2",
+      "role": "temporal_magnitude"
+    },
+    "crack_count_cumulative": {
+      "label": "累计裂纹",
+      "unit": "event",
+      "role": "temporal_count"
+    },
+    "axial_strain": {
+      "label": "轴向应变",
+      "unit": "1",
+      "role": "mechanical_response"
+    },
+    "axial_stress_pa": {
+      "label": "名义轴向应力",
+      "unit": "Pa",
+      "role": "mechanical_response"
+    },
+    "axial_load_per_unit_thickness_n_m": {
+      "label": "轴向线载荷",
+      "unit": "N/m",
+      "role": "mechanical_response"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "dimension": 2,
+  "balls": [
+    {
+      "id": 1,
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "radius": 0.6
+    },
+    {
+      "id": 2,
+      "x": 0.8,
+      "y": 0.0,
+      "z": 0.0,
+      "radius": 0.6
+    },
+    {
+      "id": 3,
+      "x": 0.4,
+      "y": 0.5,
+      "z": 0.0,
+      "radius": 0.6
+    }
+  ],
+  "walls": [
+    {
+      "id": 101,
+      "name": "bottom",
+      "position": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "vertices": [
+        {
+          "id": 1,
+          "position": [
+            -2.0,
+            -1.0,
+            0.0
+          ]
+        },
+        {
+          "id": 2,
+          "position": [
+            2.0,
+            -1.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "name": "top",
+      "position": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "vertices": [
+        {
+          "id": 3,
+          "position": [
+            -2.0,
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "id": 4,
+          "position": [
+            2.0,
+            1.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "geometry": {
+    "dimension": 2,
+    "axis": "y",
+    "axis_index": 1,
+    "top": 102,
+    "bottom": 101,
+    "height0": 2.0,
+    "area0": 4.0,
+    "area_kind": "unit_thickness_length",
+    "transverse_spans": [
+      {
+        "axis": "x",
+        "extent": 4.0
+      }
+    ]
+  }
+}

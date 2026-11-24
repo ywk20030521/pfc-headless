@@ -1,0 +1,273 @@
+[
+  {
+    "id": "cycle",
+    "entity_type": "history",
+    "variable": "cycle",
+    "unit": "cycle",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "frame"
+    ],
+    "description": "PFC Cycle at capture.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "mechanical_time_total",
+    "entity_type": "history",
+    "variable": "mechanical_time_total",
+    "unit": "s",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "frame"
+    ],
+    "description": "PFC total mechanical time at capture.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "ball_id",
+    "entity_type": "ball",
+    "variable": "id",
+    "unit": null,
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "entity",
+      "frame_variable_length"
+    ],
+    "description": "Stable PFC Ball ID; offsets define each real frame.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "ball_xyz",
+    "entity_type": "ball",
+    "variable": "position",
+    "unit": "m",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "entity",
+      "xyz"
+    ],
+    "description": "Same-Cycle Ball coordinates.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "ball_radius",
+    "entity_type": "ball",
+    "variable": "radius",
+    "unit": "m",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "entity"
+    ],
+    "description": "Static radius or a real radius update at/after Ball creation.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "wall_vertex_xyz",
+    "entity_type": "wall",
+    "variable": "vertex_position",
+    "unit": "m",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "entity",
+      "xyz",
+      "frame_variable_length"
+    ],
+    "description": "Wall vertices from each captured frame.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "ball_velocity",
+    "entity_type": "ball",
+    "variable": "velocity",
+    "unit": "m/s",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "entity",
+      "xyz"
+    ],
+    "description": "Captured Ball velocity in the global coordinate system.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "ball_spin",
+    "entity_type": "ball",
+    "variable": "angular_velocity",
+    "unit": "rad/s",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "entity",
+      "xyz"
+    ],
+    "description": "Captured Ball angular velocity; PFC2D uses the z component.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "contact_id",
+    "entity_type": "contact",
+    "variable": "id",
+    "unit": null,
+    "source": "NOT_CAPTURED",
+    "status": "NOT_CAPTURED",
+    "dimensions": [
+      "contact"
+    ],
+    "description": "Contact network was disabled for this Case.",
+    "provenance": {
+      "source": "NOT_CAPTURED",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "contact_force_xyz",
+    "entity_type": "contact",
+    "variable": "force_global",
+    "unit": "N",
+    "source": "NOT_CAPTURED",
+    "status": "NOT_CAPTURED",
+    "dimensions": [
+      "contact",
+      "xyz"
+    ],
+    "description": "Contact force was not captured.",
+    "provenance": {
+      "source": "NOT_CAPTURED",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "top_force_n",
+    "entity_type": "wall",
+    "variable": "contact_force_magnitude",
+    "unit": "N",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "frame"
+    ],
+    "description": "Top platen contact-force magnitude.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  },
+  {
+    "id": "bottom_force_n",
+    "entity_type": "wall",
+    "variable": "contact_force_magnitude",
+    "unit": "N",
+    "source": "REAL_PFC",
+    "status": "GENERATED",
+    "dimensions": [
+      "frame"
+    ],
+    "description": "Bottom platen contact-force magnitude.",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [],
+      "formula": null,
+      "method": null,
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:16:28+00:00"
+    }
+  }
+]

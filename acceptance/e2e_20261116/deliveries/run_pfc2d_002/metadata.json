@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run_pfc2d_002",
+  "case_id": 0,
+  "case_ids": [
+    0
+  ],
+  "engine_dimension": 2,
+  "engine_version": "9.0.0",
+  "model_identity": {
+    "sha256": "a91a064bab58963f2e84e210be3fc0d72c7555b2d1f044a575a1148962425be7",
+    "ball_count": 41,
+    "wall_count": 2,
+    "wall_vertex_count": 4,
+    "basis": "static initial topology plus captured fracture events"
+  },
+  "script_identity": {
+    "input_files": [
+      {
+        "path": "static.json",
+        "size_bytes": 9607,
+        "sha256": "7953df09fe007d5d4c7cb96b101e4d5d0716d577272f3bf2f2e44ea3f102ae62"
+      },
+      {
+        "path": "frame_index.csv",
+        "size_bytes": 1221,
+        "sha256": "91f307c60371218c633460b963000515e23d799c89c6e7aaa455ee5f9bb0c380"
+      },
+      {
+        "path": "ball_frames.csv",
+        "size_bytes": 48804,
+        "sha256": "cd681bf8856d218374814e4af0f11b06ca9b4cb0d5b83038d91c24272fb842b0"
+      },
+      {
+        "path": "wall_vertices.csv",
+        "size_bytes": 1333,
+        "sha256": "6700e4b8797c4a2d9f063c8dc9cea7c6fddc8f5d9b0dc3a676a447b71e3bc085"
+      },
+      {
+        "path": "fracture_events.csv",
+        "size_bytes": 94,
+        "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+      },
+      {
+        "path": "contact_frames.csv",
+        "size_bytes": 77,
+        "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+      },
+      {
+        "path": "native_histories.csv",
+        "size_bytes": 60,
+        "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+      }
+    ],
+    "capture_config_sha256": "28bd10ac1fdede150c2a7aafb337c98105b05831cd306fd12b683ecd5b36dbb0",
+    "capture_config_available": true
+  },
+  "parameters": {},
+  "sampling_configuration": {
+    "mode": "cycle",
+    "value": 1.0,
+    "capture_contacts": true,
+    "source": "recorded capture configuration"
+  },
+  "units": {
+    "length": "m",
+    "time": "s",
+    "force": "N",
+    "velocity": "m/s",
+    "angular_velocity": "rad/s",
+    "unknown_native_histories": "UNKNOWN"
+  },
+  "coordinate_system": {
+    "name": "PFC_GLOBAL_CARTESIAN",
+    "dimensions": 2,
+    "pfc2d_z": "numeric embedding only; not a physical out-of-plane coordinate"
+  },
+  "time_range": [
+    0.0,
+    0.0272798
+  ],
+  "step_range": [
+    0,
+    20
+  ],
+  "data_files": [
+    {
+      "path": "cases/case_0/arrays.npz",
+      "size_bytes": 13102,
+      "sha256": "64c8b86bc63586cfc72e78d8dcb322d3f35f4e8d4ff1342a7fae79ad89f90166"
+    },
+    {
+      "path": "cases/case_0/case.json",
+      "size_bytes": 10769,
+      "sha256": "5574f7e9c929dea9c3514f55c0ef9f7c471c2b554230421271e9a870d5e9fc1f"
+    },
+    {
+      "path": "cases/case_0/channels.json",
+      "size_bytes": 6426,
+      "sha256": "89894e05e39b8be8c29a591aaa10f63698322b851fa9b3cefc1e3fecfb0c1e40"
+    },
+    {
+      "path": "cases/case_0/conversion_report.json",
+      "size_bytes": 5909,
+      "sha256": "f9b405a75d76c1e225556c736eb8569085b3f3ef3e5f37c02aac607d679cae4f"
+    },
+    {
+      "path": "cases/case_0/entity_changes.json",
+      "size_bytes": 4356,
+      "sha256": "cc13e7a681e392c833921b3297cdfabc127bbc2a4cca58d6dd481f372e797c87"
+    },
+    {
+      "path": "cases/case_0/events.json",
+      "size_bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "cases/case_0/frame_summary.csv",
+      "size_bytes": 724,
+      "sha256": "78aacf6db11295147468316634c4ff5c33221e0c29039bbc0bbf641fdb95cce5"
+    },
+    {
+      "path": "cases/case_0/frames.json",
+      "size_bytes": 12932,
+      "sha256": "f4fb450cb2705d78ed26ab77abea5ba6b3b9c0e5f2d4f608399da6e06a6ed73e"
+    },
+    {
+      "path": "cases/case_0/static.json",
+      "size_bytes": 7085,
+      "sha256": "f365483561f00ef2ef7fc86164852aeed7efbf61e7d3898adfa40899f481e019"
+    },
+    {
+      "path": "conversion_report.json",
+      "size_bytes": 7074,
+      "sha256": "81c2b153806a2b1508b18eb89e73a770e29a5f1b5dc2e3999944e73e0e9c0777"
+    },
+    {
+      "path": "experiment.json",
+      "size_bytes": 15089,
+      "sha256": "b588299f673fce96fff64aa6b6cafb00bfc525d2e3d659cf02d72b1781cebc32"
+    },
+    {
+      "path": "schema/case.schema.json",
+      "size_bytes": 1191,
+      "sha256": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75"
+    },
+    {
+      "path": "schema/channel.schema.json",
+      "size_bytes": 930,
+      "sha256": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308"
+    },
+    {
+      "path": "schema/experiment.schema.json",
+      "size_bytes": 1015,
+      "sha256": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac"
+    },
+    {
+      "path": "schema/feedback.schema.json",
+      "size_bytes": 1921,
+      "sha256": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080"
+    },
+    {
+      "path": "schema/frame.schema.json",
+      "size_bytes": 841,
+      "sha256": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684"
+    },
+    {
+      "path": "schema/instance.schema.json",
+      "size_bytes": 1246,
+      "sha256": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8"
+    },
+    {
+      "path": "schema/manifest.schema.json",
+      "size_bytes": 1209,
+      "sha256": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8"
+    },
+    {
+      "path": "schema/metadata.schema.json",
+      "size_bytes": 1359,
+      "sha256": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969"
+    },
+    {
+      "path": "schema/project.schema.json",
+      "size_bytes": 1014,
+      "sha256": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171"
+    },
+    {
+      "path": "schema/run.schema.json",
+      "size_bytes": 1159,
+      "sha256": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077"
+    },
+    {
+      "path": "validation_report.json",
+      "size_bytes": 713,
+      "sha256": "5df35bc20afbf87d8015897ccd78cda3a431ae16e985bf839d5e9e1492435352"
+    }
+  ],
+  "file_hashes": {
+    "cases/case_0/arrays.npz": "64c8b86bc63586cfc72e78d8dcb322d3f35f4e8d4ff1342a7fae79ad89f90166",
+    "cases/case_0/case.json": "5574f7e9c929dea9c3514f55c0ef9f7c471c2b554230421271e9a870d5e9fc1f",
+    "cases/case_0/channels.json": "89894e05e39b8be8c29a591aaa10f63698322b851fa9b3cefc1e3fecfb0c1e40",
+    "cases/case_0/conversion_report.json": "f9b405a75d76c1e225556c736eb8569085b3f3ef3e5f37c02aac607d679cae4f",
+    "cases/case_0/entity_changes.json": "cc13e7a681e392c833921b3297cdfabc127bbc2a4cca58d6dd481f372e797c87",
+    "cases/case_0/events.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "cases/case_0/frame_summary.csv": "78aacf6db11295147468316634c4ff5c33221e0c29039bbc0bbf641fdb95cce5",
+    "cases/case_0/frames.json": "f4fb450cb2705d78ed26ab77abea5ba6b3b9c0e5f2d4f608399da6e06a6ed73e",
+    "cases/case_0/static.json": "f365483561f00ef2ef7fc86164852aeed7efbf61e7d3898adfa40899f481e019",
+    "conversion_report.json": "81c2b153806a2b1508b18eb89e73a770e29a5f1b5dc2e3999944e73e0e9c0777",
+    "experiment.json": "b588299f673fce96fff64aa6b6cafb00bfc525d2e3d659cf02d72b1781cebc32",
+    "schema/case.schema.json": "f4db78ea39d9286b3dfcbb2fdba226ff8bd07356e7dcf4c249992908195a9c75",
+    "schema/channel.schema.json": "e83ad3d448be92b46a67fb85bb879d04f158966653dbf14f1a36c583a4146308",
+    "schema/experiment.schema.json": "8eee512d8fa4104265738664d3946c10bd825233dc24a6df7d8894c5b8b552ac",
+    "schema/feedback.schema.json": "fb835db5982d1603cafa1a63c1457205af3b2de8bb46fdf60030dbf7e0f99080",
+    "schema/frame.schema.json": "cc12ef98f743772f854571ad46a673c1229b1d8a90fa277aa858aa98fa15a684",
+    "schema/instance.schema.json": "e4af2a2f9b6060e6e610e171012c811a47b0e2ba2693c22f43466d626ad2a0c8",
+    "schema/manifest.schema.json": "edc9b0e2ea744d6e725e6362facd9813f4ee769f9451b8ede978431f05d149d8",
+    "schema/metadata.schema.json": "af247a32916a1e3c4936a002ca9488dbe91b5dd67f92109764ee71d64414e969",
+    "schema/project.schema.json": "0ea5fb2c2c04262e0afdee81271a82ee3131007a9229c0f402ca94d3f06fc171",
+    "schema/run.schema.json": "25341ed51167eab288827f878de540e6c1e491118f07ae016f38b52a36966077",
+    "validation_report.json": "5df35bc20afbf87d8015897ccd78cda3a431ae16e985bf839d5e9e1492435352"
+  },
+  "record_counts": {
+    "cases": 1,
+    "frames": 21,
+    "ball_observations": 861,
+    "wall_observations": 84,
+    "events": 0
+  },
+  "validation_status": "PASS",
+  "source": {
+    "raw_input_root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002",
+    "data_boundary": "REAL_PFC",
+    "engine": {
+      "executable": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+      "python": "3.10.5",
+      "runtime_mode": "CONSOLE"
+    },
+    "snapshot": {
+      "pid": 33204,
+      "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept",
+      "python": "3.10.5",
+      "cycle": 0,
+      "mechanical_time_total": 0.0,
+      "balls": 41,
+      "walls": 2,
+      "contacts": 0,
+      "fractures": null,
+      "fracture_module_available": false
+    }
+  }
+}

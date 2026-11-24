@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case_id": 0,
+      "path": "cases/case_0/case.json"
+    },
+    {
+      "case_id": 1,
+      "path": "cases/case_1/case.json"
+    },
+    {
+      "case_id": 2,
+      "path": "cases/case_2/case.json"
+    },
+    {
+      "case_id": 3,
+      "path": "cases/case_3/case.json"
+    }
+  ],
+  "configuration": {
+    "default_port": 9001,
+    "default_sampling": {
+      "capture_contacts": false,
+      "interval": 1,
+      "mode": "cycle"
+    },
+    "default_transport": "bridge",
+    "execution_mode": "CONSOLE"
+  },
+  "created_utc": "2026-11-16T13:13:07+00:00",
+  "project_id": "pfc_headless_e2e_20261116",
+  "project_name": "PFC Headless E2E Acceptance",
+  "project_root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116",
+  "schema_version": "1.0.0"
+}

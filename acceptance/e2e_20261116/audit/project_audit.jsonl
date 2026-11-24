@@ -1,0 +1,46 @@
+{"event": "PROJECT_CREATED", "project_root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116", "time_utc": "2026-11-16T13:13:07+00:00"}
+{"case_id": 0, "config_sha256": "dc71cbd6bc9c16e6d062e10e88ed6b2409876de4c86cc2177c0bc6c29f9a0a75", "event": "CASE_ADDED", "source_config": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\examples\\console\\pfc2d_smoke.json", "time_utc": "2026-11-16T13:13:12+00:00"}
+{"case_id": 1, "config_sha256": "ebb0134552467379ab36cedd26e39605666c2e546a493a8c236cedd0907fe596", "event": "CASE_ADDED", "source_config": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\examples\\console\\pfc3d_smoke.json", "time_utc": "2026-11-16T13:13:22+00:00"}
+{"engine": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe", "event": "INSTANCE_STARTED", "instance_id": "pfc2d_accept", "pid": 33204, "port": 9001, "time_utc": "2026-11-16T13:13:49+00:00"}
+{"case_id": 0, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_pfc2d_001", "time_utc": "2026-11-16T13:14:40+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_pfc2d_001", "task_id": null, "time_utc": "2026-11-16T13:14:40+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_pfc2d_001", "task_id": "b9b2bc", "time_utc": "2026-11-16T13:14:42+00:00", "to_status": "COMPLETED"}
+{"event": "FEEDBACK_RECEIVED", "feedback_id": "feedback_run_pfc2d_001_contacts", "run_id": "run_pfc2d_001", "time_utc": "2026-11-16T13:15:15+00:00"}
+{"approved_by": "Codex", "event": "FEEDBACK_APPROVED", "feedback_id": "feedback_run_pfc2d_001_contacts", "time_utc": "2026-11-16T13:15:21+00:00"}
+{"case_id": 0, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_pfc2d_002", "time_utc": "2026-11-16T13:15:26+00:00"}
+{"event": "FEEDBACK_NEW_RUN_CREATED", "feedback_id": "feedback_run_pfc2d_001_contacts", "new_run_id": "run_pfc2d_002", "original_run_id": "run_pfc2d_001", "time_utc": "2026-11-16T13:15:26+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_pfc2d_002", "task_id": null, "time_utc": "2026-11-16T13:15:58+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_pfc2d_002", "task_id": "35b72e", "time_utc": "2026-11-16T13:15:59+00:00", "to_status": "COMPLETED"}
+{"case_id": 2, "config_sha256": "abe7aa5a95b771022f0b1a275721e68a06ff3759992aaa8a6e85e9c95763a89c", "event": "CASE_ADDED", "source_config": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\source_contact_smoke.json", "time_utc": "2026-11-16T13:16:21+00:00"}
+{"case_id": 2, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_pfc2d_contact_001", "time_utc": "2026-11-16T13:16:27+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_pfc2d_contact_001", "task_id": null, "time_utc": "2026-11-16T13:16:27+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_pfc2d_contact_001", "task_id": "2eda11", "time_utc": "2026-11-16T13:16:28+00:00", "to_status": "COMPLETED"}
+{"case_id": 2, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_pfc2d_contact_002", "time_utc": "2026-11-16T13:16:56+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_pfc2d_contact_002", "task_id": null, "time_utc": "2026-11-16T13:16:56+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_pfc2d_contact_002", "task_id": "f4e181", "time_utc": "2026-11-16T13:16:57+00:00", "to_status": "COMPLETED"}
+{"event": "INSTANCE_STOPPED", "instance_id": "pfc2d_accept", "method": "verified PID process termination after program stop", "pid": 33204, "time_utc": "2026-11-16T13:17:47+00:00"}
+{"engine": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe", "event": "INSTANCE_STARTED", "instance_id": "pfc3d_accept", "pid": 5500, "port": 9001, "time_utc": "2026-11-16T13:18:01+00:00"}
+{"case_id": 1, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_pfc3d_001", "time_utc": "2026-11-16T13:18:25+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_pfc3d_001", "task_id": null, "time_utc": "2026-11-16T13:18:25+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_pfc3d_001", "task_id": "18678e", "time_utc": "2026-11-16T13:18:27+00:00", "to_status": "COMPLETED"}
+{"case_id": 3, "config_sha256": "3e1c93a9bd72855e175a4dd3f749f97a241e9b68ba349413296ab99cb1417b05", "event": "CASE_ADDED", "source_config": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\source_interrupt_smoke.json", "time_utc": "2026-11-16T13:19:10+00:00"}
+{"case_id": 3, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_interrupt_probe", "time_utc": "2026-11-16T13:19:16+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_interrupt_probe", "task_id": null, "time_utc": "2026-11-16T13:19:16+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_interrupt_probe", "task_id": "8557ed", "time_utc": "2026-11-16T13:19:17+00:00", "to_status": "FAILED"}
+{"case_id": 3, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_interrupt_probe2", "time_utc": "2026-11-16T13:19:55+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_interrupt_probe2", "task_id": null, "time_utc": "2026-11-16T13:19:55+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_interrupt_probe2", "task_id": "da8355", "time_utc": "2026-11-16T13:19:56+00:00", "to_status": "COMPLETED"}
+{"case_id": 3, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_interrupt_probe3", "time_utc": "2026-11-16T13:20:22+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_interrupt_probe3", "task_id": null, "time_utc": "2026-11-16T13:20:22+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_interrupt_probe3", "task_id": "95769f", "time_utc": "2026-11-16T13:20:43+00:00", "to_status": "INTERRUPT_REQUESTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "INTERRUPT_REQUESTED", "run_id": "run_interrupt_probe3", "task_id": "95769f", "time_utc": "2026-11-16T13:20:44+00:00", "to_status": "INTERRUPTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "INTERRUPTED", "run_id": "run_interrupt_probe3", "task_id": "95769f", "time_utc": "2026-11-16T13:20:44+00:00", "to_status": "FAILED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "FAILED", "run_id": "run_interrupt_probe3", "task_id": "95769f", "time_utc": "2026-11-16T13:20:55+00:00", "to_status": "INTERRUPTED"}
+{"case_id": 3, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_timeout_probe", "time_utc": "2026-11-16T13:21:05+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_timeout_probe", "task_id": null, "time_utc": "2026-11-16T13:21:05+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_timeout_probe", "task_id": "aced66", "time_utc": "2026-11-16T13:21:07+00:00", "to_status": "TIMEOUT_UNKNOWN"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "TIMEOUT_UNKNOWN", "run_id": "run_timeout_probe", "task_id": "aced66", "time_utc": "2026-11-16T13:21:14+00:00", "to_status": "INTERRUPT_REQUESTED"}
+{"case_id": 1, "event": "RUN_CREATED", "input_snapshot": "input", "run_id": "run_pfc3d_time_sampling", "time_utc": "2026-11-16T13:21:21+00:00"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "PREPARED", "run_id": "run_pfc3d_time_sampling", "task_id": null, "time_utc": "2026-11-16T13:21:21+00:00", "to_status": "SUBMITTED"}
+{"event": "RUN_STATUS_CHANGED", "from_status": "SUBMITTED", "run_id": "run_pfc3d_time_sampling", "task_id": "bdf860", "time_utc": "2026-11-16T13:21:22+00:00", "to_status": "COMPLETED"}
+{"event": "INSTANCE_STOPPED", "instance_id": "pfc3d_accept", "method": "verified PID process termination after program stop", "pid": 5500, "time_utc": "2026-11-16T13:21:51+00:00"}

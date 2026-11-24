@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": 3,
+  "label": "Case 3",
+  "run_id": "run_interrupt_probe2",
+  "dimension": 3,
+  "source_format": "pfc-live-capture-working",
+  "frame_count": 4,
+  "arrays_path": "cases/case_3/arrays.npz",
+  "channels": [
+    {
+      "id": "cycle",
+      "entity_type": "history",
+      "variable": "cycle",
+      "unit": "cycle",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "frame"
+      ],
+      "description": "PFC Cycle at capture.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "mechanical_time_total",
+      "entity_type": "history",
+      "variable": "mechanical_time_total",
+      "unit": "s",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "frame"
+      ],
+      "description": "PFC total mechanical time at capture.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "ball_id",
+      "entity_type": "ball",
+      "variable": "id",
+      "unit": null,
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "entity",
+        "frame_variable_length"
+      ],
+      "description": "Stable PFC Ball ID; offsets define each real frame.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "ball_xyz",
+      "entity_type": "ball",
+      "variable": "position",
+      "unit": "m",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "entity",
+        "xyz"
+      ],
+      "description": "Same-Cycle Ball coordinates.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "ball_radius",
+      "entity_type": "ball",
+      "variable": "radius",
+      "unit": "m",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "entity"
+      ],
+      "description": "Static radius or a real radius update at/after Ball creation.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "wall_vertex_xyz",
+      "entity_type": "wall",
+      "variable": "vertex_position",
+      "unit": "m",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "entity",
+        "xyz",
+        "frame_variable_length"
+      ],
+      "description": "Wall vertices from each captured frame.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "ball_velocity",
+      "entity_type": "ball",
+      "variable": "velocity",
+      "unit": "m/s",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "entity",
+        "xyz"
+      ],
+      "description": "Captured Ball velocity in the global coordinate system.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "ball_spin",
+      "entity_type": "ball",
+      "variable": "angular_velocity",
+      "unit": "rad/s",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "entity",
+        "xyz"
+      ],
+      "description": "Captured Ball angular velocity; PFC2D uses the z component.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "contact_id",
+      "entity_type": "contact",
+      "variable": "id",
+      "unit": null,
+      "source": "NOT_CAPTURED",
+      "status": "NOT_CAPTURED",
+      "dimensions": [
+        "contact"
+      ],
+      "description": "Contact network was disabled for this Case.",
+      "provenance": {
+        "source": "NOT_CAPTURED",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "contact_force_xyz",
+      "entity_type": "contact",
+      "variable": "force_global",
+      "unit": "N",
+      "source": "NOT_CAPTURED",
+      "status": "NOT_CAPTURED",
+      "dimensions": [
+        "contact",
+        "xyz"
+      ],
+      "description": "Contact force was not captured.",
+      "provenance": {
+        "source": "NOT_CAPTURED",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "top_force_n",
+      "entity_type": "wall",
+      "variable": "contact_force_magnitude",
+      "unit": "N",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "frame"
+      ],
+      "description": "Top platen contact-force magnitude.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    },
+    {
+      "id": "bottom_force_n",
+      "entity_type": "wall",
+      "variable": "contact_force_magnitude",
+      "unit": "N",
+      "source": "REAL_PFC",
+      "status": "GENERATED",
+      "dimensions": [
+        "frame"
+      ],
+      "description": "Bottom platen contact-force magnitude.",
+      "provenance": {
+        "source": "REAL_PFC",
+        "input_files": [],
+        "parent_results": [],
+        "formula": null,
+        "method": null,
+        "applicability": null,
+        "notes": [],
+        "generated_utc": "2026-11-16T13:19:56+00:00"
+      }
+    }
+  ],
+  "entity_groups": [
+    {
+      "entity_type": "ball",
+      "array_prefix": "ball",
+      "count": 8,
+      "dynamic_ids": true,
+      "properties": [
+        "id",
+        "position",
+        "radius",
+        "frame_index"
+      ],
+      "source": "REAL_PFC"
+    },
+    {
+      "entity_type": "wall",
+      "array_prefix": "wall",
+      "count": 32,
+      "dynamic_ids": true,
+      "properties": [
+        "id",
+        "vertex_id",
+        "vertex_position"
+      ],
+      "source": "REAL_PFC"
+    }
+  ],
+  "metadata": {
+    "geometry": {
+      "dimension": 3,
+      "axis": "z",
+      "axis_index": 2,
+      "top": 102,
+      "bottom": 101,
+      "height0": 2.0,
+      "area0": 16.0,
+      "area_kind": "cross_section_area",
+      "transverse_spans": [
+        {
+          "axis": "x",
+          "extent": 4.0
+        },
+        {
+          "axis": "y",
+          "extent": 4.0
+        }
+      ]
+    },
+    "ball_count_min": 2,
+    "ball_count_max": 2,
+    "event_count": 0,
+    "contact_count": 0,
+    "contact_type_codes": {},
+    "contact_model_codes": {},
+    "cycle_start": 0,
+    "cycle_end": 253,
+    "mechanical_time_start": 0.0,
+    "mechanical_time_end": 101.474
+  },
+  "provenance": {
+    "source": "REAL_PFC",
+    "input_files": [
+      {
+        "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2\\data\\static.json",
+        "size_bytes": 3900,
+        "sha256": "4c5407ccfc32ee470a1234201e8db470f4f8d0109f89a1cbcea82f6b35a05f00"
+      },
+      {
+        "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2\\data\\raw\\frame_index.csv",
+        "size_bytes": 359,
+        "sha256": "f1c786a36d6be904159338036f8eaad31da6d6f428e083d449cec90324fa9f21"
+      },
+      {
+        "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2\\data\\raw\\ball_frames.csv",
+        "size_bytes": 273,
+        "sha256": "9790e5f882cbc5a7db9907a5c361e2c489309b0618c3ab104833c0a367f04c1f"
+      },
+      {
+        "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2\\data\\raw\\wall_vertices.csv",
+        "size_bytes": 393,
+        "sha256": "27d679438fa0139ca0cf34c6b03edf51200ccfc764c35b26307b8dbb4e57040a"
+      },
+      {
+        "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2\\data\\raw\\fracture_events.csv",
+        "size_bytes": 94,
+        "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+      },
+      {
+        "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2\\data\\raw\\contact_frames.csv",
+        "size_bytes": 77,
+        "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+      },
+      {
+        "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2\\data\\native_histories.csv",
+        "size_bytes": 60,
+        "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+      }
+    ],
+    "parent_results": [],
+    "formula": null,
+    "method": "read-only legacy adapter; variable-length concatenated arrays; NPZ compression",
+    "applicability": null,
+    "notes": [
+      "Raw capture files were not modified.",
+      "Each frame uses explicit offsets; Ball sets may grow or shrink."
+    ],
+    "generated_utc": "2026-11-16T13:19:56+00:00"
+  }
+}

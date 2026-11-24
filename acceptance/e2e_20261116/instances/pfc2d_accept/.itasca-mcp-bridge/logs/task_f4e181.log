@@ -1,0 +1,314 @@
+pfc2d>model new
+pfc2d>model large-strain on
+pfc2d>model domain extent -2.0 2.0 -2.0 2.0
+pfc2d>wall generate id 101 name 'bottom' plane position (0,-1.0) dip 0.0
+--- The plane wall with name bottom and ID 101 and 1 facets has been generated.
+pfc2d>wall generate id 102 name 'top' plane position (0,1.0) dip 0.0
+--- The plane wall with name top and ID 102 and 1 facets has been generated.
+pfc2d>ball create id 1 radius 0.6 position (0,0)
+--- Ball 1 with radius 0.6 created at position (0,0).
+pfc2d>ball create id 2 radius 0.6 position (0.8,0)
+--- Ball 2 with radius 0.6 created at position (0.8,0).
+pfc2d>ball create id 3 radius 0.6 position (0.4,0.5)
+--- Ball 3 with radius 0.6 created at position (0.4,0.5).
+pfc2d>ball attribute density 2500.0 damp 0.7
+--- Attribute density initialized in 3 ball(s).
+--- Attribute damp initialized in 3 ball(s).
+pfc2d>contact cmat default model linear property kn 1e8 ks 5e7 fric 0.5
+pfc2d>fish define _pfc_live_capture_init
+Fish>global _pfc_live_capture_enabled = true
+Fish>global _pfc_live_capture_frame_id = 0
+Fish>global _pfc_live_capture_stride = 500
+Fish>global _pfc_live_capture_mode = 'cycle'
+Fish>global _pfc_live_capture_value = 1.0
+Fish>global _pfc_live_capture_last_cycle = -1
+Fish>global _pfc_live_capture_last_time = -1.0
+Fish>global _pfc_live_capture_calls = 0
+Fish>global _pfc_live_capture_events = 0
+Fish>global _pfc_live_capture_contacts = false
+Fish>global _pfc_live_capture_wall_top = 1
+Fish>global _pfc_live_capture_wall_bottom = 2
+Fish>global _pfc_live_capture_3d = false
+Fish>end
+pfc2d>fish define _pfc_live_capture_vel_z(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_vel_z = comp.z(v)
+Fish>else
+Fish>_pfc_live_capture_vel_z = 0.0
+Fish>endif
+Fish>end
+pfc2d>fish define _pfc_live_capture_spin_x(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_spin_x = comp.x(v)
+Fish>else
+Fish>_pfc_live_capture_spin_x = 0.0
+Fish>endif
+Fish>end
+pfc2d>fish define _pfc_live_capture_spin_y(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_spin_y = comp.y(v)
+Fish>else
+Fish>_pfc_live_capture_spin_y = 0.0
+Fish>endif
+Fish>end
+pfc2d>fish define _pfc_live_capture_spin_z(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_spin_z = comp.z(v)
+Fish>else
+Fish>_pfc_live_capture_spin_z = v
+Fish>endif
+Fish>end
+pfc2d>fish define _pfc_live_capture_z(v)
+Fish>if _pfc_live_capture_3d = true then
+Fish>_pfc_live_capture_z = comp.z(v)
+Fish>else
+Fish>_pfc_live_capture_z = 0.0
+Fish>endif
+Fish>end
+pfc2d>fish define _pfc_live_capture_frame
+Fish>if _pfc_live_capture_enabled = false then
+Fish>exit
+Fish>endif
+Fish>_pfc_live_capture_frame_id = _pfc_live_capture_frame_id + 1
+Fish>local fid = _pfc_live_capture_frame_id
+Fish>local cyc = mech.cycle()
+Fish>local mt = mech.time.total()
+Fish>_pfc_live_capture_last_cycle = cyc
+Fish>_pfc_live_capture_last_time = mt
+Fish>local bf = file.open(_pfc_live_capture_frame_path,'append','text')
+Fish>local brows = list()
+Fish>loop foreach local b ball.list
+Fish>local bv = ball.vel(b)
+Fish>local bs = ball.spin(b)
+Fish>brows = list.append(brows,string.build('%1,%2,%3,%4,%5,%6,%7,%8,%9', ...
+Fish>fid,ball.id(b),comp.x(ball.pos(b)),comp.y(ball.pos(b)), ...
+Fish>_pfc_live_capture_z(ball.pos(b)),ball.radius(b), ...
+Fish>comp.x(bv),comp.y(bv),_pfc_live_capture_vel_z(bv)) + ',' + ...
+Fish>string.build('%1,%2,%3',_pfc_live_capture_spin_x(bs), ...
+Fish>_pfc_live_capture_spin_y(bs),_pfc_live_capture_spin_z(bs)))
+Fish>endloop
+Fish>file.write(bf,brows)
+Fish>file.close(bf)
+Fish>local wf = file.open(_pfc_live_capture_walls_path,'append','text')
+Fish>local wrows = list()
+Fish>loop foreach local v wall.vertex.list()
+Fish>local wp = wall.vertex.pos(v)
+Fish>wrows = list.append(wrows,string.build('%1,%2,%3,%4,%5', ...
+Fish>fid,wall.vertex.id(v),comp.x(wp),comp.y(wp),_pfc_live_capture_z(wp)))
+Fish>endloop
+Fish>file.write(wf,wrows)
+Fish>file.close(wf)
+Fish>if _pfc_live_capture_contacts = true then
+Fish>local cf = file.open(_pfc_live_capture_contacts_path,'append','text')
+Fish>local crows = list()
+Fish>loop foreach local c contact.list
+Fish>local cp = contact.pos(c)
+Fish>local cforce = contact.force.global(c)
+Fish>local e1 = contact.end1(c)
+Fish>local e2 = contact.end2(c)
+Fish>crows = list.append(crows,string.build('%1,%2,%3,%4,%5,%6,%7,%8,%9', ...
+Fish>fid,contact.id(c),type.pointer(e1),type.pointer.id(e1), ...
+Fish>type.pointer(e2),type.pointer.id(e2),comp.x(cp),comp.y(cp), ...
+Fish>_pfc_live_capture_z(cp)) + ',' + ...
+Fish>string.build('%1,%2,%3,%4',comp.x(cforce),comp.y(cforce), ...
+Fish>_pfc_live_capture_vel_z(cforce),contact.model(c)))
+Fish>endloop
+Fish>file.write(cf,crows)
+Fish>file.close(cf)
+Fish>endif
+Fish>local ix = file.open(_pfc_live_capture_index_path,'append','text')
+Fish>local irow = list()
+Fish>if _pfc_live_capture_wall_top > 0 then
+Fish>local w1 = wall.find(_pfc_live_capture_wall_top)
+Fish>local w2 = wall.find(_pfc_live_capture_wall_bottom)
+Fish>local p1 = wall.pos(w1)
+Fish>local p2 = wall.pos(w2)
+Fish>local f1 = wall.force.contact(w1)
+Fish>local f2 = wall.force.contact(w2)
+Fish>irow = list.append(irow,string.build('%1,%2,%3,%4,%5,%6,%7,%8,%9', ...
+Fish>fid,cyc,mt,ball.num(),comp.x(p1),comp.y(p1),_pfc_live_capture_z(p1), ...
+Fish>comp.x(p2),comp.y(p2)) + ',' + string.build('%1,%2,%3,%4', ...
+Fish>_pfc_live_capture_z(p2),math.mag(f1),math.mag(f2),_pfc_live_capture_calls) + ',' + ...
+Fish>string.build('%1,%2',_pfc_live_capture_mode,_pfc_live_capture_value))
+Fish>else
+Fish>irow = list.append(irow,string.build('%1,%2,%3,%4,,,,,,,,,%5', ...
+Fish>fid,cyc,mt,ball.num(),_pfc_live_capture_calls) + ',' + ...
+Fish>string.build('%1,%2',_pfc_live_capture_mode,_pfc_live_capture_value))
+Fish>endif
+Fish>file.write(ix,irow)
+Fish>file.close(ix)
+Fish>end
+pfc2d>fish define _pfc_live_capture_cycle
+Fish>_pfc_live_capture_calls = _pfc_live_capture_calls + 1
+Fish>if _pfc_live_capture_enabled = true then
+Fish>if _pfc_live_capture_mode = 'cycle' then
+Fish>if (mech.cycle() - _pfc_live_capture_last_cycle) >= _pfc_live_capture_stride then
+Fish>_pfc_live_capture_frame
+Fish>endif
+Fish>else
+Fish>if _pfc_live_capture_mode = 'time' then
+Fish>if (mech.time.total() - _pfc_live_capture_last_time) >= _pfc_live_capture_value then
+Fish>_pfc_live_capture_frame
+Fish>endif
+Fish>endif
+Fish>endif
+Fish>endif
+Fish>end
+pfc2d>fish callback remove _pfc_live_capture_cycle 49.5
+pfc2d>fish callback add _pfc_live_capture_cycle 49.5
+--- Function _pfc_live_capture_cycle() registered as a callback at position 49.5 in the cycle sequence
+pfc2d>model solve time 0.01
+    Cycle      Total    Timestep    Mech Time       Clock
+--------- ---------- ----------- ------------ ----------- 
+       16         16 5.30258E-04 1.025134e-02 00:00:00:01                                  1.000000e-02             
+--- Limit time of 1.000000e-02 met in process(es): mech Ball (1.025134e-02),mech Clump (1.025134e-02),mech Wall (1.025134e-02),mech RBlock (1.025134e-02),mech MPMPoint (1.025134e-02).
+--- Cycling ended at: 2026-11-16T21:16:57
+pfc2d>fish callback remove _pfc_live_capture_cycle 49.5
+pfc2d>model save 'pfc2d_contact_smoke_final'
+--- Model saved to file D:\Python\itasca-mcp\PFC Visualization Skill\pfc-headless\acceptance\e2e_20261116\instances\pfc2d_accept\.pfc-console\pfc2d_contact_smoke_final.sav.
+{
+  "schema_version": 1,
+  "data_boundary": "REAL_PFC",
+  "case_id": 2,
+  "run_id": "run_pfc2d_contact_002",
+  "started_utc": "2026-11-16T13:16:56.235+00:00",
+  "config": {
+    "case_id": 2,
+    "run_id": "run_pfc2d_contact_002",
+    "engine_dimension": 2,
+    "project_dir": "D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116",
+    "restore_initial": false,
+    "setup": [
+      "model new",
+      "model large-strain on",
+      "model domain extent -2.0 2.0 -2.0 2.0",
+      "wall generate id 101 name 'bottom' plane position (0,-1.0) dip 0.0",
+      "wall generate id 102 name 'top' plane position (0,1.0) dip 0.0",
+      "ball create id 1 radius 0.6 position (0,0)",
+      "ball create id 2 radius 0.6 position (0.8,0)",
+      "ball create id 3 radius 0.6 position (0.4,0.5)",
+      "ball attribute density 2500.0 damp 0.7",
+      "contact cmat default model linear property kn 1e8 ks 5e7 fric 0.5"
+    ],
+    "solve": "model solve time 0.01",
+    "post_solve": [],
+    "save": "model save 'pfc2d_contact_smoke_final'",
+    "sample_mode": "cycle",
+    "sample_interval": 1.0,
+    "sample_stride_cycles": 1,
+    "capture_contacts": true,
+    "history_names": [],
+    "history_meanings": {},
+    "time_history_name": "1",
+    "fracture_observer": false,
+    "expected_initial": {
+      "balls": 3
+    },
+    "source_files": {},
+    "load_axis": "y",
+    "top_wall_id": 102,
+    "bottom_wall_id": 101,
+    "headless": {
+      "project_id": "pfc_headless_e2e_20261116",
+      "case_id": 2,
+      "run_id": "run_pfc2d_contact_002",
+      "parameters": {},
+      "source_case_config": "cases/case_2/case_config.json"
+    },
+    "run_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_contact_002\\data",
+    "execution_mode": "CONSOLE"
+  },
+  "status": "COMPLETE",
+  "errors": [],
+  "source_hashes": {},
+  "pre_snapshot": {
+    "pid": 33204,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept",
+    "python": "3.10.5",
+    "cycle": 0,
+    "mechanical_time_total": 0.0,
+    "balls": 3,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": null,
+    "fracture_module_available": false
+  },
+  "post_snapshot": {
+    "pid": 33204,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept",
+    "python": "3.10.5",
+    "cycle": 16,
+    "mechanical_time_total": 0.010251343664370305,
+    "balls": 3,
+    "walls": 2,
+    "contacts": 1,
+    "fractures": null,
+    "fracture_module_available": false
+  },
+  "capture": {
+    "callback_calls": 16,
+    "frame_count": 17,
+    "fracture_event_count": 0,
+    "mechanical_time_run": 0.010251343664370305,
+    "sample_stride_cycles": 1,
+    "sample_mode": "cycle",
+    "sample_value": 1.0,
+    "sample_interval_mode": "Cycle-stride sampling",
+    "capture_contacts": true,
+    "field_status": {
+      "particle_position": "REAL_PFC",
+      "particle_radius": "REAL_PFC",
+      "particle_velocity": "REAL_PFC",
+      "particle_spin": "REAL_PFC",
+      "wall_vertices": "REAL_PFC",
+      "contact_network": "REAL_PFC",
+      "fracture_events": "NOT_CAPTURED"
+    }
+  },
+  "save_executed": true,
+  "solve_elapsed_seconds": 0.4228529999963939,
+  "native_history_row_count": 0,
+  "ended_utc": "2026-11-16T13:16:57.066+00:00",
+  "engine": {
+    "executable": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+    "python": "3.10.5",
+    "runtime_mode": "CONSOLE"
+  },
+  "files": [
+    {
+      "path": "native_histories.csv",
+      "size_bytes": 60,
+      "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+    },
+    {
+      "path": "raw/ball_frames.csv",
+      "size_bytes": 2979,
+      "sha256": "eda1c9c94424afdfe1cac311ba77c7dbc68ea22cfce4e5a6643bdbfa2d80efae"
+    },
+    {
+      "path": "raw/contact_frames.csv",
+      "size_bytes": 4459,
+      "sha256": "8a8ff9810a0e22cff6de928785733db5906b0a34e25fcb6dbbc3fbcf0909f8c9"
+    },
+    {
+      "path": "raw/fracture_events.csv",
+      "size_bytes": 94,
+      "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+    },
+    {
+      "path": "raw/frame_index.csv",
+      "size_bytes": 1091,
+      "sha256": "d5fc79e16e22331507db64d30c71f7b8e6778cda03f3472ec06e10cbf566b5a6"
+    },
+    {
+      "path": "raw/wall_vertices.csv",
+      "size_bytes": 805,
+      "sha256": "213e0cea02f36e2e1078990dd4157dc2aa0cd1dbb0ac949ac839f3589cf3f582"
+    },
+    {
+      "path": "static.json",
+      "size_bytes": 2748,
+      "sha256": "66d3f8d2f8bac002f015eecebe1f3a73397536ee653d89270a4447589deb2051"
+    }
+  ]
+}

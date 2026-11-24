@@ -1,0 +1,17 @@
+{
+  "case_id": 3,
+  "end_time": "2026-11-16T13:19:17+00:00",
+  "error": {
+    "message": "[Errno 2] No such file or directory: 'D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\runs\\\\run_interrupt_probe\\\\data\\\\native_histories.csv'",
+    "type": "FileNotFoundError"
+  },
+  "input_snapshot": "input",
+  "instance_id": "pfc3d_accept",
+  "mcp_task_id": "8557ed",
+  "output_path": "deliveries/run_interrupt_probe",
+  "run_id": "run_interrupt_probe",
+  "schema_version": "1.0.0",
+  "script_version": "sha256:38fc623afb93ea34615985461cbc1b0e6c8437c281e0be1a4379169c3f88a626",
+  "start_time": "2026-11-16T13:19:16+00:00",
+  "task_status": "FAILED"
+}

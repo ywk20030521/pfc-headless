@@ -1,0 +1,20 @@
+{
+  "case_id": 2,
+  "created_utc": "2026-11-16T13:16:56+00:00",
+  "data_collection_config": {
+    "capture_contacts": true,
+    "interval": 1.0,
+    "mode": "cycle"
+  },
+  "files": [
+    {
+      "kind": "case_config",
+      "sha256": "1f569a7eebc2728a7177a138fb2a417d01b042c3523275792b7e94faa773ae75",
+      "size_bytes": 1400,
+      "snapshot": "config.json",
+      "source": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\cases\\case_2\\case_config.json"
+    }
+  ],
+  "parameters": {},
+  "run_id": "run_pfc2d_contact_002"
+}

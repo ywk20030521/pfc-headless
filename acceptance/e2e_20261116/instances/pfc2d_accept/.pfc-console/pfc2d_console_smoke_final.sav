@@ -1,0 +1,972 @@
+{
+    "Header" : {
+        "Type" : "ITASCA SAVE FILE" ,
+        "Name" : "pfc2d" ,
+        "Major Version" : 9 ,
+        "Minor Version" : 7 ,
+        "Revision" : 49 ,
+        "Source" : "3352e0ec46" ,
+        "Binary" : true ,
+        "DateTime" : "2026-11-16T21:15:59" ,
+        "Format" : 1 ,
+        "Title" : "" ,
+        "CustTit1" : "" ,
+        "CustTit2" : "" ,
+        "ReadOnly" : false ,
+        "TotalCycles" : 20 ,
+        "SuperCycles" : 20 ,
+        "Dimension" : 2 ,
+        "Information" : [ 
+            "Model State" ,
+            "ball: 41" ,
+            "ball attribute" ,
+            "ball attribute convergence: 10000 (all)" ,
+            "ball attribute damp: 0.7 (all)" ,
+            "ball attribute density: 2500 (all)" ,
+            "ball attribute displacement: 9.099424129554036e-05 (ID 10000) - 0.0011723454823242764 (ID 16)" ,
+            "ball attribute energy-body: 0 (all)" ,
+            "ball attribute energy-damp: 0 (all)" ,
+            "ball attribute energy-kinetic: 0 (all)" ,
+            "ball attribute force-applied: 0 (all)" ,
+            "ball attribute force-contact: 0 (all)" ,
+            "ball attribute force-unbalanced: 504.6806719560324 (ID 6) - 1032.2079945555624 (ID 27)" ,
+            "ball attribute fragment: 0 (all)" ,
+            "ball attribute id: 1 - 10000" ,
+            "ball attribute mass: 51.445532309483426 (ID 6) - 105.21997905765161 (ID 27)" ,
+            "ball attribute mass-inertial: 51.445532309483426 (ID 6) - 105.21997905765161 (ID 27)" ,
+            "ball attribute moi: 0.1684905133440437 (ID 6) - 0.7048172830581267 (ID 27)" ,
+            "ball attribute moi-inertial: 0.1684905133440437 (ID 6) - 0.7048172830581267 (ID 27)" ,
+            "ball attribute moment-applied: 0 (all)" ,
+            "ball attribute moment-contact: 0 (all)" ,
+            "ball attribute moment-unbalanced: 0 (all)" ,
+            "ball attribute position: 0.09792950043001614 (ID 7) - 0.7706189416845686 (ID 38)" ,
+            "ball attribute radius: 0.08093360620680681 (ID 6) - 0.11574551318837706 (ID 27)" ,
+            "ball attribute ratio-local: 1 (all)" ,
+            "ball attribute ratio-target: 1e-04 (all)" ,
+            "ball attribute spin: 0 (all)" ,
+            "ball attribute stress-prin-max: 0 (all)" ,
+            "ball attribute stress-prin-min: 0 (all)" ,
+            "ball attribute stress-xx: 0 (all)" ,
+            "ball attribute stress-xy: 0 (all)" ,
+            "ball attribute stress-yy: 0 (all)" ,
+            "ball attribute velocity: 0.024036331977841257 (ID 10000) - 0.08311708346370435 (ID 1)" ,
+            "ball attribute volume: 0.02057821292379337 (ID 6) - 0.04208799162306064 (ID 27)" ,
+            "contact: 78" ,
+            "contact ball-ball: 78" ,
+            "contact ball-ball area: 0.16837153962374998 (all)" ,
+            "contact ball-ball force: 0 (all)" ,
+            "contact ball-ball gap: 0.011005169685650573 (all)" ,
+            "contact ball-ball id: 3 (all)" ,
+            "contact ball-ball inactive: 78" ,
+            "contact ball-ball model|#|null: 78" ,
+            "contact ball-ball momentOn1: 0 (all)" ,
+            "contact ball-ball momentOn2: 0 (all)" ,
+            "contact ball-ball normal|#|stress: 0 (all)" ,
+            "contact ball-ball shear|#|stress: 0 (all)" ,
+            "contact|#|cmat:  " ,
+            "contact|#|cmat default: null" ,
+            "fish: 25" ,
+            "fish function: 8" ,
+            "fish function _pfc_live_capture_cycle: 0 (F(0))" ,
+            "fish function _pfc_live_capture_frame: 0 (F(0))" ,
+            "fish function _pfc_live_capture_init: 0 (F(0))" ,
+            "fish function _pfc_live_capture_spin_x: 0 (F(1))" ,
+            "fish function _pfc_live_capture_spin_y: 0 (F(1))" ,
+            "fish function _pfc_live_capture_spin_z: 0 (F(1))" ,
+            "fish function _pfc_live_capture_vel_z: 0 (F(1))" ,
+            "fish function _pfc_live_capture_z: 0 (F(1))" ,
+            "fish symbol: 17" ,
+            "fish symbol _pfc_live_capture_3d: false (Boolean)" ,
+            "fish symbol _pfc_live_capture_calls: 20 (Integer)" ,
+            "fish symbol _pfc_live_capture_contacts: true (Boolean)" ,
+            "fish symbol _pfc_live_capture_contacts_path: D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_pfc2d_002/data/raw/contact_frames.csv (String)" ,
+            "fish symbol _pfc_live_capture_enabled: false (Boolean)" ,
+            "fish symbol _pfc_live_capture_events: 0 (Integer)" ,
+            "fish symbol _pfc_live_capture_frame_id: 21 (Integer)" ,
+            "fish symbol _pfc_live_capture_frame_path: D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_pfc2d_002/data/raw/ball_frames.csv (String)" ,
+            "fish symbol _pfc_live_capture_index_path: D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_pfc2d_002/data/raw/frame_index.csv (String)" ,
+            "fish symbol _pfc_live_capture_last_cycle: 20 (Integer)" ,
+            "fish symbol _pfc_live_capture_last_time: 0.0272798 (float)" ,
+            "fish symbol _pfc_live_capture_mode: cycle (String)" ,
+            "fish symbol _pfc_live_capture_stride: 1 (Integer)" ,
+            "fish symbol _pfc_live_capture_value: 1 (float)" ,
+            "fish symbol _pfc_live_capture_wall_bottom: 101 (Integer)" ,
+            "fish symbol _pfc_live_capture_wall_top: 102 (Integer)" ,
+            "fish symbol _pfc_live_capture_walls_path: D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_pfc2d_002/data/raw/wall_vertices.csv (String)" ,
+            "model:  " ,
+            "model deterministic: true" ,
+            "model domain" ,
+            "model domain condition: Stop Stop" ,
+            "model domain extent: (-1.5,1.5) (-1.5,1.5) " ,
+            "model gravity: (0,-9.81)" ,
+            "model large-strain: true" ,
+            "model mechanical" ,
+            "model mechanical active: on" ,
+            "model mechanical configure: on" ,
+            "model mechanical energy: off" ,
+            "model precision: 6" ,
+            "model random: 9322" ,
+            "model timestep: 0.0020847624058791736" ,
+            "model title" ,
+            "model total-cycles: 20" ,
+            "model update-interval: 100" ,
+            "python: 31" ,
+            "python function: 19" ,
+            "python function find_config: <function find_config at 0x000001471CAFF2E0> (F(0))" ,
+            "python function fish_path: <function fish_path at 0x000001471CAFEB90> (F(1))" ,
+            "python function install_capture: <function install_capture at 0x000001471CAFF010> (F(3))" ,
+            "python function install_fracture_observer: <function install_fracture_observer at 0x000001471CAFF0A0> (F(1))" ,
+            "python function main: <function main at 0x000001471CAFF370> (F(0))" ,
+            "python function my_displayhook: <function my_displayhook at 0x000001477C933D90> (F(1))" ,
+            "python function publish_fractures_final: <function publish_fractures_final at 0x000001471CAFF250> (F(1))" ,
+            "python function publish_native_histories: <function publish_native_histories at 0x000001471CAFF1C0> (F(3))" ,
+            "python function read_ball_static: <function read_ball_static at 0x000001471CAFED40> (F(0))" ,
+            "python function read_histories: <function read_histories at 0x000001471CAFEEF0> (F(1))" ,
+            "python function read_wall_static: <function read_wall_static at 0x000001471CAFEDD0> (F(0))" ,
+            "python function resolve_wall_roles: <function resolve_wall_roles at 0x000001471CAFEE60> (F(2))" ,
+            "python function sha256_file: <function sha256_file at 0x000001471CAFEA70> (F(1))" ,
+            "python function snapshot: <function snapshot at 0x000001471CAFECB0> (F(0))" ,
+            "python function stop_capture: <function stop_capture at 0x000001471CAFF130> (F(0))" ,
+            "python function utc_now: <function utc_now at 0x000001471CB81240> (F(0))" ,
+            "python function vector3: <function vector3 at 0x000001471CAFEC20> (F(1))" ,
+            "python function write_csv: <function write_csv at 0x000001471CAFEF80> (F(3))" ,
+            "python function write_json: <function write_json at 0x000001471CAFEB00> (F(2))" ,
+            "python symbol: 12" ,
+            "python symbol annotations: _Feature((3, 7, 0, 'beta', 1), (3, 11, 0, 'alpha', 0), 16777216) (_Feature)" ,
+            "python symbol Any: typing.Any (_SpecialForm)" ,
+            "python symbol AXIS_INDEX: {'x': 0, 'y': 1, 'z': 2} (dict)" ,
+            "python symbol CAPTURE_BOND: '_pfc_live_capture_bond' (str)" ,
+            "python symbol CAPTURE_CALLBACK: '_pfc_live_capture_cycle' (str)" ,
+            "python symbol CAPTURE_FRAME: '_pfc_live_capture_frame' (str)" ,
+            "python symbol CAPTURE_POSITION: 49.5 (float)" ,
+            "python symbol DATA_BOUNDARY: 'REAL_PFC' (str)" ,
+            "python symbol exit_code: 0 (int)" ,
+            "python symbol ItascaStdOut: <class '__main__.ItascaStdOut'> (class)" ,
+            "python symbol port: 9001 (int)" ,
+            "python symbol SCHEMA_VERSION: 1 (int)" ,
+            "wall: 2" ,
+            "wall attribute" ,
+            "wall attribute cutoff-angle: 0 (all)" ,
+            "wall attribute displacement: 0 (all)" ,
+            "wall attribute force-contact: 0 (all)" ,
+            "wall attribute fragment: 0 (all)" ,
+            "wall attribute moment-contact: 0 (all)" ,
+            "wall attribute position: 0.8 (all)" ,
+            "wall attribute spin: 0 (all)" ,
+            "wall attribute velocity: 0 (all)" ,
+            "Program Settings" ,
+            "automatic-model-save active: true" ,
+            "automatic-model-save directory: " ,
+            "automatic-model-save interval: 4" ,
+            "customer-title-1: " ,
+            "customer-title-2: " ,
+            "directory: D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept" ,
+            "echo: true" ,
+            "floating-point-check: off" ,
+            "log: true" ,
+            "log-file: D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept\\.itasca-mcp-bridge\\logs\\cmdtmp_a001f2d1.log" ,
+            "notice: true" ,
+            "threads: automatic" ,
+            "warning: true" 
+        ]
+    },
+    "InputRecord" : {
+        "Commands" : [  ],
+        "Files" : [ 
+            {
+                "File" : ".pfc-console\\bridge_bootstrap.py" ,
+                "Modified" : "2026-11-16T21:13:43" ,
+                "Size" : 197 ,
+                "Role" : "data" ,
+                "Order" : 1 
+            }
+        ]
+    }
+}
+  «HW 3ašÍ«³PšÜ™ ’@Kr´H	d   aRZ ¤´ç&•¦ç ÕÉK A° ²òË ­’$ Ad’KãµaiR »o”&}2 Ad’K»s$Mƒ* Ad’KÛo“& &M4c,M
+ É‘‚Yš &M4ò` 0SôÜÈƒ ÅGYš 37ñØ §¸" «d'fos_complete 6°Z 'Ad’K fos_start  ' solve_complete  ' solve_ending  ' solve_follower  ' solve_leader  ' solve_start  ' struct_eom  ' struct_eom_complete  ' struct_internal_complete  ' struct_link_force  ' struct_link_force_complete  ' struct_link_update_complete  ' struct_update  ' struct_update_complete  ' zone_eom  ' zone_eom_complete  ' zone_fluid_update  ' zone_fluid_update_complete  ' zone_stress  ' zone_stress_complete  ' zone_update  ' zone_update_complete  'Ad’KAd’K"0Ö		 "0FQ‘-°N
+ Ad’KAd’KB¦±: Ad’KƒÕ; ƒÕ)*²Ö Ad’KAd’KƒÕI‹ì Ad’K£
+ Ad’Kãµ¹±N 70fXM¤ Ad’K70FQ‘-°N Ad’KAd’Kã9ãµ Ad’Kã9±Á ã9¥¨È Ad’KAd’Kã9± ã95¬&" Ad’Kã9¥¨È Ad’KAd’Kã9¬6x ã9¥¨È Ad’KAd’Kã95¬&Ò Ad’Kä Ad’KæM Ad’KF†A«, Ä8h F†á
+½O®	  ³0“)
+“Z8
+ “Z:
+ ã9Z ¶HšF™! ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KF†A«," ³0“)
+“Z8
+ “Z:
+ ã9Z ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•AAd’KÉÑ"g4=7# ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KP>X$Í-@ Ä8Zd$ ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KÉÑ"g¡% ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KÄ8úhiZ Ä¸Áê¤E& ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’K¡ÒW!	´ ¤˜P¥¥A' ³0“)
+‰
+ .´' 3é( $µâfz	   0ÈĞ
+-r(      @$MJ3,	   âUGL’“) 6°Z&      ğ?Ad’KâUGfÏ) ÿÿÿÿÿÿï£¶ÊŞ Â Ad’KO¦âh é9(     (   )         )      €f@  ğÍDÓs(     (   )         )           ì Ad’KAd’KP>X$Í-@ Ad’K²ÌÊèƒ&[ Ad’KF†ÓŠ£`¼Ö* Ad’K§¼V¨Ì+ ³0“)
+	“Z8
+ “Z:
+ ã9Z £JY
+ ²ÌÊèƒ&[ Ad’KG¾
+, "0- Ad’KƒÕ. Ad’K70/ Ad’K,M
+0 ³0“)
+
+“Z8
+ “Z:
+ ã9Z ®2vä«°1 ³0“)
+‰
+ .´'None Ad’KÁåÉ2 ³0“)
+‰
+ .´'Any É‘‚	ÿÿÿÿAd’K¤˜PìQ2  Default     “=ÊÒ¤ Ad’KT–Ò Ad’KÉ±B;3 Ad’K,ˆÂ4 Ad’K-$5 Ad’K­„Yeé6 Ad’Kí‘Ê
+7 ‡=Ø8 4µ2iîBMKa?¤˜P¥©•I ôÑÀF¬L
+³Â"G¬L
+G›h        …ëQ¸#ÀO¦âh é9* ¤Ğ"[riÒ4æMú        &úä33˜B        P–‘fz	   ¤Ğ2hz,ÈS&•!9W	   ã93Ë¨² ÉÑ"]` ƒÕI‹ …IÓ˜T†ä ²èç
+ Ad’Käµ9 ³0“)
+‰
+ G¾
+: ÅQ™
+ Ad’KS; S Ad’K(‘ ³°2( O’"
+ -@ Óâ(      ø¿      ø?      ø¿      ø?x<GMÏ	    y<GMÏ	    (ÌƒŞ¤ -ĞIeHNZ                                ²´ éc        Ad’KAd’K¾äh'< Ad’KĞŒN= Ad’KP¾Qæ> P¾QædiR? C–@ ã9“N•… æ1ön‘ aĞd Ï -`šZ™´@ÿÿÿÿÿÿï'ÙâhjeÒÿÿÿÿÿÿïtÀF{¤	    tÀFr´H	   3˜B³	ƒ>	      ğ?³ŠI	d   t²Ô        ÿÿÿÿÿÿïÓâfz.9RÿÿÿÿÅyòs ÅyR™A -@ ®`š)	   Ad’K4µB 6°Z        7Š	   Ad’K#V&C 6°Z
+ 7Š	   Ad’KôÑÀhjB            ôÑÀF¬LC     ³B(Ëœ-9šZ™´@#B’¡œÇ;u–êD`ÁB t†A“´#B’¡œÇ;tN$Mî#B’¡œÇ;t²0)        ,ĞâF	   ,ĞâF¯:
+	ÿÿÿÿ•±Ä« 2ĞôXj‰Nü©ñÒMbP?{®Gázt?³HûLôI)\Âõ(ğ?ÍÌÌÌÌÌì?³HûÂ É Ad’K$»ĞÒD ã9“N•… æ1ön‘ aĞd Ï -`šZ™´@ÿÿÿÿÿÿï'ÙâhjeÒÿÿÿÿÿÿïtÀF{¤	    tÀFr´H	   3˜B³	ƒ>	      ğ?³ŠI	d   t²Ô        ÿÿÿÿÿÿïÓâfz.9RÿÿÿÿÅyòs ÅyR™A     4µB            #V&C     ôÑÀhjB            ôÑÀF¬LC     ³B(ËœAd’K†ÕDE ã9“N•… æ1ön‘ aĞd Ï -`šZ™´@ÿÿÿÿÿÿï'ÙâhjeÒÿÿÿÿÿÿïtÀF{¤	    tÀFr´H	   3˜B³	ƒ>	š™™™™™é?³ŠI	d   t²Ô        ÿÿÿÿÿÿïÓâfz.9RÿÿÿÿÅyòs ÅyR™A     4µB            #V&C     ôÑÀhjB            ôÑÀF¬LC     ³B(ËœAd’K­\F ã9“N•…æ1ön‘ aĞdÏ-`šZ™´@ÿÿÿÿÿÿï'ÙâhjeÒÿÿÿÿÿÿïtÀF{¤	    tÀFr´H	   3˜B³	ƒ>	š™™™™™é?³ŠI	è  t²Ô        îBMKa?Óâfz.9RÿÿÿÿÅyòs ÅyR™A G «d	   6°ZH 6°Z        .´'energy-strain ²ÌBAd’KAd’KG    H         energy-slip  G    H         energy-dashpot  G    H         energy-rrstrain G    H         energy-rrslip  G    H         energy-pbstrain G    H         energy-adhesive  G    H         energy-strain-eepa  G 	   H         energy-strain-jkr  G 
+   H         energy-kinetic G    H         energy-damp  G    H         energy-body  G    H         energy-boundary     4µB ö0Ãjx?   #V&C    ôÑÀhjB *a;ï›?   ôÑÀF¬LC    ³B(Ëœ ³Ñ   Ad’KÙI ã9“N•… æ1ön‘ aĞd Ï -`šZ™´@ÿÿÿÿÿÿï'ÙâhjeÒÿÿÿÿÿÿïtÀF{¤	    tÀFr´H	   3˜B³	ƒ>	š™™™™™é?³ŠI	d   t²Ô        ÿÿÿÿÿÿïÓâfz.9RÿÿÿÿÅyòs ÅyR™A     4µB            #V&C     ôÑÀhjB            ôÑÀF¬LC     ³B(ËœAd’KAd’KAd’K0Sô\'J Ad’K28òK Ad’K2¸SL Ad’KR°7V'M R°7EE¶ÀN Ad’KAd’KR°74c<GO Ad’K²Œ'	P Ad’K³0Q ¢„R Ad’K#VS Ad’K,¹"T Ad’K0±U Ad’KAd’Ks:V í‘Ò	Ad’K4VW Ad’K•ÌXX ³0“)
+“Z8
+ “Z:
+ ã9Z ²ÌÊèƒ&[ Ad’K•Ğâæ“Y ³0“)
+“Z8
+ “Z:
+ ã9Z ²ÌÊèƒ&[ Ad’K•Ø2è“Z ³0“)
+“Z8
+ “Z:
+ ã9Z ²ÌÊèƒ&[ Ad’K70¦Ÿ+[ Ad’Kú¹\ ú¹¢^r´] Ad’KAd’KAd’Kí‘Ê
+K“^ ã9mTV_ ã9%` ¤Ğ2( ¤Ğ2(Í° CN   -æ$a p°0'	4b ±ñƒNc ³0“)
+aĞdd ³0“)
+Ad’KAd’KÉ‘‚    .´'mechanical ã9mÆe £
+f -`’&n        -@ ¤˜Pm6g «d'ball-ball ã95‰Ñ"h ³0“)
+‰
+ .´' Õ¥ç ³°2h! ¤ÌÂÊ … u”) …•V Ad’Kh1‰Ñ"h        .´' ¤Ğ2(        ­PôÈ í‘Âi .´'null -¹'m‘3=	   $Ğ' Ad’KAd’Kg ball-facet h        h                  i null     g ball-MPMPoint h        h                  i null     g ball-pebble h        h                  i null     g ball-rblock h        h                  i null     g facet-facet h        h                  i null     g MPMPoint-facet h         h !                 i null     g pebble-facet h "       h #                 i null     g pebble-pebble h $       h %                 i null     g pebble-rblock h &       h '                 i null     g rblock-facet h (       h )                 i null     g rblock-rblock h *       h +                 i null     g vertex-facet h ,       h -                 i null     Ad’KAd’KAd’KAd’Ka j ±ñƒNc .d /É‘‚   .´'domain Ad’Ka k ±ñƒNc 0d 1É‘‚   .´'thermal ã9mÆl £
+f          	g ballthermal-ballthermal h 2       h 3                 i null 1    g ballthermal-facetthermal h 4       h 5                 i null 1    g ballthermal-pebblethermal h 6       h 7                 i null 1    g ballthermal-rblockthermal h 8       h 9                 i null 1    g pebblethermal-facetthermal h :       h ;                 i null 1    g pebblethermal-pebblethermal h <       h =                 i null 1    g pebblethermal-rblockthermal h >       h ?                 i null 1    g rblockthermal-facetthermal h @       h A                 i null 1    g rblockthermal-rblockthermal h B       h C                 i null 1    Ad’KAd’Ka m ±ñƒNc Dd EÉ‘‚   .´'fluid ã9mÆn £
+f          g fball-fball h F       h G                 i null 1    g fball-ffacet h H       h I                 i null 1    Ad’KAd’KAd’KF†ÓŠ£í‘Êo F†ÓŠ£$Ğp F†ÓŠ£4µ2 Gˆq ¶HšF™ 
+Gˆ …œ2 ƒÕI‹ ƒÕI‹”Å9 -àÁê¤E&G	    Ad’K(Múdr F†ÓŠ£s ³0“)
+J“Z8
+ “Z:
+ ã9Z Ad’Kâ‘LŸ‘á´â F†ÓŠ£P>X Ad’K2¸S& BÆs4: 
+²´gÏÑ0 
+é¸'‹x&L
+ Ì$
+ &Ljd8 &L*º í‘Â& 2¸Sh K       aĞd näÁÊ	    ¦V        ,LJS+ä¹        G¾
+'{    G¾
+'{Ô•  Ad’KAd’KAd’Kã9…fHÁt ã9…fHÁu ã9v ³0“)
+L“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw ³0“)
+MAd’KÉ¡$x ³0“)
+N“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’K°ˆñƒNy ³0“)
+O“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw PÉ¡$z ³0“)
+Q“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KR˜;£aĞ	{ ³0“)
+R“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw SÉ¡$| ³0“)
+T“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KAd’K#VŠ£2C3} aĞdÏ.´'Contact Ball-RBlock Ad’K#VŠ£2Ã"~ aĞdÏ.´'Contact Pebble-RBlock Ad’K#VŠ£2KÁ aĞdÏ.´'Contact RBlock-FWallFacet Ad’KAd’KSYI‘€ s:Ğ,”¥I ³0“)
+U“Z8
+ “Z:
+ ã9Z £JY
+ Ad’K­Lƒ­Ğ"‚ ­LTİ¤²Z ­LÔ)± ­LÔ)T¦ ­L4©¬ƒVY­LÔ*£iRY­Lô M-é@   ­L4Q€%ÖÀffffffæ?­Lk 2¸Ã      è?­LDƒ<…¶B        ­LÔ>2@      à?­L$‹I®´â­Lä)³½G­Lä)ÉÍ"­Lä)²´g­L4QaL–VAd’Kã9š\}uÂ@ SYgz®=R    Ad’K§¼V¨Ìí‘Êƒ Ad’K¶N„ $Ğ… ğ%G'† ³0“)
+V“Z8
+ “Z:
+ ã9Z ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•Aí‘ÂXš‡ .´2''anisotropic burgers burgers-mohr cap-yield cap-yield-simplified cavehoek clay-and-sand concrete curved-mohr-coulomb double-yield drucker-prager elastic finn hoek-brown hoek-brown-pac hydration-drucker-prager jones-wilkins-lee maxwell modified-cam-clay mohr-coulomb munson-dawson norsand null p2psand plastic-hardening power power-mohr power-ubiquitous soft-soil soft-soil-creep softening-ubiquitous strain-softening swell ubiquitous-anisotropic ubiquitous-joint von-mises wipp wipp-drucker wipp-salt ã9Ó Ad’K†Ú`ƒ/9
+ˆ ¶0 ğM “Ê “Ê2' ô±‚) GÛÂœ ¤8 ö±Ú
+ 2  "=Ú "=: †ÕDÚ# †ÕD( ğÉ7Í †ÕDìc†½ †ÕD`‘ †ÕDHq š„ ²D' &a &@ÈR! F†ÌJ: uNh 	ğ%G[€ 
+¤˜'¤ ã9óä( „„        $4š™™™™™é?ö±Ú
+{c ã9[$¥š™™™™™Ù?ã9[$    ã9[$uµ   $4H3,    „„i†    2dVÒA        2dVÒA        ã9[$•      @ã9[$M	 †ÕDÚ#    Áe“0 Á˜ä
+ ¶  Núd8 NZÜM„"      è?ã¹I“1 -»GÊ                -»GŠ        -»G
+        -Â˜        $9                                ·¤ƒè Ş’¢ ¢—\ í‘Â& $M æ	 &a[ sVd ²Déc       €²DYj   ²D“£d   ²Dep§' ²DÛ#    ²D' ²D§' ö±ã' ö±é' w
+    ö1–ÿÿÿÿÿÿïA        A      @Ad’KAd’K¾äè‰ ³0“)
+W“Z8
+ “Z:
+ ã9Z Ad’K¾äèŠ ³0“)
+X“Z8
+ “Z:
+ ã9Z Ad’KP>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿï,LJS+“îBMKa?-`ó‹ 6°Z        7Š	   Ad’K-`öF`2Ğô‹         
+   Áhz‹         
+   -`hz‹         
+   #V&C 	   áB *a;ï›?   4µB *a;ï›?   Áó        Á         2Ğô‹         
+   ®6q
+ "06Œ ³0“)
+Y“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw ZÉ¡$ ³0“)
+[“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’K706 ³0“)
+\“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw ]É¡$ ³0“)
+^“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KAd’KAd’K¶Y Ad’KĞŒN‘ í‘ÊŠŒ’ "0F“ ã9” ³0“)
+_“Z8
+W“Z:
+ ã9ZN• ³0“)
+`‰
+G¾
+:  S;  (‘ ³°2( O’"
+ Å
+aÅ‘
+b0Hšhzÿÿÿÿí‘Âi null     ğÍDÓsÏCÃØÃÄ¿œç~ˆ§°?'@€*ßà‰†?É
+I  —	 &Ôã¡ûï?#CJâ„· ?“Z' &	    Ï˜Y(       €       €¤Ğ2(        ä‰G2 ä‰Gr Ad’K• c:  ;     deÿÿÿÿi null     Òä¦Åğà¿t¨%ÎÈPÖ¿X:§',‘? Ğî æ?vç´m\ç¿            €       €          • f:  ;     ghÿÿÿÿi null     ÇñíáŒË?nnN‰¾~Ğ¿øró±*OÀ¿ ™º¥(Ü¿Sq–ny¼ì¿                               • i:  ;     gjÿÿÿÿi null     D4S]%"Ò?ØŞ¸&Á¿öË`›¿ ^ÓŠ à?NŸ7h@µë?                               • k:  ;     lmÿÿÿÿi null     şL¥wvË¿¨ëŒ¥ÔHÙ?ähÈÅ¥¿ (äà?À¶¿PS‰ß•ßï?                               • n:  ;     aoÿÿÿÿi null     ÊÌî 4Ğ¿^U.,¢–¿ p³êª’? ÓÉÌç¨¿,¼ÍŒêşï¿            €       €          • p:  ;     aqÿÿÿÿi null     ö˜ÜÛRÆ¿ìóä¦Üµ?ÀŸEô¨@{¿ x¬Ro¥î?ıáÄkÒ?            €       €          • r:  ;     asÿÿÿÿi null     ıkŠ‹l
+Ğ¿“*á-p´?òåKôÁ¿ ¿œQÍ±c±?ãè íï?            €       €          • t:  ;     auÿÿÿÿi null     ›s¼S}†Ç¿¼Où¸Ê÷–?ğ¼6V!†¿ 
+Áâö£ë?ïĞoçà¿            €       €          • v:  ;     awÿÿÿÿi null     a¼Û$öÒ¿÷Å~hã³°?±Û}µ[L´¿ Z>îêëï¿ŒÑê±?                               • x:  ;     yzÿÿÿÿi null     ”å	'øYÛ?øÇ¸m>9İ?<:añ´¿ ^Ëx‰Õ)¯¿*ƒ	ÃÏğï?                               • {:  ;     y|ÿÿÿÿi null     úéÁò^Ş?lr×Sp•İ?ø_Æ®§&§¿  3QyVá?;§ägåê?                               • }:  ;     bqÿÿÿÿi null     0*Ú4ø´¿¤2Kì>Ÿ¶?êG@  À¿ usœ´„ß¿+ğ÷¤·Ùë?            €       €          • ~:  ;     bÿÿÿÿi null     *1ã\Ïœ¿€ù&¥Ã? ¤İEg’? 5PpNAdÜ?&şË­ì?                               • €:  ;     bsÿÿÿÿi null     zÒ
+3£ÔÃ¿aKÉšßg¶? ï‡¬…µI? ¢‚ë.ï¿½P5õ»Ì?            €       €          • :  ;     buÿÿÿÿi null     ,ŠC å´¿Úvhı^Å?è¾çn·¿ şã0°Ñ¿¾ˆ˜XéÀî¿                               • ‚:  ;     bƒÿÿÿÿi null     áéXí¿]¼È°-Dº?ì¨:(1¥¿ öëëƒD5ë?lĞ´ÒØà?                               • „:  ;     …oÿÿÿÿi null     ºÆê`ùuÕ¿2.AJ³²¶¿ |9]¥^? €?^|ï?ßæ”ÚÆ¿            €       €          • †:  ;     …‡ÿÿÿÿi null     WñkÛ¿øıÿ¸¿”µú’² À¿ ë*«½6§?Zù\“÷ï¿                               • ˆ:  ;     …‰ÿÿÿÿi null     ÁÎñŸà¥Ú¿uéî„ò&»¿ã~8Ö´Â»¿ Õq=f„É?¹¥±÷çaï¿                               • Š:  ;     …wÿÿÿÿi null     BŸhÂ½Ù¿|ÂÕáÔŒ¿Y}Áãª¿ ½qï1AdÕ?Ê‘Ù(î?            €       €          • ‹:  ;     …Œÿÿÿÿi null     Š»„¶€7Û¿îtõøKl´¿
+Ul‰ú¯Ä¿ •T.òÓ¿Jª£zî¿            €       €          •  :  ;     …ÿÿÿÿi null     ÀÖÒ’[Õ¿<˜uá5)¿¿°JèDú›? 'TÊáì?Ï*µÕÅŞ¿                               • !:  ;     eÿÿÿÿi null     í¯5#ÚÙ¿ä<¼à¿ˆi÷1<S¯¿ åáw…´ä?d/t}ñè¿            €       €          • ‘":  ;     e’ÿÿÿÿi null     ¸\˜ÂøŞ¿³Å†R©ß¿$JúhØ;·¿ ÿ÷ŞQùJâ¿œ(Aê¿                               • “#:  ;     ”•ÿÿÿÿi null     İúÚ<İ¿½–!£@QØ?çÁEHšÇ¿ —ë™çã?Äuî Vé¿                               • –$:  ;     ”—ÿÿÿÿi null     `]¹S÷´Ş¿B9UŸåEà? ‰ÍêUz? âî­ºC¬¿Ö-¢‚óï?                               • ˜%:  ;     ™šÿÿÿÿi null     VÉA¢Gİ?é¬à›2H¤?tzûÅü³¿ À£jûåSÛ¿õÓ¦O¥ïì¿                               • ›&:  ;     ™œÿÿÿÿi null     v.–äQ‘Ú?š_X`£?¨¹VH—¿ LËÔ@Ûßç¿ßMÔÄºNå¿                               • ':  ;     ™jÿÿÿÿi null     ›ƒ’ÑçÙ?¬1áe”?À¼8±b?‘? ¦>Z¿«æ¿İì:)–æ¿                               • (:  ;     oŸÿÿÿÿi null     šş§:3Í¿ªç°‡~Ã¿˜Vù%&ª¿ ×šÈ!`Ş?â=)áŠ*ì¿            €       €          •  ):  ;     o¡ÿÿÿÿi null     ¼Ü¿AÂÊ¿–—jÊ…ÍÇ¿`Ú|íš? ½ÖTÑêÛŞ?âÌÈòĞì¿            €       €          • ¢*:  ;     ouÿÿÿÿi null     ÂeéXëÇ¿,¡F–²¿@Qrú£®ˆ¿ îü~&éÏì?â¹ÖÂØÛ?            €       €          • £+:  ;     o‡ÿÿÿÿi null     6N'˜l3Õ¿C¾-–"½¿@^;R"¿ ™€VÒ¨»ï¿æÿõ;ÈÀ¿                               • ¤,:  ;     o‰ÿÿÿÿi null     (@¾ØÔ¿ŒC–ÙšP¿¿`˜øö5­¿ ¸ßKàëî¿¹}/Q€Ğ¿                               • ¥-:  ;     owÿÿÿÿi null     2É™goÓ¿üW°·	nŸ¿ °¥18²Š? â³Sîá¿ã¢Ñ©ô€ê?                               • ¦.:  ;     oŒÿÿÿÿi null     a-…*jÕ¿FÍğŠ«»¿@¸ùHŠ¿ I¦Bß:ûï¿«ÀŸFCx¡¿                               • §/:  ;     oÿÿÿÿi null     	[ªÜĞ¿ëˆ%5ñÁ¿.Àˆ×¹¿ kñiçêÁ?Yõ¼ÇW¯ï¿                               • ¨0:  ;     Ÿ©ÿÿÿÿi null     ò9½×L_·¿Qİô^]Ò¿ ÅQF—k¿ pcIòbë? õš±îà¿            €       €          • ª1:  ;     Ÿ¡ÿÿÿÿi null     Ÿõªi¾cÅ¿¢&AÀõĞĞ¿H3´@ÃÃ¿ G˜Íugà?ƒ=Êl¥ë¿            €       €          • «2:  ;     Ÿuÿÿÿÿi null     œTZdÿÁ¿¸gí¿¿ Yí›(!d? Ÿ¢¢%ÁÙ?Ÿpû]nKí?                               • ¬3:  ;     Ÿ‰ÿÿÿÿi null     ö…œB£Ó¿¥7]×EyÇ¿Ì«F‡ ? ïûTèäí¿ÁGÜ]ÑÖÖ?                               • ­4:  ;     Ÿÿÿÿÿi null     ¸ê(<lÇÌ¿Ø.nß8jÈ¿Ç§®¾¿ ¶Wíâù†æ¿Lˆƒû%ºæ?                               • ®5:  ;     ¯ÿÿÿÿi null     fço©F}Ğ¿şÈZh}à¿PÒÖ?Z‡¿ ¥UP‰Ü`ì?òb+“İ?            €       €          • °6:  ;     ’ÿÿÿÿi null     fÅØ3ñÛ¿øÑ¢¸á¿h#¨º£¿ ÃíE‹ãï¿-(-…±Qµ?                               • ±7:  ;     ©¡ÿÿÿÿi null     _Õ
+Tƒ/·¿wyQÓ¿ñøpÅ–’¿ Ë'ğRc’í¿Ø½NatØ?            €       €          • ²8:  ;     ©¯ÿÿÿÿi null     !ª|E·¿ÔR€pGƒÙ¿@º|€n¼‘? İêî´Zè¿Ê\Úæå¿                               • ³9:  ;     qÿÿÿÿi null     ™&È€n¥¿®SƒLŠÆ?@ ØÛÍw¿ $=Û2¹ã?ßNáí2é?                               • ´::  ;     qsÿÿÿÿi null     ,´·bÅ¿¦^VÆÿ»?À^>«K¿ xDE8öÿï¿\bÌ°Ãi¿            €       €          • µ;:  ;     quÿÿÿÿi null     G Óz~¸¿òyVØín©?3‰İM¬¿ cj.u¿’¨ğşzüï¿            €       €          • ¶<:  ;     qƒÿÿÿÿi null     L$oœ¿Ë5Ç+BÀ?8Š‘;£¿ õSö’‡ôî?ĞÊ¬Lq8Ğ?            €       €          • ·=:  ;     ¡¯ÿÿÿÿi null     SÀÒ`%TÅ¿Õƒšæ—K×¿°Uo
+ˆ? §<µF%Q­¿%{¿<òï¿                               • ¸>:  ;     ¡ÿÿÿÿi null     ß½,ñÉ¿÷Uz˜nÌ¿Dù#Ü¥¿ ]­W7«Dä¿Áí¦áIÃè?                               • ¹?:  ;     ƒÿÿÿÿi null     ­œïiÜ¦?ŞY]ôÎiÊ?âÆQ4f»¿ CÄñQo,Ô?Ÿ\îÑa^î¿            €       €          • º@:  ;     »ÿÿÿÿi null     Æ¸Ó6º¶?ÖÖèÖ? jÅˆd? •µgŸá?Åj¼£×µê?            €       €          • ¼A:  ;     šœÿÿÿÿi null     iŸ”yuÃØ?£óƒ„‚Œ¿×9HjQÃ½¿ ºÌ.?Øçï¿Sró¥³?            €       €          • ½B:  ;     šjÿÿÿÿi null     µÒ}Ju9Ø?Ìı5Â:G£¿Íõ!·¿ ‡'«OÎí¿İ±\ËiK×¿            €       €          • ¾C:  ;     š¿ÿÿÿÿi null      ‹UÛmŞ?¶¢Uò?[À¿ğÌZFŠ³¡? ©¸á‘ÖØ?êÁ.§í¿            €       €          • ÀD:  ;     suÿÿÿÿi null     »ÛĞ›Æ¿~A«Ò€g¦? sŠ‡İh? KU²ç?†jÙÆOå¿                               • ÁE:  ;     swÿÿÿÿi null     ¶ÃM²AÓ¿ ó%Î¨Â·?²T„¸µ¿ ĞÍ2KŒî¿ñõ‰xJÓ¿                               • ÂF:  ;     uƒÿÿÿÿi null     ¤e¨ÒW”¿ƒ¥ı£K®?p9”D¢û—? ‚HiÌrå? VVo-Àç?                               • ÃG:  ;     uÿÿÿÿi null     G¼E¯¸¿Æ¿ÂÚ ¶sãº¿Àiö2´Š? ‰7Ñƒøæ¿"Â:ƒ^Gæ¿                               • ÄH:  ;     z|ÿÿÿÿi null     É „o_Ş?PBÑÂà?%æ¬’ÛU»¿ Ö`åDÌï?Q¢Gf¹¼¿            €       €          • ÅI:  ;     ‡‰ÿÿÿÿi null     ğq²²Ë‡Ú¿S‚$èaEÁ¿4hÉõƒÅ¿ À m°Ñªà?ÔÎÉ”Që¿                               • ÆJ:  ;     ‡wÿÿÿÿi null     nşŞGä‰Ù¿€Úc‡öT£¿ Nåó€¿ YfÎ`ÌÎ?’¿JTï?            €       €          • ÇK:  ;     ‡Œÿÿÿÿi null     ãŸĞ¶ûÚ¿,Ñ%®Vµ¿¿1T&k®Ç¿ ıäu^È—å¿ªãÇjİç?            €       €          • ÈL:  ;     ‡ÿÿÿÿi null     Â$GÕ¿íYx; Ã¿  ˜½„Uò¾ íÃñúî?ûü	§.Ğ¿                               • ÉM:  ;     ‰wÿÿÿÿi null     ´w©ÛÙ¿&œ˜ø¨¿ 64ßÚj‚? ß¾ô’éoÅ?ëŒ½KŒï?            €       €          • ÊN:  ;     ‰Œÿÿÿÿi null     ™ñ—ŠÃ¢Ú¿t·ÜÚG5Á¿`ÈE _´Ä¿ êb7ahã¿#£|`«é?            €       €          • ËO:  ;     ‰ÿÿÿÿi null     tÄP»»»Ô¿Tı=ş4Ä¿ğ‚–@¿ íÒ·Š›ï?97‚üÃ¿            €       €          • ÌP:  ;     wŒÿÿÿÿi null     ğm2¢ÜÙ¿P„ÅB¼•¿ qVÀ8£¿ ü\®v¶Õ¿’ş"ù9î¿            €       €          • ÍQ:  ;     œjÿÿÿÿi null     qg{ÈJÖ?€)-,öœ¿\â«øœÀ¿ ÖoÆªñ â¿!4R”Èê¿                               • ÎR:  ;     Œÿÿÿÿi null     ¨Vr§Õ¿V"}>\cÂ¿ ˆuA%#,¿ Ì]‡gxî?é+¥ÿÓ¿                               • ÏS:  ;     »Ğÿÿÿÿi null     hra/µ?n¶[=Tà?ˆ´å¡“¿ u&5¸ëHå¿•|Â&	åç?                               • ÑT:  ;     bÒÿÿÿÿi null     O[¶ş¬£¿pty~¿`À?Do¢¼çİ¢¿ ·ÊísP&Ş?˜L:ì?                               • ÓU:  ;     qÒÿÿÿÿi null     AQc­_ª¿‘é@E?Ã?#ªF|7­¿ ¼t­ttç?!iZš”.æ?                               • ÔV:  ;     Òÿÿÿÿi null     5Ècª„…?ÿÆÁAØÌ? 4®®ÀÂ¿ Ísn/¥mØ¿ıùŠÇ“í¿            €       €          • ÕW:  ;     ƒÒÿÿÿÿi null     Æ¯PºJl›?§æÒŞóêÆ?ı’“­ÄèÀ¿ xjşO>é¿(Iªã?                               ÅyR™A 	G    H         energy-strain G    H         energy-slip  G    H         energy-dashpot  G    H         energy-rrstrain G    H         energy-rrslip  G    H         energy-pbstrain G    H         energy-adhesive  G    H         energy-strain-eepa  G 	   H         energy-strain-jkr  
+   “>YHqA 	G    H         energy-strain G    H         energy-slip  G    H         energy-dashpot  G    H         energy-rrstrain G    H         energy-rrslip  G    H         energy-pbstrain G    H         energy-adhesive  G    H         energy-strain-eepa  G 	   H         energy-strain-jkr  
+   aĞdw ÖÉ¡$– ³0“)
+×“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KäµÜx†A— ³0“)
+Ø“Z8
+ “Z:
+ ã9Z Ad’K½IE`l˜ ³0“)
+Ù“Z8
+ “Z:
+ ã9Z ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•AAd’K"06™ ³0“)
+Ú“Z8
+)“Z:
+ã9Z)š ³0“)
+g‰
+G¾
+:  S;  (‘ ³°2( O’"
+ &a ìÀHh0¹ffffffæ?ÉIS`-Ì	^îdjjzW@GÛÂœ^îdjjzW@æÉQ› œ 6°Z        Ad’Kœ         Ad’Kíµâ(œ         B–
+1O                B–
+i¯G&        Bóä(-œ         +¹BÓ(®È“        $4X\‘'        â‘|Ÿ\        ¤¸™h     ˆ£@“&c¨n²@› œ         œ         “&c‚;•	œ         t²Ôã9        ÿÿÿÿÿÿïí%5_—÷á?ÉIS`í%5_—÷á?¶°7Í        Õ+7C)Gµ¿Á[Ø‰f&        $MÈÂ(­8
+        a„e`,5S¿O¦âh é9        2Ğô(-Cëâ6?2Ğô      ğ?F†ÓŠ£É‘‚    -@ i†ƒŞ¤ ğÍDÓsTKàşèÎ?ÓñŞ7q¾Ë¿2T'*‰}fVş»?-@úØxnR        ¶°7Í’@Óâ(X\sÊ°¿¼?>tCÌüîÖ?úab¼‹«Õ¿DïŠì±·¿ô±‚iqë4Û0–¾?~©rÖ?ÕkÈb’;Õ¿×ëVñÑq¹¿ñH
+ 0HšhzÿÿÿÿAd’Kš l:  ;      ffffffæ?âœIôO@âœIôO@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï(Ş¡ª¤Ğ?(Ş¡ª¤Ğ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ÊÕNÖW­Ê¿«g±÷ºãÔ?¥ê¯¡¹·?        ää  XÕÓ¿›Ã·Öş_»¿h¦0İ‡ğÌ?1G‹YœuÛ?9%:ùxÓ¿EÂÒpzÑ¼¿½%>ªE©Í?†‡s=Û? ÿÿÿÿš a:  ;      ffffffæ?äææßÔK@äææßÔK@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï©:às?É?©:às?É?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      Ã¦•-Ğ¿m/L>Ï¯?)n!Ø2µ?        *pâã-Ö¿ ¸º‘îÄ¿LÜ9·Ê ¿Ú$W…¦9Ä?N¤¯×Õ¿‘Ã{(XÉÄ¿]k¸HÆš¿i–î<Ã? ÿÿÿÿš y:  ;      ffffffæ?Î5Ù¥¹T@Î5Ù¥¹T@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïKsSO Ü?KsSO Ü?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      LÜ¨¢—Û?µpô—úEÙ?>òˆ	Mº?        *X`uô1Ô?6°^m¨~á?R¦‘óÑ?.­ûn_à?ó{†Í(›Ô?RKAJá?ãuÌéµ\Ò?J›nÏÔ*à? ÿÿÿÿš d:  ;      ffffffæ?vEå3¹I@vEå3¹I@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï–Ü?Ş‘Å?–Ü?Ş‘Å?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ru]êâ¿—ÿ20Ò¿Z:Î—¸´?        §iÊ?Ôå¿=·{ à¿x©^}Âğ×¿MQõOr’È¿2f9©Ïªå¿²æ@ë)à¿pÿ:â×¿ Ã³Ô28É¿ ÿÿÿÿš b:  ;      ffffffæ?B¡÷¬UDM@B¡÷¬UDM@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïğ¶WëË?ğ¶WëË?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      €AJğ²¿o{l±?ê^-Ç®¶?        #&uêqÅ¿%XÑW›?å;rœ¿#Ë±àJÅ?,»×şÁÄ¿bÍC¦eÑ•?bpÀ³	—¿,#’;šÄ? ÿÿÿÿš …:  ;      ffffffæ?N}­#ŠN@N}­#ŠN@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïÍçEîufÎ?ÍçEîufÎ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      µ÷^®Û¿éıü©ßŸ²¿ÿm×b“¶?        ã1Ç¶à¿Fa’:¹Ô¿lkmÜÅ¿œL}çKœ?³WPêˆà¿¦º¾ˆÕ¿¬¨¯şÑ'Å¿œ¢18¦–? ÿÿÿÿš e	:  ;      ffffffæ?ÅhöèY@ÅhöèY@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïGî¹åÄáå?Gî¹åÄáå?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      Æ„s.àmÜ¿W¾!€Ü¿_Ü
+Uh½?        aIÇœYâ¿ÊvXCˆ(Ô¿f3nŸâ¿ÔJ¦hªÓ¿¨3±bËâ¿<¢„—)Ô¿­XõÍßá¿FvÒ¼. Ô¿ ÿÿÿÿš ”
+:  ;      ffffffæ?i†ç²V%X@i†ç²V%X@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïÂ;áê ã?Â;áê ã?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      'ºÕÄMŞ¿ïğ›ÈAÙ?ü¯ïF…c¼?        NÈÖ(á$ã¿Ÿ½ÆYÇQÖ¿÷ìyOXÑ?úßw8%¨à?îèHìâ¿_|ânUÃÖ¿·«$İÉÑ?š ê-^oà? ÿÿÿÿš ™:  ;      ffffffæ?ëAJsV@ëAJsV@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïœWº'®mà?œWº'®mà?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ¦ı4V˜"ß?ß¤oókÛ¹?Æg„z·_»?        vÀ¿»¬o×?lUøÁjã?<ç·’¿×c‡÷yÌ?Ò©™+İ×?œ`‰4ã?”šÛi’k‡¿™ôËùË? ÿÿÿÿš o:  ;      ffffffæ?ÏßŒŒàI@ÏßŒŒàI@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïß©¥ï—ÓÅ?ß©¥ï—ÓÅ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      NÅôFJĞ¿©9Îsº¿§öºöÇ´?        MıZY„"Ö¿œ~` äÄ¿ÌxWĞÃÈ¿Ä<1R¬-†¿±"o~dÏÕ¿Õ38ÖRŠÅ¿“Ú ¡È¿)HÖ×ÓH¿ ÿÿÿÿš Ÿ:  ;      ffffffæ?üıŸ[§Y@üıŸ[§Y@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï%b]Ï…ä?%b]Ï…ä?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      8Wù@âÇ¿™Ì$Ì‚ZÍ¿å}è<™ğ¼?        ¤•ËÔ¿A«k®¿1dÓR·½Ö¿uB‚„Ù¹¿í°0	¡Ó¿­¨U!ß±¿9ÂßíôIÖ¿]ı¨»¿ ÿÿÿÿš :  ;      ffffffæ?‘ªXº†fU@‘ªXº†fU@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï°9÷èÛİ?°9÷èÛİ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      /TÖ¿CÇc	óá¿Ø|»ç¹º?        5Ó›İ¿ø¹”(&Í¿òAJ“«å¿æmº ”NÜ¿Båøkµ0İ¿ß•Ê`åûÍ¿{4|vå¿Ù[Õ<|¹Ü¿ ÿÿÿÿš ©:  ;      ffffffæ?è»ğxë8P@è»ğxë8P@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïàée×Ø'Ñ?àée×Ø'Ñ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ÀÅJ
+†¢¿%ÿú°QÕ¿ìÒmŒëD·?        æD¿Ù¾¿’4²<8Y¶?ñ|!ŞÉÛ¿˜lG3fÍ¿Ó~‹¼¿cWëƒéä´?¥Åï^ÊlÛ¿/ÛªxZ Î¿ ÿÿÿÿš q:  ;      ffffffæ?‘‹I^²ùM@‘‹I^²ùM@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï¤XÜŒIÍ?¤XÜŒIÍ?        Õ+7C)Gµ¿                b„e`,5S¿        -Cëâ6?      ğ?      ¨pêÊş
+¸¿~ <³¼?ÕïË¿]¶?        ( ,H;šÈ¿ğ5¨çq?x#¢Eˆ‰?àñÇÙÿÁÊ?€¡ÌIMçÇ¿à“çÀØQ¿şÍ•°[’?8shÛÊ? ÿÿÿÿš ¡:  ;      ffffffæ?]˜ğw.ÙL@]˜ğw.ÙL@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïå·‡$] Ë?å·‡$] Ë?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      :r¹&T¨Ä¿ƒ“Ì¸qÑ¿>Shlñµ?        †ÚÑ÷Ğ¿Î†}Sq¡°¿fş¯^QŠ×¿%ŸjÃkeÆ¿9o(€3(Ğ¿Dš‚ ²¿]ş2×¿¿áÍfôÇ¿ ÿÿÿÿš ¯:  ;      ffffffæ?Íî8î0T@Íî8î0T@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï(“¤“Ú?(“¤“Ú?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      Æ|®!jÆ¿š‚=47&Ş¿)İ KÅõ¹?        —|Ô[Ò¿{œ¬®¿£-‘Â°â¿ßŞ—ŠâÅÖ¿"ùíxıóÑ¿£²¥°¿éëù7%|â¿TbÆŸ¹-×¿ ÿÿÿÿš :  ;      ffffffæ?f¶×&BY@f¶×&BY@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï@+Îdiä?@+Îdiä?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      €uİ,š?5JYÚ1ĞĞ?ÿ|æ¼?         _Ô4Öß¹¿¯ÇQv“Ã?¹ZW…Á?œÆa?Ù?§
+=m¸¿³ŸâÕA¬Â?µo?ÓQlÂ?§Ó#¥Ø? ÿÿÿÿš š:  ;      ffffffæ? áˆ‚iT@ áˆ‚iT@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïÃ¾mg)Û?Ã¾mg)Û?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ÚCüpÛ?æc‘ıî²‘¿ØlMº?        >åQã8Ô?<QSŸasá?®Fâ™¾À¿Œ·Æ¨e=¹?ñ†… Ô?b@¹ˆ-?á?¶»“Û¿¿¾0öóÄ›·? ÿÿÿÿš s:  ;      ffffffæ?6İN§ R@6İN§ R@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï¼%”Rs&Õ?¼%”Rs&Õ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      
+ßw3‰ÓÏ¿¿6^»î»?lÖò„¸?        Ä0îå(ÏÖ¿\›ÀÂ¿ĞúxÚÛ¿d?äè2 èË?²–mÖ¿±œÃ1èÌÂ¿ê@¢apr?Á¨‚	i$Ë? ÿÿÿÿš u:  ;      ffffffæ?ø¸¾öîU@ø¸¾öîU@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïv\	OŞ?v\	OŞ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      4+á¹¸¹¿Æ©˜¡öPœ¿ou„©µÓº?        ªKŒr Ë¿¤cO“Îm”?@ÌÌªÊzÂ¿½oĞgÃf·?şóşŞÔÉÊ¿ŒÜQÂq‹?”¨€ı,¤Á¿f(8ˆ¹µ? ÿÿÿÿš ƒ:  ;      ffffffæ?Pã…n¯X@Pã…n¯X@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï,ª/´µÜã?,ª/´µÜã?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      à!Ş)°?ë{vwKÃ?LÔyf@´¼?        öìj`Å!°¿Z˜Ãå9È?Iü•´ü`š?/çítËÑ?bŸ´­¬¿¸Éß¿CTÇ?®8gÇ ?ŞÿS£XÑ? ÿÿÿÿš z:  ;      ffffffæ?©ÅzGÓV@©ÅzGÓV@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïT¬.€Vûà?T¬.€Vûà?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ÂãÓ<Û?ïmÉvÊ¿à?{cÇ´ş™»?        ÇÏ¶0íSÓ?Ş{3;Fmá?g-wzÏÙ?®ªeŞ«ä?Uí‰+UÂÓ?íÉ=6á?õJîqâ=Ú?çüàØsä? ÿÿÿÿš ‡:  ;      ffffffæ?›rYtSQ@›rYtSQ@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïl-kÀ‘Ó?l-kÀ‘Ó?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ;õäëÚ¿	ÈjYú¿¿amí7¸?        =ÿ]ã©×à¿¢w.Qt(Ô¿Ô‚I½]Í¿‘8óò’¿z$ƒs‘§à¿(-ä0¥ˆÔ¿È´Š[Ì¿|é“î ƒ˜¿ ÿÿÿÿš ‰:  ;      ffffffæ?n;Î;DQ@n;Î;DQ@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï~ï‰Ó?~ï‰Ó?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      !Á0n(Ú¿ï1l¥ú}Â¿êßåç·?        †>¿LÓpà¿6ÁÆ5oÓ¿¹ŞhÊÏ¿H¼·ç}”£¿j€µ‚Aà¿nÔZÕÎÓ¿JæA÷Á
+Ï¿Sˆz‘¦¿ ÿÿÿÿš w:  ;      ffffffæ?Êš
+#NZ@Êš
+#NZ@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïÂ|ŒùÜæ?Â|ŒùÜæ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      Ö˜ÏÉêÑ×¿ß€øÙã²?\…Íy¡½?        ,³R«à¿¨–ßıøÎ¿0>»íï­¿|¦@ú³ÙÉ?B0*¦Ğ°ß¿ÓêÚ	æÏ¿„àË½;ª¿Q:rş§ìÈ? ÿÿÿÿš •:  ;      ffffffæ?Ïÿg+µåU@Ïÿg+µåU@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï´aBß?´aBß?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      Ÿ|^İ¿QÕú7E¥×?YÓÜ»?        ånÛ›Pâ¿slÕ¿¬ÙIüĞ?œ³øRß?2l5â{â¿Ù RtBØÕ¿ßN¼ŠĞ?–gÕæŞ? ÿÿÿÿš œ:  ;      ffffffæ?-ïêO=qL@-ïêO=qL@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïŒI¶C^Ê?ŒI¶C^Ê?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      nPïÒ
+×?Kr¢LEˆ¿ozCiÉµ?        0á"T-êĞ?¬¿Šx+İ?Rh¶Nk>»¿¢‰ÁÆµ?ìÊ0ùRAÑ?ğÕ	åRÔÜ?`Á~ºÔá¹¿°jåô*j´? ÿÿÿÿš h:  ;      ffffffæ?æ‰Ì™aÿK@æ‰Ì™aÿK@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï~ÊÏÍŒÉ?~ÊÏÍŒÉ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      mS"bÊ?5ÏsÛ¸¯Ñ¿¾q½¡µ?        zeOºr¼?‚zYEÓ?¬Ác,Ù°×¿a#†c\Ç¿6q>k”Ì½?»ĞƒãîÒ?åƒm¥bZ×¿ïrqI½Ç¿ ÿÿÿÿš Œ:  ;      ffffffæ?•…ø X@•…ø X@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïMH=LÏÄã?MH=LÏÄã?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      â©Êë*ÓÛ¿-ä–À¼¿œíö™«¼?        ¬·ñá¿‡ûWçÂÓ¿FÙ–|ıÍ¿NŸA…’?ñÑ°è_¸á¿á¯3–5Ô¿‘pß½Í¿NwÇ‡=ã…? ÿÿÿÿš  :  ;      ffffffæ?±S¥JæN@±S¥JæN@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïV®é[TeÍ?V®é[TeÍ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ¦ÓÒÜ^Ï¿q²Úå¦ÍÅ¿„~¥c¶?        `Ûô´éúÕ¿Œğ»OfÆÂ¿AeyÑ¿œ ²¿Jã^†]¡Õ¿¸àç¬~yÃ¿+m‚^íÅĞ¿ôè]º<…³¿ ÿÿÿÿš |!:  ;      ffffffæ?TË°Å¹K@TË°Å¹K@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïğñ”_É?ğñ”_É?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      FL¹…@à?.Xà™qà?®÷õ±‚µ?        âr‚şbsÚ?_1ŒsFã?6ğŒà¦éÚ?Ä6}•ã?ÁæVÆmÉÚ?+%G(nã?da¨±?Û?ÕcLVã? ÿÿÿÿš Û":  ;      ffffffæ?ë,FÜ#U@ë,FÜ#U@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï“¡Tú/"İ?“¡Tú/"İ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      bœ™!øŞ?¯˜×ÙcÑá¿	æ!%º?        \Ù"—×?`õ
+V8ã?F*ä„å¿(CÕòÜ¿ô`››×é×?”±ÎË5ã?zæ§BîNå¿ÀÊM‰HÜ¿ ÿÿÿÿš »#:  ;      ffffffæ?Ò¯¡óªS@Ò¯¡óªS@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïªáüÁ\5Ù?ªáüÁ\5Ù?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      Ğğ"Â?íWÜÔ0RÜ?dÍÀ—‡¹?         õ•4×_ ?-2ï+'uĞ?¯ƒŞÏ0Õ?œ{õşÌá?Ì'¨“£?÷.­Ğ?å†íüI—Õ?úÅÁ™á? ÿÿÿÿš j$:  ;      ffffffæ?„­ûT@„­ûT@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï+Z+¯Á:Ú?+Z+¯Á:Ú?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ~UñÔ?ôD4µŠ­¿é"$õß¹?        æ¯:TË?	'«ş7Ü?Šÿ£Ø<ÊÅ¿ÀÛF­?.Ğã#Ì?e›-~ĞÛ?Bè‚/=ûÄ¿l½ˆİ
+ª? ÿÿÿÿš ¿%:  ;      ffffffæ?làäŒbQ@làäŒbQ@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿïDwyÄ²Ó?DwyÄ²Ó?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ŒØ"Üçà?éTÆ0‘Í¿Q?ıV¸?        Jw®€‡UÚ?tuî÷ñã?ĞHan«{Õ¿ÏTËük¼¿¿GlÙàµÚ?õz¸KßÀã?ÓSõRÕ¿b”=¯èÀ¿ ÿÿÿÿš —&:  ;      ffffffæ?İ8N@İ8N@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï>§BXÍ?>§BXÍ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      Äw¯íß¿½KF++ã?{$e<`¶?        õU‰
+©â¿³Å»Ø¿^Eø#2à? ·ô$ZZæ?º*İlI|â¿š¤IGÙ¿§q@ó;à?Wí{™-æ? ÿÿÿÿš m':  ;      ffffffæ?^ÉÉbÒL@^ÉÉbÒL@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï½˜÷÷–Ë?½˜÷÷–Ë?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      ø³Wõ­1Ì¿ÄÛêcİ?R+j®~îµ?        *¶¹›êCÔ¿3÷wf·¿¿^gL×?^#™ÔÑá?} ¡0ìÓ¿ôL¯¨úŠÀ¿7ĞaÆ£×?O<×<¥á? ÿÿÿÿš ’(:  ;      ffffffæ? O>1şW@ O>1şW@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï©µW# Eá?©µW# Eá?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?      V’|·í¢à¿Š ¼m{á¿¨ëNı·»?        ÷µ•VÍˆä¿jİÆ0zÙ¿i‰Å²Wå¿Nt®çÛ¿§Ş÷[]Qä¿
+Œ&üèÙ¿ªëÊB å¿î"êÇ†Û¿ ÿÿÿÿš Ğ):  ;      ffffffæ?ğÌ­¥CU@ğÌ­¥CU@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï	xzİ?	xzİ?        Õ+7C)Gµ¿                a„e`,5S¿        -Cëâ6?      ğ?       ÒŸ€°•?®0J&Ì—â?L¡Ñ¤º?        Îà]yŒ¸¿åi´\²Á?ƒÑ9 §Äİ? Ş×èy`æ?¹Æöó7â¶¿Xãÿ;İÀ?}z7/Ş?İ:¶»1+æ? ÿÿÿÿš Ò':  ;      ffffffæ?;CÕYŒ¢S@;CÕYŒ¢S@› œ         œ         œ                                 œ                                      ˆ£@› œ         œ         œ                 ÿÿÿÿÿÿï-DTû!Ù?-DTû!Ù?        Ûá
+ïúœ˜¿                8İu)…Ú¿        -Cëâ6?      ğ?              ßjôH–É?š™™™™™¹?        ÎÌÌÌÌÌ¼¿ÎÌÌÌÌÌ¼?ffffff¶?      Ô?433333»¿433333»?      ¸?š™™™™™Ó? ÿÿÿÿÅyR™A G    H         energy-kinetic G    H         energy-damp  G    H         energy-body     “>YHqA G    H         energy-kinetic G    H         energy-damp  G    H         energy-body     ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•Au 
+-àD
+ °ÁÊ ³0“)
+Ü“Z8
+ “Z:
+ ã9Z Ad’K´4‹¬L İ   Ad’KP>X$Í-@ 4µ2i,µD        Ì!HjYİ­?,LJS+“îBMKa?-`ó‹ ŒW†üÔ @   -`öF`2Ğô‹       ğ?
+   Áhz‹       ğ?
+   -`hz‹ €J>	ö?
+   ã9[ä)‹      ˆÃ@
+   #V&C 	   áB *a;ï›?   4µB ö0Ãjx?   Áó¦š;æŞk‡@Á ¦š;æŞk‡@2Ğô‹       ğ?
+   ®6›
+)aŒÚ&•eN ¤Ğä(ÿÿÿÿäÍ')Ad’K#VŠ£2‹À aĞdÏ.´'Ball Ad’K#VŠ£2ôŸ aĞdÏ.´'GhostBall Ad’KAd’Kí‘ÊÊ`µA  ƒÕI ¡ ã9¢ ³0“)
+Ş“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw ßÉ¡$£ ³0“)
+à“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KäµÜx†A¤ ³0“)
+á“Z8
+ “Z:
+ ã9Z Ad’K½Ia‚•	¥ ³0“)
+â“Z8
+ “Z:
+ ã9Z ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•AAd’KƒÕiiZ¦ ³0“)
+ã“Z8
+ “Z:
+ ã9Z ƒVœ§ ³0“)
+ä“Z8
+ “Z:
+ ã9Z Ad’KƒÂ"+¨ ³0“)
+å“Z8
+ “Z:
+ ã9Z Ad’Kƒ
+X„`e© ³0“)
+æ“Z8
+ “Z:
+ ã9Z ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•AAd’K³JF™ª ³0“)
+ç“Z8
+ “Z:
+ ã9Z &ŒB'« ³0“)
+è“Z8
+ “Z:
+ ã9Z ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•AAd’K¶HšF™¬ ³0“)
+é“Z8
+ “Z:
+ ã9Z Ad’KAd’K.´2 ³JFi Ad’KƒÕ'­ ³0“)
+ê“Z8
+ “Z:
+ ã9Z ÅyR™A G    H         energy-kinetic G    H         energy-damp  G    H         energy-body     “>YHqA G    H         energy-kinetic G    H         energy-damp  G    H         energy-body     °ÁÊ® ³0“)
+ë“Z8
+ “Z:
+ ã9Z ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•Au 
+-àD
+ Ad’K!X™© ì                    ?              ø¿      ø?      ø¿      ø?Ad’KP>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿï_,LJS+“        -`ó‹            -`öF`2Ğô‹         
+   Áhz‹         
+   -`hz‹         
+   ã9[ä)‹         
+   #V&C 	   áB *a;ï›?   4µB ö0Ãjx?   Áó        Á         2Ğô‹         
+   aŒÚ&•eN ¤Ğä(ÿÿÿÿäÍ')Ad’K#VŠ£2V¯ aĞdÏ.´'Clump Ad’K#VŠ£2ô° aĞdÏ.´'GhostPebble Ad’KAd’Kí‘ÊÊŒ± 70F² ã9³ ³0“)
+í“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw îÉ¡$´ ³0“)
+ï“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KæÆ&µ ³0“)
+ğ“Z8
+ “Z:
+ã9Z¶ ³0“)
+ñ‰
+eG¾
+:  S;  (‘ ³°2( O’"
+ F†ÓŠ£É‘‚    ¨S&· ³0“)
+ò“Z8
+“Z:
+ ã9Z¸ ³0“)
+ó‰
+O¦“
+ô®`
+
+õP
+õ0$	
+ö&ŒB
+÷ãÍà      $ÀAd’K¸ öô  ó       $À¸ õøóóù÷      $À¸ ùø  õ       $ÀAd’K¶HZ0²8
+¹ ³0“)
+ú&ÉI
+ô,L
+
+ø®6Q$
+Ad’K&ŒBaÅQº ³0“)
+û&ÉI
+÷,L
+
+÷®6Q$
+Ad’KğÍDÓs        š™™™™™é¿içlÁ 2T'      ø?ö±Ú
+        &ú$    ²œV&ã9W V&j .´b o t t o m   ¶°7Í                Á[Ø‰f&        ÁV        §)                        £8*                $MÈÂ(­8
+                æÉQ› œ         œ         íµâ(œ         O¦âh é9        ãÍà}      ğ?¶H:o¢È 
+&ŒBçMç 
+²ºò¶H:Q°Å ³Hû\¹ Ad’K¶ üf:  ;         · ı ¸ şÿ        $À¸ ÿ  ş       $À¸  şş      $À¸           $À¹ ÿº         š™™™™™é?       ø?              t o p                                                                                           › œ         œ         œ                       ğ? 
+ 
+  &ŒB'» ³0“)
+“Z8
+“Z:
+ ã9Z¼ -@ G¾
+:  S;  ³0“)
+÷‰
+¨S
+ó÷d       €      ğ?®`
+
+ P
+ -@úØxnR@5^ºI¨?ã9[ò“¶0                aĞdËL¤ Óâ(Tã¥›Ä€ù¿Tã¥›Ä€ù?ÁÊ¡E¶³ì¿sh‘í|æ¿ô±‚iqªñÒMbÀø¿ªñÒMbÀø?mçû©ñ2ë¿ÇK7‰A è¿ô1@5^ºI¨?ƒĞÇ@5^ºI¸?,L:¯:
+   ®¶ñƒN   &2 
+ÂUÆ
+ Ad’K¼  :  ;  ş       €      ğ?  @5^ºI¨?                 Tã¥›Ä€ù¿Tã¥›Ä€ù?sh‘í|æ?ÁÊ¡E¶³ì?ªñÒMbÀø¿ªñÒMbÀø?ÇK7‰A è?mçû©ñ2ë?@5^ºI¨?@5^ºI¸?       
+ ¡ÒG¡ÒG#Å-@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•AAd’K¶HšF™½ ³0“)
+“Z8
+“Z:
+ ã9Z¾ -@ ³0“)
+ô‰
+G¾
+:  S;  (‘ ³°2( O’"
+ ¨S
+óğÍDÓs      ø¿š™™™™™é¿ã9WÿÿÿÿÑD
+ ®`
+
+øP
+ ¶°7Í                2T'433333Ã?Ad’K¾  ø:  ;     õ      ø?š™™™™™é¿ÿÿÿÿ  ô                433333Ã?¾  ÿ:  ;     ş      ø¿š™™™™™é?ÿÿÿÿ                  433333Ã?¾  :  ;            ø?š™™™™™é?ÿÿÿÿ  ÿ                433333Ã?¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•AAd’KAd’Käµ¿ ³0“)
+	“Z8
+“Z:
+ ã9ZÀ ³0“)
+
+‰
+G¾
+:  S;  (‘ ³°2( O’"
+ Å
+÷Å‘
+0Hšhzÿÿÿÿ“Z' &	    Ï˜Y(                ¤Ğ2(        Ad’KÀ :  ;     ÿÿÿÿ                             Ad’KP>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿï²ÌÇ*MÏ   áB *a;ï›?   4µB ö0Ãjx?   70V\‘'A G    H         energy-boundary     îÑÔ
+ ¤Ğä(ÿÿÿÿAd’K#VŠ£2ßÀÁ aĞdÏ.´'Wall Ad’KAd’Kí‘ñœŒİÀÂ ã9»1Ã ã9Ä ³0“)
+“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw É¡$Å ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KÉÑ"Ã é¹	Æ ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KAd’K#VŠ£2'GÇ aĞdÏ.´'Interaction Ball-Wall Ad’KAd’Kí‘ñœŒVÈ ã9¬6HÉ ã9Ê ³0“)
+“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw É¡$Ë ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KAd’K#VŠ£2çÌ aĞdÏ.´'Contact Ball-Pebble Ad’KAd’Kí‘ñÜ`µÁÍ ã¹Ájƒ70FÎ ã9Ï ³0“)
+“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw É¡$Ğ ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KÉÑ"Ã é¹	Ñ ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KAd’K#VŠ£2'GÒ aĞdÏ.´'Interaction Clump-Wall Ad’KAd’Kí!ÓXÓ B¦±H Ô B¦±&Õ ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KÉ±B'Ö ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KAd’K#VŠ£2™× aĞdÏ.´'Brick Ad’KAd’Kí‘VÂ¬²Ø ­„Ye!Ù ­„Ye™Ú ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KAd’KAd’K"0&Ë¬ŒNÛ aĞd $4 ¤¸™h $M Å‰G Å‘Ğ  Å­ä æÉ ! æÉñ F† -Ì	 -Ì™ í% í¥ä íµ ! íµñ & ¶0 G¾
+ S O¦âh é9 “Ê2' ’ ã9 ’ Ad’KƒÕe™•Ñ	Ü aĞd $4 ¤¸™h $M Å‰G Å‘Ğ  Å­ä O¦âh é9 æÉ ! æÉñ F† -Ì	 -Ì™ í% í¥ä íµ ! íµñ & ¶0 G¾
+ S “Ê2' ’ ã9 ’ Ad’K70&Ë¬ŒNİ aĞd £Òg $M O¦âh é9 æÉñ F† íµñ òÑQ & ¶0 ¶°ñ G¾
+ S Ad’KAd’KĞŒS{¤²ÒŞ Ad’KĞŒYß æÉQ óä( Ò<9
+ ò1b íµâ( ‘öZq &£Êá( rT9 ôÑá( F– -@ Ã<9
+ ã1b Cš'G C>FÌ“£ £½V ã1Ò^+ &cT9 C*‡£ ƒ>: ÃÈR £ Ad’KĞŠŠlµGà í‘ÊŠŒá "0FQ‘-0â P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿï"06ã ³0“)
+“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     Ad’K0Á2ä ³0“)
+“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw É¡$å ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KƒNlLZ 
+ -`ø‹            -`öF`2Ğô‹         
+   Áhz‹         
+   -`hz‹         
+   #V&C  	   áB            4µB            Áø        Á         2Ğô‹         
+   Ad’K#VŠ£2
+æ aĞd Ï .´'Ball Thermal Ad’K#VŠ£2:ç aĞdÏ.´'Ball Thermal-Mechanical Coupler Ad’KAd’Kí‘ÊÊ`µAè ƒÕ)*²Fé P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿïƒÕ'ê ³0“)
+“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     °ÁÊë ³0“)
+“Z8
+ “Z:
+ ã9Z Ad’KAd’K0Á2ì ³0“)
+ “Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw !É¡$í ³0“)
+"“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KƒNlLZ 
+ -`ø‹            -`öF`2Ğô‹         
+   Áhz‹         
+   -`hz‹         
+   #V&C  	   áB            4µB            Áø        Á         2Ğô‹         
+   Ad’K#VŠ£2
+î aĞd Ï .´'Clump Thermal Ad’K#VŠ£2:ï aĞdÏ.´'Clump Thermal-Mechanical Coupler Ad’KAd’Kí‘ÊÊŒğ P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿïæÆ&ñ ³0“)
+#“Z8
+ “Z:
+ ã9Z &ŒB'ò ³0“)
+$“Z8
+ “Z:
+ ã9Z Ad’KAd’KƒNlLZ 
+ Ad’Kí‘ñœŒİÀó ã9¥¨Èô P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿï0Á2õ ³0“)
+%“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw &É¡$ö ³0“)
+'“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KƒNlLZ 
+ Ad’K#VŠ£2ç÷ aĞd Ï .´'Contact Ball-Facet Thermal Ad’KAd’Kí‘ñœŒVø ã9¥¨Èù P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿï0Á2ú ³0“)
+(“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw )É¡$û ³0“)
+*“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KƒNlLZ 
+ Ad’K#VŠ£2çü aĞd Ï .´'Contact Ball-Pebble Thermal Ad’KAd’Kí‘ñÜ`µÁı ã9¥¨Èş P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿï0Á2ÿ ³0“)
++“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw ,É¡$ ³0“)
+-“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KƒNlLZ 
+ Ad’K#VŠ£2çaĞd Ï .´'Contact Pebble-Facet Thermal Ad’KAd’Kí‘Ê
+4Ã°šĞÃj"$ĞÂŒçhH®H³0“)
+.“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     Ad’KÃ1£!¹"³0“)
+/“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw 0É¡$³0“)
+1“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KP>X$Í-@ Áø‹ ÿÿÿÿÿÿï   -àø‹       ğ¿   C&J'ÿÿÿÿÿÿïAd’K#VŠ£2C3aĞd Ï .´'in PFC Ad’KAd’Kí‘ÊÊŒP>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿïæÆ&	³0“)
+2“Z8
+ “Z:
+ ã9Z &ŒB'
+³0“)
+3“Z8
+ “Z:
+ ã9Z Ad’KAd’KƒNlLZ 
+ Ad’Kí‘ñœ±ã95¬&"P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿïÂŒçht³0“)
+4“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw 5É¡$³0“)
+6“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KƒNlLZ 
+ Ad’KAd’KAd’K0Sô\{¤²ÒAd’KR°7V{¤²ÒR°7–ì5³0“)
+7“Z8
+ “Z:
+ ã9Z ÅyR™A 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   “>YHqA 	G    H         energy-strain G    H         energy-rrstrain G    H         energy-slip  G    H         energy-rrslip  G    H         energy-dashpot  G    H         energy-adhesive  G    H         energy-strain-eepa  G    H         energy-strain-jkr  G 	   H         energy-pbstrain 
+   aĞdw 8É¡$³0“)
+9“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KäµÜx†A³0“)
+:“Z8
+ “Z:
+ ã9Z Ad’KR°7Ö³0“)
+;“Z8
+ “Z:
+ ã9Z ÅyR™A G    H         energy-kinetic G    H         energy-damp  G    H         energy-body     “>YHqA G    H         energy-kinetic G    H         energy-damp  G    H         energy-body     ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•Au 
+-àD
+ °ÁÊ³0“)
+<“Z8
+ “Z:
+ ã9Z Ad’K´4‹¬L=   Ad’K½I¥`o¬	³0“)
+>“Z8
+ “Z:
+ ã9Z ¡ÒG ¡ÒG#Å -@úØxnR        -@úXÁ´8
+       ?-@ú˜-        Óâ(      ø¿      ø?      ø¿      ø?äµÜxÎ•AAd’KR°7-²@³0“)
+?“Z8
+ “Z:
+ ã9Z .´Ò Ad’KR°7	4P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿï_,LJS+“        -`ó‹            -`öF`2Ğô‹         
+   Áhz‹         
+   -`hz‹         
+   ã9[ä)‹         
+   #V&C 	   áB *a;ï›?   4µB *a;ï›?   Áó        Á         ã9Y&ã9Y&}:Œ0âyE>£Jkäk aŒÚ&•eN ²Œ'	4O &Œ2{        •±“&Œñœ{²      ğ¿É¡$’£    2Ğô‹         
+   æÈWá öÈWá B– ¤Ğä(ÿÿÿÿB4 B4dh²$Gd   ²0éñhãˆµøä>&ú({®Gáz„¿Ad’KäÍ')ã5XKq &ŒB        ²°€ Ad’K#VŠ£2KÁaĞdÏ.´'RBlock Ad’K#VŠ£2K!aĞdÏ.´'Contact RBlock-RBlock Ad’K#VŠ£2ôaĞdÏ.´'GhostRBlock Ad’KR°7–,³2:aĞd aÂ2( $4 ¤¸™h $M Å‰G Å‘Ğ  Å­ä æÉ ! æÉñ F† -Ì	 -Ì™ í% í¥ä íµ ! íµñ & ¶0 G¾
+ S O¦âh é9 “Ê2' ’ ã9 ’ Ad’KAd’KR°7Ö,æÉQ óä( Ò<9
+ ò1b íµâ( ‘öZq &²½V ò1Ò^+ &£Êá( rT9 ôÑá( F– -@ Ad’KR°7EE¶ÀR°7EE¶À P>X$Í-@ 4µ2i,µD        ÿÿÿÿÿÿïR°7Ö!³0“)
+@“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     Ad’K0Á2"³0“)
+A“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw BÉ¡$#³0“)
+C“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KBÂË$³0“)
+D“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw EÉ¡$%³0“)
+F“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KPÂË&³0“)
+G“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw HÉ¡$'³0“)
+I“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KÒÀË(³0“)
+J“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw KÉ¡$)³0“)
+L“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” Ad’KƒNlLZ 
+ -`ø‹            -`öF`2Ğô‹         
+   Áhz‹         
+   -`hz‹         
+   #V&C  	   áB            4µB            Áø        Á         2Ğô‹         
+   Ad’K#VŠ£2K
+*aĞd Ï .´'RBlock Thermal Ad’K#VŠ£2K:+aĞdÏ.´'RBlock Thermal-Mechanical Coupler Ad’KAd’K³0,…•V-³0“)
+M“Z8
+ “Z:
+ ã9Z ®`:K
+Ad’Kî‘2.³0“)
+N“Z8
+ “Z:
+ ã9Z Ad’K,¹5/³0“)
+O“Z8
+ “Z:
+ ã9Z Ad’K²ÌÊè0aĞd$MÈÂ(­8:G¾
+'æÉQ&¶°7Me P>X$Me S ,¹5 aŒÂŠ4=7 Ad’K­1aĞdÏ.´'SELMechanical ‰´€ÙÉ@
+ #V&C    Õ‰À‚…‹            Áhz‹         
+   -`hz‹         
+   ìÀd é‹         
+   2Ğô‹         
+   2ĞôfaeP	    ã9[ä)n‹         
+   Ad’K$;2aĞd Ï .´'Struct Dynamic Ad’Kã9¥ñhãˆµøä>’@‹´	
+   sSh6aĞ'       @dSh6aĞ'       @sVä£-Ì	 -`šZ™´@      ğ?'@}š™™™™™¹?î‘B+2¸QH¯¼šò×z>’@ 7Ì
+I … ã9û$)      ğ¿Ad’K70¦Ÿ+370¦Ÿ+$Ğ4ãUÈ
+!5³0“)
+P“Z8
+ “Z:
+ ã9Z T¦sŠd©%
+      ø?ä™Ê“&c      ğ?ã5Xi s% Ad’KW!	46³0“)
+Q“Z8
+ “Z:
+ ã9Z ²÷V… Ad’Kã97³0“)
+R“Z8
+ “Z:
+ ã9Z ÅyR™A     “>YHqA     aĞdw SÉ¡$8³0“)
+T“Z8
+ “Z:
+ ã9Z Ad’KÏÉ” ÉQ ÉÑ Áúg¿xûï?Ò7 –¾ñ Ù •±’ Ad’KNšŒ VH-²ÌÊè ²ÌÊè, ²ÌÊè< ²ÌÊèlAd’K#VŠ£2ßÀ9aĞdÏ.´'Wall-Zone test cycler Ad’KAd’Kú¹:Ò0K“;³0“)
+U“Z8
+ “Z:
+ ã9Z Ad’KÉÑ"Me<³0“)
+V“Z8
+ “Z:
+ ã9Z Ad’Kí‘ÂXš‡ ''anisotropic burgers burgers-mohr cap-yield cap-yield-simplified cavehoek clay-and-sand concrete curved-mohr-coulomb double-yield drucker-prager elastic finn hoek-brown hoek-brown-pac hydration-drucker-prager jones-wilkins-lee maxwell modified-cam-clay mohr-coulomb munson-dawson norsand null p2psand plastic-hardening power power-mohr power-ubiquitous soft-soil soft-soil-creep softening-ubiquitous strain-softening swell ubiquitous-anisotropic ubiquitous-joint von-mises wipp wipp-drucker wipp-salt  ²4)=³0“)
+W“Z8
+ “Z:
+ ã9Z Ad’Kú¹ÂÒ¤>³0“)
+X“Z8
+ “Z:
+ ã9Z Ad’KB–Yš?³0“)
+Y“Z8
+ “Z:
+ ã9Z ,MÚ Ad’K7Ğ"i¬@¤¸™h        É™ä- WAO¦“                O¦âh é9"              ğ?              ğ?»‡$           Ad’K§¼6'Water Table Ad’KIÓ`…¥IB³0“)
+Z“Z8
+ “Z:
+ ã9Z Ad’K‡=ØC7Ğ"Iq3Ñ        £Òg         -àBN “š	&w	    ìÀHh0¹áz®Gáâ?ã5‘\!$4˜š™™™™™é?´Ğ
+I 	
+   §¼&M        $Í X< "gécE7š™™™™™©?-áBHšCš §™[+Tf 0Hš+T†± ® ú¹! ú¹BKƒ ®‘–p!-¹BNaÅŠÿÿÿÿÿÿï§¼V¨Ì’@ Æ„A“- Æ …IÓ¸O. ìÀ£ 7Ì
+I … 2ĞôfaeP	   ,LJep                ,LÚ^&        ,L:Š                #°á
+5O2 -Ì9ƒ)4       @ã9û$)      ğ¿´P–Z¢š™™™™™©?"}       @Ad’K&Œrä«D-À Ad’K&Œ2gaeĞBE³P Ad’Kº=RYaiRFÙí‘ÊGaĞd Ï .´'Zone Thermal ³0“)
+[‰
+ôÑÀhjB            #V&C  	   ã9“N•… í‘ÂXšH.´2'advection-conduction hydration Ad’K©A–F¢ -àD‹4=7è  4µ2i        2Ğô{‹         
+   ú¹R0I³0“)
+\“Z8
+ “Z:
+ ã9Z Ad’KLJ³0“)
+]“Z8
+ “Z:
+ ã9Z Ad’KtŞ ]r        ©Á‚a‘-Cëâ6
+?©ÁÔ`‘-Cëâ6
+?{®Gázt?©ÁY¤}©AB[e      ğ?©ÁD      ©Á’š™™™™™é?      ô?p–Z¢     jè@,ĞâF	P   &áBÿÿÿÿÿÿï-`BÿÿÿÿÿÿïAd’K†ÕDÚ#•KaĞd Ï .´'Zone Fluid ³0“)
+^‰
+ôÑÀhjB            #V&C  	   ã9“N•… ©A–F¢ JŸ1 4µ2i        Tš‹         
+   3Ğ*MÏÑÇü©ñÒMbP?&LjØ» ÆÈÂ4=ü©ñÒMbp?ÆL*Ëœ-        Æ{ª‹         
+   Æ´€«‹         
+   ú¹R0L³0“)
+_“Z8
+ “Z:
+ ã9Z Ad’KLM³0“)
+`“Z8
+ “Z:
+ ã9Z Ad’Kí‘Yh 	    ó1[$	   ©ÁD‹è  ©Aúñhãˆµøô>©AYXÀD>ÍÌÌÌÌÌä?¤˜(	   ¤Oq &Wg ©Á‚a‘-Cëâ6
+?©ÁÔ`‘-Cëâ6
+?{®Gázt?©ÁY¤} ©AB[e      ğ?©ÁD‹d©      ©Á’š™™™™™é?      ô?©Á"er(   ©AÇ   <   ©Aóä( tŞ ]r        ã¹yŠ ³HûÆ«	    âÂ É ³HûZe
+ ³HûŠ”O
+ ³Hû-
+ ³Hû\¢E
+ p–Z¢     jè@,ĞâF	P   &áBÿÿÿÿÿÿï-`BÿÿÿÿÿÿïAd’Kú¹Hv¡¥NaĞd Ï .´'Zone Dynamic ³0“)
+a‰
+ôÑÀhjB            #V&C  	   ã9“N•… $4˜Ü	   ìÀ        4µ2iÿÿÿÿÿÿïšZ™´@ÿÿÿÿÿÿïA        ¢Ğ        ­2š&- ²:hz      ğ?nSh6aĞ'       @Ad’KC–A{¤²OaĞd Ï .´'Zone Creep ³0“)
+b‰
+ôÑÀhjB            #V&C  	   ã9“N•… Ad’KAd’K§8(SK
+ 3‘2^u	    ²ÌÊèPaĞd$MÈÂ(­8:G¾
+'“Ê2g™¶°7Me ­Ô)l †ÕDÚ#…M ÙÚ#…M Õ‰À‚… ğÉe™³Ê2 S 3Ğ*MÏ ´4Xd U ÉÑ"Me Ò0 B– 7Ğ" aŒÂŠ4=7 2¸Sh c       Ad’K­QaĞdÏ.´'ZoneMechanical #V&C    Õ‰À‚…˜'‹            Áhz‹         
+   -`hz‹         
+   ìÀd é‹         
+   2Ğô‹         
+   ã9[ä)n‹         
+   ­M¶,Lš)    Ad’KÙ‚óU9R³0“)
+d“Z8
+ “Z:
+ ã9Z Ad’Kãµ‘E?WS²èçŠxÕ‘ ' -¹‰,±–š™™™™™™?²˜
+I %9Z	ô  ²˜äh‘6°Y ÉÑ"ác¦ç	   ³½GQrEºÀ0¹^¥ÁV      $@´L:uµ	    ²èçÊS 
+²èçŠ~®L 
+Ad’KAd’Kú¹2TAd’KAd’KP¾AS+
+ïÿ²Ìäès ²Ìä(”o' ²Ìä(M­        ²Ìäè¤
+ ²Ìähr¤`	   ²Ìä(”Å$' ²Ìäè`o,
+2	&
+ 2	šZ        2‰I
+ 2‰0Fm4µ
+ 2‰g‹¼2Ñ2	YÆ“ &MÔU¡Ò7d	´3¹ÃÊ„,Qâ=6³ER‡=V“JRW.´'attachentry &F&'gp weight id Ad’KWlink 'pnt ind ± eÈX‰´  ®`š
+Ad’K±VÚ“Y‰´  ®`š
+Ad’K37ñØZ³0“)
+e“Z8
+“Z:
+ ã9Z[³0“)
+f‰
+.´'_pfc_live_capture_frame_path 6°Z\4ÃÒ   6°Z:'D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_pfc2d_002/data/raw/ball_frames.csv Ad’KA		    ã‘ÂÒ¤ Ad’K[g_pfc_live_capture_index_path \   'D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_pfc2d_002/data/raw/frame_index.csv      [h_pfc_live_capture_walls_path \   'D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_pfc2d_002/data/raw/wall_vertices.csv      [i_pfc_live_capture_contacts_path \   'D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_pfc2d_002/data/raw/contact_frames.csv      [j_pfc_live_capture_init \               ]ã9Z^ÉM*ë é9   SIƒ¤#   Sâ'   S–\	   Sùª'Python interpreter Ï˜Y(        ğA 4ÈSh'true...Main É™    Ad’K^             Python interpreter         
+k_,M
+ 2D'd‰ Ad’K^$   $   %      Python interpreter                      ^      !      Python interpreter         
+l_  ^$   "   %      Python interpreter          ô          ^            Python interpreter         
+m_  ^'       '      Python interpreter          'cycle     ^            Python interpreter         
+n_  ^%   !   $      Python interpreter                ğ?    ^            Python interpreter         
+o_  ^$   '   (      Python interpreter          ÿÿÿÿÿÿÿÿ    ^      #      Python interpreter         
+p_  ^%   &   )      Python interpreter                ğ¿    ^      "      Python interpreter         
+q_  ^$   !   "      Python interpreter                      ^            Python interpreter         
+r_  ^$   "   #   	   Python interpreter                      ^         	   Python interpreter         
+s_  ^   $   )   
+   Python interpreter          'false...Main     ^      !   
+   Python interpreter         
+t_  ^$   $   %      Python interpreter                     ^      !      Python interpreter         
+u_  ^$   '   (      Python interpreter                     ^      $      Python interpreter         
+v_  ^      #      Python interpreter          'false...Main     ^            Python interpreter         
+w_  ìÀ& 'è“ Ad’K[k_pfc_live_capture_enabled \          [l_pfc_live_capture_frame_id \               [m_pfc_live_capture_stride \               [n	_pfc_live_capture_mode \   'cycle      [o
+_pfc_live_capture_value \         ğ?     [p_pfc_live_capture_last_cycle \               [q_pfc_live_capture_last_time \   *a;ï›?     [r_pfc_live_capture_calls \               [s_pfc_live_capture_events \                [t_pfc_live_capture_contacts \         [u_pfc_live_capture_wall_top \   f            [v_pfc_live_capture_wall_bottom \   e            [w_pfc_live_capture_3d \          [x_pfc_live_capture_vel_z \              ]
+^            Python interpreter          
+wÿÿÿÿ^            Python interpreter          'true...Main     ^            Python interpreter                  ^+            Python interpreter                 ^1   !   "      Python interpreter                      ^             Python interpreter          'comp.z...Main    ^             Python interpreter         
+x_  ^,             Python interpreter                 ^%            Python interpreter                      ^             Python interpreter         
+x_  'v  [y_pfc_live_capture_spin_x \              ]
+^            Python interpreter          
+wÿÿÿÿ^            Python interpreter          'true...Main     ^            Python interpreter                  ^+            Python interpreter                 ^1   "   #      Python interpreter                      ^      !      Python interpreter          'comp.x...Main    ^             Python interpreter         
+y_  ^,             Python interpreter                 ^%            Python interpreter                      ^             Python interpreter         
+y_  'v  [z_pfc_live_capture_spin_y \              ]
+^            Python interpreter          
+wÿÿÿÿ^            Python interpreter          'true...Main     ^            Python interpreter                  ^+            Python interpreter                 ^1   "   #      Python interpreter                      ^      !      Python interpreter          'comp.y...Main    ^             Python interpreter         
+z_  ^,             Python interpreter                 ^%            Python interpreter                      ^             Python interpreter         
+z_  'v  [{_pfc_live_capture_spin_z \              ]
+^            Python interpreter          
+wÿÿÿÿ^            Python interpreter          'true...Main     ^            Python interpreter                  ^+            Python interpreter                 ^1   "   #      Python interpreter                      ^      !      Python interpreter          'comp.z...Main    ^             Python interpreter         
+{_  ^,             Python interpreter                 ^            Python interpreter                      ^             Python interpreter         
+{_  'v  [|_pfc_live_capture_z \              ]
+^            Python interpreter          
+wÿÿÿÿ^            Python interpreter          'true...Main     ^            Python interpreter                  ^+            Python interpreter                 ^1            Python interpreter                      ^            Python interpreter          'comp.z...Main    ^             Python interpreter         
+|_  ^,             Python interpreter                 ^%            Python interpreter                      ^             Python interpreter         
+|_  'v  [}_pfc_live_capture_frame \               ]^            Python interpreter          
+kÿÿÿÿ^      $      Python interpreter          'false...Main     ^            Python interpreter                  ^+            Python interpreter                 ^             Python interpreter                  ^      7      Python interpreter          
+lÿÿÿÿ^$   :   ;      Python interpreter                     ^   8   9      Python interpreter                  ^             Python interpreter         
+l_  ^      &      Python interpreter          
+lÿÿÿÿ^      	      Python interpreter                 _  ^            Python interpreter          'mech.cycle...Main     ^      	      Python interpreter                _  ^            Python interpreter          'mech.time.total...Main     ^            Python interpreter                _  ^      "      Python interpreter                     ^             Python interpreter         
+p_  ^          	   Python interpreter                     ^          	   Python interpreter         
+q_  ^      1   
+   Python interpreter          
+fÿÿÿÿ^'   2   :   
+   Python interpreter          'append     ^'   ;   A   
+   Python interpreter          'text     ^         
+   Python interpreter          'file.open...Main    ^         
+   Python interpreter                _  ^            Python interpreter          'list...Main     ^            Python interpreter                _  ^            Python interpreter          'ball.list...Main     ^            Python interpreter ,                  ^            Python interpreter                     ^            Python interpreter          'ball.vel...Main    ^            Python interpreter                _  ^            Python interpreter                     ^            Python interpreter          'ball.spin...Main    ^            Python interpreter                _  ^            Python interpreter                     ^'   '   C      Python interpreter          '%1,%2,%3,%4,%5,%6,%7,%8,%9     ^             Python interpreter                      ^            Python interpreter                     ^            Python interpreter          'ball.id...Main    ^             Python interpreter                     ^            Python interpreter          'ball.pos...Main    ^            Python interpreter          'comp.x...Main    ^   3   4      Python interpreter                     ^   *   2      Python interpreter          'ball.pos...Main    ^   #   )      Python interpreter          'comp.y...Main    ^            Python interpreter                     ^            Python interpreter          'ball.pos...Main    ^             Python interpreter          
+|   ^   -   .      Python interpreter                     ^   !   ,      Python interpreter          'ball.radius...Main    ^1      	      Python interpreter                     ^             Python interpreter          'comp.x...Main    ^1            Python interpreter                     ^            Python interpreter          'comp.y...Main    ^   .   0      Python interpreter                     ^      -      Python interpreter          
+x   ^      &      Python interpreter          'string.build...Main 
+   ^'   5   8      Python interpreter          ',     ^   3   4      Python interpreter                  ^'            Python interpreter          '%1,%2,%3     ^   1   3      Python interpreter                     ^      0      Python interpreter          
+y   ^            Python interpreter                     ^             Python interpreter          
+z   ^   6   8      Python interpreter                     ^      5      Python interpreter          
+{   ^             Python interpreter          'string.build...Main    ^   9   :      Python interpreter                  ^            Python interpreter          'list.append...Main    ^             Python interpreter                _  ^            Python interpreter Õÿÿÿÿÿÿÿ           ^            Python interpreter                     ^            Python interpreter                     ^	       
+      Python interpreter          'file.write...Main    ^            Python interpreter                     ^	       
+      Python interpreter          'file.close...Main    ^      1      Python interpreter          
+hÿÿÿÿ^'   2   :      Python interpreter          'append     ^'   ;   A      Python interpreter          'text     ^            Python interpreter          'file.open...Main    ^            Python interpreter                _  ^            Python interpreter          'list...Main     ^            Python interpreter         	       _  ^      %      Python interpreter          'wall.vertex.list...Main     ^            Python interpreter         
+          ^            Python interpreter          
+           ^            Python interpreter          'wall.vertex.pos...Main    ^            Python interpreter                _  ^            Python interpreter          	           ^'   '   7      Python interpreter          '%1,%2,%3,%4,%5     ^             Python interpreter                      ^            Python interpreter          
+           ^            Python interpreter          'wall.vertex.id...Main    ^1            Python interpreter                     ^            Python interpreter          'comp.x...Main    ^1   (   *      Python interpreter                     ^   !   '      Python interpreter          'comp.y...Main    ^   @   B      Python interpreter                     ^   ,   ?      Python interpreter          
+|   ^      &      Python interpreter          'string.build...Main    ^            Python interpreter          'list.append...Main    ^             Python interpreter         	       _  ^            Python interpreter îÿÿÿÿÿÿÿ 
+          ^            Python interpreter                     ^            Python interpreter          	           ^	       
+      Python interpreter          'file.write...Main    ^             Python interpreter                     ^	       
+       Python interpreter          'file.close...Main    ^         !   Python interpreter          
+tÿÿÿÿ^       $   !   Python interpreter          'true...Main     ^         !   Python interpreter                  ^+         !   Python interpreter ?                ^      4   "   Python interpreter          
+iÿÿÿÿ^'   5   =   "   Python interpreter          'append     ^'   >   D   "   Python interpreter          'text     ^         "   Python interpreter          'file.open...Main    ^         "   Python interpreter                _  ^         #   Python interpreter          'list...Main     ^         #   Python interpreter                _  ^      !   $   Python interpreter          'contact.list...Main     ^         $   Python interpreter 1                  ^         %   Python interpreter                     ^         %   Python interpreter          'contact.pos...Main    ^         %   Python interpreter                _  ^   $   %   &   Python interpreter                     ^      #   &   Python interpreter          'contact.force.global...Main    ^         &   Python interpreter                _  ^         '   Python interpreter                     ^         '   Python interpreter          'contact.end1...Main    ^         '   Python interpreter                _  ^         (   Python interpreter                     ^         (   Python interpreter          'contact.end2...Main    ^         (   Python interpreter                _  ^         )   Python interpreter                     ^'   '   C   )   Python interpreter          '%1,%2,%3,%4,%5,%6,%7,%8,%9     ^          *   Python interpreter                      ^         *   Python interpreter                     ^         *   Python interpreter          'contact.id...Main    ^      !   *   Python interpreter                     ^         *   Python interpreter          'type.pointer...Main    ^   3   5   *   Python interpreter                     ^   #   2   *   Python interpreter          'type.pointer.id...Main    ^         +   Python interpreter                     ^          +   Python interpreter          'type.pointer...Main    ^   !   #   +   Python interpreter                     ^          +   Python interpreter          'type.pointer.id...Main    ^1   ,   .   +   Python interpreter                     ^   %   +   +   Python interpreter          'comp.x...Main    ^1   7   9   +   Python interpreter                     ^   0   6   +   Python interpreter          'comp.y...Main    ^         ,   Python interpreter                     ^          ,   Python interpreter          
+|   ^      &   )   Python interpreter          'string.build...Main 
+   ^'         ,   Python interpreter          ',     ^         ,   Python interpreter                  ^'         -   Python interpreter          '%1,%2,%3,%4     ^1   "   (   -   Python interpreter                     ^      !   -   Python interpreter          'comp.x...Main    ^1   1   7   -   Python interpreter                     ^   *   0   -   Python interpreter          'comp.y...Main    ^         .   Python interpreter                     ^          .   Python interpreter          
+x   ^   .   /   .   Python interpreter                     ^       -   .   Python interpreter          'contact.model...Main    ^          -   Python interpreter          'string.build...Main    ^          ,   Python interpreter                  ^         )   Python interpreter          'list.append...Main    ^          )   Python interpreter                _  ^         $   Python interpreter Ğÿÿÿÿÿÿÿ           ^         0   Python interpreter                     ^         0   Python interpreter                     ^	       
+   0   Python interpreter          'file.write...Main    ^         1   Python interpreter                     ^	       
+   1   Python interpreter          'file.close...Main    ^      1   3   Python interpreter          
+gÿÿÿÿ^'   2   :   3   Python interpreter          'append     ^'   ;   A   3   Python interpreter          'text     ^         3   Python interpreter          'file.open...Main    ^         3   Python interpreter                _  ^         4   Python interpreter          'list...Main     ^      
+   4   Python interpreter                _  ^         5   Python interpreter          
+uÿÿÿÿ^$       !   5   Python interpreter                      ^         5   Python interpreter                  ^+         5   Python interpreter :                ^      /   6   Python interpreter          
+uÿÿÿÿ^         6   Python interpreter          'wall.find...Main    ^         6   Python interpreter                _  ^      2   7   Python interpreter          
+vÿÿÿÿ^         7   Python interpreter          'wall.find...Main    ^         7   Python interpreter                _  ^         8   Python interpreter                     ^         8   Python interpreter          'wall.pos...Main    ^         8   Python interpreter                _  ^         9   Python interpreter                     ^         9   Python interpreter          'wall.pos...Main    ^         9   Python interpreter                _  ^          :   Python interpreter                     ^         :   Python interpreter          'wall.force.contact...Main    ^         :   Python interpreter                _  ^          ;   Python interpreter                     ^         ;   Python interpreter          'wall.force.contact...Main    ^         ;   Python interpreter                _  ^         <   Python interpreter                     ^'   %   A   <   Python interpreter          '%1,%2,%3,%4,%5,%6,%7,%8,%9     ^          =   Python interpreter                      ^         =   Python interpreter                     ^      
+   =   Python interpreter                     ^         =   Python interpreter          'ball.num...Main     ^1         =   Python interpreter                     ^         =   Python interpreter          'comp.x...Main    ^1   (   *   =   Python interpreter                     ^   !   '   =   Python interpreter          'comp.y...Main    ^   @   B   =   Python interpreter                     ^   ,   ?   =   Python interpreter          
+|   ^1      	   >   Python interpreter                     ^          >   Python interpreter          'comp.x...Main    ^1         >   Python interpreter                     ^         >   Python interpreter          'comp.y...Main    ^      $   <   Python interpreter          'string.build...Main 
+   ^'         >   Python interpreter          ',     ^         >   Python interpreter                  ^'   ,   9   >   Python interpreter          '%1,%2,%3,%4     ^         ?   Python interpreter                     ^          ?   Python interpreter          
+|   ^   !   #   ?   Python interpreter                     ^          ?   Python interpreter          'math.mag...Main    ^   .   0   ?   Python interpreter                     ^   %   -   ?   Python interpreter          'math.mag...Main    ^   2   I   ?   Python interpreter          
+rÿÿÿÿ^      +   >   Python interpreter          'string.build...Main    ^         >   Python interpreter                  ^'   M   P   ?   Python interpreter          ',     ^   K   L   ?   Python interpreter                  ^'         @   Python interpreter          '%1,%2     ^      +   @   Python interpreter          
+nÿÿÿÿ^   ,   C   @   Python interpreter          
+oÿÿÿÿ^          @   Python interpreter          'string.build...Main    ^   Q   R   ?   Python interpreter                  ^         <   Python interpreter          'list.append...Main    ^          <   Python interpreter                _  ^,          A   Python interpreter                 ^         B   Python interpreter                     ^'   %   =   B   Python interpreter          '%1,%2,%3,%4,,,,,,,,,%5     ^          C   Python interpreter                      ^         C   Python interpreter                     ^      
+   C   Python interpreter                     ^         C   Python interpreter          'ball.num...Main     ^      -   C   Python interpreter          
+rÿÿÿÿ^      $   B   Python interpreter          'string.build...Main    ^'   1   4   C   Python interpreter          ',     ^   /   0   C   Python interpreter                  ^'         D   Python interpreter          '%1,%2     ^      +   D   Python interpreter          
+nÿÿÿÿ^   ,   C   D   Python interpreter          
+oÿÿÿÿ^          D   Python interpreter          'string.build...Main    ^   5   6   C   Python interpreter                  ^         B   Python interpreter          'list.append...Main    ^          B   Python interpreter                _  ^         F   Python interpreter                     ^         F   Python interpreter                     ^	       
+   F   Python interpreter          'file.write...Main    ^         G   Python interpreter                     ^	       
+   G   Python interpreter          'file.close...Main    'fid cyc mt bf brows b bv bs wf wrows v wp cf crows c cp cforce e1 e2 ix irow w1 w2 p1 p2 f1 f2  [~_pfc_live_capture_cycle \               ]^      1      Python interpreter          
+rÿÿÿÿ^$   4   5      Python interpreter                     ^   2   3      Python interpreter                  ^             Python interpreter         
+r_  ^            Python interpreter          
+kÿÿÿÿ^      #      Python interpreter          'true...Main     ^            Python interpreter                  ^+            Python interpreter                 ^            Python interpreter          
+nÿÿÿÿ^'      #      Python interpreter          'cycle     ^            Python interpreter                  ^+            Python interpreter 	                ^            Python interpreter          'mech.cycle...Main     ^      /      Python interpreter          
+pÿÿÿÿ^            Python interpreter                  ^   4   L      Python interpreter          
+mÿÿÿÿ^   1   3      Python interpreter                  ^+            Python interpreter                 ^             Python interpreter          
+}ÿÿÿÿ^,             Python interpreter                 ^            Python interpreter          
+nÿÿÿÿ^'      "      Python interpreter          'time     ^            Python interpreter                  ^+            Python interpreter                 ^         	   Python interpreter          'mech.time.total...Main     ^      3   	   Python interpreter          
+qÿÿÿÿ^         	   Python interpreter                  ^   8   O   	   Python interpreter          
+oÿÿÿÿ^   5   7   	   Python interpreter                  ^+         	   Python interpreter                 ^          
+   Python interpreter          
+}ÿÿÿÿ ' Ad’K&±ÂÒ¤`ã9
+a³0“)
+“Z8
+“Z:
+ ã9Z Ad’KAd’K,	db,	hc.´'socket.open $Ğd,M
+e³0“)
+€“Z8
+ “Z:
+ ã9Z Ad’KAd’KAd’KAd’KAd’K²ÌÊèƒ&[ Ad’K4V&f³0“)
+“Z8
+ “Z:
+ ã9Z ²ÌÊèƒ&[ Ad’K(Múd*g³0“)
+‚“Z8
+ “Z:
+ ã9Z nÒ	
+   ²ÌÊèƒ&[ ²Œ'É Ad’K0Hš+T†Qh³0“)
+ƒ“Z8
+ “Z:
+ ã9Z nÒ	
+   ²ÌÊèƒ&[ ²Œ'É Ad’K,ˆÂ&i³0“)
+„“Z8
+ “Z:
+ ã9Z ²ÌÊèƒ&[ Ad’K.´Bdp§Lj³0“)
+…“Z8
+ “Z:
+ ã9Z Ad’K&úä33˜Bkí‘ÂH  í‘Âl`µL Ad’K28òl³P g
+        28Â±-  28Ò›&  ³j$  Ad’KAd’K

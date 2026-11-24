@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "data_boundary": "REAL_PFC",
+  "dimension": 2,
+  "case_id": 2,
+  "run_id": "run_pfc2d_contact_002",
+  "snapshot": {
+    "pid": 33204,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc2d_accept",
+    "python": "3.10.5",
+    "cycle": 0,
+    "mechanical_time_total": 0.0,
+    "balls": 3,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": null,
+    "fracture_module_available": false
+  },
+  "balls": {
+    "count": 3,
+    "ids": [
+      1,
+      2,
+      3
+    ],
+    "balls": [
+      {
+        "id": 1,
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "radius": 0.6
+      },
+      {
+        "id": 2,
+        "x": 0.8,
+        "y": 0.0,
+        "z": 0.0,
+        "radius": 0.6
+      },
+      {
+        "id": 3,
+        "x": 0.4,
+        "y": 0.5,
+        "z": 0.0,
+        "radius": 0.6
+      }
+    ]
+  },
+  "walls": {
+    "count": 2,
+    "walls": [
+      {
+        "id": 101,
+        "name": "bottom",
+        "position": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "vertices": [
+          {
+            "id": 1,
+            "position": [
+              -2.0,
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "id": 2,
+            "position": [
+              2.0,
+              -1.0,
+              0.0
+            ]
+          }
+        ],
+        "facets": [
+          {
+            "id": 1,
+            "active": 0,
+            "position": [
+              0.0,
+              -1.0,
+              0.0
+            ],
+            "normal": [
+              -0.0,
+              1.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "name": "top",
+        "position": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "vertices": [
+          {
+            "id": 3,
+            "position": [
+              -2.0,
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "id": 4,
+            "position": [
+              2.0,
+              1.0,
+              0.0
+            ]
+          }
+        ],
+        "facets": [
+          {
+            "id": 2,
+            "active": 0,
+            "position": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "normal": [
+              -0.0,
+              1.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "histories": {},
+  "wall_roles": {
+    "top": 102,
+    "bottom": 101,
+    "axis": "y",
+    "source": "config"
+  },
+  "load_axis": "y"
+}

@@ -1,0 +1,25 @@
+{
+  "case_id": 0,
+  "run_id": "example_case_0",
+  "run_dir": "",
+  "project_dir": "C:\\path\\to\\project",
+  "restore_initial": false,
+  "setup": [],
+  "solve": "model solve time 50.0",
+  "post_solve": [],
+  "save": "model save 'example-final'",
+  "sample_stride_cycles": 500,
+  "fracture_observer": false,
+  "load_axis": "z",
+  "top_wall_id": null,
+  "bottom_wall_id": null,
+  "history_names": ["1", "2", "3"],
+  "history_meanings": {
+    "1": "Declare the real physical meaning here",
+    "2": "Declare the real physical meaning here",
+    "3": "Declare the real physical meaning here"
+  },
+  "expected_initial": {},
+  "expected_mechanical_time_run": null,
+  "source_files": {}
+}

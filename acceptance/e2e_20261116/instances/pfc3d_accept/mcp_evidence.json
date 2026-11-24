@@ -1,0 +1,7 @@
+{
+  "bridge_port": 9001,
+  "observed_utc": "2026-11-16T13:18:14+00:00",
+  "output": "PFC_HEADLESS_MCP_PROBE_3D={\"pid\": 5500, \"exe\": \"D:\\\\Itasca\\\\PFC900\\\\exe64\\\\pfc3d9_console.exe\", \"dimension\": 3, \"cycle\": 0, \"balls\": 0}\n",
+  "status": "PASS",
+  "tool": "itasca_execute_code"
+}

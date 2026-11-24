@@ -1,0 +1,1335 @@
+{
+  "status": "GENERATED",
+  "verification": "NOT_VERIFIED",
+  "source_contract": {
+    "name": "pfc.standardized-experiment",
+    "version": "1.0.0",
+    "read_only": true
+  },
+  "source_manifest_sha256": "f90b773cc90722b36a67c9014901ef5892c207ca1fccd2b27a948f198099d32b",
+  "experiment": {
+    "schema_version": "1.0.0",
+    "experiment_id": "run_pfc2d_002",
+    "title": "run_pfc2d_002",
+    "pfc_version": "9.0.0",
+    "execution_mode": "CONSOLE",
+    "dimensions": [
+      2
+    ],
+    "data_boundary": "REAL_PFC",
+    "cases": [
+      {
+        "schema_version": "1.0.0",
+        "case_id": 0,
+        "label": "Case 0",
+        "run_id": "run_pfc2d_002",
+        "dimension": 2,
+        "source_format": "pfc-live-capture-working",
+        "frame_count": 21,
+        "arrays_path": "cases/case_0/arrays.npz",
+        "channels": [
+          {
+            "id": "cycle",
+            "entity_type": "history",
+            "variable": "cycle",
+            "unit": "cycle",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "frame"
+            ],
+            "description": "PFC Cycle at capture.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "mechanical_time_total",
+            "entity_type": "history",
+            "variable": "mechanical_time_total",
+            "unit": "s",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "frame"
+            ],
+            "description": "PFC total mechanical time at capture.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "ball_id",
+            "entity_type": "ball",
+            "variable": "id",
+            "unit": null,
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "entity",
+              "frame_variable_length"
+            ],
+            "description": "Stable PFC Ball ID; offsets define each real frame.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "ball_xyz",
+            "entity_type": "ball",
+            "variable": "position",
+            "unit": "m",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "entity",
+              "xyz"
+            ],
+            "description": "Same-Cycle Ball coordinates.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "ball_radius",
+            "entity_type": "ball",
+            "variable": "radius",
+            "unit": "m",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "entity"
+            ],
+            "description": "Static radius or a real radius update at/after Ball creation.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "wall_vertex_xyz",
+            "entity_type": "wall",
+            "variable": "vertex_position",
+            "unit": "m",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "entity",
+              "xyz",
+              "frame_variable_length"
+            ],
+            "description": "Wall vertices from each captured frame.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "ball_velocity",
+            "entity_type": "ball",
+            "variable": "velocity",
+            "unit": "m/s",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "entity",
+              "xyz"
+            ],
+            "description": "Captured Ball velocity in the global coordinate system.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "ball_spin",
+            "entity_type": "ball",
+            "variable": "angular_velocity",
+            "unit": "rad/s",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "entity",
+              "xyz"
+            ],
+            "description": "Captured Ball angular velocity; PFC2D uses the z component.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "contact_id",
+            "entity_type": "contact",
+            "variable": "id",
+            "unit": null,
+            "source": "NOT_CAPTURED",
+            "status": "NOT_CAPTURED",
+            "dimensions": [
+              "contact"
+            ],
+            "description": "Contact network was disabled for this Case.",
+            "provenance": {
+              "source": "NOT_CAPTURED",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "contact_force_xyz",
+            "entity_type": "contact",
+            "variable": "force_global",
+            "unit": "N",
+            "source": "NOT_CAPTURED",
+            "status": "NOT_CAPTURED",
+            "dimensions": [
+              "contact",
+              "xyz"
+            ],
+            "description": "Contact force was not captured.",
+            "provenance": {
+              "source": "NOT_CAPTURED",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "top_force_n",
+            "entity_type": "wall",
+            "variable": "contact_force_magnitude",
+            "unit": "N",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "frame"
+            ],
+            "description": "Top platen contact-force magnitude.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          },
+          {
+            "id": "bottom_force_n",
+            "entity_type": "wall",
+            "variable": "contact_force_magnitude",
+            "unit": "N",
+            "source": "REAL_PFC",
+            "status": "GENERATED",
+            "dimensions": [
+              "frame"
+            ],
+            "description": "Bottom platen contact-force magnitude.",
+            "provenance": {
+              "source": "REAL_PFC",
+              "input_files": [],
+              "parent_results": [],
+              "formula": null,
+              "method": null,
+              "applicability": null,
+              "notes": [],
+              "generated_utc": "2026-11-16T13:15:59+00:00"
+            }
+          }
+        ],
+        "entity_groups": [
+          {
+            "entity_type": "ball",
+            "array_prefix": "ball",
+            "count": 861,
+            "dynamic_ids": true,
+            "properties": [
+              "id",
+              "position",
+              "radius",
+              "frame_index"
+            ],
+            "source": "REAL_PFC"
+          },
+          {
+            "entity_type": "wall",
+            "array_prefix": "wall",
+            "count": 84,
+            "dynamic_ids": true,
+            "properties": [
+              "id",
+              "vertex_id",
+              "vertex_position"
+            ],
+            "source": "REAL_PFC"
+          }
+        ],
+        "metadata": {
+          "geometry": {
+            "dimension": 2,
+            "axis": "y",
+            "axis_index": 1,
+            "top": 102,
+            "bottom": 101,
+            "height0": 1.6,
+            "area0": 3.0,
+            "area_kind": "unit_thickness_length",
+            "transverse_spans": [
+              {
+                "axis": "x",
+                "extent": 3.0
+              }
+            ]
+          },
+          "ball_count_min": 41,
+          "ball_count_max": 41,
+          "event_count": 0,
+          "contact_count": 0,
+          "contact_type_codes": {},
+          "contact_model_codes": {},
+          "cycle_start": 0,
+          "cycle_end": 20,
+          "mechanical_time_start": 0.0,
+          "mechanical_time_end": 0.0272798
+        },
+        "provenance": {
+          "source": "REAL_PFC",
+          "input_files": [
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\static.json",
+              "size_bytes": 9607,
+              "sha256": "7953df09fe007d5d4c7cb96b101e4d5d0716d577272f3bf2f2e44ea3f102ae62"
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\frame_index.csv",
+              "size_bytes": 1221,
+              "sha256": "91f307c60371218c633460b963000515e23d799c89c6e7aaa455ee5f9bb0c380"
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\ball_frames.csv",
+              "size_bytes": 48804,
+              "sha256": "cd681bf8856d218374814e4af0f11b06ca9b4cb0d5b83038d91c24272fb842b0"
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\wall_vertices.csv",
+              "size_bytes": 1333,
+              "sha256": "6700e4b8797c4a2d9f063c8dc9cea7c6fddc8f5d9b0dc3a676a447b71e3bc085"
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\fracture_events.csv",
+              "size_bytes": 94,
+              "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\contact_frames.csv",
+              "size_bytes": 77,
+              "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\native_histories.csv",
+              "size_bytes": 60,
+              "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+            }
+          ],
+          "parent_results": [],
+          "formula": null,
+          "method": "read-only legacy adapter; variable-length concatenated arrays; NPZ compression",
+          "applicability": null,
+          "notes": [
+            "Raw capture files were not modified.",
+            "Each frame uses explicit offsets; Ball sets may grow or shrink."
+          ],
+          "generated_utc": "2026-11-16T13:15:59+00:00"
+        }
+      }
+    ],
+    "metadata": {
+      "conversion": "NumPy NPZ with variable-length entity offsets",
+      "raw_input_root": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002",
+      "case_count": 1
+    },
+    "provenance": {
+      "source": "CONFIG",
+      "input_files": [
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\static.json",
+          "size_bytes": 9607,
+          "sha256": "7953df09fe007d5d4c7cb96b101e4d5d0716d577272f3bf2f2e44ea3f102ae62"
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\frame_index.csv",
+          "size_bytes": 1221,
+          "sha256": "91f307c60371218c633460b963000515e23d799c89c6e7aaa455ee5f9bb0c380"
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\ball_frames.csv",
+          "size_bytes": 48804,
+          "sha256": "cd681bf8856d218374814e4af0f11b06ca9b4cb0d5b83038d91c24272fb842b0"
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\wall_vertices.csv",
+          "size_bytes": 1333,
+          "sha256": "6700e4b8797c4a2d9f063c8dc9cea7c6fddc8f5d9b0dc3a676a447b71e3bc085"
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\fracture_events.csv",
+          "size_bytes": 94,
+          "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\raw\\contact_frames.csv",
+          "size_bytes": 77,
+          "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+        },
+        {
+          "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc2d_002\\data\\native_histories.csv",
+          "size_bytes": 60,
+          "sha256": "9a648d79f03369bd3f7623bfc9756f124f827b90d5f9d1f076ac30b9690d3333"
+        }
+      ],
+      "parent_results": [],
+      "formula": null,
+      "method": "standardize_experiment",
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:15:59+00:00"
+    },
+    "generated_utc": "2026-11-16T13:15:59+00:00"
+  },
+  "data_layers": {
+    "status": "GENERATED",
+    "layers": [
+      "ANALYSIS_DATA",
+      "DISPLAY_DATA"
+    ],
+    "records": [
+      {
+        "layer": "ANALYSIS_DATA",
+        "layer_id": "analysis_data:case_0",
+        "case_id": 0,
+        "status": "GENERATED",
+        "parent_layers": [
+          "pfc-headless:f90b773cc90722b36a67c9014901ef5892c207ca1fccd2b27a948f198099d32b:case_0"
+        ],
+        "artifacts": [
+          {
+            "path": "03_analysis/case_0/analysis_arrays.npz",
+            "sha256": "14036995dccd9eecf2e3555d43ac33faf065aaf63933ff25c78112356bce1e1a",
+            "size_bytes": 30262
+          },
+          {
+            "path": "03_analysis/case_0/analysis.json",
+            "sha256": "3fce72fc5a79439093a8df96e1f35b740488585754863cf79a9673847257e9d4",
+            "size_bytes": 23278
+          }
+        ],
+        "operations": [
+          {
+            "method": "||x_i(t)-x_i(t_first_observed)||",
+            "outputs": [
+              "ball.displacement"
+            ],
+            "unit": "m",
+            "source": "DERIVED"
+          },
+          {
+            "method": "(x(t2)-x(t1))/(t2-t1)",
+            "outputs": [
+              "ball.velocity"
+            ],
+            "unit": "m/s",
+            "source": "DERIVED"
+          },
+          {
+            "method": "(v(t2)-v(t1))/(t2-t1)",
+            "outputs": [
+              "ball.acceleration"
+            ],
+            "unit": "m/s^2",
+            "source": "DERIVED"
+          },
+          {
+            "method": "count(real fracture event with cycle <= frame cycle)",
+            "outputs": [
+              "fracture.cumulative"
+            ],
+            "unit": "event",
+            "source": "DERIVED"
+          },
+          {
+            "method": "(H0-H)/H0",
+            "outputs": [
+              "sample.axial_strain"
+            ],
+            "unit": "1",
+            "source": "DERIVED"
+          },
+          {
+            "method": "0.5*(|F_top|+|F_bottom|)",
+            "outputs": [
+              "sample.mean_axial_load"
+            ],
+            "unit": "N",
+            "source": "DERIVED"
+          },
+          {
+            "method": "mean_axial_load/W0",
+            "outputs": [
+              "sample.axial_load_per_unit_thickness"
+            ],
+            "unit": "N/m",
+            "source": "DERIVED"
+          }
+        ],
+        "display": null,
+        "provenance": {
+          "source": "DERIVED",
+          "input_files": [
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\deliveries\\run_pfc2d_002\\experiment.json",
+              "sha256": "b588299f673fce96fff64aa6b6cafb00bfc525d2e3d659cf02d72b1781cebc32",
+              "size_bytes": 15089
+            },
+            {
+              "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\deliveries\\run_pfc2d_002\\cases\\case_0\\arrays.npz",
+              "sha256": "64c8b86bc63586cfc72e78d8dcb322d3f35f4e8d4ff1342a7fae79ad89f90166",
+              "size_bytes": 13102
+            }
+          ],
+          "parent_results": [],
+          "formula": null,
+          "method": "Formula-gated analysis over standardized arrays.",
+          "applicability": "Only fields with complete declared inputs are derived.",
+          "notes": [],
+          "generated_utc": "2026-11-16T13:17:05+00:00"
+        },
+        "generated_utc": "2026-11-16T13:17:05+00:00"
+      },
+      {
+        "layer": "DISPLAY_DATA",
+        "layer_id": "display_data:case_0",
+        "case_id": 0,
+        "status": "GENERATED",
+        "parent_layers": [
+          "analysis_data:case_0"
+        ],
+        "artifacts": [
+          {
+            "path": "03_analysis/chart_specs.json",
+            "sha256": "e43b37e6ccbd7e12053ca995d6191ac54fb3c00e4121f75d5b0f550b120d8c3b",
+            "size_bytes": 27483
+          },
+          {
+            "path": "03_analysis/display_data.json",
+            "sha256": "669790daa779042420953b22bb51db37431a9a90657abf521834965f16258b82",
+            "size_bytes": 8670
+          }
+        ],
+        "operations": [
+          {
+            "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+            "inputs": "analysis values by immutable array reference",
+            "outputs": "display strings and axis/tooltip formatting metadata",
+            "note": "Display values are never used as analysis inputs."
+          }
+        ],
+        "display": {
+          "method": "AUTO_SCIENTIFIC_OR_DECIMAL_DISPLAY_ONLY",
+          "significant_digits": 4,
+          "tooltip_digits": 8,
+          "rules": "Display strings and unit scaling are metadata; chart values retain the declared numerical transform and never feed analysis."
+        },
+        "provenance": {
+          "source": "CONFIG",
+          "input_files": [],
+          "parent_results": [],
+          "formula": null,
+          "method": null,
+          "applicability": null,
+          "notes": [],
+          "generated_utc": "2026-11-16T13:17:05+00:00"
+        },
+        "generated_utc": "2026-11-16T13:17:05+00:00"
+      }
+    ],
+    "external_parent": {
+      "owner": "pfc-headless",
+      "contract": {
+        "name": "pfc.standardized-experiment",
+        "version": "1.0.0",
+        "read_only": true
+      },
+      "manifest_sha256": "f90b773cc90722b36a67c9014901ef5892c207ca1fccd2b27a948f198099d32b",
+      "read_only": true
+    },
+    "policy": {
+      "standardized_input_immutable": true,
+      "raw_owned_by_pfc_headless": true,
+      "derived_requires_formula_and_inputs": true,
+      "display_never_used_as_analysis_input": true
+    },
+    "verification": "NOT_VERIFIED"
+  },
+  "capabilities": {
+    "status": "GENERATED",
+    "policy": "Capabilities are inspected per Case. A missing optional field in one Case does not prevent other Cases from being processed.",
+    "cases": {
+      "0": {
+        "status": "GENERATED",
+        "dimension": 2,
+        "capabilities": {
+          "ball_position": "SUPPORTED",
+          "ball_radius": "SUPPORTED",
+          "wall_geometry": "SUPPORTED",
+          "fracture_event": "NOT_CAPTURED",
+          "contact_network": "NOT_CAPTURED",
+          "bond_network": "NOT_CAPTURED",
+          "particle_displacement": "SUPPORTED",
+          "particle_speed": "SUPPORTED",
+          "particle_acceleration": "SUPPORTED",
+          "nominal_stress": "NOT_CAPTURED",
+          "line_load": "SUPPORTED"
+        }
+      }
+    },
+    "common": {
+      "ball_position": "SUPPORTED",
+      "ball_radius": "SUPPORTED",
+      "wall_geometry": "SUPPORTED",
+      "fracture_event": "NOT_CAPTURED",
+      "contact_network": "NOT_CAPTURED",
+      "bond_network": "NOT_CAPTURED",
+      "particle_displacement": "SUPPORTED",
+      "particle_speed": "SUPPORTED",
+      "particle_acceleration": "SUPPORTED",
+      "nominal_stress": "NOT_CAPTURED",
+      "line_load": "SUPPORTED"
+    },
+    "runtime_verification": "NOT_VERIFIED"
+  },
+  "linkage": {
+    "status": "GENERATED",
+    "verification": "NOT_VERIFIED",
+    "shared_state": [
+      "currentCase",
+      "currentFrame",
+      "currentCycle",
+      "currentTime"
+    ],
+    "policy": "Shared time and Case state does not imply full bidirectional linkage. A view remains independent when it has no physical ID correspondence.",
+    "decisions": [
+      {
+        "id": "timeline_sync",
+        "implemented": true,
+        "status": "SUPPORTED",
+        "scientific_need": "high",
+        "interaction_value": "high",
+        "technical_complexity": "low",
+        "coordinate_conversion_complexity": "none",
+        "data_sync_complexity": "low",
+        "performance_cost": "low",
+        "maintenance_cost": "low",
+        "decision_reason": "All temporal views index the same real captured frame."
+      },
+      {
+        "id": "case_switch_sync",
+        "implemented": true,
+        "status": "SUPPORTED",
+        "scientific_need": "high",
+        "interaction_value": "high",
+        "technical_complexity": "low",
+        "coordinate_conversion_complexity": "none",
+        "data_sync_complexity": "medium",
+        "performance_cost": "low",
+        "maintenance_cost": "low",
+        "decision_reason": "Case changes reset selection, range and frame before loading new data."
+      },
+      {
+        "id": "particle_selection_attribute_panel",
+        "implemented": true,
+        "status": "PARTIAL",
+        "scientific_need": "high",
+        "interaction_value": "high",
+        "technical_complexity": "medium",
+        "coordinate_conversion_complexity": "none",
+        "data_sync_complexity": "medium",
+        "performance_cost": "low",
+        "maintenance_cost": "medium",
+        "decision_reason": "Implemented for real Ball IDs with these particle histories: displacement, speed; force and stress histories remain unavailable unless captured.",
+        "available_metrics": [
+          "displacement",
+          "speed"
+        ],
+        "unavailable_metrics": [
+          "contact_force",
+          "particle_stress"
+        ]
+      },
+      {
+        "id": "particle_3d_to_2d_projection",
+        "implemented": false,
+        "status": "NOT_IMPLEMENTED",
+        "scientific_need": "medium",
+        "interaction_value": "medium",
+        "technical_complexity": "high",
+        "coordinate_conversion_complexity": "medium",
+        "data_sync_complexity": "high",
+        "performance_cost": "medium",
+        "maintenance_cost": "high",
+        "decision_reason": "The existing distribution view answers aggregate spatial questions; a projected particle marker would add synchronization complexity with limited additional evidence. Independent views are retained."
+      },
+      {
+        "id": "crack_3d_to_2d_projection",
+        "implemented": false,
+        "status": "NOT_IMPLEMENTED",
+        "scientific_need": "medium",
+        "interaction_value": "medium",
+        "technical_complexity": "high",
+        "coordinate_conversion_complexity": "high",
+        "data_sync_complexity": "high",
+        "performance_cost": "medium",
+        "maintenance_cost": "high",
+        "decision_reason": "Captured crack direction is already represented by a rose chart and 3D lines; projection is only valuable for an explicit shared slice."
+      },
+      {
+        "id": "camera_to_2d_view_sync",
+        "implemented": false,
+        "status": "NOT_IMPLEMENTED",
+        "scientific_need": "low",
+        "interaction_value": "low",
+        "technical_complexity": "high",
+        "coordinate_conversion_complexity": "high",
+        "data_sync_complexity": "high",
+        "performance_cost": "high",
+        "maintenance_cost": "high",
+        "decision_reason": "Camera rotation is exploratory navigation, not a shared physical state."
+      },
+      {
+        "id": "all_charts_bidirectional_3d",
+        "implemented": false,
+        "status": "NOT_IMPLEMENTED",
+        "scientific_need": "low",
+        "interaction_value": "low",
+        "technical_complexity": "high",
+        "coordinate_conversion_complexity": "medium",
+        "data_sync_complexity": "high",
+        "performance_cost": "high",
+        "maintenance_cost": "high",
+        "decision_reason": "Many aggregate charts have no particle-level correspondence. Forcing bidirectional linkage would imply a mapping the data does not contain."
+      }
+    ]
+  },
+  "viewer": {
+    "status": "GENERATED",
+    "verification_status": "NOT_VERIFIED",
+    "architecture": "small-html-local-dependencies-chunked-data",
+    "viewer": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\analysis\\run_pfc2d_002_visualization\\04_viewer\\scientific_viewer.html",
+    "html_bytes": 8787,
+    "html_target_bytes": 5242880,
+    "html_target_met": true,
+    "viewer_total_bytes": 1917965,
+    "offline": true,
+    "external_network_requests": false,
+    "single_html": false,
+    "dependencies": [
+      "viewer/vendor/three.min.js",
+      "viewer/vendor/OrbitControls.js",
+      "viewer/vendor/echarts.min.js",
+      "viewer/visual-semantics.js"
+    ],
+    "payload": {
+      "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\analysis\\run_pfc2d_002_visualization\\04_viewer\\data",
+      "version": "2.2.0",
+      "reused": false,
+      "frame_policy": "ALL_REAL_FRAMES",
+      "sizes": {
+        "catalog_bytes": 1688,
+        "static_bytes": 6186,
+        "chunk_bytes": 43413,
+        "history_bytes": 45816,
+        "metadata_and_chart_bytes": 20117,
+        "total_bytes": 117226
+      },
+      "cases": [
+        {
+          "id": 0,
+          "label": "Case 0",
+          "runId": "run_pfc2d_002",
+          "dimension": 2,
+          "sourceFrameCount": 21,
+          "viewerFrameCount": 21,
+          "frameStatus": "FULL_REAL_FRAME_SET",
+          "ballCountMin": 41,
+          "ballCountMax": 41,
+          "fractureEvents": 0,
+          "crackStatus": "NOT_CAPTURED",
+          "maxDisplacement": 0.0011730000000000906,
+          "maxSpeed": 0.08010360706064282,
+          "maxAcceleration": 4.5325654261833686,
+          "bounds": [
+            [
+              -0.591109,
+              -0.560918,
+              0.0
+            ],
+            [
+              0.517322,
+              0.600192,
+              0.0
+            ]
+          ],
+          "chartCount": 6,
+          "metaPath": "data/cases/case_0/meta.js",
+          "chartsPath": "data/cases/case_0/charts.js",
+          "chunkPattern": "data/cases/case_0/chunks/chunk_{chunk:03d}.js",
+          "historyPattern": "data/cases/case_0/histories/bucket_{bucket:03d}.js",
+          "chartsStatus": "GENERATED",
+          "entityStatus": {
+            "ball": "SUPPORTED",
+            "wall": "SUPPORTED",
+            "fracture": "NOT_CAPTURED",
+            "contact": "NOT_CAPTURED",
+            "bond": "NOT_CAPTURED",
+            "clump": "NOT_CAPTURED"
+          },
+          "metricStatus": {
+            "displacement": "SUPPORTED",
+            "speed": "SUPPORTED",
+            "acceleration": "SUPPORTED"
+          }
+        }
+      ]
+    },
+    "state_contract": {
+      "currentCase": "integer Case ID",
+      "currentFrame": "zero-based index in the real-frame sequence",
+      "currentCycle": "captured PFC Cycle",
+      "currentTime": "captured mechanical time in seconds",
+      "selectedBallIds": "real PFC Ball IDs",
+      "selectedMetric": "displacement | speed | acceleration",
+      "selectedRange": "inclusive numeric range for the selected particle metric"
+    },
+    "linking": {
+      "timeline_to_scene": true,
+      "chart_drag_to_frame": true,
+      "scene_ball_to_history": true,
+      "current_distribution_brush_to_particles": true,
+      "multi_ball_selection": true,
+      "particle_force_history": "NOT_CAPTURED_UNLESS_SOURCE_FIELD_EXISTS",
+      "decision_record": "linkage_decisions.json",
+      "decision_summary": {
+        "implemented": 3,
+        "not_implemented": 4
+      }
+    },
+    "design_system": {
+      "path": "viewer/visual-semantics.js",
+      "source": "assets/styles/scientific-visual-semantics.json",
+      "version": "2.1.0",
+      "sha256": "9880e0dba8813b9d2edc79bd8f6da70b14b1e9597ed2a2937db841bbe5631498"
+    },
+    "publication_export_api": {
+      "png_current": "window.PFCViewer.exportPNG()",
+      "png_specified_frame": "window.PFCViewer.exportFramePNG(frameIndex, width)",
+      "chart_svg": "window.PFCViewer.exportChartSVGs()",
+      "composite_png": "window.PFCViewer.exportCompositePanels()"
+    },
+    "requested_cases": null,
+    "viewer_output_contract": "viewer_output_contract.json",
+    "build_elapsed_seconds": 0.515
+  },
+  "analysis_chart_count": 6,
+  "figure_plan": {
+    "status": "GENERATED",
+    "width_mm": 180.0,
+    "height_mm": 124.138,
+    "page_aspect_ratio": 1.45,
+    "columns": 2,
+    "rows": 3,
+    "layout": {
+      "template": "2_by_3",
+      "panel_count": 6,
+      "row_count": 3,
+      "column_count": 2,
+      "variable_panel_sizes": false,
+      "empty_placeholder_panels": 0,
+      "read_order": "row_major_left_to_right",
+      "panels": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "x": 0.5,
+          "y": 0.0,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 0,
+          "x": 0.0,
+          "y": 0.33333333,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 1,
+          "x": 0.5,
+          "y": 0.33333333,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 0,
+          "x": 0.0,
+          "y": 0.66666667,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "x": 0.5,
+          "y": 0.66666667,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        }
+      ]
+    },
+    "font_family": "Arial, Helvetica, sans-serif",
+    "background": "#FFFFFF",
+    "panel_letters": "bold lowercase in parentheses",
+    "color_tokens": {
+      "primary": "#3C5488",
+      "fracture": "#E64B35",
+      "slate": "#8491B4",
+      "tan": "#B09C85",
+      "accent": "#F39B7F"
+    },
+    "panels": [
+      {
+        "index": 1,
+        "panel": "a",
+        "chart_id": "case_0:speed_time",
+        "title": "平均速度–机械时间",
+        "basis": "Backward finite differences between consecutive real same-ID observations.",
+        "decision": {
+          "status": "GENERATED",
+          "score": 0.91,
+          "reason": "At least three finite frame-aligned mechanical-time samples preserve the temporal trend without interpolation.",
+          "alternatives": [
+            {
+              "type": "area",
+              "score": 0.73,
+              "reason": "Adds magnitude emphasis without improving trend identification."
+            },
+            {
+              "type": "scatter",
+              "score": 0.6,
+              "reason": "Shows real observations but obscures continuity."
+            }
+          ],
+          "derived": true,
+          "missing_count": 1,
+          "manual_override": null,
+          "compatible_types": [
+            "line",
+            "area",
+            "scatter"
+          ]
+        },
+        "rectangle": {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "x": 0.0,
+          "y": 0.0,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        }
+      },
+      {
+        "index": 2,
+        "panel": "b",
+        "chart_id": "case_0:acceleration_time",
+        "title": "平均加速度–机械时间",
+        "basis": "Backward finite differences between consecutive real same-ID velocity observations.",
+        "decision": {
+          "status": "GENERATED",
+          "score": 0.91,
+          "reason": "At least three finite frame-aligned mechanical-time samples preserve the temporal trend without interpolation.",
+          "alternatives": [
+            {
+              "type": "area",
+              "score": 0.73,
+              "reason": "Adds magnitude emphasis without improving trend identification."
+            },
+            {
+              "type": "scatter",
+              "score": 0.6,
+              "reason": "Shows real observations but obscures continuity."
+            }
+          ],
+          "derived": true,
+          "missing_count": 2,
+          "manual_override": null,
+          "compatible_types": [
+            "line",
+            "area",
+            "scatter"
+          ]
+        },
+        "rectangle": {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "x": 0.5,
+          "y": 0.0,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        }
+      },
+      {
+        "index": 3,
+        "panel": "c",
+        "chart_id": "case_0:motion",
+        "title": "颗粒平均位移",
+        "basis": "Mean displacement over present captured Ball IDs at each real frame.",
+        "decision": {
+          "status": "GENERATED",
+          "score": 0.8,
+          "reason": "The channel is an ordered frame summary and is useful even when fracture data is absent.",
+          "alternatives": [
+            {
+              "type": "area",
+              "score": 0.64,
+              "reason": "A filled trend is decorative when the baseline is not zero."
+            }
+          ],
+          "derived": true,
+          "missing_count": 0,
+          "manual_override": null,
+          "compatible_types": [
+            "line",
+            "area"
+          ]
+        },
+        "rectangle": {
+          "index": 2,
+          "row": 1,
+          "column": 0,
+          "x": 0.0,
+          "y": 0.33333333,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        }
+      },
+      {
+        "index": 4,
+        "panel": "d",
+        "chart_id": "case_0:displacement_hist",
+        "title": "末帧颗粒累计位移分布",
+        "basis": "Distribution of real final-frame particle displacements.",
+        "decision": {
+          "status": "GENERATED",
+          "score": 0.9,
+          "reason": "A finite particle-level sample is available for distribution analysis in the final captured frame.",
+          "alternatives": [
+            {
+              "type": "boxplot",
+              "score": 0.74,
+              "reason": "Compact for summary comparison but hides multimodality."
+            }
+          ],
+          "derived": true,
+          "missing_count": 0,
+          "manual_override": null,
+          "compatible_types": [
+            "histogram",
+            "boxplot"
+          ]
+        },
+        "rectangle": {
+          "index": 3,
+          "row": 1,
+          "column": 1,
+          "x": 0.5,
+          "y": 0.33333333,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        }
+      },
+      {
+        "index": 5,
+        "panel": "e",
+        "chart_id": "case_0:particle_density",
+        "title": "末帧颗粒数密度",
+        "basis": "Particle-count density from the final captured frame, not a stress or strain field.",
+        "decision": {
+          "status": "GENERATED",
+          "score": 0.86,
+          "reason": "The final real frame has XY coordinates; binned counts expose spatial heterogeneity without claiming a physical field.",
+          "alternatives": [
+            {
+              "type": "scatter",
+              "score": 0.58,
+              "reason": "Would overplot dense particles and obscure count gradients."
+            }
+          ],
+          "derived": true,
+          "missing_count": 0,
+          "manual_override": null,
+          "compatible_types": [
+            "heatmap"
+          ]
+        },
+        "rectangle": {
+          "index": 4,
+          "row": 2,
+          "column": 0,
+          "x": 0.0,
+          "y": 0.66666667,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        }
+      },
+      {
+        "index": 6,
+        "panel": "f",
+        "chart_id": "case_0:correlation",
+        "title": "通道相关性",
+        "basis": "Pearson correlation on frame-aligned native samples; no interpolation",
+        "decision": {
+          "status": "GENERATED",
+          "score": 0.75,
+          "reason": "At least two frame-aligned finite channels vary; a compact matrix shows pairwise association for exploration.",
+          "alternatives": [
+            {
+              "type": "scatter",
+              "score": 0.66,
+              "reason": "Better for one selected pair but requires multiple panels for all pairs."
+            }
+          ],
+          "derived": true,
+          "missing_count": 0,
+          "manual_override": null,
+          "compatible_types": [
+            "correlation"
+          ]
+        },
+        "rectangle": {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "x": 0.5,
+          "y": 0.66666667,
+          "width": 0.5,
+          "height": 0.33333333,
+          "weight": 1.0,
+          "role": "supporting"
+        }
+      }
+    ],
+    "export_strategy": {
+      "png": "Render composed SVG at the requested raster size.",
+      "svg": "Native vector composition.",
+      "pdf": "Convert the composed SVG with a local vector converter; no implicit raster fallback and no runtime network dependency.",
+      "pdf_status": "NOT_SUPPORTED_WITHOUT_LOCAL_VECTOR_CONVERTER"
+    },
+    "export_requirements": [
+      "Use real captured frames and supplied chart exports only.",
+      "Do not insert blank panels to force an even count.",
+      "Keep a common scale and color meaning across Cases.",
+      "Retain variable names and units on axes and color bars."
+    ]
+  },
+  "output_contract": {
+    "status": "GENERATED",
+    "verification": "NOT_VERIFIED",
+    "items": [
+      {
+        "id": "source_standardized_contract",
+        "status": "VERIFIED_READ_ONLY",
+        "path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\deliveries\\run_pfc2d_002",
+        "owner": "pfc-headless",
+        "manifest_sha256": "f90b773cc90722b36a67c9014901ef5892c207ca1fccd2b27a948f198099d32b"
+      },
+      {
+        "id": "analysis_data",
+        "status": "GENERATED",
+        "path": "03_analysis/"
+      },
+      {
+        "id": "offline_viewer",
+        "status": "GENERATED",
+        "path": "04_viewer/scientific_viewer.html",
+        "verification": "NOT_VERIFIED"
+      },
+      {
+        "id": "charts",
+        "status": "GENERATED",
+        "path": "03_analysis/chart_specs.json",
+        "rejected": [
+          {
+            "id": "case_0:stress_strain",
+            "case_id": 0,
+            "status": "NOT_CAPTURED",
+            "reason": "No valid stress channel exists; no stress chart was generated."
+          },
+          {
+            "id": "case_0:stress_time",
+            "case_id": 0,
+            "status": "NOT_CAPTURED",
+            "reason": "No valid stress channel exists; no stress–time chart was generated."
+          },
+          {
+            "id": "case_0:line_load_time",
+            "case_id": 0,
+            "status": "NOT_GENERATED",
+            "reason": "PFC2D line load is constant across all captured frames, so a line-load–time trend is omitted."
+          },
+          {
+            "id": "case_0:fracture",
+            "case_id": 0,
+            "status": "NOT_CAPTURED",
+            "reason": "No captured fracture events; fracture evolution and orientation charts are omitted."
+          },
+          {
+            "id": "experiment:case_comparison",
+            "case_id": null,
+            "status": "NOT_GENERATED",
+            "reason": "A comparison requires at least two cases."
+          }
+        ]
+      },
+      {
+        "id": "publication_figure_plan",
+        "status": "GENERATED",
+        "path": "06_publication_figures/figure_plan.json",
+        "verification": "NOT_VERIFIED"
+      },
+      {
+        "id": "publication_composed_svg",
+        "status": "NOT_GENERATED",
+        "reason": "Viewer SVG exports are required."
+      },
+      {
+        "id": "publication_pdf",
+        "status": "NOT_SUPPORTED",
+        "reason": "Use a local vector converter on composed SVG; no PDF backend is bundled."
+      },
+      {
+        "id": "experiment_report",
+        "status": "GENERATED",
+        "path": "report/experiment_report.md",
+        "verification": "NOT_VERIFIED"
+      }
+    ],
+    "unverified": [
+      "browser rendering and interaction",
+      "PNG/SVG export",
+      "test suite execution",
+      "performance measurement"
+    ]
+  }
+}

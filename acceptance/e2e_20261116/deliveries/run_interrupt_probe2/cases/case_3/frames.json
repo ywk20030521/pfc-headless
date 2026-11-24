@@ -1,0 +1,118 @@
+[
+  {
+    "frame_id": 1,
+    "cycle": 0,
+    "mechanical_time_total": 0.0,
+    "entity_offsets": {
+      "ball": [
+        0,
+        2
+      ],
+      "wall": [
+        0,
+        8
+      ]
+    },
+    "event_ids": [],
+    "capture_status": "VALID",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [
+        "case conversion_report.json"
+      ],
+      "formula": null,
+      "method": "frame membership preserved through explicit slice offsets",
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:19:56+00:00"
+    }
+  },
+  {
+    "frame_id": 2,
+    "cycle": 100,
+    "mechanical_time_total": 0.0917763,
+    "entity_offsets": {
+      "ball": [
+        2,
+        4
+      ],
+      "wall": [
+        8,
+        16
+      ]
+    },
+    "event_ids": [],
+    "capture_status": "VALID",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [
+        "case conversion_report.json"
+      ],
+      "formula": null,
+      "method": "frame membership preserved through explicit slice offsets",
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:19:56+00:00"
+    }
+  },
+  {
+    "frame_id": 3,
+    "cycle": 200,
+    "mechanical_time_total": 7.67514,
+    "entity_offsets": {
+      "ball": [
+        4,
+        6
+      ],
+      "wall": [
+        16,
+        24
+      ]
+    },
+    "event_ids": [],
+    "capture_status": "VALID",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [
+        "case conversion_report.json"
+      ],
+      "formula": null,
+      "method": "frame membership preserved through explicit slice offsets",
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:19:56+00:00"
+    }
+  },
+  {
+    "frame_id": 4,
+    "cycle": 253,
+    "mechanical_time_total": 101.474,
+    "entity_offsets": {
+      "ball": [
+        6,
+        8
+      ],
+      "wall": [
+        24,
+        32
+      ]
+    },
+    "event_ids": [],
+    "capture_status": "VALID",
+    "provenance": {
+      "source": "REAL_PFC",
+      "input_files": [],
+      "parent_results": [
+        "case conversion_report.json"
+      ],
+      "formula": null,
+      "method": "frame membership preserved through explicit slice offsets",
+      "applicability": null,
+      "notes": [],
+      "generated_utc": "2026-11-16T13:19:56+00:00"
+    }
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "transport": "bridge",
+  "task_kind": "task",
+  "dimension": 3,
+  "engine": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+  "runtime": {
+    "status": "ATTACHED",
+    "instance_id": "pfc3d_9001_07db8353",
+    "engine": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+    "dimension": 3,
+    "pid": 5500,
+    "port": 9001,
+    "workdir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+    "bootstrap_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept\\.pfc-console\\bridge_bootstrap.py",
+    "command_line": [
+      "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+      "--run",
+      "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept\\.pfc-console\\bridge_bootstrap.py"
+    ],
+    "process_create_time": 1794835077.2089257,
+    "executable_sha256": "e4e15cfbf8c4ea97d6ba1fe4fb4c35f45dc850a28074dfd50dcaf1fc5d2ac673",
+    "engine_version": "9.0.0",
+    "attached_utc": "2026-11-16T13:20:22+00:00",
+    "health": {
+      "status": "success",
+      "version": "0.6.11",
+      "runtime_mode": "console"
+    },
+    "probe_output": "PFC_HEADLESS_PROBE={\"executable\": \"D:\\\\Itasca\\\\PFC900\\\\exe64\\\\pfc3d9_console.exe\", \"pid\": 5500, \"cwd\": \"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\instances\\\\pfc3d_accept\", \"dimension\": 3, \"cycle\": 253, \"balls\": 2}\n",
+    "probe": {
+      "executable": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+      "pid": 5500,
+      "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+      "dimension": 3,
+      "cycle": 253,
+      "balls": 2
+    }
+  },
+  "task_id": "95769f",
+  "task": {
+    "type": "result",
+    "request_id": "unknown",
+    "status": "interrupted",
+    "message": "Script interrupted by user: capture_case.py\nElapsed time: 21.62s\n\n=== Partial Output ===\n  },\n  \"status\": \"FAILED\",\n  \"errors\": [\n    {\n      \"type\": \"ValueError\",\n      \"message\": \"The following Python error occurred while executing _mcp_bridge_interrupt_check:\\n\\n \\\"<class 'InterruptedError'>\\\"\\n'Task 95769f interrupted by user'\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\signals\\\\interrupt.py\\\", line 465, in _mcp_bridge_interrupt_check\\n    raise InterruptedError(\\\"Task {} interrupted by user\\\".format(task_id))\\n\\n\\n    While processing line 0 of source Python interpreter.\",\n      \"traceback\": \"Traceback (most recent call last):\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\execution\\\\script.py\\\", line 169, in _execute\\n    code_obj = compile(script_content, script_path, \\\"eval\\\")\\n  File \\\"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\runs\\\\run_interrupt_probe3\\\\entry\\\\capture_case.py\\\", line 1\\n    from __future__ import annotations\\n    ^^^^\\nSyntaxError: invalid syntax\\n\\nDuring handling of the above exception, another exception occurred:\\n\\nTraceback (most recent call last):\\n  File \\\"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\runs\\\\run_interrupt_probe3\\\\entry\\\\capture_case.py\\\", line 538, in main\\n    \\\"ball_count\\\",\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\utils\\\\command_log.py\\\", line 110, in _patched\\n    _orig_command(cmd)\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\signals\\\\interrupt.py\\\", line 773, in _wrapped_command\\n    result = _original_command(cmd)\\nValueError: The following Python error occurred while executing _mcp_bridge_interrupt_check:\\n\\n \\\"<class 'InterruptedError'>\\\"\\n'Task 95769f interrupted by user'\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\signals\\\\interrupt.py\\\", line 465, in _mcp_bridge_interrupt_check\\n    raise InterruptedError(\\\"Task {} interrupted by user\\\".format(task_id))\\n\\n\\n    While processing line 0 of source Python interpreter.\\n\"\n    },\n    {\n      \"phase\": \"cleanup\",\n      \"type\": \"InterruptedError\",\n      \"message\": \"Task 95769f interrupted by user\"\n    }\n  ],\n  \"source_hashes\": {},\n  \"pre_snapshot\": {\n    \"pid\": 5500,\n    \"cwd\": \"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\instances\\\\pfc3d_accept\",\n    \"python\": \"3.10.5\",\n    \"cycle\": 0,\n    \"mechanical_time_total\": 0.0,\n    \"balls\": 2,\n    \"walls\": 2,\n    \"contacts\": 0,\n    \"fractures\": 0,\n    \"fracture_module_available\": true\n  },\n  \"post_snapshot\": {\n    \"pid\": 5500,\n    \"cwd\": \"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\instances\\\\pfc3d_accept\",\n    \"python\": \"3.10.5\",\n    \"cycle\": 20763,\n    \"mechanical_time_total\": 2.767115418414369e+154,\n    \"balls\": 2,\n    \"walls\": 2,\n    \"contacts\": 0,\n    \"fractures\": 0,\n    \"fracture_module_available\": true\n  },\n  \"capture\": null,\n  \"save_executed\": false,\n  \"ended_utc\": \"2026-11-16T13:20:43.821+00:00\",\n  \"engine\": {\n    \"executable\": \"D:\\\\Itasca\\\\PFC900\\\\exe64\\\\pfc3d9_console.exe\",\n    \"python\": \"3.10.5\",\n    \"runtime_mode\": \"CONSOLE\"\n  },\n  \"files\": [\n    {\n      \"path\": \"raw/ball_frames.csv\",\n      \"size_bytes\": 11701,\n      \"sha256\": \"c5d1c52beb0c7332a49e654a022dd1dcbcb3e4585ffa69a70bde7b7d19173d42\"\n    },\n    {\n      \"path\": \"raw/contact_frames.csv\",\n      \"size_bytes\": 77,\n      \"sha256\": \"f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1\"\n    },\n    {\n      \"path\": \"raw/fracture_events.csv\",\n      \"size_bytes\": 94,\n      \"sha256\": \"20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367\"\n    },\n    {\n      \"path\": \"raw/frame_index.csv\",\n      \"size_bytes\": 11828,\n      \"sha256\": \"3c60998ec6ca0edd334d8079e9e97e9deed5229f875e418aa4a598870402d82d\"\n    },\n    {\n      \"path\": \"raw/wall_vertices.csv\",\n      \"size_bytes\": 21625,\n      \"sha256\": \"010169628d07805020b13c90cdf30bd19a79e4ba6dd49dba03d02fb11ccd30eb\"\n    },\n    {\n      \"path\": \"static.json\",\n      \"size_bytes\": 3900,\n      \"sha256\": \"d67a1ed4edbfa59f2f40a18dbacb43f19cf30093b0d6d3310a454d2ab210dc2b\"\n    }\n  ]\n}",
+    "data": {
+      "task_id": "95769f",
+      "task_type": "script",
+      "script_name": "capture_case.py",
+      "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe3\\entry\\capture_case.py",
+      "description": "PFC3D Console case 3 embedded capture run_interrupt_probe3",
+      "start_time": 1794835222.2269952,
+      "end_time": 1794835243.8452098,
+      "elapsed_time": 21.61821460723877,
+      "output": "  },\n  \"status\": \"FAILED\",\n  \"errors\": [\n    {\n      \"type\": \"ValueError\",\n      \"message\": \"The following Python error occurred while executing _mcp_bridge_interrupt_check:\\n\\n \\\"<class 'InterruptedError'>\\\"\\n'Task 95769f interrupted by user'\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\signals\\\\interrupt.py\\\", line 465, in _mcp_bridge_interrupt_check\\n    raise InterruptedError(\\\"Task {} interrupted by user\\\".format(task_id))\\n\\n\\n    While processing line 0 of source Python interpreter.\",\n      \"traceback\": \"Traceback (most recent call last):\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\execution\\\\script.py\\\", line 169, in _execute\\n    code_obj = compile(script_content, script_path, \\\"eval\\\")\\n  File \\\"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\runs\\\\run_interrupt_probe3\\\\entry\\\\capture_case.py\\\", line 1\\n    from __future__ import annotations\\n    ^^^^\\nSyntaxError: invalid syntax\\n\\nDuring handling of the above exception, another exception occurred:\\n\\nTraceback (most recent call last):\\n  File \\\"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\runs\\\\run_interrupt_probe3\\\\entry\\\\capture_case.py\\\", line 538, in main\\n    \\\"ball_count\\\",\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\utils\\\\command_log.py\\\", line 110, in _patched\\n    _orig_command(cmd)\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\signals\\\\interrupt.py\\\", line 773, in _wrapped_command\\n    result = _original_command(cmd)\\nValueError: The following Python error occurred while executing _mcp_bridge_interrupt_check:\\n\\n \\\"<class 'InterruptedError'>\\\"\\n'Task 95769f interrupted by user'\\n  File \\\"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\\\\itasca_mcp_bridge\\\\signals\\\\interrupt.py\\\", line 465, in _mcp_bridge_interrupt_check\\n    raise InterruptedError(\\\"Task {} interrupted by user\\\".format(task_id))\\n\\n\\n    While processing line 0 of source Python interpreter.\\n\"\n    },\n    {\n      \"phase\": \"cleanup\",\n      \"type\": \"InterruptedError\",\n      \"message\": \"Task 95769f interrupted by user\"\n    }\n  ],\n  \"source_hashes\": {},\n  \"pre_snapshot\": {\n    \"pid\": 5500,\n    \"cwd\": \"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\instances\\\\pfc3d_accept\",\n    \"python\": \"3.10.5\",\n    \"cycle\": 0,\n    \"mechanical_time_total\": 0.0,\n    \"balls\": 2,\n    \"walls\": 2,\n    \"contacts\": 0,\n    \"fractures\": 0,\n    \"fracture_module_available\": true\n  },\n  \"post_snapshot\": {\n    \"pid\": 5500,\n    \"cwd\": \"D:\\\\Python\\\\itasca-mcp\\\\PFC Visualization Skill\\\\pfc-headless\\\\acceptance\\\\e2e_20261116\\\\instances\\\\pfc3d_accept\",\n    \"python\": \"3.10.5\",\n    \"cycle\": 20763,\n    \"mechanical_time_total\": 2.767115418414369e+154,\n    \"balls\": 2,\n    \"walls\": 2,\n    \"contacts\": 0,\n    \"fractures\": 0,\n    \"fracture_module_available\": true\n  },\n  \"capture\": null,\n  \"save_executed\": false,\n  \"ended_utc\": \"2026-11-16T13:20:43.821+00:00\",\n  \"engine\": {\n    \"executable\": \"D:\\\\Itasca\\\\PFC900\\\\exe64\\\\pfc3d9_console.exe\",\n    \"python\": \"3.10.5\",\n    \"runtime_mode\": \"CONSOLE\"\n  },\n  \"files\": [\n    {\n      \"path\": \"raw/ball_frames.csv\",\n      \"size_bytes\": 11701,\n      \"sha256\": \"c5d1c52beb0c7332a49e654a022dd1dcbcb3e4585ffa69a70bde7b7d19173d42\"\n    },\n    {\n      \"path\": \"raw/contact_frames.csv\",\n      \"size_bytes\": 77,\n      \"sha256\": \"f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1\"\n    },\n    {\n      \"path\": \"raw/fracture_events.csv\",\n      \"size_bytes\": 94,\n      \"sha256\": \"20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367\"\n    },\n    {\n      \"path\": \"raw/frame_index.csv\",\n      \"size_bytes\": 11828,\n      \"sha256\": \"3c60998ec6ca0edd334d8079e9e97e9deed5229f875e418aa4a598870402d82d\"\n    },\n    {\n      \"path\": \"raw/wall_vertices.csv\",\n      \"size_bytes\": 21625,\n      \"sha256\": \"010169628d07805020b13c90cdf30bd19a79e4ba6dd49dba03d02fb11ccd30eb\"\n    },\n    {\n      \"path\": \"static.json\",\n      \"size_bytes\": 3900,\n      \"sha256\": \"d67a1ed4edbfa59f2f40a18dbacb43f19cf30093b0d6d3310a454d2ab210dc2b\"\n    }\n  ]\n}",
+      "pagination": {
+        "total_lines": 292,
+        "line_range": "213-292"
+      }
+    }
+  },
+  "task_status": "interrupted",
+  "elapsed_seconds": 22.491,
+  "validation": {
+    "schema_version": 1,
+    "status": "FAIL",
+    "errors": [
+      "PFC execution did not report completion"
+    ],
+    "warnings": [],
+    "execution_status": "interrupted"
+  },
+  "status": "FAILED",
+  "generated_utc": "2026-11-16T13:20:44+00:00"
+}

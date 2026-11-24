@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "data_boundary": "REAL_PFC",
+  "case_id": 3,
+  "run_id": "run_interrupt_probe3",
+  "started_utc": "2026-11-16T13:20:22.320+00:00",
+  "config": {
+    "case_id": 3,
+    "run_id": "run_interrupt_probe3",
+    "engine_dimension": 3,
+    "project_dir": "D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116",
+    "restore_initial": false,
+    "setup": [
+      "model new",
+      "model large-strain on",
+      "model domain extent -2.0 2.0 -2.0 2.0 -2.0 2.0",
+      "wall generate id 101 name 'bottom' plane position (0,0,-1.0) dip 0.0",
+      "wall generate id 102 name 'top' plane position (0,0,1.0) dip 0.0",
+      "ball create id 1 radius 0.6 position (0,0,0)",
+      "ball create id 2 radius 0.6 position (0.8,0,0)",
+      "ball attribute density 2500.0 damp 0.7",
+      "contact cmat default model linear property kn 1e8 ks 5e7 fric 0.5"
+    ],
+    "solve": "model cycle 100000000",
+    "post_solve": [],
+    "save": "model save 'pfc3d_interrupt_smoke_final'",
+    "sample_mode": "cycle",
+    "sample_interval": 100.0,
+    "sample_stride_cycles": 100,
+    "capture_contacts": false,
+    "history_names": [],
+    "history_meanings": {},
+    "time_history_name": "1",
+    "fracture_observer": false,
+    "expected_initial": {
+      "balls": 2
+    },
+    "source_files": {},
+    "load_axis": "z",
+    "top_wall_id": 102,
+    "bottom_wall_id": 101,
+    "headless": {
+      "project_id": "pfc_headless_e2e_20261116",
+      "case_id": 3,
+      "run_id": "run_interrupt_probe3",
+      "parameters": {},
+      "source_case_config": "cases/case_3/case_config.json"
+    },
+    "run_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe3\\data",
+    "execution_mode": "CONSOLE"
+  },
+  "status": "FAILED",
+  "errors": [
+    {
+      "type": "ValueError",
+      "message": "The following Python error occurred while executing _mcp_bridge_interrupt_check:\n\n \"<class 'InterruptedError'>\"\n'Task 95769f interrupted by user'\n  File \"C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages\\itasca_mcp_bridge\\signals\\interrupt.py\", line 465, in _mcp_bridge_interrupt_check\n    raise InterruptedError(\"Task {} interrupted by user\".format(task_id))\n\n\n    While processing line 0 of source Python interpreter.",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages\\itasca_mcp_bridge\\execution\\script.py\", line 169, in _execute\n    code_obj = compile(script_content, script_path, \"eval\")\n  File \"D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe3\\entry\\capture_case.py\", line 1\n    from __future__ import annotations\n    ^^^^\nSyntaxError: invalid syntax\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe3\\entry\\capture_case.py\", line 538, in main\n    \"ball_count\",\n  File \"C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages\\itasca_mcp_bridge\\utils\\command_log.py\", line 110, in _patched\n    _orig_command(cmd)\n  File \"C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages\\itasca_mcp_bridge\\signals\\interrupt.py\", line 773, in _wrapped_command\n    result = _original_command(cmd)\nValueError: The following Python error occurred while executing _mcp_bridge_interrupt_check:\n\n \"<class 'InterruptedError'>\"\n'Task 95769f interrupted by user'\n  File \"C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages\\itasca_mcp_bridge\\signals\\interrupt.py\", line 465, in _mcp_bridge_interrupt_check\n    raise InterruptedError(\"Task {} interrupted by user\".format(task_id))\n\n\n    While processing line 0 of source Python interpreter.\n"
+    },
+    {
+      "phase": "cleanup",
+      "type": "InterruptedError",
+      "message": "Task 95769f interrupted by user"
+    }
+  ],
+  "source_hashes": {},
+  "pre_snapshot": {
+    "pid": 5500,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+    "python": "3.10.5",
+    "cycle": 0,
+    "mechanical_time_total": 0.0,
+    "balls": 2,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": 0,
+    "fracture_module_available": true
+  },
+  "post_snapshot": {
+    "pid": 5500,
+    "cwd": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept",
+    "python": "3.10.5",
+    "cycle": 20763,
+    "mechanical_time_total": 2.767115418414369e+154,
+    "balls": 2,
+    "walls": 2,
+    "contacts": 0,
+    "fractures": 0,
+    "fracture_module_available": true
+  },
+  "capture": null,
+  "save_executed": false,
+  "ended_utc": "2026-11-16T13:20:43.821+00:00",
+  "engine": {
+    "executable": "D:\\Itasca\\PFC900\\exe64\\pfc3d9_console.exe",
+    "python": "3.10.5",
+    "runtime_mode": "CONSOLE"
+  },
+  "files": [
+    {
+      "path": "raw/ball_frames.csv",
+      "size_bytes": 11701,
+      "sha256": "c5d1c52beb0c7332a49e654a022dd1dcbcb3e4585ffa69a70bde7b7d19173d42"
+    },
+    {
+      "path": "raw/contact_frames.csv",
+      "size_bytes": 77,
+      "sha256": "f6b5899a389ecd47254c6a39fc2d24b232666c8e2f6596bccb6321063f8fe8b1"
+    },
+    {
+      "path": "raw/fracture_events.csv",
+      "size_bytes": 94,
+      "sha256": "20b4633f28768e2b7e7998863bf71ad3b11d147864fc3cc63bbf99681601e367"
+    },
+    {
+      "path": "raw/frame_index.csv",
+      "size_bytes": 11828,
+      "sha256": "3c60998ec6ca0edd334d8079e9e97e9deed5229f875e418aa4a598870402d82d"
+    },
+    {
+      "path": "raw/wall_vertices.csv",
+      "size_bytes": 21625,
+      "sha256": "010169628d07805020b13c90cdf30bd19a79e4ba6dd49dba03d02fb11ccd30eb"
+    },
+    {
+      "path": "static.json",
+      "size_bytes": 3900,
+      "sha256": "d67a1ed4edbfa59f2f40a18dbacb43f19cf30093b0d6d3310a454d2ab210dc2b"
+    }
+  ]
+}

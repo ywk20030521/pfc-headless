@@ -1,0 +1,51 @@
+{
+  "console_only": true,
+  "engines": [
+    {
+      "bridge_dependency": {
+        "details": {
+          "psutil_version": "5.9.6",
+          "user_site": "C:\\Users\\L\\AppData\\Roaming\\Python\\Python310\\site-packages",
+          "user_site_exists": true,
+          "version": "0.6.11"
+        },
+        "install_command": "\"D:\\Itasca\\PFC900\\exe64\\python310\\python.exe\" -m pip install --user itasca-mcp-bridge",
+        "note": "If a sandbox hides the user site-packages directory, rerun the environment check outside that sandbox before changing dependencies.",
+        "returncode": 0,
+        "status": "PASS",
+        "stderr": "",
+        "stdout": "{\"version\": \"0.6.11\", \"psutil_version\": \"5.9.6\", \"user_site\": \"C:\\\\Users\\\\L\\\\AppData\\\\Roaming\\\\Python\\\\Python310\\\\site-packages\", \"user_site_exists\": true}"
+      },
+      "console_marker_hits": [
+        "Console Terminal"
+      ],
+      "dimension": 2,
+      "engine_python": "D:\\Itasca\\PFC900\\exe64\\python310\\python.exe",
+      "engine_python_exists": true,
+      "engine_type": "PFC2D_CONSOLE",
+      "engine_version": "9.0.0",
+      "executable_path": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+      "file": {
+        "path": "D:\\Itasca\\PFC900\\exe64\\pfc2d9_console.exe",
+        "sha256": "20ffb56da3f3acc4bc51c05043a9c6f31d796ce8b13cc7ee6f7f8626392f3f40",
+        "size_bytes": 721896
+      },
+      "identity_basis": "product and console markers inside executable",
+      "install_root": "D:\\Itasca\\PFC900",
+      "status": "PASS",
+      "version_source": "path segment PFC900"
+    }
+  ],
+  "generated_utc": "2026-11-16T13:26:21+00:00",
+  "gui_accepted": false,
+  "mcp": {
+    "bridge_url_environment": null,
+    "configuration_files_with_itasca": [
+      "C:\\Users\\L\\.codex\\config.toml"
+    ],
+    "note": "MCP process routing is one Bridge URL per MCP server. Multiple engines require separate configured MCP processes or a verified router.",
+    "status": "PASS"
+  },
+  "requested_dimension": 2,
+  "schema_version": "1.0.0"
+}

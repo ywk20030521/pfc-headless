@@ -1,0 +1,37 @@
+{
+  "status": "GENERATED",
+  "policy": "Capabilities are inspected per Case. A missing optional field in one Case does not prevent other Cases from being processed.",
+  "cases": {
+    "2": {
+      "status": "GENERATED",
+      "dimension": 2,
+      "capabilities": {
+        "ball_position": "SUPPORTED",
+        "ball_radius": "SUPPORTED",
+        "wall_geometry": "SUPPORTED",
+        "fracture_event": "NOT_CAPTURED",
+        "contact_network": "SUPPORTED",
+        "bond_network": "NOT_CAPTURED",
+        "particle_displacement": "SUPPORTED",
+        "particle_speed": "SUPPORTED",
+        "particle_acceleration": "SUPPORTED",
+        "nominal_stress": "NOT_CAPTURED",
+        "line_load": "SUPPORTED"
+      }
+    }
+  },
+  "common": {
+    "ball_position": "SUPPORTED",
+    "ball_radius": "SUPPORTED",
+    "wall_geometry": "SUPPORTED",
+    "fracture_event": "NOT_CAPTURED",
+    "contact_network": "SUPPORTED",
+    "bond_network": "NOT_CAPTURED",
+    "particle_displacement": "SUPPORTED",
+    "particle_speed": "SUPPORTED",
+    "particle_acceleration": "SUPPORTED",
+    "nominal_stress": "NOT_CAPTURED",
+    "line_load": "SUPPORTED"
+  },
+  "runtime_verification": "NOT_VERIFIED"
+}

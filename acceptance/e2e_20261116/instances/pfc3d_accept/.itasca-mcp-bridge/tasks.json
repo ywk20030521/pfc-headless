@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": "18678e",
+    "task_type": "script",
+    "description": "PFC3D Console case 1 embedded capture run_pfc3d_001",
+    "status": "completed",
+    "start_time": 1794835105.550344,
+    "end_time": 1794835106.8365993,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_001\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept\\.itasca-mcp-bridge\\logs\\task_18678e.log",
+    "error": null
+  },
+  {
+    "task_id": "8557ed",
+    "task_type": "script",
+    "description": "PFC3D Console case 3 embedded capture run_interrupt_probe",
+    "status": "failed",
+    "start_time": 1794835156.8328266,
+    "end_time": 1794835157.3577003,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept\\.itasca-mcp-bridge\\logs\\task_8557ed.log",
+    "error": "Script execution failed:\n  File \"D:/Python/itasca-mcp/PFC Visualization Skill/pfc-headless/acceptance/e2e_20261116/runs/run_interrupt_probe/entry/capture_case.py\", line 660, in <module>\nRuntimeError: PFC capture failed; see metadata/result.json"
+  },
+  {
+    "task_id": "da8355",
+    "task_type": "script",
+    "description": "PFC3D Console case 3 embedded capture run_interrupt_probe2",
+    "status": "completed",
+    "start_time": 1794835195.5764441,
+    "end_time": 1794835196.3216615,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe2\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept\\.itasca-mcp-bridge\\logs\\task_da8355.log",
+    "error": null
+  },
+  {
+    "task_id": "95769f",
+    "task_type": "script",
+    "description": "PFC3D Console case 3 embedded capture run_interrupt_probe3",
+    "status": "interrupted",
+    "start_time": 1794835222.2269952,
+    "end_time": 1794835243.8452098,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_interrupt_probe3\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept\\.itasca-mcp-bridge\\logs\\task_95769f.log",
+    "error": null
+  },
+  {
+    "task_id": "aced66",
+    "task_type": "script",
+    "description": "PFC3D Console case 3 embedded capture run_timeout_probe",
+    "status": "interrupted",
+    "start_time": 1794835265.8963645,
+    "end_time": 1794835275.0824382,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_timeout_probe\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept\\.itasca-mcp-bridge\\logs\\task_aced66.log",
+    "error": null
+  },
+  {
+    "task_id": "bdf860",
+    "task_type": "script",
+    "description": "PFC3D Console case 1 embedded capture run_pfc3d_time_sampling",
+    "status": "completed",
+    "start_time": 1794835281.502771,
+    "end_time": 1794835282.2146401,
+    "script_name": "capture_case.py",
+    "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\entry\\capture_case.py",
+    "log_path": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\instances\\pfc3d_accept\\.itasca-mcp-bridge\\logs\\task_bdf860.log",
+    "error": null
+  }
+]

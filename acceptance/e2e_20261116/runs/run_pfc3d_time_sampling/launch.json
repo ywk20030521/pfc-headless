@@ -1,0 +1,8 @@
+{
+  "transport": null,
+  "entry_script": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\entry\\capture_case.py",
+  "config": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\entry\\capture_config.json",
+  "data_dir": "D:\\Python\\itasca-mcp\\PFC Visualization Skill\\pfc-headless\\acceptance\\e2e_20261116\\runs\\run_pfc3d_time_sampling\\data",
+  "run_id": "run_pfc3d_time_sampling",
+  "case_id": 1
+}
