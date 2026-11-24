@@ -15,6 +15,8 @@ import zipfile
 from pathlib import Path
 from typing import Any, Iterable
 
+import numpy as np
+
 
 class LegacyDataError(RuntimeError):
     pass
@@ -41,12 +43,32 @@ def _csv_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def _iter_csv_rows(path: Path) -> Iterable[dict[str, str]]:
+    """Streaming CSV reader. Yields one row at a time so the raw
+    list[dict[str, str]] never materializes in memory. The caller must
+    consume the generator exactly once (all current call sites do)."""
+    with path.open(encoding="utf-8", newline="") as handle:
+        yield from csv.DictReader(handle)
+
+
+def _iter_csv_rows_from_text(text: str) -> Iterable[dict[str, str]]:
+    yield from csv.DictReader(io.StringIO(text))
+
+
 def _zip_rows(archive: zipfile.ZipFile, name: str) -> list[dict[str, str]]:
     try:
         text = archive.read(name).decode("utf-8")
     except KeyError as exc:
         raise LegacyDataError(f"frames.zip is missing {name}") from exc
     return _csv_rows_from_text(text)
+
+
+def _iter_zip_rows(archive: zipfile.ZipFile, name: str) -> Iterable[dict[str, str]]:
+    try:
+        text = archive.read(name).decode("utf-8")
+    except KeyError as exc:
+        raise LegacyDataError(f"frames.zip is missing {name}") from exc
+    yield from _iter_csv_rows_from_text(text)
 
 
 def _finite(value: Any, label: str) -> float:
@@ -190,23 +212,27 @@ def _work_paths(case_dir: Path) -> tuple[Path, Path] | None:
     return None
 
 
-def _load_work_files(case_dir: Path, data_dir: Path) -> dict[str, Any]:
+def _load_work_files(
+    case_dir: Path, data_dir: Path, *, fast_reader: bool = False
+) -> dict[str, Any]:
     static_path = data_dir / "static.json"
     static = read_json(static_path)
     frame_index_path = data_dir / "raw" / "frame_index.csv"
     ball_path = data_dir / "raw" / "ball_frames.csv"
     wall_path = data_dir / "raw" / "wall_vertices.csv"
+    row_reader = _iter_csv_rows if fast_reader else _csv_rows
+    zip_reader = _iter_zip_rows if fast_reader else _zip_rows
     if not all(path.is_file() for path in (frame_index_path, ball_path, wall_path)):
         # Packaged case with an unpacked static.json and frames.zip.
         zipped = case_dir / "frames.zip"
         if zipped.is_file():
             with zipfile.ZipFile(zipped) as archive:
-                frame_index = _zip_rows(archive, "frame_index.csv")
-                ball_rows = _zip_rows(archive, "ball_frames.csv")
-                wall_rows = _zip_rows(archive, "wall_vertices.csv")
+                frame_index = zip_reader(archive, "frame_index.csv")
+                ball_rows = zip_reader(archive, "ball_frames.csv")
+                wall_rows = zip_reader(archive, "wall_vertices.csv")
             fracture_rows = []
             if (case_dir / "fracture_events.csv").is_file():
-                fracture_rows = _csv_rows(case_dir / "fracture_events.csv")
+                fracture_rows = row_reader(case_dir / "fracture_events.csv")
             return {
                 "static": static,
                 "static_path": static_path,
@@ -214,7 +240,7 @@ def _load_work_files(case_dir: Path, data_dir: Path) -> dict[str, Any]:
                 "ball_rows": ball_rows,
                 "wall_rows": wall_rows,
                 "fracture_rows": fracture_rows,
-                "history_rows": _csv_rows(case_dir / "history.csv")
+                "history_rows": row_reader(case_dir / "history.csv")
                 if (case_dir / "history.csv").is_file()
                 else [],
                 "format": "pfc-live-capture-packaged",
@@ -224,7 +250,7 @@ def _load_work_files(case_dir: Path, data_dir: Path) -> dict[str, Any]:
             }
         raise LegacyDataError(f"Incomplete capture files under {data_dir}")
     fracture_path = data_dir / "raw" / "fracture_events.csv"
-    fracture_rows = _csv_rows(fracture_path) if fracture_path.is_file() else []
+    fracture_rows = row_reader(fracture_path) if fracture_path.is_file() else []
     history_path = data_dir / "history.csv"
     if not history_path.is_file():
         history_path = case_dir / "history.csv"
@@ -246,24 +272,27 @@ def _load_work_files(case_dir: Path, data_dir: Path) -> dict[str, Any]:
     return {
         "static": static,
         "static_path": static_path,
-        "frame_index": _csv_rows(frame_index_path),
-        "ball_rows": _csv_rows(ball_path),
-        "wall_rows": _csv_rows(wall_path),
+        "frame_index": row_reader(frame_index_path),
+        "ball_rows": row_reader(ball_path),
+        "wall_rows": row_reader(wall_path),
         "fracture_rows": fracture_rows,
-        "contact_rows": _csv_rows(contact_path) if contact_path.is_file() else [],
-        "history_rows": _csv_rows(history_path) if history_path.is_file() else [],
-        "metric_rows": _csv_rows(metric_path) if metric_path.is_file() else [],
+        "contact_rows": row_reader(contact_path) if contact_path.is_file() else [],
+        "history_rows": row_reader(history_path) if history_path.is_file() else [],
+        "metric_rows": row_reader(metric_path) if metric_path.is_file() else [],
         "format": "pfc-live-capture-working",
         "files": files,
     }
 
 
-def _load_zip_only(case_dir: Path) -> dict[str, Any]:
+def _load_zip_only(case_dir: Path, *, fast_reader: bool = False) -> dict[str, Any]:
     static_path = case_dir / "static.json"
     if not static_path.is_file():
         raise LegacyDataError(f"Packaged case lacks static.json: {case_dir}")
     static = read_json(static_path)
     archive_path = case_dir / "frames.zip"
+    row_reader = _iter_csv_rows if fast_reader else _csv_rows
+    # ZIP rows are decoded into text eagerly; keep the packaged path materialized
+    # because the archive is closed before the caller consumes the rows.
     with zipfile.ZipFile(archive_path) as archive:
         frame_index = _zip_rows(archive, "frame_index.csv")
         ball_rows = _zip_rows(archive, "ball_frames.csv")
@@ -276,8 +305,8 @@ def _load_zip_only(case_dir: Path) -> dict[str, Any]:
         "frame_index": frame_index,
         "ball_rows": ball_rows,
         "wall_rows": wall_rows,
-        "fracture_rows": _csv_rows(fracture_path) if fracture_path.is_file() else [],
-        "history_rows": _csv_rows(history_path) if history_path.is_file() else [],
+        "fracture_rows": row_reader(fracture_path) if fracture_path.is_file() else [],
+        "history_rows": row_reader(history_path) if history_path.is_file() else [],
         "format": "pfc-live-capture-packaged",
         "files": [static_path, archive_path]
         + ([history_path] if history_path.is_file() else [])
@@ -285,16 +314,124 @@ def _load_zip_only(case_dir: Path) -> dict[str, Any]:
     }
 
 
-def load_legacy_case(case_dir: Path) -> dict[str, Any]:
-    """Load one working or packaged case without modifying its source files."""
+def _columnar_ball_rows(
+    ball_path: Path,
+    frame_index: list[dict[str, Any]],
+    static_radius: dict[int, float],
+) -> dict[str, Any] | None:
+    """Read ball CSV into preallocated columnar arrays, bypassing the
+    dict-of-dicts intermediate that dominates memory on large runs.
+
+    Rows are grouped by frame and sorted by Ball ID to match the legacy path
+    exactly. Returns None for the ZIP layout (caller falls back to the dict
+    path). All validation performed by the legacy ball loop is reproduced.
+    """
+    frame_pos = {int(row["frame_id"]): index for index, row in enumerate(frame_index)}
+    expected = {int(row["frame_id"]): int(row["ball_count"]) for row in frame_index}
+
+    # Pass 1: count rows per frame.
+    per_frame: dict[int, int] = {fid: 0 for fid in frame_pos}
+    for row in _iter_csv_rows(ball_path):
+        fid = int(row["frame_id"])
+        if fid not in frame_pos:
+            raise LegacyDataError(f"Ball row references unknown frame {fid}")
+        per_frame[fid] += 1
+    for fid, count in per_frame.items():
+        if count != expected[fid]:
+            raise LegacyDataError(
+                f"Frame {fid} has {count} Ball rows, expected {expected[fid]}"
+            )
+
+    total = sum(per_frame.values())
+    offsets = [0]
+    for row in frame_index:
+        offsets.append(offsets[-1] + per_frame[int(row["frame_id"])])
+    ids = np.empty(total, dtype=np.uint64)
+    xyz = np.empty((total, 3), dtype=np.float64)
+    radius = np.empty(total, dtype=np.float64)
+    present = np.empty(total, dtype=np.int64)
+    velocity = np.empty((total, 3), dtype=np.float64)
+    spin = np.empty((total, 3), dtype=np.float64)
+    velocity_complete = True
+    spin_complete = True
+
+    # Pass 2: write rows into their frame's slice; track duplicates.
+    cursors = {fid: offsets[index] for index, fid in enumerate(frame_pos)}
+    seen: dict[int, set[int]] = {fid: set() for fid in frame_pos}
+    for row in _iter_csv_rows(ball_path):
+        fid = int(row["frame_id"])
+        ball_id = int(row["ball_id"])
+        dupes = seen[fid]
+        if ball_id in dupes:
+            raise LegacyDataError(f"Frame {fid} has duplicate Ball ID {ball_id}")
+        dupes.add(ball_id)
+        pos = cursors[fid]
+        cursors[fid] += 1
+        ids[pos] = ball_id
+        xyz[pos] = (
+            _finite(row["x"], "Ball x"),
+            _finite(row["y"], "Ball y"),
+            _finite(row.get("z", 0.0), "Ball z"),
+        )
+        raw_radius = row.get("radius")
+        radius[pos] = float(raw_radius) if raw_radius not in {None, ""} else static_radius.get(ball_id, float("nan"))
+        present[pos] = frame_pos[fid]
+        has_velocity = all(row.get(key) not in {None, ""} for key in ("vx", "vy", "vz"))
+        if has_velocity:
+            velocity[pos] = (_finite(row["vx"], "vx"), _finite(row["vy"], "vy"), _finite(row["vz"], "vz"))
+        else:
+            velocity_complete = False
+        has_spin = all(row.get(key) not in {None, ""} for key in ("spin_x", "spin_y", "spin_z"))
+        if has_spin:
+            spin[pos] = (_finite(row["spin_x"], "sx"), _finite(row["spin_y"], "sy"), _finite(row["spin_z"], "sz"))
+        else:
+            spin_complete = False
+
+    # Sort each frame's slice by Ball ID to match legacy ordering.
+    for index, row in enumerate(frame_index):
+        fid = int(row["frame_id"])
+        start, end = offsets[index], offsets[index + 1]
+        if end - start < 2:
+            continue
+        order = np.argsort(ids[start:end], kind="stable")
+        ids[start:end] = ids[start:end][order]
+        xyz[start:end] = xyz[start:end][order]
+        radius[start:end] = radius[start:end][order]
+        present[start:end] = present[start:end][order]
+        velocity[start:end] = velocity[start:end][order]
+        spin[start:end] = spin[start:end][order]
+
+    return {
+        "frame_offsets": np.asarray(offsets, dtype=np.int64),
+        "ball_id": ids,
+        "ball_xyz": xyz,
+        "ball_radius": radius,
+        "ball_frame_index": present,
+        "ball_velocity": velocity if velocity_complete and total else None,
+        "ball_spin": spin if spin_complete and total else None,
+    }
+
+
+def load_legacy_case(case_dir: Path, *, fast_reader: bool = False, columnar: bool = False) -> dict[str, Any]:
+    """Load one working or packaged case without modifying its source files.
+
+    fast_reader=True streams large CSV tables instead of materializing
+    list[dict[str, str]] in memory. The default path is unchanged.
+
+    columnar=True reads ball rows straight into preallocated arrays, skipping
+    the ball_frames dict-of-dicts intermediate. Requires the working CSV
+    layout; ZIP cases fall back automatically. Off by default.
+    """
     case_dir = case_dir.resolve()
     if (case_dir / "frames.zip").is_file() and not (case_dir / "data").is_dir():
-        source = _load_zip_only(case_dir)
+        source = _load_zip_only(case_dir, fast_reader=fast_reader)
+        columnar_active = False
     else:
         paths = _work_paths(case_dir)
         if paths is None:
             raise LegacyDataError(f"Not a recognized PFC case directory: {case_dir}")
-        source = _load_work_files(*paths)
+        source = _load_work_files(*paths, fast_reader=fast_reader)
+        columnar_active = columnar and (paths[1] / "raw" / "ball_frames.csv").is_file()
 
     static = source["static"]
     balls = _static_balls(static)
@@ -337,48 +474,57 @@ def load_legacy_case(case_dir: Path) -> dict[str, Any]:
             }
         )
 
-    ball_frames: dict[int, list[dict[str, Any]]] = {
-        int(row["frame_id"]): [] for row in frame_index
-    }
-    for row in source["ball_rows"]:
-        frame_id = int(row["frame_id"])
-        if frame_id not in ball_frames:
-            raise LegacyDataError(f"Ball row references unknown frame {frame_id}")
-        ball_frames[frame_id].append(
-            {
-                "id": int(row["ball_id"]),
-                "x": _finite(row["x"], "Ball x"),
-                "y": _finite(row["y"], "Ball y"),
-                "z": _finite(row.get("z", 0.0), "Ball z"),
-                "radius": _finite(row["radius"], "Ball radius")
-                if row.get("radius") not in {None, ""}
-                else None,
-                "velocity": [
-                    _finite(row[key], f"Ball velocity {key}")
-                    for key in ("vx", "vy", "vz")
-                ]
-                if all(row.get(key) not in {None, ""} for key in ("vx", "vy", "vz"))
-                else None,
-                "spin": [
-                    _finite(row[key], f"Ball spin {key}")
-                    for key in ("spin_x", "spin_y", "spin_z")
-                ]
-                if all(
-                    row.get(key) not in {None, ""}
-                    for key in ("spin_x", "spin_y", "spin_z")
-                )
-                else None,
-            }
+    ball_arrays: dict[str, Any] | None = None
+    if columnar_active:
+        ball_arrays = _columnar_ball_rows(
+            paths[1] / "raw" / "ball_frames.csv",
+            frame_index,
+            {int(r["id"]): float(r["radius"]) for r in balls},
         )
-    for frame in frame_index:
-        rows = ball_frames[frame["frame_id"]]
-        rows.sort(key=lambda value: value["id"])
-        if len(rows) != frame["ball_count"]:
-            raise LegacyDataError(
-                f"Frame {frame['frame_id']} has {len(rows)} Ball rows, expected {frame['ball_count']}"
+        ball_frames = {}
+    else:
+        ball_frames: dict[int, list[dict[str, Any]]] = {
+            int(row["frame_id"]): [] for row in frame_index
+        }
+        for row in source["ball_rows"]:
+            frame_id = int(row["frame_id"])
+            if frame_id not in ball_frames:
+                raise LegacyDataError(f"Ball row references unknown frame {frame_id}")
+            ball_frames[frame_id].append(
+                {
+                    "id": int(row["ball_id"]),
+                    "x": _finite(row["x"], "Ball x"),
+                    "y": _finite(row["y"], "Ball y"),
+                    "z": _finite(row.get("z", 0.0), "Ball z"),
+                    "radius": _finite(row["radius"], "Ball radius")
+                    if row.get("radius") not in {None, ""}
+                    else None,
+                    "velocity": [
+                        _finite(row[key], f"Ball velocity {key}")
+                        for key in ("vx", "vy", "vz")
+                    ]
+                    if all(row.get(key) not in {None, ""} for key in ("vx", "vy", "vz"))
+                    else None,
+                    "spin": [
+                        _finite(row[key], f"Ball spin {key}")
+                        for key in ("spin_x", "spin_y", "spin_z")
+                    ]
+                    if all(
+                        row.get(key) not in {None, ""}
+                        for key in ("spin_x", "spin_y", "spin_z")
+                    )
+                    else None,
+                }
             )
-        if len({row["id"] for row in rows}) != len(rows):
-            raise LegacyDataError(f"Frame {frame['frame_id']} has duplicate Ball IDs")
+        for frame in frame_index:
+            rows = ball_frames[frame["frame_id"]]
+            rows.sort(key=lambda value: value["id"])
+            if len(rows) != frame["ball_count"]:
+                raise LegacyDataError(
+                    f"Frame {frame['frame_id']} has {len(rows)} Ball rows, expected {frame['ball_count']}"
+                )
+            if len({row["id"] for row in rows}) != len(rows):
+                raise LegacyDataError(f"Frame {frame['frame_id']} has duplicate Ball IDs")
 
     wall_frames: dict[int, dict[int, list[dict[str, Any]]]] = {
         int(row["frame_id"]): {} for row in frame_index
@@ -478,6 +624,7 @@ def load_legacy_case(case_dir: Path) -> dict[str, Any]:
         "dimension": dimension,
         "frame_index": frame_index,
         "ball_frames": ball_frames,
+        "ball_arrays": ball_arrays,
         "wall_frames": wall_frames,
         "fracture_events": fracture_events,
         "contact_frames": contact_frames,

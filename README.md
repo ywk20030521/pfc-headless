@@ -178,6 +178,31 @@ pfc.standardized-experiment@1.0.0
 
 The scientific Skill consumes this tree read-only and writes analysis elsewhere.
 
+### Offline standardization reader options
+
+`run_standardization.py` converts a captured run into the standardized package.
+All reader options produce byte-identical arrays and never modify raw input:
+
+```powershell
+& "<python>" "<skill>\scripts\run_standardization.py" `
+  --input "<run-root>" --output "<new-delivery-root>" --auto
+```
+
+| Flag | Effect |
+|---|---|
+| `--fast-reader` | Stream CSV rows instead of materializing `list[dict]` |
+| `--columnar` | Read ball rows straight into preallocated arrays; skips the `ball_frames` dict-of-dicts layer (largest memory win) |
+| `--contact-memmap` | Back large contact arrays with disk memmaps |
+| `--auto` | Choose the combination from data scale and memory budget; decision recorded in `conversion_report.json` under `cleaning_strategy` |
+| `--memory-budget-mb N` | Budget used by `--auto` (default 512) |
+
+All reader flags are off by default. The default path remains the original
+CSV→list→ndarray conversion. On a 200k-row ball run, `--columnar` reduced peak
+Python memory from 283 MB to 29 MB (9.6x) and wall time from 15.2 s to 9.9 s;
+see `reports/PERFORMANCE.md`. A `-1` contact endpoint (Wall/Facet) is encoded as
+the uint64 sentinel so runs with non-Ball contacts stay convertible under
+NumPy 2.x without changing bytes.
+
 ## Feedback loop
 
 ```powershell

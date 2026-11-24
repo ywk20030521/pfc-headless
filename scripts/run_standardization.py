@@ -29,6 +29,44 @@ def main() -> int:
         action="store_true",
         help="Also write independent NPY arrays beside canonical NPZ arrays.",
     )
+    parser.add_argument(
+        "--fast-reader",
+        action="store_true",
+        help=(
+            "Stream CSV rows through generators to lower peak memory. "
+            "Output-identical to the default reader; off by default."
+        ),
+    )
+    parser.add_argument(
+        "--columnar",
+        action="store_true",
+        help=(
+            "Read ball CSV straight into columnar arrays, skipping the "
+            "ball_frames dict-of-dicts intermediate. Output-identical; off by default."
+        ),
+    )
+    parser.add_argument(
+        "--contact-memmap",
+        action="store_true",
+        help=(
+            "Back contact arrays with disk memmaps so large contact sets "
+            "do not occupy RAM during conversion. Output-identical; off by default."
+        ),
+    )
+    parser.add_argument(
+        "--auto",
+        action="store_true",
+        help=(
+            "Choose reader strategy automatically from data scale and the "
+            "memory budget. Overrides the individual reader flags."
+        ),
+    )
+    parser.add_argument(
+        "--memory-budget-mb",
+        type=float,
+        default=None,
+        help="Memory budget in MB used by --auto (default: 512).",
+    )
     args = parser.parse_args()
     input_root = Path(args.input).resolve()
     output_root = Path(args.output).resolve()
@@ -40,6 +78,11 @@ def main() -> int:
         execution_mode=args.execution_mode,
         pfc_version=args.pfc_version,
         export_npy=args.export_npy,
+        fast_reader=args.fast_reader,
+        columnar=args.columnar,
+        contact_memmap=args.contact_memmap,
+        auto=args.auto,
+        memory_budget_mb=args.memory_budget_mb,
     )
     print(
         json.dumps(

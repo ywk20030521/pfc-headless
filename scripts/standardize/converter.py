@@ -7,6 +7,7 @@ import json
 import math
 import re
 import shutil
+import tempfile
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -40,6 +41,78 @@ def _json_dump(path: Path, value: Any) -> None:
     )
 
 
+def _count_csv_rows(path: Path) -> int:
+    """Count data rows without materializing parsed objects."""
+    if not path.is_file():
+        return 0
+    count = 0
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1 << 20), b""):
+            count += block.count(b"\n")
+    return max(0, count - 1)  # subtract header
+
+
+def choose_cleaning_strategy(
+    case_dirs: list[Path],
+    *,
+    memory_budget_mb: float | None = None,
+) -> dict[str, Any]:
+    """Pick reader flags from measured scale thresholds (PR-0 / PR-2).
+
+    Thresholds come from end-to-end A/B measurements on real and synthetic
+    runs: the columnar ball path cut peak memory ~9.6x and was strictly
+    faster, so it is preferred whenever the working CSV layout is present.
+    Contact memmap is enabled when the estimated contact array footprint
+    exceeds a fraction of the memory budget. The caller may override any
+    flag explicitly; this is advisory only.
+    """
+    ball_rows = 0
+    contact_rows = 0
+    can_columnar = True
+    for case_dir in case_dirs:
+        data = case_dir / "data" if (case_dir / "data" / "raw").is_dir() else case_dir
+        ball_csv = data / "raw" / "ball_frames.csv"
+        contact_csv = data / "raw" / "contact_frames.csv"
+        if ball_csv.is_file():
+            ball_rows += _count_csv_rows(ball_csv)
+        else:
+            can_columnar = False
+        if contact_csv.is_file():
+            contact_rows += _count_csv_rows(contact_csv)
+
+    # Peak RSS per row from measurements: legacy ~1.4 KB/row incl. dict layer,
+    # columnar ~0.15 KB/row. Contact adds ~78 B/row.
+    legacy_est_mb = ball_rows * 1.4e-3 + contact_rows * 7.8e-5
+    columnar_est_mb = ball_rows * 1.5e-4 + contact_rows * 7.8e-5
+    budget = memory_budget_mb
+    if budget is None:
+        # Without an explicit budget, still prefer the strictly-better path.
+        budget = 512.0
+
+    columnar = can_columnar and ball_rows > 0
+    fast_reader = columnar or ball_rows > 20_000
+    contact_memmap = bool(budget) and (contact_rows * 7.8e-5) > 0.25 * budget
+
+    return {
+        "strategy": "auto",
+        "fast_reader": fast_reader,
+        "columnar": columnar,
+        "contact_memmap": contact_memmap,
+        "scale": {
+            "ball_rows": ball_rows,
+            "contact_rows": contact_rows,
+            "estimated_legacy_peak_mb": round(legacy_est_mb, 2),
+            "estimated_columnar_peak_mb": round(columnar_est_mb, 2),
+            "memory_budget_mb": budget,
+        },
+        "reason": (
+            f"ball_rows={ball_rows}, contact_rows={contact_rows}; "
+            f"columnar={'on' if columnar else 'off'}, "
+            f"contact_memmap={'on' if contact_memmap else 'off'}"
+        ),
+    }
+
+
 def _sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -64,6 +137,27 @@ def _array_record(arrays: dict[str, np.ndarray], key: str, unit: str | None, sou
         "unit": unit,
         "source": source,
     }
+
+
+_UINT64_SENTINEL = (1 << 64) - 1
+
+
+def _endpoint_id(value: Any) -> int:
+    """Map the capture engine's -1 non-Ball endpoint to the uint64 sentinel.
+
+    Keeps the exact byte representation produced by legacy NumPy (wrap of -1)
+    while remaining valid under NumPy 2.x strict integer assignment.
+    """
+    number = int(value)
+    return _UINT64_SENTINEL if number < 0 else number
+
+
+def _alloc_contact_array(shape, dtype, memmap_dir: Path | None, name: str):
+    """Allocate a contact channel in RAM or as a disk-backed memmap."""
+    if memmap_dir is None:
+        return np.empty(shape, dtype=dtype)
+    path = memmap_dir / f"contact_{name}.dat"
+    return np.memmap(path, mode="w+", dtype=dtype, shape=shape)
 
 
 def export_independent_npy(
@@ -378,7 +472,9 @@ def _wall_facet_arrays(walls: list[dict[str, Any]]) -> dict[str, np.ndarray]:
     }
 
 
-def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
+def _build_case_arrays(
+    case: dict[str, Any], *, contact_memmap_dir: Path | None = None
+) -> tuple[dict[str, np.ndarray], dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
     data_boundary = str(case.get("data_boundary", "REAL_PFC"))
     raw_source = "REAL_PFC" if data_boundary == "REAL_PFC" else "CONFIG"
     frames = case["frame_index"]
@@ -387,50 +483,65 @@ def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dic
     times = np.asarray(
         [frame["mechanical_time_total"] for frame in frames], dtype=np.float64
     )
-    ball_offsets = [0]
-    ball_ids: list[int] = []
-    ball_xyz: list[float] = []
-    ball_radius: list[float] = []
-    ball_velocity: list[float] = []
-    ball_spin: list[float] = []
-    ball_present: list[float] = []
-    velocity_complete = True
-    spin_complete = True
-    static_radius = {
-        int(row["id"]): float(row["radius"]) for row in case["static"]["balls"]
-    }
-    for index, frame in enumerate(frames):
-        rows = case["ball_frames"][int(frame["frame_id"])]
-        for row in rows:
-            ball_ids.append(int(row["id"]))
-            ball_xyz.extend([row["x"], row["y"], row["z"]])
-            radius = row.get("radius")
-            ball_radius.append(
-                float(radius if radius is not None else static_radius.get(int(row["id"]), float("nan")))
-            )
-            ball_present.append(float(index))
-            if row.get("velocity") is None:
-                velocity_complete = False
-            else:
-                ball_velocity.extend(float(value) for value in row["velocity"])
-            if row.get("spin") is None:
-                spin_complete = False
-            else:
-                ball_spin.extend(float(value) for value in row["spin"])
-        ball_offsets.append(len(ball_ids))
+    # Two ball ingestion paths, both producing identical arrays:
+    #  - columnar: legacy streamed CSV straight into preallocated arrays,
+    #    skipping the ball_frames dict-of-dicts intermediate (PR-2).
+    #  - fallback: count-then-fill from the legacy ball_frames structure (PR-1).
+    columnar = case.get("ball_arrays")
+    if columnar is not None:
+        ball_offsets = [int(value) for value in columnar["frame_offsets"]]
+        total_balls = len(columnar["ball_id"])
+        ball_ids = columnar["ball_id"]
+        ball_xyz = columnar["ball_xyz"]
+        ball_radius = columnar["ball_radius"]
+        ball_present = columnar["ball_frame_index"]
+        velocity_complete = columnar["ball_velocity"] is not None
+        spin_complete = columnar["ball_spin"] is not None
+        ball_velocity = columnar["ball_velocity"]
+        ball_spin = columnar["ball_spin"]
+    else:
+        ball_offsets = [0]
+        for frame in frames:
+            rows = case["ball_frames"][int(frame["frame_id"])]
+            ball_offsets.append(ball_offsets[-1] + len(rows))
+        total_balls = ball_offsets[-1]
+        ball_ids = np.empty(total_balls, dtype=np.uint64)
+        ball_xyz = np.empty((total_balls, 3), dtype=np.float64)
+        ball_radius = np.empty(total_balls, dtype=np.float64)
+        ball_present = np.empty(total_balls, dtype=np.int64)
+        ball_velocity = np.empty((total_balls, 3), dtype=np.float64)
+        ball_spin = np.empty((total_balls, 3), dtype=np.float64)
+        velocity_complete = True
+        spin_complete = True
+        static_radius = {
+            int(row["id"]): float(row["radius"]) for row in case["static"]["balls"]
+        }
+        ball_cursor = 0
+        for index, frame in enumerate(frames):
+            rows = case["ball_frames"][int(frame["frame_id"])]
+            for row in rows:
+                ball_ids[ball_cursor] = int(row["id"])
+                ball_xyz[ball_cursor] = (row["x"], row["y"], row["z"])
+                radius = row.get("radius")
+                ball_radius[ball_cursor] = float(
+                    radius if radius is not None else static_radius.get(int(row["id"]), float("nan"))
+                )
+                ball_present[ball_cursor] = index
+                velocity = row.get("velocity")
+                if velocity is None:
+                    velocity_complete = False
+                else:
+                    ball_velocity[ball_cursor] = velocity
+                spin = row.get("spin")
+                if spin is None:
+                    spin_complete = False
+                else:
+                    ball_spin[ball_cursor] = spin
+                ball_cursor += 1
 
     contact_offsets = [0]
-    contact_ids: list[int] = []
-    contact_xyz: list[float] = []
-    contact_force_xyz: list[float] = []
-    contact_end1_ids: list[int] = []
-    contact_end2_ids: list[int] = []
-    contact_end1_types: list[int] = []
-    contact_end2_types: list[int] = []
-    contact_model_codes: list[int] = []
     contact_type_names: set[str] = set()
     contact_model_names: set[str] = set()
-    cumulative_contacts = 0
     for frame in frames:
         frame_contacts = case.get("contact_frames", {}).get(
             int(frame["frame_id"]), []
@@ -439,36 +550,56 @@ def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dic
             contact_type_names.add(str(row["end1_type"]))
             contact_type_names.add(str(row["end2_type"]))
             contact_model_names.add(str(row["model"]))
-        cumulative_contacts += len(frame_contacts)
-        contact_offsets.append(cumulative_contacts)
+        contact_offsets.append(contact_offsets[-1] + len(frame_contacts))
+    total_contacts = contact_offsets[-1]
     contact_type_map = {
         name: index for index, name in enumerate(sorted(contact_type_names))
     }
     contact_model_map = {
         name: index for index, name in enumerate(sorted(contact_model_names))
     }
+    contact_ids = _alloc_contact_array(total_contacts, np.uint64, contact_memmap_dir, "id")
+    contact_xyz = _alloc_contact_array((total_contacts, 3), np.float64, contact_memmap_dir, "xyz")
+    contact_force_xyz = _alloc_contact_array((total_contacts, 3), np.float64, contact_memmap_dir, "force_xyz")
+    contact_end1_ids = _alloc_contact_array(total_contacts, np.uint64, contact_memmap_dir, "end1_id")
+    contact_end2_ids = _alloc_contact_array(total_contacts, np.uint64, contact_memmap_dir, "end2_id")
+    contact_end1_types = _alloc_contact_array(total_contacts, np.int16, contact_memmap_dir, "end1_type")
+    contact_end2_types = _alloc_contact_array(total_contacts, np.int16, contact_memmap_dir, "end2_type")
+    contact_model_codes = _alloc_contact_array(total_contacts, np.int16, contact_memmap_dir, "model")
+    contact_cursor = 0
     for frame in frames:
         for row in case.get("contact_frames", {}).get(
             int(frame["frame_id"]), []
         ):
-            contact_ids.append(int(row["id"]))
-            contact_xyz.extend(float(value) for value in row["position"])
-            contact_force_xyz.extend(float(value) for value in row["force_xyz"])
-            contact_end1_ids.append(int(row["end1_id"]))
-            contact_end2_ids.append(int(row["end2_id"]))
-            contact_end1_types.append(contact_type_map[str(row["end1_type"])])
-            contact_end2_types.append(contact_type_map[str(row["end2_type"])])
-            contact_model_codes.append(contact_model_map[str(row["model"])])
+            contact_ids[contact_cursor] = int(row["id"])
+            contact_xyz[contact_cursor] = row["position"]
+            contact_force_xyz[contact_cursor] = row["force_xyz"]
+            # A non-Ball endpoint (Wall/Facet) is written as -1 by the capture
+            # engine. Older NumPy silently wrapped -1 into uint64 max; NumPy 2.x
+            # raises OverflowError. Map explicitly to the same uint64 sentinel
+            # so real runs with Facet contacts stay convertible and byte-identical.
+            contact_end1_ids[contact_cursor] = _endpoint_id(row["end1_id"])
+            contact_end2_ids[contact_cursor] = _endpoint_id(row["end2_id"])
+            contact_end1_types[contact_cursor] = contact_type_map[str(row["end1_type"])]
+            contact_end2_types[contact_cursor] = contact_type_map[str(row["end2_type"])]
+            contact_model_codes[contact_cursor] = contact_model_map[str(row["model"])]
+            contact_cursor += 1
 
-    wall_ids: list[int] = []
-    wall_vertex_ids: list[int] = []
-    wall_vertex_xyz: list[float] = []
     wall_offsets = [0]
+    for frame in frames:
+        by_wall = case["wall_frames"][int(frame["frame_id"])]
+        count = sum(len(by_wall[wall_id]) for wall_id in by_wall)
+        wall_offsets.append(wall_offsets[-1] + count)
+    total_vertices = wall_offsets[-1]
+    wall_ids = np.empty(total_vertices, dtype=np.uint64)
+    wall_vertex_ids = np.empty(total_vertices, dtype=np.uint64)
+    wall_vertex_xyz = np.empty((total_vertices, 3), dtype=np.float64)
     static_vertex_wall = {
         int(vertex["id"]): int(wall["id"])
         for wall in case["static"]["walls"]
         for vertex in wall["vertices"]
     }
+    wall_cursor = 0
     for frame in frames:
         by_wall = case["wall_frames"][int(frame["frame_id"])]
         for wall_id in sorted(by_wall):
@@ -483,10 +614,14 @@ def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dic
                     raise ValueError(
                         f"Wall vertex {vertex_id} has no Wall identity in static.json"
                     )
-                wall_ids.append(int(resolved_wall_id))
-                wall_vertex_ids.append(vertex_id)
-                wall_vertex_xyz.extend(vertex["position"])
-        wall_offsets.append(len(wall_ids))
+                wall_ids[wall_cursor] = int(resolved_wall_id)
+                wall_vertex_ids[wall_cursor] = vertex_id
+                wall_vertex_xyz[wall_cursor] = vertex["position"]
+                wall_cursor += 1
+    if wall_cursor != total_vertices:
+        raise ValueError(
+            f"Wall vertex cursor {wall_cursor} != total {total_vertices}"
+        )
 
     event_count = len(case["fracture_events"])
     event_ids = np.asarray([row["event_id"] for row in case["fracture_events"]], dtype=np.int64)
@@ -553,14 +688,14 @@ def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dic
         "cycle": cycles,
         "mechanical_time_total": times,
         "frame_offsets": np.asarray(ball_offsets, dtype=np.int64),
-        "ball_id": np.asarray(ball_ids, dtype=np.uint64),
-        "ball_xyz": np.asarray(ball_xyz, dtype=np.float64).reshape((-1, 3)),
-        "ball_radius": np.asarray(ball_radius, dtype=np.float64),
-        "ball_frame_index": np.asarray(ball_present, dtype=np.int64),
+        "ball_id": ball_ids,
+        "ball_xyz": ball_xyz,
+        "ball_radius": ball_radius,
+        "ball_frame_index": ball_present,
         "wall_offsets": np.asarray(wall_offsets, dtype=np.int64),
-        "wall_id": np.asarray(wall_ids, dtype=np.uint64),
-        "wall_vertex_id": np.asarray(wall_vertex_ids, dtype=np.uint64),
-        "wall_vertex_xyz": np.asarray(wall_vertex_xyz, dtype=np.float64).reshape((-1, 3)),
+        "wall_id": wall_ids,
+        "wall_vertex_id": wall_vertex_ids,
+        "wall_vertex_xyz": wall_vertex_xyz,
         **_wall_facet_arrays(case["static"]["walls"]),
         "fracture_event_id": event_ids,
         "fracture_cycle": event_cycles,
@@ -573,22 +708,22 @@ def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dic
     if endpoint_ids_captured:
         arrays["fracture_ball_id_a"] = event_ball_a
         arrays["fracture_ball_id_b"] = event_ball_b
-    if velocity_complete and ball_velocity:
-        arrays["ball_velocity"] = np.asarray(ball_velocity, dtype=np.float64).reshape((-1, 3))
-    if spin_complete and ball_spin:
-        arrays["ball_spin"] = np.asarray(ball_spin, dtype=np.float64).reshape((-1, 3))
-    if contact_ids:
+    if velocity_complete and total_balls:
+        arrays["ball_velocity"] = ball_velocity
+    if spin_complete and total_balls:
+        arrays["ball_spin"] = ball_spin
+    if total_contacts:
         arrays.update(
             {
                 "contact_offsets": np.asarray(contact_offsets, dtype=np.int64),
-                "contact_id": np.asarray(contact_ids, dtype=np.uint64),
-                "contact_xyz": np.asarray(contact_xyz, dtype=np.float64).reshape((-1, 3)),
-                "contact_force_xyz": np.asarray(contact_force_xyz, dtype=np.float64).reshape((-1, 3)),
-                "contact_end1_id": np.asarray(contact_end1_ids, dtype=np.uint64),
-                "contact_end2_id": np.asarray(contact_end2_ids, dtype=np.uint64),
-                "contact_end1_type": np.asarray(contact_end1_types, dtype=np.int16),
-                "contact_end2_type": np.asarray(contact_end2_types, dtype=np.int16),
-                "contact_model": np.asarray(contact_model_codes, dtype=np.int16),
+                "contact_id": contact_ids,
+                "contact_xyz": contact_xyz,
+                "contact_force_xyz": contact_force_xyz,
+                "contact_end1_id": contact_end1_ids,
+                "contact_end2_id": contact_end2_ids,
+                "contact_end1_type": contact_end1_types,
+                "contact_end2_type": contact_end2_types,
+                "contact_model": contact_model_codes,
             }
         )
     if np.isfinite(top_force).any():
@@ -711,7 +846,7 @@ def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dic
                 description="Captured Ball angular velocity; PFC2D uses the z component.",
             )
         )
-    if contact_ids:
+    if total_contacts:
         channels.extend(
             [
                 make_channel(
@@ -850,7 +985,7 @@ def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dic
             properties=["id", "vertex_id", "vertex_position"],
         ),
     ]
-    if contact_ids:
+    if total_contacts:
         entities.append(
             make_entity_group(
                 "contact",
@@ -880,7 +1015,7 @@ def _build_case_arrays(case: dict[str, Any]) -> tuple[dict[str, np.ndarray], dic
             "ball": [int(ball_offsets[index]), int(ball_offsets[index + 1])],
             "wall": [int(wall_offsets[index]), int(wall_offsets[index + 1])],
         }
-        if contact_ids:
+        if total_contacts:
             entity_offsets["contact"] = [
                 int(contact_offsets[index]),
                 int(contact_offsets[index + 1]),
@@ -953,8 +1088,18 @@ def standardize_experiment(
     execution_mode: str = "UNKNOWN",
     pfc_version: str | None = None,
     export_npy: bool = False,
+    fast_reader: bool = False,
+    columnar: bool = False,
+    contact_memmap: bool = False,
+    auto: bool = False,
+    memory_budget_mb: float | None = None,
 ) -> dict[str, Any]:
-    """Create a standardized experiment without overwriting raw inputs."""
+    """Create a standardized experiment without overwriting raw inputs.
+
+    fast_reader=True streams CSV rows through generators instead of
+    materializing list[dict[str, str]]. It is output-identical to the default
+    path and off by default for backward compatibility.
+    """
     input_root = input_root.resolve()
     output_root = output_root.resolve()
     if (
@@ -970,6 +1115,13 @@ def standardize_experiment(
             f"Refusing to overwrite an existing standardized delivery: {output_root}"
         )
     case_dirs = discover_legacy_cases(input_root)
+    strategy_record = None
+    if auto:
+        decision = choose_cleaning_strategy(case_dirs, memory_budget_mb=memory_budget_mb)
+        fast_reader = decision["fast_reader"]
+        columnar = decision["columnar"]
+        contact_memmap = decision["contact_memmap"]
+        strategy_record = decision
     cases_root = output_root / "cases"
     schema_root = output_root / "schema"
     cases_root.mkdir(parents=True, exist_ok=True)
@@ -982,11 +1134,21 @@ def standardize_experiment(
     legacy_records = []
     boundaries = []
     for case_dir in case_dirs:
-        legacy = load_legacy_case(case_dir)
+        legacy = load_legacy_case(case_dir, fast_reader=fast_reader, columnar=columnar)
         legacy_records.append(legacy)
         boundaries.append(str(legacy.get("data_boundary", "REAL_PFC")))
         raw_source = "REAL_PFC" if legacy.get("data_boundary") == "REAL_PFC" else "CONFIG"
-        arrays, summary, channels, entities = _build_case_arrays(legacy)
+        memmap_dir: Path | None = None
+        if contact_memmap:
+            memmap_dir = Path(tempfile.mkdtemp(prefix="pfc-headless-contact-"))
+        try:
+            arrays, summary, channels, entities = _build_case_arrays(
+                legacy, contact_memmap_dir=memmap_dir
+            )
+        except BaseException:
+            if memmap_dir is not None:
+                shutil.rmtree(memmap_dir, ignore_errors=True)
+            raise
         case_id = int(legacy["case_id"])
         case_out = cases_root / f"case_{case_id}"
         case_out.mkdir(parents=True, exist_ok=True)
@@ -1089,6 +1251,11 @@ def standardize_experiment(
         _json_dump(case_out / "conversion_report.json", report)
         case_records.append(case_record)
         conversion_records.append(report)
+        if memmap_dir is not None:
+            del arrays
+            import gc
+            gc.collect()
+            shutil.rmtree(memmap_dir, ignore_errors=True)
 
     distinct_boundaries = sorted(set(boundaries))
     experiment_boundary = (
@@ -1128,6 +1295,7 @@ def standardize_experiment(
             "experiment_id": experiment["experiment_id"],
             "cases": conversion_records,
             "raw_data_immutable": True,
+            "cleaning_strategy": strategy_record,
         },
     )
     validation_checks = []
