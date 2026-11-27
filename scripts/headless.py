@@ -15,6 +15,7 @@ from pfc_headless.feedback import (
     ingest_feedback,
     prepare_feedback_run,
 )
+from pfc_headless.authorization import RunAuthorization
 from pfc_headless.instance import (
     list_instances,
     load_instance,
@@ -48,6 +49,40 @@ def _print(value: Any) -> None:
 
 def _project(value: str) -> Project:
     return Project.open(Path(value))
+
+
+def _add_authorization_args(parser: argparse.ArgumentParser) -> None:
+    """Formal Runs cannot start without a bound user authorization."""
+    parser.add_argument("--authorization-id")
+    parser.add_argument("--research-task-id")
+    parser.add_argument("--decision-id")
+    parser.add_argument("--model-version")
+    parser.add_argument("--parameter-version")
+    parser.add_argument("--matrix-version")
+    parser.add_argument("--assumption-version", default="v1")
+    parser.add_argument("--context-version")
+    parser.add_argument("--pilot", action="store_true",
+                        help="explicit technical pilot, NOT a formal experiment")
+    parser.add_argument("--pilot-reason", default="")
+
+
+def _authorization_from_args(args: argparse.Namespace) -> RunAuthorization:
+    from pfc_headless.authorization import resolve_authorization
+
+    if getattr(args, "pilot", False):
+        return resolve_authorization({
+            "pilot": True, "pilot_reason": getattr(args, "pilot_reason", ""),
+        })
+    return resolve_authorization({
+        "authorization_id": getattr(args, "authorization_id", None),
+        "research_task_id": getattr(args, "research_task_id", None),
+        "decision_id": getattr(args, "decision_id", None),
+        "model_version": getattr(args, "model_version", None),
+        "parameter_version": getattr(args, "parameter_version", None),
+        "matrix_version": getattr(args, "matrix_version", None),
+        "assumption_version": getattr(args, "assumption_version", "v1"),
+        "context_version": getattr(args, "context_version", None),
+    })
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -133,6 +168,7 @@ def build_parser() -> argparse.ArgumentParser:
     run_start.add_argument("--capture-contacts", action="store_true")
     run_start.add_argument("--instance-id")
     run_start.add_argument("--pfc-version")
+    _add_authorization_args(run_start)
     run_prepare = run_sub.add_parser("prepare")
     run_prepare.add_argument("--project", required=True)
     run_prepare.add_argument("--case-id", type=int, required=True)
@@ -143,6 +179,7 @@ def build_parser() -> argparse.ArgumentParser:
     run_prepare.add_argument("--capture-contacts", action="store_true")
     run_prepare.add_argument("--collection-plan")
     run_prepare.add_argument("--instance-id", required=True)
+    _add_authorization_args(run_prepare)
     run_list = run_sub.add_parser("list")
     run_list.add_argument("--project", required=True)
     run_execute = run_sub.add_parser("execute")
@@ -378,6 +415,7 @@ def main() -> int:
                     "run prepare requires --instance-id; Headless no longer "
                     "starts an unregistered execution process"
                 )
+            authorization = _authorization_from_args(args)
             _print(
                 prepare_project_case(
                     project,
@@ -387,6 +425,7 @@ def main() -> int:
                     sampling=sampling,
                     instance_id=args.instance_id,
                     collection_plan=collection_plan,
+                    authorization=authorization.to_record(),
                 )
             )
             return 0

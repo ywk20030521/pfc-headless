@@ -466,6 +466,11 @@ def main() -> int:
         "ball_radius_changes": compact["ball_radius_changes"],
         "raw_tail_rejections": compact["raw_tails"],
         "incomplete_frame_rows": compact["incomplete_frame_rows"],
+        # Data integrity is owned by Execution; scientific validity is not.
+        # Keep these distinct so downstream Skills cannot read a PASS as a
+        # scientific conclusion.
+        "data_integrity_status": fracture_report["status"],
+        "scientific_validity": "NOT_VERIFIED",
     }
     final_status = (
         "COMPLETE" if status in {"COMPLETE", "INTERRUPTED"} else status
@@ -496,6 +501,12 @@ def main() -> int:
         "native_histories": native,
         "frame_metrics": metrics_path,
         "manifest": manifest,
+        "data_integrity_status": fracture_report["status"],
+        "scientific_validity": "NOT_VERIFIED",
+        "boundary_note": (
+            "INCOMPLETE/COMPLETE 仅表示数据完整性闸门；科学有效性须由 "
+            "pfc-research-evidence 依据判据与证据裁定，legacy 派生量不得作为结论"
+        ),
     }
     atomic_write_json(run_dir / "metadata" / "finalize_result.json", result)
     print(json.dumps(result, ensure_ascii=False, indent=2))

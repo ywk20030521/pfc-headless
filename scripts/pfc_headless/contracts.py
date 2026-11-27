@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import math
+import uuid
 from pathlib import Path
 from typing import Any
 
@@ -293,7 +294,7 @@ def make_feedback(
     return {
         "schema_version": SCHEMA_VERSION,
         "contract": "pfc.analysis-findings@1.0.0",
-        "feedback_id": f"feedback_{utc_now().replace(':', '').replace('-', '')}",
+        "feedback_id": "feedback_" + uuid.uuid4().hex[:16],
         "run_id": run_id,
         "source": source,
         "referenced_artifacts": referenced_artifacts or [],

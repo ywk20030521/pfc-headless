@@ -93,12 +93,30 @@ Connection readiness has four evidence layers:
 The evidence validator also compares the current identity fingerprint and
 rejects expired probes or evidence from a previous instance.
 
-Prepare a Run and bind its official MCP task:
+Prepare a Run and bind its official MCP task. Formal Runs require a
+user-approved authorization from `pfc-interaction`; the authorization fields
+are copied verbatim into the immutable Run record:
 
 ```powershell
 & "<python>" "<skill>\scripts\headless.py" run prepare `
   --project "<project>" --case-id 0 --run-id run_001 `
-  --instance-id pfc3d_9001
+  --instance-id pfc3d_9001 `
+  --authorization-id auth-abc12345 `
+  --research-task-id task-triax --decision-id dec-abc12345 `
+  --model-version model-v1 --parameter-version param-v1 `
+  --matrix-version matrix-v1
+```
+
+For a non-formal technical trial only:
+
+```powershell
+& "<python>" "<skill>\scripts\headless.py" run prepare ... `
+  --pilot --pilot-reason "method smoke test"
+```
+
+`--pilot` runs are marked `UNACCEPTED_TECHNICAL_PILOT` and cannot be combined
+with `--authorization-id`. `run execute` refuses any Run without a valid
+persisted authorization.
 
 # Agent Host: call itasca_execute_task with the returned arguments.
 & "<python>" "<skill>\scripts\headless.py" run attach-task `
