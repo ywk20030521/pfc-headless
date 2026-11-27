@@ -84,7 +84,14 @@ layer; `itasca-mcp` and `itasca-mcp-bridge` remain the execution layer, while
 5. **Simulation Manager**
 
    Use `run prepare` to create the immutable Run and obtain an official MCP
-   operation request. The Agent Host calls `itasca_execute_task`, then records
+   operation request. A formal Run requires `--authorization-id`,
+   `--research-task-id`, `--decision-id`, `--model-version`,
+   `--parameter-version` and `--matrix-version` copied from a user-approved
+   `pfc-interaction` authorization. Without them the command fails; the only
+   alternative is an explicit `--pilot --pilot-reason "..."`, which is recorded
+   as `UNACCEPTED_TECHNICAL_PILOT` and must never be delivered as a formal
+   experiment. `run execute` re-checks the persisted authorization before
+   issuing an MCP operation. The Agent Host calls `itasca_execute_task`, then records
    the returned task with `run attach-task`. Use `run status` and
    `run interrupt` to obtain the MCP query/interrupt operations, and
    `run record-status` / `run record-interrupt` to persist returned evidence.

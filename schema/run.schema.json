@@ -27,6 +27,7 @@
     "prepared_utc": {"type": ["string", "null"]},
     "finalization": {"type": ["object", "null"]},
     "feedback_id": {"type": ["string", "null"]},
+    "authorization": {"type": ["object", "null"]},
     "output_path": {"type": "string", "minLength": 1},
     "error": {"type": ["object", "null"]}
   },

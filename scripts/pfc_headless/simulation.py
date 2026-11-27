@@ -99,6 +99,7 @@ def prepare_project_case(
     instance_id: str,
     collection_plan: dict[str, Any] | None = None,
     feedback_id: str | None = None,
+    authorization: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     instance = load_instance(project, instance_id)
     if instance.get("state") != "READY":
@@ -118,6 +119,7 @@ def prepare_project_case(
         instance_id=instance_id,
         collection_plan=collection_plan,
         feedback_id=feedback_id,
+        authorization=authorization,
     )
     return prepare_planned_run(project, str(created["record"]["run_id"]))
 
@@ -766,5 +768,9 @@ def run_project_case(project: Project, **kwargs: Any) -> dict[str, Any]:
 
 
 def execute_planned_run(project: Project, run_id: str, **_: Any) -> dict[str, Any]:
+    """Submission boundary: refuse any Run without a valid authorization."""
+    from .authorization import gate_run_record
+
+    gate_run_record(project.get_run(run_id))
     return prepare_planned_run(project, run_id)
 

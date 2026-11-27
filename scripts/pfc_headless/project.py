@@ -22,6 +22,7 @@ from .common import (
     validate_id,
 )
 from .contracts import make_case, make_project, make_run, validate_document
+from .authorization import RunAuthorization
 from .collection import apply_plan_to_config, normalize_collection_plan
 
 
@@ -178,6 +179,7 @@ class Project:
         instance_id: str | None = None,
         collection_plan: dict[str, Any] | None = None,
         feedback_id: str | None = None,
+        authorization: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         case = self.get_case(case_id)
         run_id = validate_id(run_id or new_id("run"), "run_id")
@@ -311,6 +313,10 @@ class Project:
                     "preflight": rendered.get("preflight") or {"status": "NOT_RUN"},
                 }
             )
+            if authorization is not None:
+                auth = RunAuthorization.from_mapping(authorization)
+                auth.validate()
+                record["authorization"] = auth.to_record()
             validate_document("run", record)
             atomic_write_json(run_root / "metadata" / "run.json", record)
             append_audit(
