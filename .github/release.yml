@@ -1,0 +1,24 @@
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+  categories:
+    - title: Execution and Run lifecycle
+      labels:
+        - execution
+        - run-lifecycle
+    - title: Data contract and delivery
+      labels:
+        - contract
+        - data-delivery
+    - title: Security and authorization
+      labels:
+        - security
+        - authorization
+    - title: Documentation and repository configuration
+      labels:
+        - documentation
+        - repository-config
+    - title: Other changes
+      labels:
+        - "*"

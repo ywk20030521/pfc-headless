@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible defect in execution, capture or delivery
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not report security vulnerabilities here. Use the private
+        reporting channel in `SECURITY.md`. Do not attach proprietary model files.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened
+      description: Describe the observed behavior and the exact command used.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "Python 3.13 / Windows 11 / PFC3D 9.x / bridge 0.6.17 / commit <sha>"
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence type
+      options:
+        - Real PFC / bridge evidence
+        - Unit or contract test only
+        - Simulated or mock data
+        - Documentation / schema only
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or Run IDs
+      description: Include tool_task_id / run_id when available. Redact sensitive paths.
+    validations:
+      required: false
