@@ -77,6 +77,37 @@ class AuthorizationRecordTests(unittest.TestCase):
         self.assertEqual(record["matrix_version"], "matrix-v1")
 
 
+class ContractRemediationTests(unittest.TestCase):
+    def test_feedback_id_is_stable_unique_not_timestamp_collision(self):
+        from pfc_headless.contracts import make_feedback
+
+        common = dict(
+            run_id="run_test", source="pfc-scientific-visualization",
+            findings=[], missing_data=[],
+            recommended_sampling={"mode": "cycle", "interval": 1},
+            recommended_actions=[],
+        )
+        a = make_feedback(**common)["feedback_id"]
+        b = make_feedback(**common)["feedback_id"]
+        self.assertTrue(a.startswith("feedback_"))
+        self.assertNotEqual(a, b)
+
+    def test_canonical_layer_vocabulary_maps_legacy_names(self):
+        from pfc_headless.layer_contract import (
+            CANONICAL_LAYERS, can_write, normalize_layer,
+        )
+
+        self.assertEqual(CANONICAL_LAYERS, ("RAW", "STANDARDIZED", "DERIVED"))
+        self.assertEqual(normalize_layer("RAW_DATA"), "RAW")
+        self.assertEqual(normalize_layer("ANALYSIS_DATA"), "DERIVED")
+        self.assertEqual(normalize_layer("DISPLAY_DATA"), "DERIVED")
+        with self.assertRaises(ValueError):
+            normalize_layer("UNKNOWN")
+        self.assertTrue(can_write("pfc-headless", "RAW"))
+        self.assertFalse(can_write("pfc-scientific-visualization", "RAW"))
+        self.assertTrue(can_write("pfc-scientific-visualization", "DERIVED"))
+
+
 class CliGateTests(unittest.TestCase):
     def test_run_prepare_without_authorization_fails(self):
         import headless
