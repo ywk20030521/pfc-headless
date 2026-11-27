@@ -1,0 +1,46 @@
+name: Feature request
+description: Propose a change within the execution and data-production boundary
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before proposing, check the responsibility boundary in `CONTRIBUTING.md`.
+        User interaction, derived quantities/charts, and scientific validation
+        belong to other Skills and will be redirected.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: dropdown
+    id: contract_impact
+    attributes:
+      label: Does this change a shared contract (Run / Dataset / Manifest / schema)?
+      options:
+        - "No"
+        - "Yes - additive only"
+        - "Yes - breaking"
+    validations:
+      required: true
+  - type: textarea
+    id: status
+    attributes:
+      label: How would the result be verified?
+      description: Name the tests and, if applicable, the real PFC evidence required.
+    validations:
+      required: true

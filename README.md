@@ -247,3 +247,12 @@ See `reports/VALIDATION_REPORT.md`, `reports/CAPABILITY_MATRIX.md`,
 `CONSOLE_ACCEPTANCE.md` and `DATA_INTEGRITY_REPORT.md` for the distinction
 between unit tests, simulated tests and real PFC acceptance.
 
+## Contributing and release
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) — development and scientific-integrity rules
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — community standards
+- [SECURITY.md](SECURITY.md) — private vulnerability reporting
+- [docs/VERSIONING.md](docs/VERSIONING.md) — tags and release process
+- [docs/RELEASE_NOTES_DRAFT.md](docs/RELEASE_NOTES_DRAFT.md) — draft, not published
+- [LICENSE](LICENSE) — MIT
+
